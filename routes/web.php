@@ -33,6 +33,10 @@ Route::get('catalog',function(){
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
-
-
+Route::get('info',function(){
+	return view('changeInfo');
+});
+Route::get('phanquyen',function(){
+	return view('Phanquyen');
+});
 
