@@ -39,4 +39,9 @@ Route::get('info',function(){
 Route::get('phanquyen',function(){
 	return view('Phanquyen');
 });
-
+Route::get('featured',function(){
+	return view('Featured_Products');
+});
+Route::get('discounted',function(){
+	return view('product_is_discounted');
+});
