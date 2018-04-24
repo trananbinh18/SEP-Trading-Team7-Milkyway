@@ -1,83 +1,83 @@
 @charset "UTF-8";
 /**
-	Theme Name: FutureLife
-	Theme URI: http://engotheme.com/
-	Author: Engo Team
-	Author URI: http://engotheme.com/
-	Description: Engo ABC HTML Template
-	Version: 1.0
-	Last change:	2016/02/20 [Initial Release]
-	License: GNU General Public License v2 or later
-	Tags: two-columns, left-sidebar, fixed-layout, responsive-layout
-	Text Domain: Engotheme
+  Theme Name: FutureLife
+  Theme URI: http://engotheme.com/
+  Author: Engo Team
+  Author URI: http://engotheme.com/
+  Description: Engo ABC HTML Template
+  Version: 1.0
+  Last change:  2016/02/20 [Initial Release]
+  License: GNU General Public License v2 or later
+  Tags: two-columns, left-sidebar, fixed-layout, responsive-layout
+  Text Domain: Engotheme
  **/
 /*------------------------------------------------------------------
 [Table of contents]
 
-	1. Import vendor
-		1.1. Vendor
-			1.1.1. Google fonts
-			1.1.2. Icon Fonts
-			1.1.3. Vendor library
-		1.2. Bootstrap
-	2. Reset
-		2.1. Reset
-		2.2. Default base
-			2.2.1.	Button
-			2.2.2.	Link
-			2.2.3.	Typo
-			2.2.4.	Heading
-			...
-	3. Mixins
-	4. Elements
-		4.1. Our new
-		4.2. News letter
-		4.3. Form our
-		4.4. Brand
-		...
-	5. Ecommerce
-		5.1. Shop General
-		5.2. Item view templates
-		5.3. Shop Widget
-		5.4. Shop view Pages
-		5.5. Shop Single
-		5.6. Shop Cart
-		5.7. Shop Checkout
-		5.8. Shop Wishlist
-		5.9. Track Order
-	6. Templates Layout
-		6.1. General
-		6.2. Header
-			6.2.1. General
-			6.2.2. Header version 1
-			6.2.3. Header version 2
-			6.2.4. Header version 3
-			...
-		6.3. Sidebar
-		6.4. Contents
-			6.4.1. CMS default
-			6.4.2. Blog
-			...
-		6.5. Footers
-			6.5.1. General
-			6.5.2. Footer Version 1
-			6.5.3. Footer Version 2
-			...
-		6.6. Home pages
-			6.6.1. Home page 1
-			6.6.2. Home page 2
-			...
-		6.7. Pages
-			6.7.1. About Us
-				6.7.1.1. About Us Version 1
-				6.7.1.2. About Us Version 2
-			6.7.2. Contact Us
-			6.7.3. FAQ's
-			...
+  1. Import vendor
+    1.1. Vendor
+      1.1.1. Google fonts
+      1.1.2. Icon Fonts
+      1.1.3. Vendor library
+    1.2. Bootstrap
+  2. Reset
+    2.1. Reset
+    2.2. Default base
+      2.2.1.  Button
+      2.2.2.  Link
+      2.2.3.  Typo
+      2.2.4.  Heading
+      ...
+  3. Mixins
+  4. Elements
+    4.1. Our new
+    4.2. News letter
+    4.3. Form our
+    4.4. Brand
+    ...
+  5. Ecommerce
+    5.1. Shop General
+    5.2. Item view templates
+    5.3. Shop Widget
+    5.4. Shop view Pages
+    5.5. Shop Single
+    5.6. Shop Cart
+    5.7. Shop Checkout
+    5.8. Shop Wishlist
+    5.9. Track Order
+  6. Templates Layout
+    6.1. General
+    6.2. Header
+      6.2.1. General
+      6.2.2. Header version 1
+      6.2.3. Header version 2
+      6.2.4. Header version 3
+      ...
+    6.3. Sidebar
+    6.4. Contents
+      6.4.1. CMS default
+      6.4.2. Blog
+      ...
+    6.5. Footers
+      6.5.1. General
+      6.5.2. Footer Version 1
+      6.5.3. Footer Version 2
+      ...
+    6.6. Home pages
+      6.6.1. Home page 1
+      6.6.2. Home page 2
+      ...
+    6.7. Pages
+      6.7.1. About Us
+        6.7.1.1. About Us Version 1
+        6.7.1.2. About Us Version 2
+      6.7.2. Contact Us
+      6.7.3. FAQ's
+      ...
 -------------------------------------------------------------------*/
 /** 1. Import vendor **/
 /** 1.1. Vendor **/
-/** 1.1.1.	Google fonts **/
+/** 1.1.1.  Google fonts **/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,500);
@@ -85,7 +85,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
-/** 1.1.2.	Icon Fonts **/
+/** 1.1.2.  Icon Fonts **/
 @import url("../sass/components/Vendor/font-awesome/font-awesome.min.css");
 @import url("../sass/components/Vendor/simple-line-icon/css/simple-line-icons.css");
 @import url("../sass/components/Vendor/pe-icon-7-stroke/css/pe-icon-7-stroke.css");
@@ -798,7 +798,7 @@ body {
 }
 
 /** 2.2. Default base **/
-/** 2.2.1.	Button **/
+/** 2.2.1.  Button **/
 .dropdown-menu {
   background-color: #333333;
   border-radius: 0px;
@@ -15636,7 +15636,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 }
 
 button.button_search {
-  background: #333;
+  background: #80b435;
   font: 700 16px/43px "Roboto Condensed";
   color: #fff;
   text-transform: uppercase;
@@ -15652,7 +15652,8 @@ button.button_search {
 }
 
 button.button_search:hover {
-  background: #80b435;
+  background: #fff;
+  color: #333;
 }
 
 .popup-search {
@@ -20736,4 +20737,56 @@ nav.megamenu-v2 ul.main-menu li:last-child {
     text-align: center;
     font-size: 12px;
   }
+}
+
+.control-h1{
+  padding-top: 30px;
+  padding-left: 80px;
+  font: 700 18px/40px "Roboto Slab";
+  font-size: 22px;
+  color: #161616;
+}
+.control-infotproduct{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  color:#171313;
+  border: 1px solid #E1DADA;
+}
+.control-product{
+  padding-left: 100px;
+  color: #171313;
+}
+/*.control-text{
+  width: 50%;
+  color: gray;
+}*/
+.control-describe{
+  width: 50%;
+  height: 200px;
+  padding-bottom: 30px;
+  word-wrap: break-word;
+}
+.control-tbrow{
+  border-style: solid 1px;
+  border-color: #333;
+}
+.control-price{
+  width: 100%;
+}
+.box-shadow(@shadow: 0 2px 4px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+.row-addproduct{
+  background-color:#fff;
+}
+.control-lab{
+  font-size: 20px;
+  color: #161616;
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+  font-family: "TXGB";
 }

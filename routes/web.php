@@ -21,5 +21,18 @@ Route::get('home',function(){
 Route::get('product-detail',function(){
 	return view('product_detail');
 });
+Route::get('about',function(){
+	return view('about');
+});
+Route::get('Addproduct',function(){
+	return view('Addproduct');
+});
+Route::get('catalog',function(){
+	return view('catalog_sidebar');
+});
+Route::get('shopping',function(){
+	return view('shopping_cart');
+});
+
 
 

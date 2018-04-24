@@ -12,6 +12,8 @@
         <link rel="shortcut icon" href="resources/assets/images/favicon.png" />
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/slick.css"/>
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/settings.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/range-price.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="resources/assets/js/jquery-3.2.0.min.js"></script>
         <title>Trang chủ</title>
     </head>
@@ -115,17 +117,47 @@
                             </div>
                             <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                          <ul class="nav navbar-nav" id="navbar">
-                            <li class="level1 active"><a href="#" title="Home">Trang chủ</a>
-                                <!-- <ul class="menu-level-1 dropdown-menu">
-                                   <li class="level2"><a href="home_v1.html" title="Home 1">Home 1</a></li>
-                                    <li class="level2"><a href="home_v2.html" title="Home 2">Home 2</a></li>
-                                    <li class="level2"><a href="home_v3.html" title="Home 3">Home 3</a></li>
-                                    <li class="level2"><a href="home_v4.html" title="Home 4">Home 4</a></li>
-                                </ul> -->
-                            </li>
+                           <ul class="nav navbar-nav" id="navbar">
+                            <li class="level1"><a href="#" title="Home">Trang chủ</a></li>
                             <li class="level1"><a href="about.html" title="About us">Giới thiệu</a></li>
+                            <li class="level1 dropdown">
+                                <a href="#" title="Category">Danh mục</a>
+                                <div class="sub-menu sub-menu-v2 dropdown-menu">
+                                <div class="top-sub-menu">
+                                    <img src="resources/assets/images/banner/4.jpg" alt="images">
+                                </div>
+                                  <ul class="menu-level-1">
+                                    <li class="level2"><a href="#">Thực phẩm tươi</a>
+                                        <ul class="menu-level-2">
+                                            <li class="level3"><a href="#" title="Seatings">Hải sản</a></li>
+                                            <li class="level3"><a href="#" title="Series">Thịt</a></li>
+                                            <li class="level3"><a href="#" title="Series">Rau</a></li>
+                                            <li class="level3"><a href="#" title="Series">Trái cây</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="level2"><a href="#">Thực phẩm sấy khô</a>
+                                        <ul class="menu-level-2">
+                                            <li class="level3"><a href="#" title="Cleaning Tools">Các loại Khô</a></li>
+                                            <li class="level3"><a href="#" title="Waste Bins">Gia vị</a></li>
+                                            <li class="level3"><a href="#" title="Pots & Pans">Các loại hạt</a></li>
+                                            <li class="level3"><a href="#" title="Beds">Nông sản khô</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="level2"><a href="#">Sản phẩm khác</a>
+                                        <ul class="menu-level-2">
+                                            <li class="level3"><a href="#" title="Seatings">Sữa</a></li>
+                                            <li class="level3"><a href="#" title="Tables">Bánh</a></li>
+                                            <li class="level3"><a href="#" title="Accessories">Bột ngũ cốc</a></li>
+                                            <li class="level3"><a href="#" title="Series">Đồ uống</a></li>
+                                        </ul>
+                                    </li>
+                                  </ul>
+                                  <!-- End RightSubMenu -->
+                              </div>
+                              <!-- End Dropdow Menu -->
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
+                            <li class="level1"><a href="FAQ.html" title="FAQ">FAQ</a></li>
                           </ul>
                         </nav>
                         </div>
@@ -236,6 +268,17 @@
     <script type="text/javascript" src="resources/assets/js/store.js"></script>
     <script type="text/javascript" src="resources/assets/js/jquery.zoom.js"></script>
     <script type="text/javascript" src="resources/assets/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="resources/assets/js/price-range.js"></script>
+    <script type="text/javascript">
+      jQuery("#Slider1").slider({ 
+        from: 0,
+        to: 1000,
+        step: 100,
+        smooth: true,
+        round: 0,
+        skin: "plastic"
+        });
+    </script>
 
     </body>    
 </html>
