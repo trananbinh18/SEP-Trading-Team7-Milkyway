@@ -118,8 +118,8 @@
                             <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
-                            <li class="level1"><a href="#" title="Home">Trang chủ</a></li>
-                            <li class="level1"><a href="about.html" title="About us">Giới thiệu</a></li>
+                            <li class="level1"><a href="home" title="Home">Trang chủ</a></li>
+                            <li class="level1"><a href="about" title="About us">Giới thiệu</a></li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">

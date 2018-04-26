@@ -33,6 +33,9 @@ Route::get('catalog',function(){
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
+Route::get('Editproduct',function(){
+	return view('EditProduct');
+});
 
 
 
