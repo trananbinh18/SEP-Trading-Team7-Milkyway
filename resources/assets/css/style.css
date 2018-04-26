@@ -20790,3 +20790,29 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   text-align: left;
   font-family: "TXGB";
 }
+.Ttttk{
+  font-style: Arial Black    
+}
+.LTtttk{
+  text-align: center;
+}
+.RTtttk{
+  text-align: left;
+}
+.LBtttk{
+  text-align: center;
+  line-height: 40px;
+  background-color: #f0f0f0;
+}
+.mRBtttk{
+  line-height: 50px;
+}
+.Btttk input{
+  color: black;
+}
+}
+.Ftttk{
+  padding-left: 500px;
+}
+.btn-success
+{ text-align: center; }
