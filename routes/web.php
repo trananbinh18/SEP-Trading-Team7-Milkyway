@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('home',function(){
-	return view('home_v3');
+	return view('home');
 });
 Route::get('product-detail',function(){
 	return view('product_detail');
