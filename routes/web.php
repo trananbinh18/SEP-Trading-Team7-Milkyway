@@ -39,8 +39,6 @@ Route::get('Editproduct',function(){
 });
 
 
-
-
 Route::get('info',function(){
 	return view('changeInfo');
 });
@@ -54,3 +52,4 @@ Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
 
+Route::get("about",'Controller@about');

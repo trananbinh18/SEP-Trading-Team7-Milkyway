@@ -15,4 +15,8 @@ class Controller extends BaseController
     	$name = 'binhtran';
     	return view('catalog_sidebar')->with('minh',$name);
     }
+
+    function about(){
+    	return view('about');
+    }
 }
