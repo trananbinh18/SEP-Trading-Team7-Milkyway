@@ -1801,7 +1801,7 @@
                     </div>
                 </div>
                 <div class="box center space-padding-tb-30">
-                    <a class="link-v1 color-brand font-300" href="#" title="View All">View All</a>
+                    <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
                 </div>
                 <!-- End viewall -->
             </div>
