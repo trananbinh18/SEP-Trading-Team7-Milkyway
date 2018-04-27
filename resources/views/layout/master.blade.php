@@ -191,7 +191,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <h3 class="title-footer">Get It Touch</h3>
+                            <h3 class="title-footer">Mạng xã hội</h3>
                             <div class="social space-30">
                                 <a href="#" title="t"><i class="fa fa-twitter"></i></a>
                                 <a href="#" title="f"><i class="fa fa-facebook"></i></a>
