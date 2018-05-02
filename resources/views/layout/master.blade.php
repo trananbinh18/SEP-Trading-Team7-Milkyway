@@ -118,7 +118,7 @@
                             <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
-                            <li class="level1"><a href="home" title="Home">Trang chủ</a></li>
+                            <li class="level1"><a href="{{action('Controller@home')}}" title="Home">Trang chủ</a></li>
                             <li class="level1"><a href="{{action('Controller@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Category">Danh mục</a>
@@ -269,6 +269,7 @@
     <script type="text/javascript" src="resources/assets/js/jquery.zoom.js"></script>
     <script type="text/javascript" src="resources/assets/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="resources/assets/js/price-range.js"></script>
+    <script type="text/javascript" src="resources/assets/js/mainjs.js"></script>
     <script type="text/javascript">
       jQuery("#Slider1").slider({ 
         from: 0,
