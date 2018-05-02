@@ -19,4 +19,8 @@ class Controller extends BaseController
     function about(){
     	return view('about');
     }
+    function home(){
+    	return view('home');
+    }
+
 }

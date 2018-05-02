@@ -53,3 +53,4 @@ Route::get('discounted',function(){
 });
 
 Route::get("about",'Controller@about');
+Route::get("home",'Controller@home');
