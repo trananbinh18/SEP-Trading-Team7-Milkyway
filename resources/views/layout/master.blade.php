@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="stylesheet" type="text/css" href="resources/assets/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="resources/assets/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="resources/assets/css/general.css"/>
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/owl-slider.css"/>
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/settings.css"/>
         <link rel="shortcut icon" href="resources/assets/images/favicon.png" />
@@ -280,5 +281,46 @@
         });
     </script>
 
+    {{-- inputfile image and remove --}}
+    <script>
+        
+    function readURL(input,img) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $(img).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(".imgin").click(function () {
+        
+        //$(this).children("form-control").add("<button class='' style='font-weight: normal;'>Remove</button>")
+        $(this).change(function () {
+            $(this).siblings("i").remove();
+            $(this).siblings(".img222").remove();
+
+            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+
+
+            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            readURL(this, $(this).siblings(".img222"));
+            $(this).hide();
+            $(this).siblings(".btn").click(function () {
+                $(this).parent(".form-control").children(".img222").remove();
+                $(this).parent(".form-control").children(".imgin").show();
+                $(this).parent(".form-control").children(".imgin").val(null);
+                $(this).parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
+                $(this).parent(".form-control").children(".btn").remove();
+            });
+        });
+        
+
+    });
+
+    </script>
     </body>    
 </html>

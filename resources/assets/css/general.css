@@ -1,0 +1,48 @@
+.img-upload-btn {
+    position: relative;
+    overflow: hidden;
+    padding-top: 95%;
+    max-width: 450px;
+    max-height: 140px;
+    background-color: #ffffff;
+}
+.img-upload-btn i {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+.img-picker .btn-default{
+	background-color: #80b435;
+}
+.glyphicon-plus:before{
+    content: "\002b";   
+}
+.glyphicon{
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 30px;
+    color: #000;
+}
+
+.img-upload-btn input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

@@ -17,8 +17,11 @@
             </div>
                 </aside>    
                 </div>
+        
+    
 
-                
+
+
             <div class="col-md-8 control-infotproduct box-shadow">
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
@@ -43,12 +46,21 @@
                   </div>
                  <div class="form-group">
                     <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Ảnh sản phẩm(*):</label>
-                    <div class="col-sm-2 form-group">
-                        <input type="file" name="img_file[]" multiple="true" onchange="previewImg(event);" id="img_file" accept="image/*">
-                    </div>
-                    <div class="col-sm-7">
-                      <textarea class="form-control" rows="8"></textarea>
-                    </div>                  
+                    <div class="row">
+                <div class="form-group col-md-2 img12">
+                    <div class="img-picker"><div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images"></div></div>
+                </div>
+                <div class="form-group col-md-2 img12">
+                    <div class="img-picker"><div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images"></div></div>
+                </div>
+                <div class="form-group col-md-2 img12">
+                    <div class="img-picker"><div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images"></div></div>
+                </div>
+                <div class="form-group col-md-2 img12">
+                    <div class="img-picker"><div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images"></div></div>
+                </div>
+            </div>
+                            
                   </div>
                   <div class="form-group">
                     <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Giá sản phẩm(*)</label>
