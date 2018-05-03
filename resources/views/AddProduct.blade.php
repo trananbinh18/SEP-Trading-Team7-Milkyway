@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+<div class="container">
     <div class="row row-addproduct">
             <div class="col-md-3 box-shadow control-infotproduct">
                 <h1 class="control-h1">Thông tin sản phẩm</h1>
@@ -8,7 +9,7 @@
                     <ul class="product-categories">
                         <li><a href="#" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
                         <li><a href="#" title="Doanh số">Doanh số</a></li>
-                        <li><a href="#" title="Thông báo">Thông báo</a></li>
+                        <li><a href="#" title="Thông báo">Thông báo</a></li>                       
                     </ul>
                 </aside>    
                 </div>            
@@ -24,31 +25,45 @@
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-lab">Danh mục(*):</label>
                     <div class="col-sm-9">
-                        <label class="radio-inline control-tbrow">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Thực phẩm tươi
-                        </label>
-                        <label class="radio-inline control-tbrow">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Thực phẩm khô
-                        </label>
-                        <label class="radio-inline control-tbrow">
-                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Sản phẩm khác
-                        </label>
+                        <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                          <option>Thực phẩm tươi</option>
+                          <option>Thực phẩm khô</option>
+                          <option>Sản phẩm khác</option>                      
+                      </select> 
                     </div>
                   </div>
-                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Ảnh sản phẩm(*):</label>
-                    <div class="col-sm-2 form-group">
-                        <input type="file" name="img_file[]" multiple="true" onchange="previewImg(event);" id="img_file" accept="image/*">
+                 <div class="form-group">                  
+                    <label for="inputEmail3" class="col-sm-3 control-lab">Ảnh sản phẩm(*):</label>                    
+                    <div class="col-sm-2 form-group"> 
+                      <span id="previewImg"></span>                       
+                      <input class="hinh" type="image" src="resources/assets/images/uploadImg.jpg" width="100px" />
                     </div>
                     <div class="col-sm-7">
-                      <textarea class="form-control control-tbrow" rows="8"></textarea>
+                      <input style="display: none" type='file' id="files" name="image" multiple="multiple" />
                     </div>                  
                   </div>
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Giá sản phẩm(*)</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="VND">
+                  <div class="row">
+                    <label for="inputEmail3" class="col-sm-3 control-lab">Ảnh chứng nhận(*):</label>
+                    <div class="col-sm-2">
+                      <input type='file' onchange="readURL(this);" />
                     </div>
+                    <div class="col-sm-7">
+                      <img id="blah" src="resources/assets/images/uploadImg.jpg" alt="your image" />
+                    </div>
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-lab">Giá sản phẩm(*):</label>
+                    <div class="col-sm-4">
+                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="VND">
+                    </div> 
+                    <label class="col-sm-2 control-lab">Đơn vị:</label>
+                    <div class="col-sm-3">
+                      <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                        <option>Kilogram</option>
+                        <option>Gram</option>                      
+                      </select>                                              
+                    </div>                  
                   </div>
                   <div class="form-group">
                     <label for="inputEmail3" class="col-sm-3 control-lab">Miêu tả sản phẩm:</label>
@@ -69,6 +84,5 @@
             </div>
        </div>
         
-        <div id="back-to-top">
-            <i class="fa fa-long-arrow-up"></i>
+</div>
 @endsection

@@ -119,8 +119,8 @@
                             <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
-                            <li class="level1"><a href="home" title="Home">Trang chủ</a></li>
-                            <li class="level1"><a href="about" title="About us">Giới thiệu</a></li>
+                            <li class="level1"><a href="{{action('Controller@home')}}" title="Home">Trang chủ</a></li>
+                            <li class="level1"><a href="{{action('Controller@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
@@ -192,7 +192,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6">
-                            <h3 class="title-footer">Get It Touch</h3>
+                            <h3 class="title-footer">Mạng xã hội</h3>
                             <div class="social space-30">
                                 <a href="#" title="t"><i class="fa fa-twitter"></i></a>
                                 <a href="#" title="f"><i class="fa fa-facebook"></i></a>
@@ -270,6 +270,7 @@
     <script type="text/javascript" src="resources/assets/js/jquery.zoom.js"></script>
     <script type="text/javascript" src="resources/assets/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="resources/assets/js/price-range.js"></script>
+    <script type="text/javascript" src="resources/assets/js/mainjs.js"></script>
     <script type="text/javascript">
       jQuery("#Slider1").slider({ 
         from: 0,

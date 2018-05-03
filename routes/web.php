@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('home',function(){
-	return view('home_v3');
+	return view('home');
 });
 Route::get('product-detail',function(){
 	return view('product_detail');
@@ -39,8 +39,6 @@ Route::get('Editproduct',function(){
 });
 
 
-
-
 Route::get('info',function(){
 	return view('changeInfo');
 });
@@ -54,3 +52,5 @@ Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
 
+Route::get("about",'Controller@about');
+Route::get("home",'Controller@home');
