@@ -660,16 +660,16 @@
         </div>
         <div class="banner-home3">
             <div class="container container-ver2 space-40">
-                <img class="img-responsive" src="resources/assets/images/banner-home3.jpg" alt="banner-home3">
+                <img class="img-responsive" src="resources/assets/images/banner/or.png" alt="banner-home3">
                 <div class="text">
                     <img src="resources/assets/images/icon-phone.png" alt="icon">
-                    <h4>Call FOR US now</h4>
-                    <h3>(070) - 7782 - 9137</h3>
-                    <p>Order Organic food To Fit Your Healthy Lifestyle!</p>
+                    <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
+                    <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
+                    <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
                 </div>
-                <div class="icon-banner">
+                <!-- <div class="icon-banner">
                     <img src="resources/assets/images/home3-images-banner1.png" alt="icon-banner">
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="container container-ver2 ">
