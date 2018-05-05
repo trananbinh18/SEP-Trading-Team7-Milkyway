@@ -37,8 +37,12 @@ Route::get('shopping',function(){
 Route::get('Editproduct',function(){
 	return view('EditProduct');
 });
-
-
+Route::get('SignUp_Buyer',function(){
+	return view('SignUp_Buyer');
+});
+Route::get('SignUp_Seller',function(){
+	return view('SignUp_Seller');
+});
 Route::get('info',function(){
 	return view('changeInfo');
 });
