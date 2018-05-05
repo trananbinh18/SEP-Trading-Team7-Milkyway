@@ -20824,7 +20824,6 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .Unit{
   font-size: 16px;
   width: 100%;
-<<<<<<< HEAD
   border:1px solid #000;
 }
 .breadcrumb-wrap{
@@ -20848,9 +20847,4 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .class-cua-tao {
   padding-top: 30px;
   padding-bottom: 60px;
-=======
-  border:1px solid #ddd;
-  height: 47px;
-  width: 100%;
->>>>>>> 10068d2f72e8dd698fc9643f7e89f2f1fc992315
 }
