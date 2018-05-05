@@ -124,7 +124,7 @@
                                 <div class="border">
                                     <img src="resources/assets/images/icon-shipping-1.png" alt="images">
                                     <h3>Giao hàng miễn phí</h3>
-                                    <p>Cho đơn hàng cho 200.000 đ</p>
+                                    <p>Cho đơn hàng trên 200.000 đ</p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-6">
@@ -174,41 +174,34 @@
             <div class="items hover-images">
                 <img src="resources/assets/images/catbox-1.jpg" alt="catbox">
                 <div class="text">
-                    <h3>Khuyến mãi</h3>
+                    <h3>Củ quả sạch</h3>
                     <a href="#" title="View all product">Xem tất cả sản phẩm</a>
                 </div>
             </div>
             <!--End items-->
         </div>
         <!--End catbox-container-->
-        <div class="container">
+        <div class="container container-ver2 ">
             <div class="title-text-v2">
-                <h3>Sản phẩm mới nhất</h3>
+                <h3>Sản phẩm nổi bật</h3>
             </div>
-            <div class="featured-products home_2 new-arrivals lastest">
+            <div class="featured-products">
                 <ul class="tabs tabs-title">
-                    <li class="item" rel="tab_1">Tất cả sản phẩm</li>
-                    <li class="item" rel="tab_2">Rau sạch</li>
-                    <li class="item" rel="tab_3">Trái cây</li>
-                    <li class="item" rel="tab_4">Khuyến mãi</li>
+                    <li class="item" rel="tab_01">Rau</li>
+                    <li class="item" rel="tab_02">Trái cây</li>
+                    <li class="item" rel="tab_03">Củ quả</li>
                 </ul>
                 <div class="tab-container space-10">
-                    <div id="tab_1" class="tab-content">
-                        <div class="products hover-shadow ver2 border-space-product">
+                    <div id="tab_01" class="tab-content">
+                        <div class="products">
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Spices</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -220,14 +213,20 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Cucumber</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -239,32 +238,8 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Tomato</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Male</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -276,14 +251,8 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Passion Fruit</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -295,14 +264,8 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                        <a class="add-cart" href="#" title="Add to cart"></a>
-                                        <a class="wish" href="#" title="Wishlist"></a>
-                                        <a class="zoom" href="#" title="Quick view"></a>
-                                    </div>
-                                    <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Spices</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -314,32 +277,8 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                        <a class="add-cart" href="#" title="Add to cart"></a>
-                                        <a class="wish" href="#" title="Wishlist"></a>
-                                        <a class="zoom" href="#" title="Quick view"></a>
-                                    </div>
-                                    <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Cucumber</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                        <a class="add-cart" href="#" title="Add to cart"></a>
-                                        <a class="wish" href="#" title="Wishlist"></a>
-                                        <a class="zoom" href="#" title="Quick view"></a>
-                                    </div>
-                                    <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Tomato</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -351,14 +290,20 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                        <a class="add-cart" href="#" title="Add to cart"></a>
-                                        <a class="wish" href="#" title="Wishlist"></a>
-                                        <a class="zoom" href="#" title="Quick view"></a>
-                                    </div>
-                                    <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Male</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
@@ -368,38 +313,49 @@
                                 <div class="product-images">
                                     <a href="#" title="product-images">
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                        <a class="add-cart" href="#" title="Add to cart"></a>
-                                        <a class="wish" href="#" title="Wishlist"></a>
-                                        <a class="zoom" href="#" title="Quick view"></a>
-                                    </div>
-                                    <!-- End action -->
                                 </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">Passion Fruit</p></a>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
 
                             </div>
                             <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
                         </div>
-                        <!-- End product-tab-content products -->
                     </div>
-                    <!-- End tab-content -->
-                    <div id="tab_2" class="tab-content">
-                        <div class="products hover-shadow ver2 border-space-product">
-                            <div class="product hover-shadow">
+                    <div id="tab_02" class="tab-content">
+                        <div class="products">
+                            <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -413,12 +369,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -431,12 +381,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -450,12 +394,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -469,12 +407,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -488,12 +420,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -507,12 +433,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -526,12 +446,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -544,12 +458,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -563,12 +471,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -576,24 +478,40 @@
 
                             </div>
                             <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
                         </div>
-                        <!-- End product-tab-content products -->
                     </div>
-                    <!-- End tab-content -->
-                    <div id="tab_3" class="tab-content">
-                        <div class="products ver2 hover-shadow border-space-product">
+                    <div id="tab_03" class="tab-content">
+                        <div class="products">
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -607,12 +525,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -625,12 +537,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -644,12 +550,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -663,12 +563,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -682,12 +576,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -701,12 +589,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -720,12 +602,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -738,12 +614,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -757,12 +627,6 @@
                                         <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                         <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                     </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
                                 </div>
                                 <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
                                 <p class="product-price-old">$700.00</p>
@@ -770,210 +634,38 @@
 
                             </div>
                             <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
                         </div>
-                        <!-- End product-tab-content products -->
-                    </div>
-                    <!-- End tab-content -->
-                    <div id="tab_4" class="tab-content">
-                        <div class="products ver2 hover-shadow border-space-product">
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                        </div>
-                        <!-- End product-tab-content products -->
                     </div>
                 </div>
-            </div>
-            <div class="box center space-padding-tb-30 space-30">
-                <a class="link-v1 color-brand font-300 space-30" href="#" title="View All">Xem tất cả</a>
+                <div class="box center space-padding-tb-30">
+                    <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
+                </div>
             </div>
         </div>
-        <!-- End container-ver2 -->
         <div class="banner-home3">
             <div class="container container-ver2 space-40">
                 <img class="img-responsive" src="resources/assets/images/banner-home3.jpg" alt="banner-home3">
@@ -983,13 +675,11 @@
                     <h3>(070) - 7782 - 9137</h3>
                     <p>Order Organic food To Fit Your Healthy Lifestyle!</p>
                 </div>
-                <!--End text-->
                 <div class="icon-banner">
                     <img src="resources/assets/images/home3-images-banner1.png" alt="icon-banner">
                 </div>
             </div>
         </div>
-        <!--End banner-home3-->
         <div class="container container-ver2 ">
             <div class="title-text-v2">
                 <h3>Sản phẩm nổi bật</h3>
@@ -997,9 +687,9 @@
             <div class="featured-products">
                 <ul class="tabs tabs-title">
                     <li class="item" rel="tab_01">Bán chạy nhất</li>
-                    <li class="item" rel="tab_02">Sản phẩm mới</li>
+                    <!-- <li class="item" rel="tab_02">Sản phẩm mới</li>
                     <li class="item" rel="tab_03">Khuyến mãi</li>
-                    <li class="item" rel="tab_04">Đánh giá cao</li>
+                    <li class="item" rel="tab_04">Đánh giá cao</li> -->
                 </ul>
                 <div class="tab-container space-10">
                     <div id="tab_01" class="tab-content">
@@ -1161,8 +851,146 @@
                         </div>
                         <!-- End product-tab-content products -->
                     </div>
-                    <!-- End tab-content -->
-                    <div id="tab_02" class="tab-content">
+                    <!-- <div id="tab_02" class="tab-content">
+                        <div class="products">
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div id="tab_03" class="tab-content">
                         <div class="products">
                             <div class="product">
                                 <div class="product-images">
@@ -1176,7 +1004,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1188,20 +1015,6 @@
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
                             </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1214,7 +1027,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1227,7 +1039,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1240,7 +1051,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1253,19 +1063,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1278,7 +1075,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1290,20 +1086,6 @@
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
                             </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1316,12 +1098,45 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
                         </div>
-                        <!-- End product-tab-content products -->
-                    </div>
-                    <!-- End tab-content -->
-                    <div id="tab_03" class="tab-content">
+                    </div> -->
+                    <!-- <div id="tab_04" class="tab-content">
                         <div class="products">
                             <div class="product">
                                 <div class="product-images">
@@ -1335,7 +1150,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1347,20 +1161,6 @@
                                 <p class="product-price-old">$700.00</p>
                                 <p class="product-price">$350.00</p>
                             </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1373,7 +1173,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1386,7 +1185,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1399,7 +1197,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1412,19 +1209,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1437,7 +1221,17 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+                            </div>
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1450,7 +1244,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1463,7 +1256,6 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
                             <div class="product">
                                 <div class="product-images">
                                     <a href="#" title="product-images">
@@ -1476,337 +1268,26 @@
                                 <p class="product-price">$350.00</p>
 
                             </div>
-                            <!-- End item -->
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images">
+                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    </a>
+                                </div>
+                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
+                                <p class="product-price-old">$700.00</p>
+                                <p class="product-price">$350.00</p>
+
+                            </div>
                         </div>
-                        <!-- End product-tab-content products -->
-                    </div>
-                    <!-- End tab-content -->
-                    <div id="tab_04" class="tab-content">
-                        <div class="products">
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                        </div>
-                        <!-- End product-tab-content products -->
-                    </div>
-                    <div id="tab_05" class="tab-content">
-                        <div class="products">
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                            <div class="product">
-                                <div class="product-images">
-                                    <a href="#" title="product-images">
-                                        <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                        <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                    </a>
-                                </div>
-                                <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                                <p class="product-price-old">$700.00</p>
-                                <p class="product-price">$350.00</p>
-
-                            </div>
-                            <!-- End item -->
-                        </div>
-                        <!-- End product-tab-content products -->
-                    </div>
+                    </div> -->
                 </div>
                 <div class="box center space-padding-tb-30">
                     <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
                 </div>
-                <!-- End viewall -->
             </div>
         </div>
-        <!--End container-ver2-->
         <div id="back-to-top">
             <i class="fa fa-long-arrow-up"></i>
         </div>
