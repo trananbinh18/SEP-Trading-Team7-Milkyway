@@ -55,6 +55,9 @@ Route::get('featured',function(){
 Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
+Route::get('Admin',function(){
+	return view('databackend');
+});
 
 Route::get("about",'Controller@about');
 Route::get("home",'Controller@home');
