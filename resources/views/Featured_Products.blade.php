@@ -6,7 +6,8 @@
                 <div class="banner-header banner-lbook3">
                     <img src="resources/assets/images/Featured/banner-catalog1.jpg" alt="Banner-header">
                     <div class="text">
-                    <h3>Sản phẩm nổi bật</h3>
+                    <h3>Sản phẩm bán chạy nhất</h3>
+                    <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Sản phẩm nổi bật</a><i class="fa fa-caret-right"></i>Bán chạy nhất</p>
                 </div>
                 </div>
                 <div id="primary" class="col-xs-12 col-md-12">  
@@ -360,6 +361,7 @@
                                 </div>
                                 <!-- End product -->
                             </div>
+                            
                     </div>
                     <!-- End product-content products  -->
                     <div class="pagination-container">
