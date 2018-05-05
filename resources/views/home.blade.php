@@ -183,7 +183,7 @@
         <!--End catbox-container-->
         <div class="container container-ver2 ">
             <div class="title-text-v2">
-                <h3>Sản phẩm nổi bật</h3>
+                <h3>Sản phẩm mới nhất</h3>
             </div>
             <div class="featured-products">
                 <ul class="tabs tabs-title">
