@@ -20747,6 +20747,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   color: #161616;
 }
 .control-infotproduct{
+  position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 15px;
@@ -20827,7 +20828,21 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   width: 100%;
   border:1px solid #000;
 }
-.class-cua-tao {
+.breadcrumb-wrap{
+  position: absolute;
+  top: 140px;
+  background-color: #efefef;
+  margin-bottom: 10px
+}
+.breadcrumb-wrap .breadcrumb{
+  position: relative;
+  list-style: none;
+  background-color: #efefef;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
   margin-top: 30px;
   margin-bottom: 30px;
 }

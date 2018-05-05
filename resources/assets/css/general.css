@@ -17,6 +17,7 @@
 }
 .img-picker .btn-default{
 	background-color: #80b435;
+    width: 100%;
 }
 .glyphicon-plus:before{
     content: "\002b";   

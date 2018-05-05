@@ -7,6 +7,7 @@
                     <img src="resources/assets/images/discounted/banner-catalog1.jpg" alt="Banner-header">
                     <div class="text">
                     <h3>Sản phẩm đang giảm giá</h3>
+                    
                 </div>
                 </div>
                 <div id="primary" class="col-xs-12 col-md-12">  
