@@ -20828,6 +20828,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   width: 100%;
   border:1px solid #000;
 }
+<<<<<<< HEAD
 .breadcrumb-wrap{
   position: absolute;
   top: 140px;
@@ -20843,4 +20844,9 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   font-size: 0;
   white-space: nowrap;
   overflow: hidden;
+=======
+.class-cua-tao {
+  margin-top: 30px;
+  margin-bottom: 30px;
+>>>>>>> 52f8be52fd76fb4b7bd821a45b2df46e4e433b6a
 }
