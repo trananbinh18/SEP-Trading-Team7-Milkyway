@@ -1,5 +1,20 @@
 @extends('layout.master')
 @section('content')
+<div class="breadcrumb-wrap">
+  <div container>
+    <ul class="breadcrumb">
+      <li>
+        <a href="{{action('Controller@home')}}">Trang chủ</a>
+      </li>
+      <li>
+        <a href="#">Danh sách sản phẩm</a>
+      </li>
+      <li>
+        <a href="#">Đăng sản phẩm</a>
+      </li>
+    </ul>
+  </div>
+</div>
 <div class="container">
     <div class="row row-addproduct">
             <div class="col-md-3 box-shadow control-infotproduct">

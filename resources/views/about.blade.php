@@ -177,7 +177,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Nguyễn Đình Nguyên.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/NguyenDinhNguyen.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
@@ -197,7 +197,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Trần An Bình.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranAnBinh.jpg" alt="images">
                                     
                                 </div> 
                             </div>                                                                           
@@ -218,7 +218,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Trần Anh Phương.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranAnhPhuong.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
@@ -238,7 +238,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Trần Nguyên Bách.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranNguyenBach.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
@@ -258,7 +258,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Trần Phú Hòa.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranPhuHoa.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
@@ -278,7 +278,7 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Developteam/Võ Bích Tơ.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/VoBichTo.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
