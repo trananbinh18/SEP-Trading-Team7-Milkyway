@@ -1,19 +1,13 @@
 @extends('layout.master')
 @section('content')
-<div class="breadcrumb-wrap">
-  <div container>
-    <ul class="breadcrumb">
-      <li>
-        <a href="{{action('Controller@home')}}">Trang chủ</a>
-      </li>
-      <li>
-        <a href="#">Danh sách sản phẩm</a>
-      </li>
-      <li>
-        <a href="#">Đăng sản phẩm</a>
-      </li>
-    </ul>
-  </div>
+<div class="container">
+    <div class="banner-header banner-lbook3">
+      <img src="resources/assets/images/banner/1.png" alt="Banner-header">
+      <div class="text">
+       <h3>Tất cả sản phẩm</h3>
+        <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Danh sách sản phẩm</a><i class="fa fa-caret-right"></i>Đăng sản phẩm</p>
+      </div>
+    </div>
 </div>
 <div class="container">
     <div class="row row-addproduct">
@@ -37,7 +31,7 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
                     <div class="col-md-9">
-                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="Nhập tên sản phẩm">
+                      <input type="email" class="form-control " id="inputEmail3" placeholder="Nhập tên sản phẩm">
                     </div>
                   </div>
                   <div class="form-group">
@@ -60,8 +54,6 @@
                           </div>
                       </div>                                                                     
                     </div>
-                  </div>                             
-                  <div class="row">
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12">
@@ -71,11 +63,11 @@
                           </div>
                       </div>                                                                     
                     </div>
-                  </div>
+                  </div>                             
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
                     <div class="col-md-4">
-                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="VND">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="VND">
                     </div> 
                     <label class="col-md-2 control-lab">Đơn vị:</label>
                     <div class="col-md-3">
@@ -88,7 +80,7 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
                     <div class="col-md-9">
-                      <textarea class="form-control control-tbrow" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
+                      <textarea class="form-control" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
                     </div>
                   </div>
                   <div class="form-group">
@@ -103,6 +95,5 @@
                 </form>
             </div>
        </div>
-        
 </div>
 @endsection
