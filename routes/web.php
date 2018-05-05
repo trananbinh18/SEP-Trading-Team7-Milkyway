@@ -37,8 +37,12 @@ Route::get('shopping',function(){
 Route::get('Editproduct',function(){
 	return view('EditProduct');
 });
-
-
+Route::get('SignUp_Buyer',function(){
+	return view('SignUp_Buyer');
+});
+Route::get('SignUp_Seller',function(){
+	return view('SignUp_Seller');
+});
 Route::get('info',function(){
 	return view('changeInfo');
 });
@@ -50,6 +54,9 @@ Route::get('featured',function(){
 });
 Route::get('discounted',function(){
 	return view('product_is_discounted');
+});
+Route::get('Admin',function(){
+	return view('databackend');
 });
 
 Route::get("about",'Controller@about');
