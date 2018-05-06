@@ -52,5 +52,9 @@ Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
 
+Route::get('testdb',function(){
+	return DB::table('sanpham')->get();
+});
+
 Route::get("about",'Controller@about');
 Route::get("home",'Controller@home');
