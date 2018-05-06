@@ -1,30 +1,42 @@
 @extends('layout.master')
 @section('content')
 <div class="container">
+    <div class="banner-header banner-lbook3">
+      <img src="resources/assets/images/banner/1.png" alt="Banner-header">
+      <div class="text">
+       <h3>Tất cả sản phẩm</h3>
+        <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Danh sách sản phẩm</a><i class="fa fa-caret-right"></i>Đăng sản phẩm</p>
+      </div>
+    </div>
+</div>
+<div class="container">
     <div class="row row-addproduct">
             <div class="col-md-3 box-shadow control-infotproduct">
-                <h1 class="control-h1">Thông tin sản phẩm</h1>
                 <div>
-                    <aside class="widget widget_product_categories" style="padding-left: 10px;">
-                    <ul class="product-categories">
-                        <li><a href="#" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
-                        <li><a href="#" title="Doanh số">Doanh số</a></li>
-                        <li><a href="#" title="Thông báo">Thông báo</a></li>                       
-                    </ul>
-                </aside>    
-                </div>            
+                  <aside class="widget widget_product_categories" style="padding-left: 10px;">
+                    <div class="categories-home3">
+                       <h3>Thông tin sản phẩm</h3>
+                        <i class="fa fa-chevron-circle-down icon-click"></i>
+                        <ul class="menu-vertical">
+                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
+                            <li><img src="resources/assets/images/icon-categories-7.png" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
+                            <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </aside>             
             </div>
             <div class="col-md-8 control-infotproduct box-shadow">
                 <form class="form-horizontal" role="form">
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Tên sản phẩm(*);</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="Nhập tên sản phẩm">
+                    <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
+                    <div class="col-md-9">
+                      <input type="email" class="form-control " id="inputEmail3" placeholder="Nhập tên sản phẩm">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-3 control-lab">Danh mục(*):</label>
-                    <div class="col-sm-9">
+                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
+                    <div class="col-md-9">
                         <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                           <option>Thực phẩm tươi</option>
                           <option>Thực phẩm khô</option>
@@ -32,33 +44,33 @@
                       </select> 
                     </div>
                   </div>
-                 <div class="form-group">                  
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Ảnh sản phẩm(*):</label>                    
-                    <div class="col-sm-2 form-group"> 
-                      <span id="previewImg"></span>                       
-                      <input class="hinh" type="image" src="resources/assets/images/uploadImg.jpg" width="100px" />
+                  <div class="form-group">                  
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
+                    <div class="row" style="width: 100%;">
+                      <div class="form-group col-md-3 img12">
+                          <div class="img-picker">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                            </div>
+                          </div>
+                      </div>                                                                     
                     </div>
-                    <div class="col-sm-7">
-                      <input style="display: none" type='file' id="files" name="image" multiple="multiple" />
-                    </div>                  
-                  </div>
-                  <div class="row">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Ảnh chứng nhận(*):</label>
-                    <div class="col-sm-2">
-                      <input type='file' onchange="readURL(this);" />
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
+                    <div class="row" style="width: 100%;">
+                      <div class="form-group col-md-3 img12">
+                          <div class="img-picker">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                            </div>
+                          </div>
+                      </div>                                                                     
                     </div>
-                    <div class="col-sm-7">
-                      <img id="blah" src="resources/assets/images/uploadImg.jpg" alt="your image" />
-                    </div>
-                    
-                  </div>
+                  </div>                             
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Giá sản phẩm(*):</label>
-                    <div class="col-sm-4">
-                      <input type="email" class="form-control control-tbrow" id="inputEmail3" placeholder="VND">
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
+                    <div class="col-md-4">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="VND">
                     </div> 
-                    <label class="col-sm-2 control-lab">Đơn vị:</label>
-                    <div class="col-sm-3">
+                    <label class="col-md-2 control-lab">Đơn vị:</label>
+                    <div class="col-md-3">
                       <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                         <option>Kilogram</option>
                         <option>Gram</option>                      
@@ -66,13 +78,13 @@
                     </div>                  
                   </div>
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-lab">Miêu tả sản phẩm:</label>
-                    <div class="col-sm-9">
-                      <textarea class="form-control control-tbrow" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
+                    <div class="col-md-9">
+                      <textarea class="form-control" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-md-offset-2 col-md-10">
                     </div>
                   </div>
                   <div class="form-group">
@@ -83,6 +95,5 @@
                 </form>
             </div>
        </div>
-        
 </div>
 @endsection

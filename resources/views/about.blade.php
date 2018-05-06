@@ -25,44 +25,37 @@
                 <!--End choose-us-->
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="img-responsive" src="resources/assets/images/Team Develop/4.png" alt="images">
+                        <img class="img-responsive" src="resources/assets/images/Nhataitro/preview.jpg" alt="images">
                     </div>
                     <!--End col-md-6-->
                     <div class="col-md-6 pd-left-10">
                         <h3>Fresh Food và những người bạn</h3>
                         <p>Fresh Food được thành lập từng những thành viên của một trường đại học, họ được giao một đồ án làm về một website bán hàng trực tuyến, với mong muốn đem lại cho người tiêu dùng những thực phẩm an toàn và đáng tin cậy.</p>
-                        <p>Các thành viên trong nhóm đã quyết định tạo ra Fresh Food để thực hiện hóa mục tiêu đó nhằm tạo ra một môi trường kinh doanh thực phẩm sạch, nơi khách hàng có thể tin tưởng vào những sản phẩm do công ty chúng tôi cung cấp đem lợi sức khỏe cho cộng đồng.</p>
+                        <p>Các thành viên trong nhóm đã quyết định tạo ra Fresh Food để thực hiện hóa mục tiêu đó nhằm tạo ra một môi trường kinh doanh thực phẩm sạch, nơi khách hàng có thể tin tưởng vào những sản phẩm do công ty chúng tôi cung cấp đem lợi sức khỏe cho cộng đồng.Và dưới đây là các đối tác, hợp tác với công ty chúng tôi</p>
                         <div class="slider-about owl-carousel">
+                            <div class="items">                                
+                                    <img src="resources/assets/images/Nhataitro/1.jpg" alt="images">
+                            </div> 
+                            <!--End items-->
                             <div class="items">
                                 <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Nguyễn Đình Nguyên.jpg" alt="images">
+                                    <img src="resources/assets/images/Nhataitro/2.jpg" alt="images">
                                 </a>
                             </div>
                             <!--End items-->
                             <div class="items">
                                 <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Trần An Bình.jpg" alt="images">
-                                </a>
-                            </div>
-                            <!--End items-->
-                            <div class="items">
-                                <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Trần Anh Phương.jpg" alt="images">
+                                    <img src="resources/assets/images/Nhataitro/3.jpg" alt="images">
                                 </a>
                             </div>
                             <div class="items">
                                 <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Trần Nguyên Bách.jpg" alt="images">
+                                    <img src="resources/assets/images/Nhataitro/4.jpg" alt="images">
                                 </a>
                             </div>
                             <div class="items">
                                 <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Trần Phú Hòa.jpg" alt="images">
-                                </a>
-                            </div>
-                            <div class="items">
-                                <a href="#" title="post-item">
-                                    <img src="resources/assets/images/Team Develop/Võ Bích Tơ.jpg" alt="images">
+                                    <img src="resources/assets/images/Nhataitro/5.jpg" alt="images">
                                 </a>
                             </div>
                             <!--End items-->
@@ -184,12 +177,12 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Nhà tài trợ/1.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/NguyenDinhNguyen.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
-                                <h3>Bill Gates</h3>
-                                <p>Những nhà tài trợ cho website</p>
+                                <h3>Nguyễn Đình Nguyên</h3>
+                                <p>Team Leader</p>
                                 <div class="interactive-banner-profile text-center">
                                     <div class="action light-style">
                                         <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>
@@ -204,13 +197,13 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Nhà tài trợ/3.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranAnBinh.jpg" alt="images">
                                     
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
-                                <h3>Jeff Bezos</h3>
-                                <p>Những nhà tài trợ cho website</p>
+                                <h3>Trần An Bình</h3>
+                                <p>Member</p>
                                 <div class="interactive-banner-profile text-center">
                                     <div class="action light-style">
                                         <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>
@@ -225,12 +218,72 @@
                         <div class="col-md-4 col-sm-4 space-30">
                             <div class="interactive-banner interactive-banner-v1 center">
                                 <div class="interactive-banner-body">
-                                    <img class="img-responsive" src="resources/assets/images/Nhà tài trợ/2.jpg" alt="images">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranAnhPhuong.jpg" alt="images">
                                 </div> 
                             </div>                                                                           
                             <div class="banner-title">
-                                <h3>Mark Zuckerberg</h3>
-                                <p>Những nhà tài trợ cho website</p>
+                                <h3>Trần Anh Phương</h3>
+                                <p>Member</p>
+                                <div class="interactive-banner-profile text-center">
+                                    <div class="action light-style">
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa fa-facebook"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-skype"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-google-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+                        <div class="col-md-4 col-sm-4 space-30">
+                            <div class="interactive-banner interactive-banner-v1 center">
+                                <div class="interactive-banner-body">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranNguyenBach.jpg" alt="images">
+                                </div> 
+                            </div>                                                                           
+                            <div class="banner-title">
+                                <h3>Trần Nguyên Bách</h3>
+                                <p>Member</p>
+                                <div class="interactive-banner-profile text-center">
+                                    <div class="action light-style">
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa fa-facebook"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-skype"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-google-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+                        <div class="col-md-4 col-sm-4 space-30">
+                            <div class="interactive-banner interactive-banner-v1 center">
+                                <div class="interactive-banner-body">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/TranPhuHoa.jpg" alt="images">
+                                </div> 
+                            </div>                                                                           
+                            <div class="banner-title">
+                                <h3>Trần Phú Hòa</h3>
+                                <p>Member</p>
+                                <div class="interactive-banner-profile text-center">
+                                    <div class="action light-style">
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa fa-facebook"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-skype"></i></a>
+                                        <a href="#"><i class="icons icons-bodered radius-x fa fa-google-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+                        <div class="col-md-4 col-sm-4 space-30">
+                            <div class="interactive-banner interactive-banner-v1 center">
+                                <div class="interactive-banner-body">
+                                    <img class="img-responsive" src="resources/assets/images/Developteam/VoBichTo.jpg" alt="images">
+                                </div> 
+                            </div>                                                                           
+                            <div class="banner-title">
+                                <h3>Võ Bích Tơ</h3>
+                                <p>Member</p>
                                 <div class="interactive-banner-profile text-center">
                                     <div class="action light-style">
                                         <a href="#"><i class="icons icons-bodered radius-x fa fa-twitter"></i></a>

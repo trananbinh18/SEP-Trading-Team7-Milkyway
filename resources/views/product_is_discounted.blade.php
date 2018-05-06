@@ -6,7 +6,8 @@
                 <div class="banner-header banner-lbook3">
                     <img src="resources/assets/images/discounted/banner-catalog1.jpg" alt="Banner-header">
                     <div class="text">
-                    <h3>Sản phẩm đang giảm giá</h3>
+                    <h3>Sản phẩm đang khuyến mãi</h3>
+                    <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Sản phẩm nổi bật</a><i class="fa fa-caret-right"></i>Khuyến mãi</p>
                 </div>
                 </div>
                 <div id="primary" class="col-xs-12 col-md-12">  

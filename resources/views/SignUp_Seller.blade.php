@@ -69,9 +69,20 @@
                                     <label class="control-label" for="inputemail">Mật Khẩu *</label>
                                     <input class="form-control" type="text" placeholder="Password" id="inputpass"> 
                                 </div>
+                                <div class="group box">
+                                    <label for="inputEmail3" class="control-label">Giấy Phép Kinh Doanh * </label>
+                                    <div class="row" style="width: 100%;">
+                                      <div class="form-group col-md-3 img12">
+                                          <div class="img-picker">
+                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                                            </div>
+                                          </div>
+                                      </div>                                                                     
+                    </div>
+                  </div>
                             <div>
                                 <br>
-                                <button type="submit" class="link-v1 rt">Đăng Kí</button>
+                                <a href="{{action('Controller@home')}}"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
                             </div>
                                 
                             </form>

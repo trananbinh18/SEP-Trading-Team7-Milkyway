@@ -3330,7 +3330,7 @@ ul.tabs.tabs-title li span.count {
 }
 
 .banner-header.banner-lbook3 .text p {
-  font-size: 18px;
+  font-size: 24px;
   text-transform: capitalize;
   font-weight: 400;
   padding-top: 10px;
@@ -15732,7 +15732,7 @@ button.button_search:hover {
 
 #footer.footer-v3 {
   background: #f3f3f3;
-  margin-top: 200px;
+  margin-top: 20px;
 }
 
 #footer.footer-v3 .footer-inner {
@@ -20747,6 +20747,9 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   color: #161616;
 }
 .control-infotproduct{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 37px;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 15px;
@@ -20766,10 +20769,6 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   height: 200px;
   padding-bottom: 30px;
   word-wrap: break-word;
-}
-.control-tbrow{
-  border-style: solid 1px;
-  border-color: #333;
 }
 .control-price{
   width: 100%;
@@ -20827,4 +20826,25 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   width: 100%;
   border:1px solid #000;
 }
-
+.breadcrumb-wrap{
+  position: absolute;
+  top: 140px;
+  background-color: #efefef;
+  margin-bottom: 10px
+}
+.breadcrumb-wrap .breadcrumb{
+  position: relative;
+  list-style: none;
+  background-color: #efefef;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.class-cua-tao {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
