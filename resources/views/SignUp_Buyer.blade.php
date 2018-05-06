@@ -1,6 +1,8 @@
  @extends ('layout.master')
+@section(' title ')
+    Đăng Kí
+@stop
 
- 
  @section('content') 
         <div class="container">
             <div class="banner-header banner-lbook3 space-30">
@@ -63,11 +65,11 @@
                                 </div>
                                  <div class="group box">
                                 <label class="control-label" for="inputpass">Mật Khẩu *</label>
-                                <input class="form-control" type="text" placeholder="Password" id="inputpass"> 
+                                <input class="form-control" type="Password" placeholder="Password" id="inputpass"> 
                             </div>
                             <div>
                                 <br>
-                                <button type="submit" class="link-v1 rt">Đăng Kí</button>
+                                <a href="{{action('Controller@home')}}"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
                             </div>
                                 
                             </form>

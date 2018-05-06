@@ -1,4 +1,7 @@
         @extends('layout.master')
+        @section (' title ')
+            Trang Chủ
+        @stop
         @section('content')
         <div class="container container-ver2 box-cat-home3">
             <div class="row">

@@ -1,6 +1,8 @@
  @extends ('layout.master')
+@section(' title ')
 
- 
+    Đăng Kí
+@stop 
  @section('content') 
         <div class="container">
             <div class="banner-header banner-lbook3 space-30">
@@ -63,12 +65,8 @@
                                 </div>
                                  <div class="group box">
                                 <label class="control-label" for="inputpass">Mật Khẩu *</label>
-                                <input class="form-control" type="text" placeholder="Password" id="inputpass"> 
+                                <input class="form-control" type="Password" placeholder="Password" id="inputpass"> 
                             </div>
-                                <div class="group box">
-                                    <label class="control-label" for="inputemail">Mật Khẩu *</label>
-                                    <input class="form-control" type="text" placeholder="Password" id="inputpass"> 
-                                </div>
                                 <div class="group box">
                                     <label for="inputEmail3" class="control-label">Giấy Phép Kinh Doanh * </label>
                                     <div class="row" style="width: 100%;">
