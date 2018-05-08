@@ -13971,8 +13971,8 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 
 #topbar .float-right .list-menu {
   background: #fff;
-  border: 1px solid #333;
-  min-width: 80px;
+  /*border: 1px solid #333;*/
+  min-width: 100px;
   text-align: left;
   padding: 0px 15px;
 }
@@ -20847,4 +20847,8 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .class-cua-tao {
   padding-top: 30px;
   padding-bottom: 60px;
+}
+.carousel-caption {
+  font: 400 16px/25px "Roboto Slab";
+  text-shadow: 1px 2px 1px #000000;
 }

@@ -160,7 +160,6 @@
                               </div>
                               <!-- End Dropdow Menu -->
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
-                            <li class="level1"><a href="FAQ.html" title="FAQ">FAQ</a></li>
                           </ul>
                         </nav>
                         </div>
