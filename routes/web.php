@@ -60,7 +60,9 @@ Route::get('Admin',function(){
 });
 
 Route::get('testdb',function(){
-	return DB::table('sanpham')->get();
+	$user = App\loainguoidung::find(4)->nguoidung;
+	return $user;
+	
 });
 
 Route::get("about",'Controller@about');
