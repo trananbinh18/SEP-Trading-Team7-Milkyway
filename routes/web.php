@@ -60,7 +60,7 @@ Route::get('Admin',function(){
 });
 
 Route::get('testdb',function(){
-	$user = App\loainguoidung::find(4)->nguoidung;
+	$user = App\nguoidung::all()->toArray()[0]['MAND'];
 	return $user;
 	
 });

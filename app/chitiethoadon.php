@@ -17,5 +17,9 @@ class chitiethoadon extends Model
 
  	public function sanpham(){
     	return $this->hasOne('App\sanpham','MASP','MASP');
+    }
+
+    public function nguoiban(){
+    	return $this->belongsTo('App\nguoidung','MANB','MAND');
     }    
 }
