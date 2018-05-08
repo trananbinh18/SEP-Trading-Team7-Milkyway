@@ -16,7 +16,8 @@
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/range-price.css"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="resources/assets/js/jquery-3.2.0.min.js"></script>
-        <title>Trang chủ</title>
+        <title>@yield(' title ')</title>
+        <meta name="description" content="@title('description')">
     </head>
     <body>
     <div class="awe-page-loading">
@@ -159,7 +160,6 @@
                               </div>
                               <!-- End Dropdow Menu -->
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
-                            <li class="level1"><a href="FAQ.html" title="FAQ">FAQ</a></li>
                           </ul>
                         </nav>
                         </div>
