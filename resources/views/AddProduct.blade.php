@@ -59,9 +59,9 @@
                     <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
                     <div class="col-md-4">
                         <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
-                          <option>Thực phẩm tươi</option>
-                          <option>Thực phẩm khô</option>
-                          <option>Sản phẩm khác</option>                      
+                          <option value="4">Rau</option>
+                          <option value="5">Trái cây</option>
+                          <option value="6">Củ</option>                      
                       </select> 
                     </div>
                     <label class="col-md-2 control-lab">Số lượng:</label>
@@ -78,7 +78,7 @@
                     <div class="col-md-3">
                       <select id="enterprise" class="Unit" name="cdDonvi" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                         <option>Kilogram</option>
-                        <option>Gram</option>                      
+                        <option>Trái</option>                      
                       </select>                                              
                     </div>                  
                   </div>

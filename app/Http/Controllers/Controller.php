@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\sanpham;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -29,33 +30,28 @@ class Controller extends BaseController
         return view('SignUp_Buyer');
     }
 
-    function Postproduct(Request $request){
-            echo $request->tensanpham;
+    function Getproduct(){
+        return view ('Addproduct');
+    }
 
-            if($request->hasFile('imagesSP'))
-        {
-            $fileImg = $request->file('imagesSP');
-            $filename = $fileImg -> getclientOriginalName('imagesSP');
-            echo $filename;
-            $fileImg->move('resources\assets\images\products',$filename);
-        }
-            else
-        {
-            echo "Chua co file";
-        }
+    function Postproduct(Request $Product_request){
+            $filenameSP = $Product_request->file('imagesSP')->getclientOriginalName();
+            $filenameGCN = $Product_request->file('imagesGCN')->getclientOriginalName();
+            $Product = new sanpham();
+            $Product->MANB = 2;
+            $Product->MALOAISP = $Product_request->cbCategory;
+            $Product->TENSP    = $Product_request->tensanpham;
+            $Product->SOLUONG  = (double)$Product_request->Soluong;
+            $Product->GIA      = $Product_request->Giasanpham;
+            $Product->DONVI    = $Product_request->cdDonvi;
+            $Product->GCN      = $filenameGCN;
+            $Product->HINH     = $filenameSP;
+            $Product->MOTA     = $Product_request->mieutasanpham;
+            $Product_request->file('imagesSP')->move('resources\assets\images\products',$filenameSP);
+            $Product_request->file('imagesGCN')->move('resources\assets\images\Certificate',$filenameGCN);
+            $Product->save();
 
-            if($request->hasFile('imagesGCN'))
-        {
-            $fileImg = $request->file('imagesGCN');
-            $filename = $fileImg->getclientOriginalName('imagesGCN');
-            echo $filename;
-            $fileImg->move('resources\assets\images\Certificate',$filename);
-        }
-            else
-        {
-            echo "Chua co file";
-        }
-
+           
     }
 
 }
