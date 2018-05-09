@@ -62,8 +62,8 @@
                                 <div class="hover-menu">
                                     <a class="acc" href="#" title="USD"><img src="resources/assets/images/icon-user-header.png" alt="icon">Tài khoản</a>
                                     <ul class="list-menu">
-                                        <li><a href="#" title="USD">Đăng nhập</a></li>
-                                        <li><a href="#" title="VND">Đăng ký</a></li>
+                                        <li><a href="{{route('signin')}}" title="USD">Đăng nhập</a></li>
+                                        <li><a href="{{route('signup')}}" title="VND">Đăng ký</a></li>
                                     </ul>
                                 </div>
                                 <!-- End hover-menu -->

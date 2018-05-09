@@ -22,6 +22,12 @@ class Controller extends BaseController
     function home(){
     	return view('home');
     }
+    function Login(){
+        return view('SignUp_Seller');
+    }
+    function Register(){
+        return view('SignUp_Buyer');
+    }
 
     function Postproduct(Request $request){
             echo $request->tensanpham;

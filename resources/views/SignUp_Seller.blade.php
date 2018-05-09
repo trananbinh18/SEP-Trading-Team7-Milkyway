@@ -1,9 +1,8 @@
- @extends ('layout.master')
+@extends ('layout.master')
 @section(' title ')
-
-    Đăng Kí
+    Đăng Nhập
 @stop 
- @section('content') 
+@section('content') 
         <div class="container">
             <div class="banner-header banner-lbook3 space-30">
                 <img src="resources/assets/images/banner-product-checkout.jpg" alt="Banner-header">
