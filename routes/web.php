@@ -74,3 +74,10 @@ Route::get('testdb',function(){
 
 Route::get("about",'Controller@about');
 Route::get("home",'Controller@home');
+
+Route::get('Addproduct',function()
+{
+	return view ('Addproduct');
+});
+
+Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
