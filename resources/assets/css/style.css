@@ -20824,7 +20824,8 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .Unit{
   font-size: 16px;
   width: 100%;
-  border:1px solid #000;
+  border: 1px solid #ddd;
+  height: 47px;
 }
 .breadcrumb-wrap{
   position: absolute;

@@ -34,17 +34,7 @@
                     <div class="col-md-9">
                       <input type="text" class="form-control" name="tensanpham" id="inputEmail3" placeholder="Nhập tên sản phẩm">
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
-                    <div class="col-md-9">
-                        <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
-                          <option>Thực phẩm tươi</option>
-                          <option>Thực phẩm khô</option>
-                          <option>Sản phẩm khác</option>                      
-                      </select> 
-                    </div>
-                  </div>
+                  </div>                  
                   <div class="form-group">                  
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
                     <div class="row" style="width: 100%;">
@@ -64,6 +54,20 @@
                           </div>
                       </div>                                                                     
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
+                    <div class="col-md-4">
+                        <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                          <option>Thực phẩm tươi</option>
+                          <option>Thực phẩm khô</option>
+                          <option>Sản phẩm khác</option>                      
+                      </select> 
+                    </div>
+                    <label class="col-md-2 control-lab">Số lượng:</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" name="Soluong" id="inputEmail3">
+                    </div> 
                   </div>                             
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
