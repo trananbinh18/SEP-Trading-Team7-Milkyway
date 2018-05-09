@@ -20,6 +20,6 @@ class chitiethoadon extends Model
     }
 
     public function nguoiban(){
-    	return $this->belongsTo('App\nguoidung','MANB','MAND');
+    	return $this->belongsTo('App\nguoiban','MANB','MANB');
     }    
 }

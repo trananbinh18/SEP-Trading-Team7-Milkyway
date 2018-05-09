@@ -34,9 +34,15 @@ Route::get('shopping',function(){
 	return view('shopping_cart');
 });
 
-Route::get('Editproduct',function(){
+Route::get('Editproduct/{id}','SanPhamController@editproduct');
+
+Route::get('de',function(){
 	return view('EditProduct');
 });
+
+
+Route::post('Editproductpost',['as'=>'Editproductpost','uses'=>'SanPhamController@edit']);
+
 Route::get('SignUp_Buyer',function(){
 	return view('SignUp_Buyer');
 });
@@ -60,10 +66,11 @@ Route::get('Admin',function(){
 });
 
 Route::get('testdb',function(){
-	$user = App\nguoidung::all()->toArray()[0]['MAND'];
+	$user = App\sanpham::all();
 	return $user;
-	
 });
+
+
 
 Route::get("about",'Controller@about');
 Route::get("home",'Controller@home');

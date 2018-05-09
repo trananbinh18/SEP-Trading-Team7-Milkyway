@@ -17,9 +17,21 @@
             </div>
                 </aside>    
                 </div>
-        
-    
+          
+                <?php
+                  // tao biến để lưu bảng sản phẩm trong db, tạo trong controller biến này rồi chuyền qua View biến này
+                  $sanpham = App\sanpham::all()->toArray();
 
+                  foreach ($sanpham as $key => $value) {
+                   
+                    echo "{$value['MASP']}";
+                      
+                      echo "<br>";
+                  }
+                  echo "<div>sadasdasdasds</div>";
+
+                ?>
+                
 
 
             <div class="col-md-8 control-infotproduct box-shadow">

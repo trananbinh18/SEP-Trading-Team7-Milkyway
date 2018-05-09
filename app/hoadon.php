@@ -11,8 +11,8 @@ class hoadon extends Model
     protected $primaryKey = 'MAHD';
     public $timestamps = false;
 
-    public function nguoidung(){
-    	return $this->belongsTo('App\nguoidung','MANM','MAND');
+    public function nguoimua(){
+    	return $this->belongsTo('App\nguoimua','MANM','MANM');
     }
 
     public function chitiethoadon(){

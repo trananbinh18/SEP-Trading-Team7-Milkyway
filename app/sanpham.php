@@ -12,11 +12,11 @@ class sanpham extends Model
     public $timestamps = false;
 
     public function nguoiban(){
-    	return $this->belongsTo('App\nguoidung','MANB','MAND');
+    	return $this->belongsTo('App\nguoiban','MANB','MANB');
     }
 
     public function nhanvien(){
-    	return $this->belongsTo('App\nguoidung','MANV','MAND');
+    	return $this->belongsTo('App\nguoiban','MANV','MANV');
     }
 
     public function loaisanpham(){
