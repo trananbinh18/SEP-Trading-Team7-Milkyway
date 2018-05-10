@@ -17,23 +17,6 @@ class Controller extends BaseController
     	return view('catalog_sidebar')->with('minh',$name);
     }
 
-    function about(){
-    	return view('about');
-    }
-    function home(){
-    	return view('home');
-    }
-    function Login(){
-        return view('SignUp_Seller');
-    }
-    function Register(){
-        return view('SignUp_Buyer');
-    }
-
-    function Getproduct(){
-        return view ('Addproduct');
-    }
-
     function Postproduct(Request $Product_request){
             $filenameSP = $Product_request->file('imagesSP')->getclientOriginalName();
             $filenameGCN = $Product_request->file('imagesGCN')->getclientOriginalName();

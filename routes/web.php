@@ -15,14 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home',function(){
-	return view('home');
-});
 Route::get('product-detail',function(){
 	return view('product_detail');
-});
-Route::get('about',function(){
-	return view('about');
 });
 Route::get('Addproduct',function(){
 	return view('Addproduct');
@@ -43,12 +37,6 @@ Route::get('de',function(){
 
 Route::post('Editproductpost',['as'=>'Editproductpost','uses'=>'SanPhamController@edit']);
 
-Route::get('SignUp_Buyer',function(){
-	return view('SignUp_Buyer');
-});
-Route::get('SignUp_Seller',function(){
-	return view('SignUp_Seller');
-});
 Route::get('info',function(){
 	return view('changeInfo');
 });
@@ -70,11 +58,12 @@ Route::get('testdb',function(){
 	return $user;
 });
 
-
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
 Route::get('Register',['as'=>'signup','uses'=>'ControllerHome@Register']);
 Route::get("about",'ControllerHome@about');
 Route::get("home",'ControllerHome@home');
+//Đăng nhập và xử lí đăng nhập
+Route::post('login','AuthController@login')->name('login');
 
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
