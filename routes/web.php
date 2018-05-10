@@ -71,10 +71,10 @@ Route::get('testdb',function(){
 });
 
 
-Route::get('Login',['as'=>'signin','uses'=>'Controller@Login']);
-Route::get('Register',['as'=>'signup','uses'=>'Controller@Register']);
-Route::get("about",'Controller@about');
-Route::get("home",'Controller@home');
+Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
+Route::get('Register',['as'=>'signup','uses'=>'ControllerHome@Register']);
+Route::get("about",'ControllerHome@about');
+Route::get("home",'ControllerHome@home');
 
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
