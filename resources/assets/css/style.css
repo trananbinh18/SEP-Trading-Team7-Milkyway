@@ -20755,6 +20755,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   padding-left: 15px;
   color:#171313;
   border: 1px solid #E1DADA;
+
 }
 .control-product{
   padding-left: 100px;
@@ -20852,4 +20853,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .carousel-caption {
   font: 400 16px/25px "Roboto Slab";
   text-shadow: 1px 2px 1px #000000;
+}
+.infoacc {
+  margin-bottom: 200px;
 }
