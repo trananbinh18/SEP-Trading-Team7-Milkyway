@@ -49,6 +49,9 @@ Route::get('featured',function(){
 Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
+Route::get('SignUp',function(){
+	return view('SignUp');
+});
 Route::get('Admin',function(){
 	return view('databackend');
 });
