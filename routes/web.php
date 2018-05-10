@@ -43,11 +43,11 @@ Route::get('de',function(){
 
 Route::post('Editproductpost',['as'=>'Editproductpost','uses'=>'SanPhamController@edit']);
 
-Route::get('SignUp_Buyer',function(){
-	return view('SignUp_Buyer');
+Route::get('SignUp',function(){
+	return view('SignUp');
 });
-Route::get('SignUp_Seller',function(){
-	return view('SignUp_Seller');
+Route::get('SignIn',function(){
+	return view('SignIn');
 });
 Route::get('info',function(){
 	return view('changeInfo');
@@ -70,7 +70,9 @@ Route::get('testdb',function(){
 	return $user;
 });
 
-
+//Đăng nhập và xử lí đăng nhập
+Route::post('login','AuthController@login')->name('login');
+//
 Route::get('Login',['as'=>'signin','uses'=>'Controller@Login']);
 Route::get('Register',['as'=>'signup','uses'=>'Controller@Register']);
 Route::get("about",'Controller@about');
