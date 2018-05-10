@@ -52,6 +52,9 @@ Route::get('discounted',function(){
 Route::get('SignUp',function(){
 	return view('SignUp');
 });
+Route::get('SignIn',function(){
+	return view('SignIn');
+});
 Route::get('Admin',function(){
 	return view('databackend');
 });
