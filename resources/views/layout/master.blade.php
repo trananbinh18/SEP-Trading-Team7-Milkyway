@@ -121,7 +121,6 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
                             <li class="level1"><a href="{{action('ControllerHome@home')}}" title="Home">Trang chủ</a></li>
-                            <li class="level1"><a href="{{action('ControllerHome@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
@@ -157,6 +156,7 @@
                                   <!-- End RightSubMenu -->
                               </div>
                               <!-- End Dropdow Menu -->
+                            <li class="level1"><a href="{{action('ControllerHome@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
                           </ul>
                         </nav>

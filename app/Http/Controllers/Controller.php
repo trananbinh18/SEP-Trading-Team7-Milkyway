@@ -36,20 +36,7 @@ class Controller extends BaseController
 
            
     }
-    function about(){
-        return view('about');
-    }
-    function home(){
-        // $cate = DB::table('loaisanpham')->get();
-        // view()->share('cate',$cate);
-        return view('home');
-    }
-    function Login(){
-        return view('SignIn');
-    }
-    function Register(){
-        return view('SignUp');
-    }
+    
 
     function Getproduct(){
         return view ('Addproduct');

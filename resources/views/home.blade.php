@@ -167,7 +167,7 @@
                             <div class="product-images">
                                 <a href="#" title="product-images">
                                     <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    <img class="secondary_image" src="" alt=""/>
                                 </a>
                             </div>
                             <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
@@ -196,4 +196,77 @@
     <div id="back-to-top">
         <i class="fa fa-long-arrow-up"></i>
     </div>
+</div>
+<div class="container container-ver2 ">
+    <div class="title-text-v2">
+        <h3>Sản phẩm giảm giá</h3>
+    </div>
+    <div class="featured-products">
+        <ul class="tabs tabs-title">
+            <li class="item" rel="tab_04">Rau</li>
+            <li class="item" rel="tab_05">Trái cây</li>
+            <li class="item" rel="tab_06">Củ quả</li>
+        </ul>
+        <div class="tab-container space-10">
+            <div id="tab_04" class="a">
+                <div class="products">
+                    @foreach($product as $pro)
+                        @if($pro->maloaisp === 4)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="#" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price-old"><?php echo $pro->giacu." VNĐ" ?></p>
+                            <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+            <div id="tab_05" class="tab-content">
+                <div class="products">
+                    @foreach($product as $pro)
+                        @if($pro->maloaisp === 5)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="#" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+            <div id="tab_06" class="tab-content">
+                <div class="products">
+                    @foreach($product as $pro)
+                        @if($pro->maloaisp === 6)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="#" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                    <img class="secondary_image" src="" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
+                        </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="box center space-padding-tb-30">
+            <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
+        </div>
+    </div>
+</div>
     @stop

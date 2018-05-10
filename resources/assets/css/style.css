@@ -3766,7 +3766,7 @@ ul.tabs.tabs-title li span.count {
 
 @media (min-width: 1200px) {
   .banner-home3 {
-    margin-bottom: 130px;
+    margin-bottom: 60px;
   }
 }
 
@@ -10643,7 +10643,7 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
   position: relative;
   font-family: "Roboto Condensed";
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 19px;
   display: inline-block;
   vertical-align: bottom;
 }
@@ -15732,7 +15732,7 @@ button.button_search:hover {
 
 #footer.footer-v3 {
   background: #f3f3f3;
-  margin-top: 20px;
+  margin-top: 160px;
 }
 
 #footer.footer-v3 .footer-inner {
