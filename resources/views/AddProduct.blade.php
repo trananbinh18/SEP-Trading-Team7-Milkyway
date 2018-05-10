@@ -38,7 +38,7 @@
                   <div class="form-group">                  
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
                     <div class="row" style="width: 100%;">
-                      <div class="form-group col-md-3 img12">
+                      <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesSP">
                             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
                     <div class="row" style="width: 100%;">
-                      <div class="form-group col-md-3 img12">
+                      <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesGCN">
                             </div>
