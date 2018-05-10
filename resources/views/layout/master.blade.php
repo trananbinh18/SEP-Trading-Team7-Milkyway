@@ -131,12 +131,10 @@
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
                                         <ul class="menu-level-2">
-                                           <!--  <li class="level3"><a href="#" title="Seatings">Hải sản</a></li>
-                                            <li class="level3"><a href="#" title="Series">Thịt</a></li> -->
-                                            <li class="level3"><a href="#" title="Series">Rau</a></li>
-                                            <li class="level3"><a href="#" title="Series">Trái cây</a></li>
-                                            <li class="level3"><a href="#" title="Series">Củ quả</a>
-
+                                            <?php $cate = DB::table('loaisanpham')->select('tenloaisp')->get() ?>
+                                            @foreach($cate as $value)
+                                                <li class="level3"><a href="#" title="Series"><?php echo $value->tenloaisp ?></a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <!-- <li class="level2"><a href="#">Thực phẩm sấy khô</a>
