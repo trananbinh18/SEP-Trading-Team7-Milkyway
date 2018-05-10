@@ -49,11 +49,11 @@
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Tiếp theo</span>
                 </a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Quay lại</span>
                 </a>
             </div>
         </div> 
@@ -144,11 +144,11 @@
             <div id="tab_02" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 6)
+                        @if($pro->maloaisp === 5)
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                     <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                 </a>
                             </div>
@@ -166,7 +166,7 @@
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                     <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                 </a>
                             </div>
