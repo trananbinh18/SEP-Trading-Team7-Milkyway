@@ -27,7 +27,7 @@
                         <h3>Đăng nhập</h3>
                         <p>Xin chào, Mời bạn đăng nhập</p>
                         {{ $error or ''}}
-                        <form class="form-horizontal" action="{{route('login')}}" method="POST">
+                        <form class="form-horizontal" action="{{route('signin')}}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="group box space-20">
                                 <label class="control-label" for="inputemail" >Email *</label>
