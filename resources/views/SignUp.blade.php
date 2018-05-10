@@ -32,7 +32,8 @@
                         <h3>Đăng kí</h3>
                         <hr>
                         <p>Tạo tài khoản của riêng bạn!</p>
-                        <form class="form-horizontal" method="POST">
+                        <form class="form-horizontal"action="{{route('SignUp')}}" method="POST">
+                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="group box space-20">
                                     <label class="control-label" for="inputname">Họ và Tên *</label>
                                     <input class="form-control" type="text" placeholder="Họ và Tên" id="inputemailres" name="name">

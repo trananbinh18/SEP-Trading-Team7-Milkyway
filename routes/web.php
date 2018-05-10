@@ -72,7 +72,13 @@ Route::get("about",'ControllerHome@about');
 //Redirect to view "Trang chủ"
 Route::get("home",'ControllerHome@home');
 //Đăng nhập và xử lí đăng nhập
-Route::post('login','AuthController@login')->name('login');
+// Route::post('login','AuthController@postLogin');
+
+//Đăng kí cho người mua
+Route::get('SignUp','AuthController@getSignUpBuyer');
+Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpBuyer']);
+
+
 
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);

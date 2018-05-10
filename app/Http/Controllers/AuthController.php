@@ -6,24 +6,52 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request as Controller;
 use Illuminate\Http\Request;
-use App\Http\User;
+use App\nguoimua;
+use App\nguoiban;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controller\Auth\RegisterController;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class AuthController extends Controller
 {
-	public function login(Request $request)
-	{
-		$email = $request['email'];
-  		$matkhau = $request['matkhau'];
-		// $email -> 'required|email|max:255|unique:user_list';
+	
+    function getSignUpBuyer()
+    {
+      return view('SignUp');
+    }
+    function postSignUpBuyer(Request $SignUp_request)
+    {
+    // $this->validate($SignUp_request,[
+    //  'name' => 'required|min:3', 
+    //  'phone'=> 'required|min:10', 
+    //  'number_house' => 'required',
+    //  'emai' => 'required|email|unique:users,email', 
+    //  'password'=> 'required|min:6'
 
-         if (Auth::attempt(['EMAIl'=>$email,'MATKHAU'=>$matkhau]))
-           { //thành công
-            return view('home');//['user' =>Auth::user()]
-             # code...
-         }else{
-         	return view('SignUp_Buyer', ['error'=> 'Đăng nhập thất bại']);
-         }
-            
-	}
-    //
+
+    // ],[
+    //  'name.required' => 'Bạn chưa nhập tên người dùng',
+    //  'name.min'=> 'Tên người dùng phải có ít nhất 3 kí tự',
+    //  'phone.required' => 'Bạn chưa nhập số điện thoại',
+    //  'phone.min' => 'Số điện thoại phải có ít nhất 10 kí tự' , 
+    //  'address.required' => 'Bạn chưa nhập địa chỉ', 
+    //  'password.required' => 'Bạn chưa nhập mật khẩu' , 
+    //  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
+    //  ]);
+
+    $user = new nguoimua();
+    $user->TENNM = $SignUp_request->name;
+    $user->SĐT = $SignUp_request->phone;
+    $user->SONHA = $SignUp_request->number_house;
+    $user->PHUONG = $SignUp_request->ward;
+    $user->QUAN = $SignUp_request->district;
+    $user->TP = $SignUp_request->city;
+    $user->EMAIL = $SignUp_request->email;
+    $user->MATKHAU = $SignUp_request->password;
+    $user->NGAYTAO = date('Y-m-d H:i:s');
+    $user->save();
+
+    return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
+  }
 }
