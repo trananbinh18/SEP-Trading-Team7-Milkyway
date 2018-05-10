@@ -104,8 +104,9 @@
                         <h3>Đăng kí</h3>
                         <hr>
                         <p>Tạo tài khoản của riêng bạn!</p>
-                        <form class="form-horizontal" method="POST">
+                        <form class="form-horizontal" action="{{route('SignUp')}}" method="POST" enctype="multipart/form-data" role="form">
                                 <div class="group box space-20">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <label class="control-label" for="inputname">Họ và Tên *</label>
                                     <input class="form-control" type="text" placeholder="Họ và Tên" id="inputemailres" name="name">
                                 </div>
@@ -149,7 +150,7 @@
                                     <div class="row" style="width: 100%;">
                                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                                           <div class="img-picker">
-                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image">
                                             </div>
                                           </div>
                                           </div>

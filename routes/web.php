@@ -77,8 +77,9 @@ Route::get("home",'ControllerHome@home');
 //Đăng kí cho người mua
 Route::get('SignUp','AuthController@getSignUpBuyer');
 Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpBuyer']);
-
-
+//Đăng kí cho người bán
+Route::get('SignUp','AuthController@getSignUpSeller');
+Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpSeller']);
 
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
