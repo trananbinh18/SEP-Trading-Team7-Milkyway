@@ -9,21 +9,18 @@ use App\Http\Controllers\Controller;
 
 class ControllerHome extends Controller
 {
-    function about(){
-    	return view('about');
+   	function about(){
+        return view('about');
     }
     function home(){
-    	$cate = DB::table('loaisanpham')->get();
-    	return view('home');
+        $product = DB::table('sanpham')->take(12)->select('masp','tensp','gia','donvi','hinh')->get();
+        // view()->share('cate',$cate);
+        return view('home')->with('product',$product);
     }
     function Login(){
         return view('SignIn');
     }
     function Register(){
         return view('SignUp');
-    }
-
-    function Getproduct(){
-        return view ('Addproduct');
     }
 }
