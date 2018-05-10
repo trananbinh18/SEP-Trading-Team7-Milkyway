@@ -126,265 +126,55 @@
             <div id="tab_01" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
+                        @if($pro->maloaisp === 4)
                         <div class="product">
                             <div class="product-images">
                                 <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
                                     <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                 </a>
                             </div>
                             <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
                             <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
                         </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_02" class="tab-content">
                 <div class="products">
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @foreach($product as $pro)
+                        @if($pro->maloaisp === 6)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="#" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <div id="tab_03" class="tab-content">
                 <div class="products">
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @foreach($product as $pro)
+                        @if($pro->maloaisp === 6)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="#" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo $pro->gia." VNĐ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title">BlueBerry</p></a>
-                        <p class="product-price">$350.00</p>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
