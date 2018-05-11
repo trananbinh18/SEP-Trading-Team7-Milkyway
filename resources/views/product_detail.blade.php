@@ -1,16 +1,16 @@
-
 @extends('layout.master')
-
 @section('content')
           <div class="main-content">
             <div class="container">
                 <div class="banner-header banner-lbook3">
-                    <img src="resources/assets/images/banner-blog.jpg" alt="Banner-header">
+                    <img src="{!!url("resources/assets/images/banner-blog.jpg") !!}" alt="Banner-header">
                     <div class="text">
                     <h3>Tất cả sản phẩm</h3>
-                    <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Chi tiết sản phẩm</a><i class="fa fa-caret-right"></i>Rau muống</p>
+                    <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Chi tiết sản phẩm</a><i class="fa fa-caret-right"></i><?php echo "{$sanpham['TENSP']}"; ?></p>
                 </div>
-                </div>
+                </div> 
+
+
             </div>
                 <div class="container">     
                     <div class="product-details-content">
@@ -18,46 +18,31 @@
                               <div class="slider-for">
                                 <div>
                                   <span class="zoom">
-                                    <img class="zoom-images" src="resources/assets/images/products/details/1.jpg" alt="images">
+                                    <img class="zoom-images" src="{!!url("resources/assets/images/products/{$sanpham['HINH']}") !!}" alt="images">
                                   </span>
                                 </div>
                                 <div>
                                   <span class="zoom">
-                                  <img class="zoom-images" src="resources/assets/images/products/details/1.jpg" alt="images">
+                                  <img class="zoom-images" src="{!!url("resources/assets/images/products/{$sanpham['HINH']}") !!}" alt="images">
                                   </span>
                                 </div>
                                 <div>
                                   <span class="zoom">
-                                  <img class="zoom-images" src="resources/assets/images/products/details/1.jpg" alt="images">
+                                  <img class="zoom-images" src="{!!url("resources/assets/images/products/{$sanpham['HINH']}") !!}" alt="images">
                                   </span>
                                 </div>
                                 <div>
                                   <span class="zoom">
-                                  <img class="zoom-images" src="resources/assets/images/products/details/1.jpg" alt="images">
+                                  <img class="zoom-images" src="{!!url("resources/assets/images/products/{$sanpham['HINH']}") !!}" alt="images">
                                   </span>
                                 </div>
                               </div>
                               <!-- End slider-for -->
-                              <div class="slider-nav">
-                                <div>
-                                  <img src="resources/assets/images/products/details/1.jpg" alt="images">
-                                </div>
-                                <div>
-                                  <img src="resources/assets/images/products/details/1.jpg" alt="images">
-                                </div>
-                                <div>
-                                  <img src="resources/assets/images/products/details/1.jpg" alt="images">
-                                </div>
-                                <div>
-                                  <img src="resources/assets/images/products/details/1.jpg" alt="images">
-                                </div>
-
-                              </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="box-details-info">
                                 <div class="product-name">
-                                    <h1>RAU MUỐNG</h1>
+                                    <h1><?php echo "{$sanpham['TENSP']}"; ?></h1>
                                 </div>
                                 <!-- End product-name -->
                                 <div class="rating">
@@ -85,15 +70,16 @@
                             </div>
                             <!-- End box details info -->
                             <div class="options">
-                                <p>Là sản phẩm sạch của chúng tôi, chúng tôi mang đến một sản phẩm trong sạch đảm bảo không thuốc trừ sâu</p>
+                                <p><?php echo "{$sanpham['MOTA']}"; ?></p>
                                 <!-- End action -->
                                 <div class="description-lits">
                                     <h3>100% sản phẩm tươi sạch</h3>
                                     <ul>
-                                        <li><img src="resources/assets/images/icon-deslist.jpg" alt="icon">100% Không có thuốc trừ sâu</li>
-                                        <li><img src="resources/assets/images/icon-deslist.jpg" alt="icon">100% Không hư hại</li>
-                                        <li><img src="resources/assets/images/icon-deslist.jpg" alt="icon">100% Được đem từ Ninh Bình lên</li>
+                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Không có thuốc trừ sâu</li>
+                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Không hư hại</li>
+                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Được đem từ Ninh Bình lên</li>
                                     </ul>
+
                                 </div>
                                 <!--End Description-->
                                 <div class="box space-30">
@@ -104,7 +90,7 @@
                                             <h3>SỐ LƯỢNG</h3>
                                         </div>
                                          <form enctype="multipart/form-data">
-                                            <input data-step="1" value="1" title="Qty" min="1" size="4" type="number">
+                                            <input data-step="1" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                                         </form>
                                     </div>
                                     <!-- End col-md-5 -->
@@ -140,22 +126,22 @@
                         <div class="tab-container">
                             <div id="description" class="tab-content">
                                 <div class="text">
-                                    <h3>Sản phẩm của chúng đạt chất lượng chứng chỉ y tế</h3>
-                                    <p>rau muống được trồng ở Ninh Bình tập trung khu tập trung nông nghiệp, và không sử dụng các loại thuốc tăng trưởng cũng như thuốc trừ sâu.</p>
+                                    <h3><?php echo "{$sanpham['TENSP']}"; ?></h3>
+                                    <p><?php echo "{$sanpham['MOTA']}"; ?></p>
                                 </div>
                             </div>
                             <div id="product-tags" class="tab-content">
                                 <p>
-                                    <span>Chi nhánh</span>
-                                    <span>Cửa hàng Nghĩa Huy</span>
+                                    <span>Người Bán</span>
+                                    <span><?php echo "{$sanpham->nguoiban['TENNB']}"; ?></span>
                                 </p>
                                 <p>
-                                    <span>Kg</span>
-                                    <span>54g</span>
+                                    <span>Đơn Vị</span>
+                                    <span><?php echo "{$sanpham['DONVI']}"; ?></span>
                                 </p>
                                 <p>
-                                    <span>Calo</span>
-                                    <span>36 Calo</span>
+                                    <span>Hiện Còn</span>
+                                    <span><?php echo "{$sanpham['SOLUONG']} {$sanpham['DONVI']}"; ?></span>
                                 </p>
                             </div>
                             <div id="customer" class="tab-content">
@@ -238,8 +224,8 @@
                                 <div class="product">
                                     <div class="product-images">
                                         <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>
@@ -258,8 +244,8 @@
                                 <div class="product">
                                     <div class="product-images">
                                         <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>
@@ -278,8 +264,8 @@
                                 <div class="product">
                                     <div class="product-images">
                                         <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>
@@ -298,8 +284,29 @@
                                 <div class="product">
                                     <div class="product-images">
                                         <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                        </a>
+                                        
+                                        <div class="action">
+                                            <a class="add-cart" href="#" title="Add to cart"></a>
+                                            <a class="wish" href="#" title="Wishlist"></a>
+                                            <a class="zoom" href="#" title="Quick view"></a>
+                                        </div>
+                                        <!-- End action -->
+                                    </div>
+                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
+                                    <p class="product-price-old">$700.00</p>
+                                    <p class="product-price">$350.00</p>
+                                </div>
+                                <!-- End product -->
+                            </div>
+                            <div class="item-inner">
+                                <div class="product">
+                                    <div class="product-images">
+                                        <a href="#" title="product-images">
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>
@@ -318,28 +325,8 @@
                                 <div class="product">
                                     <div class="product-images">
                                         <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                        </a>
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
-                                            <img class="secondary_image" src="resources/assets/images/products/furniture/1.jpg" alt=""/>
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>

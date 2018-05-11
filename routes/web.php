@@ -18,9 +18,8 @@ Route::get('/', function () {
 Route::get('home',function(){
 	return view('home');
 });
-Route::get('product-detail',function(){
-	return view('product_detail');
-});
+Route::get("Productdetail/{id}",'ControllerSanPham@productdetail');
+
 Route::get('about',function(){
 	return view('about');
 });
@@ -34,7 +33,7 @@ Route::get('shopping',function(){
 	return view('shopping_cart');
 });
 
-Route::get('Editproduct/{id}','SanPhamController@editproduct');
+Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
 
 Route::get('de',function(){
 	return view('EditProduct');
@@ -66,11 +65,11 @@ Route::get('Admin',function(){
 });
 
 Route::get('testdb',function(){
-	$user = App\sanpham::all();
+	$user = App\sanpham::find(5)->nguoiban->toArray();
 	return $user;
 });
 
 
 
 Route::get("about",'Controller@about');
-Route::get("home",'Controller@home');
+Route::get("home",'Controller@home')->name('home');

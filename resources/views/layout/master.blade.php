@@ -5,25 +5,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <link rel="stylesheet" type="text/css" href="resources/assets/css/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/css/general.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/owl-slider.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/settings.css"/>
-        <link rel="shortcut icon" href="resources/assets/images/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/settings.css"/>
-        <link rel="stylesheet" type="text/css" href="resources/assets/vendor/range-price.css"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/css/bootstrap.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/css/style.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/css/general.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/owl-slider.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/settings.css")!!}"/>
+        <link rel="shortcut icon" href="{!!url("resources/assets/images/favicon.png")!!}" />
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/slick.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/settings.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/range-price.css")!!}"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="resources/assets/js/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="{!!url("resources/assets/js/jquery-3.2.0.min.js")!!}"></script>
         <title>@yield(' title ')</title>
         <meta name="description" content="@title('description')">
     </head>
+    
     <body>
     <div class="awe-page-loading">
          <div class="awe-loading-wrapper">
             <div class="awe-loading-icon">
-               <img src="resources/assets/images/logo.png" alt="images">
+               <img src="{!!url("resources/assets/images/logo.png")!!}" alt="images">
             </div>
             <div class="progress">
                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
@@ -53,14 +54,14 @@
             <div class="right">
                 <div id="topbar" class="topbar-ver2">
                     <div class="container container-ver2">
-                        <a class="logo-header-v3" href="#" title="Logo-FreshFood"><img src="resources/assets/images/logo-header3.png" alt="FreshFood"></a>
+                        <a class="logo-header-v3" href="#" title="Logo-FreshFood"><img src="{!!url("resources/assets/images/logo-header3.png")!!}" alt="FreshFood"></a>
                         <div class="inner-topbar box">
                             <div class="float-left">
-                                <p><img src="resources/assets/images/icon-phone-header.png.png" alt="icon"> Gọi cho chúng tôi <span> 099-999-9999</span></p>
+                                <p><img src="{!!url("resources/assets/images/icon-phone-header.png.png")!!}" alt="icon"> Gọi cho chúng tôi <span> 099-999-9999</span></p>
                             </div>
                             <div class="float-right align-right">
                                 <div class="hover-menu">
-                                    <a class="acc" href="#" title="USD"><img src="resources/assets/images/icon-user-header.png" alt="icon">Tài khoản</a>
+                                    <a class="acc" href="#" title="USD"><img src="{!!url("resources/assets/images/icon-user-header.png")!!}" alt="icon">Tài khoản</a>
                                     <ul class="list-menu">
                                         <li><a href="#" title="USD">Đăng nhập</a></li>
                                         <li><a href="#" title="VND">Đăng ký</a></li>
@@ -78,7 +79,7 @@
                         <div class="box">
                             <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
                             <!--End logo-->
-                            <div class="logo-mobile"><a href="#" title="FreshFood"><img src="resources/assets/images/logo-v2.png" alt="FreshFood-Logo"></a></div>
+                            <div class="logo-mobile"><a href="#" title="FreshFood"><img src="{!!url("resources/assets/images/logo-v2.png")!!}" alt="FreshFood-Logo")!!}"></a></div>
                             <div class="box-right">
                                 <div class="cart hover-menu">
                                         <p class="icon-cart" title="Add to cart">
@@ -88,7 +89,7 @@
                                         <div class="cart-list list-menu">
                                             <ul class="list">
                                                 <li>
-                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/1.jpg" alt="Product"></a>
+                                                    <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
                                                     <div class="text">
                                                         <p class="product-name">Dâu</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
@@ -97,7 +98,7 @@
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/1.jpg" alt="Product"></a>
+                                                    <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
                                                     <div class="text">
                                                         <p class="product-name">Đào</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
@@ -126,7 +127,7 @@
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
                                 <div class="top-sub-menu">
-                                    <img src="resources/assets/images/banner/t.jpg" alt="images">
+                                    <img src="{!!url("resources/assets/images/banner/t.jpg")!!}" alt="images">
                                 </div>
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
@@ -260,18 +261,18 @@
         </footer>
         </div>
     <!-- End wrappage -->
-    <script type="text/javascript" src="resources/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/engo-plugins.js"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/bootstrap.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/owl.carousel.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/jquery.themepunch.revolution.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/jquery.themepunch.plugins.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/engo-plugins.js")!!}"></script>
     
-    <script type="text/javascript" src="resources/assets/js/slick.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/store.js"></script>
-    <script type="text/javascript" src="resources/assets/js/jquery.zoom.js"></script>
-    <script type="text/javascript" src="resources/assets/js/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="resources/assets/js/price-range.js"></script>
-    <script type="text/javascript" src="resources/assets/js/mainjs.js"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/slick.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/store.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/jquery.zoom.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/jquery.mousewheel.min.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/price-range.js")!!}"></script>
+    <script type="text/javascript" src="{!!url("resources/assets/js/mainjs.js")!!}"></script>
     <script type="text/javascript">
       jQuery("#Slider1").slider({ 
         from: 0,
