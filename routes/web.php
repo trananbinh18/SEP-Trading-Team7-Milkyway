@@ -63,6 +63,10 @@ Route::get('testdb',function(){
 	$user = App\sanpham::all();
 	return $user;
 });
+Route::get('contact',function(){
+	return view('contact');
+});
+
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
 //Redirect to view "Đăng Ký""
