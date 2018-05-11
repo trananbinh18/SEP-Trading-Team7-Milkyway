@@ -20780,6 +20780,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .row-addproduct{
   background-color:#fff;
+  margin-bottom: 200px;
 }
 .control-lab{
   font-size: 20px;
@@ -20853,7 +20854,4 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .carousel-caption {
   font: 400 16px/25px "Roboto Slab";
   text-shadow: 1px 2px 1px #000000;
-}
-.infoacc {
-  margin-bottom: 200px;
 }

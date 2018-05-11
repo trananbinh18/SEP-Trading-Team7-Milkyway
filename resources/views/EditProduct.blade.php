@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <div class="row row-addproduct">
+    <div class="row row-addproduct" style="margin-bottom: 200px">
             <div class="col-md-3 box-shadow control-infotproduct">
                 <div>
                     <aside class="widget widget_product_categories" style="padding-left: 10px;">
@@ -101,4 +101,5 @@
         
         <div id="back-to-top">
             <i class="fa fa-long-arrow-up"></i>
+        </div>
 @endsection
