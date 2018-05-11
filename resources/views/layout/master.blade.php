@@ -88,25 +88,25 @@
                                         <div class="cart-list list-menu">
                                             <ul class="list">
                                                 <li>
-                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/1.jpg" alt="Product"></a>
+                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/tao.jpg" alt="Product"></a>
                                                     <div class="text">
-                                                        <p class="product-name">Dâu</p>
+                                                        <p class="product-name">Táo</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL:01</p>
+                                                        <p class="qty">SL: 01</p>
                                                     </div>
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/1.jpg" alt="Product"></a>
+                                                    <a href="#" title="" class="cart-product-image"><img src="resources/assets/images/products/dao.png" alt="Product"></a>
                                                     <div class="text">
                                                         <p class="product-name">Đào</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL:01</p>
+                                                        <p class="qty">SL: 01</p>
                                                     </div>
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li>
                                             </ul>
-                                            <p class="total"><span class="left">Tổng:</span> <span class="right">1121.000 đ</span></p>
+                                            <p class="total"><span class="left">Tổng:</span> <span class="right">700.000 đ</span></p>
                                             <div class="bottom">
                                                 <a class="link-v1" href="#" title="viewcart">Xem giỏ hàng</a>
                                                 <a class="link-v1 rt" href="#" title="checkout">Thanh toán</a>
@@ -125,7 +125,7 @@
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
                                 <div class="top-sub-menu">
-                                    <img src="resources/assets/images/banner/t.jpg" alt="images">
+                                    <img src="resources/assets/images/banner/t1.jpg" alt="images">
                                 </div>
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
@@ -219,7 +219,7 @@
               <div class="footer-bottom box">
                 <div class="container container-ver2">
                     <div class="box bottom">
-                        <p class="float-left">Copyright &copy;2018 <strong>Thực phẩm sạch</strong> - All Rights Reserved.</p>
+                        <p class="float-left">Copyright &copy;2018 <strong>Team Milkyway</strong> - All Rights Reserved.</p>
                         <div class="float-right">
                             <ul class="menu-bottom-footer">
                                 <li><a href="#" title="Contact Us">Liên hệ</a></li>
