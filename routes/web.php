@@ -84,6 +84,8 @@ Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpBuyer']);
 //Đăng kí cho người bán
 Route::get('SignUp','AuthController@getSignUpSeller');
 Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpSeller']);
-
+//Đăng sản phẩm
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
+//Tìm kiếm sản phẩm
+Route::get('Search',['as'=>'Search','uses'=>'Controller@Searchproduct']);

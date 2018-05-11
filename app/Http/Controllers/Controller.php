@@ -5,6 +5,7 @@ use App\sanpham;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Collection;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -69,5 +70,11 @@ class Controller extends BaseController
 
     function Getproduct(){
         return view ('Addproduct');
+    }
+
+    function Searchproduct(Request $Search_request){
+        $Search_product = sanpham::where('TENSP','like','%'.$Search_request->Timkiem.'%') 
+                                    ->get();
+        return view('Search',compact($Search_product,'Search_product'));
     }
 }

@@ -36,11 +36,10 @@
             <div class="modal-content popup-search">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <div class="modal-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control control-search" placeholder="Nhập nội dung mà bạn muốn tìm kiếm...">
-                        <button class="button_search" type="button">Tìm kiếm</button>
-                    </div><!-- /input-group -->
-
+                    <form class="input-group" method="get" action="{{route('Search')}}">
+                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập nội dung mà bạn muốn tìm kiếm...">
+                        <button class="button_search" type="submit">Tìm kiếm</button>
+                    </form>                        
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
