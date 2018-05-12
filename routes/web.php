@@ -66,6 +66,18 @@ Route::get('testdb',function(){
 Route::get('contact',function(){
 	return view('contact');
 });
+Route::get('checkout',function(){
+	return view('checkout');
+});
+
+Route::get('shoppingcart',function(){
+	return view('shopping_cart');
+});
+
+Route::get('order',function(){
+	return view('order');
+});
+
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
