@@ -66,6 +66,15 @@ Route::get('testdb',function(){
 Route::get('contact',function(){
 	return view('contact');
 });
+Route::get('customer',function(){
+	return view('EditCustomerInformation');
+});
+Route::get('password',function(){
+	return view('ResetPassword');
+});
+Route::get('deliverypolicy',function(){
+	return view('FAQ');
+});
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
