@@ -113,4 +113,7 @@ Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpSeller'])
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
 //Tìm kiếm sản phẩm
-Route::get('Search',['as'=>'Search','uses'=>'Controller@Searchproduct']);
+Route::get('Search',['as'=>'search','uses'=>'Controller@SearchProduct']);
+Route::get('SearchResult',function(){
+	return view('Search');
+});

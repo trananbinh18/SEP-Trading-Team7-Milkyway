@@ -46,19 +46,19 @@
                                 <p>Thêm yêu sức khỏe!</p>
                             </div>
                         </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Tiếp theo</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Quay lại</span>
+                    </a>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Tiếp theo</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Quay lại</span>
-                </a>
-            </div>
-        </div> 
+            </div> 
+        </div>
     </div>
-</div>
 </div>
 </div>
 <div class="container container-ver2">
@@ -126,54 +126,54 @@
             <div id="tab_01" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 4)
-                        <div class="product">
-                            <div class="product-images">
-                                <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
-                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    @if($pro->maloaisp === 4)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
                         </div>
-                        @endif
+                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_02" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 5)
-                        <div class="product">
-                            <div class="product-images">
-                                <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    @if($pro->maloaisp === 5)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
                         </div>
-                        @endif
+                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_03" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 6)
-                        <div class="product">
-                            <div class="product-images">
-                                <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                    <img class="secondary_image" src="" alt=""/>
-                                </a>
-                            </div>
-                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    @if($pro->maloaisp === 6)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                <img class="secondary_image" src="" alt=""/>
+                            </a>
                         </div>
-                        @endif
+                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -210,37 +210,37 @@
             <div id="tab_04" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 5)
-                        <div class="product">
-                            <div class="product-images">
-                                <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    @if($pro->maloaisp === 5)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
                         </div>
-                        @endif
+                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_05" class="tab-content">
                 <div class="products">
                     @foreach($product as $pro)
-                        @if($pro->maloaisp === 4)
-                        <div class="product">
-                            <div class="product-images">
-                                <a href="#" title="product-images">
-                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
-                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                            <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
-                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    @if($pro->maloaisp === 4)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
                         </div>
-                        @endif
+                        <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -250,4 +250,4 @@
         </div>
     </div>
 </div>
-    @stop
+@stop

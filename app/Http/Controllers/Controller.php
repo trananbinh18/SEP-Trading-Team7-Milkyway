@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\sanpham;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -71,10 +72,15 @@ class Controller extends BaseController
     function Getproduct(){
         return view ('Addproduct');
     }
-
-    function Searchproduct(Request $Search_request){
-        $Search_product = sanpham::where('TENSP','like','%'.$Search_request->Timkiem.'%') 
-                                    ->get();
-        return view('Search',compact($Search_product,'Search_product'));
+    function SearchResult(){
+        return view('Search');
     }
+    function SearchProduct(Request $Search_request){
+        if(is_null($Search_request->Timkiem)){
+            return view('Search')->with('sProduct',0);
+        }
+        $Search_product = DB::table('sanpham')->select('masp','maloaisp','tensp','gia','giacu','donvi','hinh')->where('tensp','like','%'.$Search_request->Timkiem.'%')->get();
+        return view('Search')->with('sProduct',$Search_product);
+    }
+    
 }
