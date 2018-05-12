@@ -198,16 +198,9 @@
                                 <a href="#" title="g"><i class="fa fa-google"></i></a>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <h3 class="title-footer">Nhận thông báo</h3>
-                            <p>Nhận thông báo về thông tin sản phẩm cũng như những chương trình khuyến mãi qua địa chỉ Email</p>
-                            <div class="subscribe">
-                                <form action="#" method="get" accept-charset="utf-8">
-                                    <input type="text" onblur="if (this.value == '') {this.value = 'Enter Your Email Address';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter Your Email Address" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
-                                    <button class="button button1 hover-white" title="Subscribe" type="submit">Theo dõi<i class="fa fa-long-arrow-right"></i></button>
-                                </form>
-                            </div>
-                            <!-- End subscribe -->
+                        <div class="col-md-3 col-sm-6">
+                            <h3 class="title-footer">Địa chỉ</h3>
+                            <p>Văn phòng: 45 Nguyễn Khắc Nhu, Phường Cô Giang, Quận 1</p>
                         </div>
                     </div>
                     <!-- End row -->
