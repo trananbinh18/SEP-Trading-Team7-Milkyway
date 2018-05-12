@@ -12972,6 +12972,7 @@ table.table.cart-table td.add-cart i {
 
 .cart-box-container .cart-total .col-md-4 {
   padding-right: 15px;
+  float: right;
 }
 
 .form-control.control-search {
@@ -13085,7 +13086,9 @@ table.table.cart-table td.add-cart i {
 .check-out .text-price {
   padding-bottom: 95px;
 }
-
+.check-out .container-ver2 .space-30 {
+  float: right;
+}
 .cart-box-container .text-price ul li .text.text-cap {
   letter-spacing: 0px;
   text-transform: capitalize;
@@ -13303,7 +13306,7 @@ table.table.cart-table td.add-cart i {
   float: left;
   color: #a7a7a7;
   font: 400 16px/50px "Roboto Condensed";
-  width: 300px;
+  width: 200px;
 }
 
 .info-order .product-name .total {
@@ -13316,8 +13319,20 @@ table.table.cart-table td.add-cart i {
 .info-order .product-name .qty {
   color: #a7a7a7;
   font: 400 16px/50px "Roboto Condensed";
+  width: 150px;
 }
-
+.info-order .product-name .dgia {
+  color: #a7a7a7;
+  font: 400 16px/50px "Roboto Condensed";
+  width: 150px;
+  margin-left: 70px;
+}
+.info-order .product-name .dgiaR2 {
+  color: #a7a7a7;
+  font: 400 16px/50px "Roboto Condensed";
+  width: 150px;
+  margin-left: 112px;
+}
 .info-order .product-name b {
   color: #2b2b2b;
 }

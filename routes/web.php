@@ -66,6 +66,20 @@ Route::get('testdb',function(){
 Route::get('contact',function(){
 	return view('contact');
 });
+// <<<<<<< HEAD
+Route::get('checkout',function(){
+	return view('checkout');
+});
+
+Route::get('shoppingcart',function(){
+	return view('shopping_cart');
+});
+
+Route::get('order',function(){
+	return view('order');
+});
+
+// ======
 Route::get('customer',function(){
 	return view('EditCustomerInformation');
 });
@@ -75,6 +89,7 @@ Route::get('password',function(){
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
+// >>>>>>> 7de33c3894ff48fda4c8d1eeb7f3414fce452723
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
