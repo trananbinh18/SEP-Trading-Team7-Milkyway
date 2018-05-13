@@ -94,7 +94,7 @@ Route::get('listproduct',function(){
 });
 
 
-=======
+
 //Redirect to view ResetPassword
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
 //Redirect to view EditInfor
