@@ -53,8 +53,8 @@
             <div class="modal-content popup-search">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <div class="modal-body">
-                    <form class="input-group" method="get" action="{{route('Search')}}">
-                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập nội dung mà bạn muốn tìm kiếm...">
+                    <form class="input-group" method="get" action="{{route('search')}}">
+                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập tên rau, trái cây hay loại củ mà bạn muốn tìm kiếm...">
                         <button class="button_search" type="submit">Tìm kiếm</button>
                     </form>                        
                 </div>
@@ -152,22 +152,6 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <!-- <li class="level2"><a href="#">Thực phẩm sấy khô</a>
-                                        <ul class="menu-level-2">
-                                            <li class="level3"><a href="#" title="Cleaning Tools">Các loại Khô</a></li>
-                                            <li class="level3"><a href="#" title="Waste Bins">Gia vị</a></li>
-                                            <li class="level3"><a href="#" title="Pots & Pans">Các loại hạt</a></li>
-                                            <li class="level3"><a href="#" title="Beds">Nông sản khô</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <!-- <li class="level2"><a href="#">Sản phẩm khác</a>
-                                        <ul class="menu-level-2">
-                                            <li class="level3"><a href="#" title="Seatings">Sữa</a></li>
-                                            <li class="level3"><a href="#" title="Tables">Bánh</a></li>
-                                            <li class="level3"><a href="#" title="Accessories">Bột ngũ cốc</a></li>
-                                            <li class="level3"><a href="#" title="Series">Đồ uống</a></li>
-                                        </ul>
-                                    </li> -->
                                   </ul>
                                   <!-- End RightSubMenu -->
                               </div>

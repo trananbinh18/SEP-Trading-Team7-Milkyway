@@ -79,7 +79,6 @@ Route::get('order',function(){
 	return view('order');
 });
 
-// ======
 Route::get('customer',function(){
 	return view('EditCustomerInformation');
 });
@@ -89,10 +88,17 @@ Route::get('password',function(){
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
+
 Route::get('listproduct',function(){
 	return view('listproduct');
 });
-// >>>>>>> 7de33c3894ff48fda4c8d1eeb7f3414fce452723
+
+
+=======
+//Redirect to view ResetPassword
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+//Redirect to view EditInfor
+Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf']);
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
@@ -116,4 +122,8 @@ Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpSeller'])
 Route::get('Addproduct','Controller@Getproduct');
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
 //Tìm kiếm sản phẩm
-Route::get('Search',['as'=>'Search','uses'=>'Controller@Searchproduct']);
+Route::get('Search',['as'=>'search','uses'=>'Controller@SearchProduct']);
+Route::get('SearchResult',function(){
+	return view('Search');
+});
+Route::get('Test','Controller@Test');
