@@ -118,3 +118,4 @@ Route::get('Search',['as'=>'search','uses'=>'Controller@SearchProduct']);
 Route::get('SearchResult',function(){
 	return view('Search');
 });
+Route::get('Test','Controller@Test');
