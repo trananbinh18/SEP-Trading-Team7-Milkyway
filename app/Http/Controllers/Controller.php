@@ -63,8 +63,8 @@ class Controller extends BaseController
             $Product->GCN      = $filenameGCNNew;
             $Product->HINH     = $filenameSPNew;
             $Product->MOTA     = $Product_request->mieutasanpham;
-            $Product_request->file('imagesSP')->move('resources\assets\images\products',$filenameSPNew);
-            $Product_request->file('imagesGCN')->move('resources\assets\images\Certificate',$filenameGCNNew);
+            $Product_request->file('imagesSP')->move('.\resources\assets\images\products',$filenameSPNew);
+            $Product_request->file('imagesGCN')->move('.\resources\assets\images\Certificate',$filenameGCNNew);
             $Product->save();
 
             return redirect('Addproduct')->with('thongbao','Bạn đã thêm thành công');
