@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-    <div class="row row-addproduct">
+    <div class="row row-addproduct" style="margin-bottom: 200px">
             <div class="col-md-3 box-shadow control-infotproduct">
                 <div>
                     <aside class="widget widget_product_categories" style="padding-left: 10px;">
@@ -8,14 +8,12 @@
                        <h3>Thông tin sản phẩm</h3>
                         <i class="fa fa-chevron-circle-down icon-click"></i>
                         <ul class="menu-vertical">
-                            <li><img src="{!!url("resources/assets/images/icon-categories-1.png") !!}" alt=""><a href="#" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
                             <li><img src="{!!url("resources/assets/images/icon-categories-7.png") !!}" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
                             <li><img src="{!!url("resources/assets/images/icon-categories-8.png") !!}" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
                         </ul>
                     </div>
                     
             </div>
-                </aside>    
                 </div>
           
                 
@@ -23,8 +21,15 @@
 
 
             <div class="col-md-8 control-infotproduct box-shadow">
-                <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" role="form" action="{{route('Editproductpost')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="HINH" value="<?php echo "{$sanpham['HINH']}";?>">
+                <input type="hidden" name="GCN" value="<?php echo "{$sanpham['GCN']}";?>">
+                <input type="hidden" name="MANB" value="<?php echo "{$sanpham['MANB']}";?>">
+                <input type="hidden" name="MASP" value="<?php echo "{$sanpham['MASP']}";?>">
+
+                
+
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
                     <div class="col-md-9">
@@ -36,7 +41,7 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
-                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesSP">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin1" name="imagesSP">
                             </div>
                           </div>
                       </div>                                                                     
@@ -45,7 +50,7 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
-                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesGCN">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin2" name="imagesGCN">
                             </div>
                           </div>
                       </div>                                                                     
@@ -66,9 +71,9 @@
                     </div> 
                   </div>                             
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá cũ(*):</label>
                     <div class="col-md-4">
-                      <input type="text" class="form-control" name="Giasanpham" id="inputEmail3" placeholder="VND" value="<?php echo "{$sanpham['GIA']}"; ?>">
+                      <input type="text" class="form-control" name="giacu" id="inputEmail3" placeholder="VND" value="<?php echo "{$sanpham['GIA']}"; ?>">
                     </div> 
                     <label class="col-md-2 control-lab">Đơn vị:</label>
                     <div class="col-md-3">
@@ -78,6 +83,21 @@
                       </select>                                              
                     </div>                  
                   </div>
+
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá mơi(*):</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" name="giamoi" id="giamoi" placeholder="VND" disabled >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="inputEmail3" class="col-md-4 control-lab">Giảm giá</label>
+                      <div class="col-md-3">
+                        <input type="checkbox" id="optgiamgia" name="" value="">
+                      </div>
+                      
+                    </div>
+                  </div>
+
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
                     <div class="col-md-9">
@@ -90,7 +110,7 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                        <button class="button_search" type="submit">Đăng sản phẩm</button>
+                        <button class="button_search" id="dangsanpham" type="submit">Đăng sản phẩm</button>
                     </div>
                   </div>
                 </form>
@@ -99,10 +119,12 @@
         
         <div id="back-to-top">
             <i class="fa fa-long-arrow-up"></i>
-
+            </div>
 
 
       <script>
+
+          
         
     function readURL(input,img) {
         if (input.files && input.files[0]) {
@@ -116,27 +138,113 @@
         }
     }
 
-    $(".imgin").ready(function() {
+    $(".imgin1").ready(function() {
      
-            $(".imgin").siblings("i").remove();
-            $(".imgin").siblings(".img222").remove();
+            $(".imgin1").siblings("i").remove();
+            $(".imgin1").siblings(".img222").remove();
 
-            $(".imgin").parent(".form-control").prepend("<img src='resources/assets/images/products/hinhvd.jpg' class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+            $(".imgin1").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['HINH']}") !!}' class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
 
 
-            $(".imgin").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            $(".imgin1").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
             
-            $(".imgin").hide();
-            $(".imgin").siblings(".btn").click(function () {
-                $(".imgin").parent(".form-control").children(".img222").remove();
-                $(".imgin").parent(".form-control").children(".imgin").show();
-                $(".imgin").parent(".form-control").children(".imgin").val(null);
-                $(".imgin").parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
-                $(".imgin").parent(".form-control").children(".btn").remove();
+            $(".imgin1").hide();
+            $(".imgin1").siblings(".btn").click(function () {
+                $(".imgin1").parent(".form-control").children(".img222").remove();
+                $(".imgin1").parent(".form-control").children(".imgin1").show();
+                $(".imgin1").parent(".form-control").children(".imgin").val(null);
+                $(".imgin1").parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
+                $(".imgin1").parent(".form-control").children(".btn").remove();
             });
         
+            $(".imgin1").click(function () {
+        
+        //$(this).children("form-control").add("<button class='' style='font-weight: normal;'>Remove</button>")
+        $(this).change(function () {
+            $(this).siblings("i").remove();
+            $(this).siblings(".img222").remove();
+
+            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+
+
+            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            readURL(this, $(this).siblings(".img222"));
+            $(this).hide();
+            $(this).siblings(".btn").click(function () {
+                $(this).parent(".form-control").children(".img222").remove();
+                $(this).parent(".form-control").children(".imgin1").show();
+                $(this).parent(".form-control").children(".imgin1").val(null);
+                $(this).parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
+                $(this).parent(".form-control").children(".btn").remove();
+            });
+        });
+        
+
     });
 
+    });
+
+
+    $(".imgin2").ready(function() {
+     
+            $(".imgin2").siblings("i").remove();
+            $(".imgin2").siblings(".img222").remove();
+
+            $(".imgin2").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['GCN']}") !!}' class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+
+
+            $(".imgin2").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            
+            $(".imgin2").hide();
+            $(".imgin2").siblings(".btn").click(function () {
+                $(".imgin2").parent(".form-control").children(".img222").remove();
+                $(".imgin2").parent(".form-control").children(".imgin2").show();
+                $(".imgin2").parent(".form-control").children(".imgin2").val(null);
+                $(".imgin2").parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
+                $(".imgin2").parent(".form-control").children(".btn").remove();
+            });
+
+
+        $(".imgin2").click(function () {
+        
+        //$(this).children("form-control").add("<button class='' style='font-weight: normal;'>Remove</button>")
+        $(this).change(function () {
+            $(this).siblings("i").remove();
+            $(this).siblings(".img222").remove();
+
+            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+
+
+            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            readURL(this, $(this).siblings(".img222"));
+            $(this).hide();
+            $(this).siblings(".btn").click(function () {
+                $(this).parent(".form-control").children(".img222").remove();
+                $(this).parent(".form-control").children(".imgin2").show();
+                $(this).parent(".form-control").children(".imgin2").val(null);
+                $(this).parent(".form-control").prepend("<i class='glyphicon glyphicon-plus'></i>");
+                $(this).parent(".form-control").children(".btn").remove();
+            });
+        });
+        
+
+    });
+    });
+
+
+    $(document).ready(function(){
+              $("#optgiamgia").change(function(){
+                        if($("#optgiamgia").is(':checked'))
+                          $("#giamoi").prop('disabled', false); 
+                        else
+                          $("#giamoi").prop('disabled', true); 
+              })
+
+              $("#dangsanpham").click(function(){
+                   if($("#optgiamgia").is(':checked')==false)
+                    $("#giamoi").remove();
+              })
+              });
 
     </script>
 @endsection

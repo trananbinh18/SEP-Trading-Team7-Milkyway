@@ -63,8 +63,8 @@
                                 </div>
                                 <!-- End Rating -->
                                 <div class="wrap-price">
-                                    <p class="price-old">$700.00</p>
-                                    <p class="price">$350.00</p>
+                                    <p class="price-old"><?php if($sanpham['GIACU'] != '0'){echo("{$sanpham['GIACU']} VND");} ?></p>
+                                    <p class="price">{{$sanpham['GIA']}} VND</p>
                                 </div>
                                 <!-- End Price -->
                             </div>
@@ -72,15 +72,7 @@
                             <div class="options">
                                 <p><?php echo "{$sanpham['MOTA']}"; ?></p>
                                 <!-- End action -->
-                                <div class="description-lits">
-                                    <h3>100% sản phẩm tươi sạch</h3>
-                                    <ul>
-                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Không có thuốc trừ sâu</li>
-                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Không hư hại</li>
-                                        <li><img src="{!!url("resources/assets/images/icon-deslist.jpg") !!}" alt="icon">100% Được đem từ Ninh Bình lên</li>
-                                    </ul>
-
-                                </div>
+                                
                                 <!--End Description-->
                                 <div class="box space-30">
                                     <div class="row">
@@ -220,12 +212,13 @@
                     </div>   
                     <!-- End title -->
                     <div class="upsell-product owl-carousel products furniture hover-shadow ver2">
+                             @foreach($lssanpham as $sanpham1)
                             <div class="item-inner">
                                 <div class="product">
                                     <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
+                                        <a href="{{route('Productdetail',['id'=>$sanpham1['MASP']])}}" title="product-images">
+                                            <img class="primary_image" src="{!!url("resources/assets/images/products/{$sanpham1['HINH']}") !!}" alt=""/>
+                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/{$sanpham1['HINH']}") !!}" alt=""/>
                                         </a>
                                         <div class="action">
                                             <a class="add-cart" href="#" title="Add to cart"></a>
@@ -234,113 +227,15 @@
                                         </div>
                                         <!-- End action -->
                                     </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
+                                    <a href="{{route('Productdetail',['id'=>$sanpham1['MASP']])}}" title="Union Bed"><p class="product-title">{{$sanpham1['TENSP']}}</p></a>
+                                    <p class="product-price-old"><?php if($sanpham1['GIACU'] != '0'){echo("{$sanpham1['GIACU']} VND");} ?> </p>
+                                    <p class="product-price">{{$sanpham1['GIA']}} VND</p>
                                 </div>
                                 <!-- End product -->
                             </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                        </a>
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                        </a>
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                        </a>
-                                        
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                        </a>
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
-                            <div class="item-inner">
-                                <div class="product">
-                                    <div class="product-images">
-                                        <a href="#" title="product-images">
-                                            <img class="primary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                            <img class="secondary_image" src="{!!url("resources/assets/images/products/furniture/1.jpg") !!}" alt=""/>
-                                        </a>
-                                        <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    </div>
-                                    <a href="#" title="Union Bed"><p class="product-title">Rau dền</p></a>
-                                    <p class="product-price-old">$700.00</p>
-                                    <p class="product-price">$350.00</p>
-                                </div>
-                                <!-- End product -->
-                            </div>
+
+                        @endforeach
+                            
                     </div>
                 </div>
                 <!-- End container --> 

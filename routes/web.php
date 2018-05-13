@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('home',function(){
 	return view('home');
 });
-Route::get("Productdetail/{id}",'ControllerSanPham@productdetail');
+Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Productdetail');
 
 Route::get('about',function(){
 	return view('about');
@@ -34,13 +34,9 @@ Route::get('shopping',function(){
 });
 
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
-
-Route::get('de',function(){
-	return view('EditProduct');
-});
+Route::post('Editproductpost','ControllerSanPham@saveproduct')->name('Editproductpost');
 
 
-Route::post('Editproductpost',['as'=>'Editproductpost','uses'=>'SanPhamController@edit']);
 
 Route::get('SignUp_Buyer',function(){
 	return view('SignUp_Buyer');
