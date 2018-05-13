@@ -88,7 +88,10 @@ Route::get('password',function(){
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
-
+//Redirect to view ResetPassword
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+//Redirect to view EditInfor
+Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf']);
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
 //Redirect to view "Đăng Ký""
