@@ -89,6 +89,9 @@ Route::get('password',function(){
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
+Route::get('listproduct',function(){
+	return view('listproduct');
+});
 // >>>>>>> 7de33c3894ff48fda4c8d1eeb7f3414fce452723
 
 //Redirect to view "Đăng Nhập"

@@ -15,6 +15,23 @@
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/settings.css"/>
         <link rel="stylesheet" type="text/css" href="resources/assets/vendor/range-price.css"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
+        <!-- Bootstrap Core CSS -->
+        <link href="resources/assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="resources/assets/css/metisMenu.min.css" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="resources/assets/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="resources/assets/css/dataTables/dataTables.responsive.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="resources/assets/css/startmin.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="resources/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="resources/assets/js/jquery-3.2.0.min.js"></script>
         <title>@yield(' title ')</title>
         <meta name="description" content="@title('description')">
