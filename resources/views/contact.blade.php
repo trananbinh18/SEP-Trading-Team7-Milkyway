@@ -68,15 +68,15 @@
             </div>
         </div>
         <!-- End container -->
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="assets/js/engo-plugins.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
-    <script type="text/javascript" src="assets/js/map-icons.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
-    <script type="text/javascript">
+    <script src="resources/assets/js/bootstrap.min.js"></script>
+    <script src="resources/assets/js/owl.carousel.min.js"></script>
+    <script src="resources/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="resources/assets/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="resources/assets/js/engo-plugins.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="resources/assets/js/map-icons.js"></script>
+    <script src="resources/assets/js/store.js"></script>
+    <script>
         if ($("#googleMap").length) {
             // Center
             var center = new google.maps.LatLng(21.0311448, 105.7640188);
