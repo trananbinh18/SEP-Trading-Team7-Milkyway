@@ -72,17 +72,17 @@ Route::get('order',function(){
 	return view('order');
 });
 
-Route::get('customer',function(){
+Route::get('Information',function(){
 	return view('EditCustomerInformation');
 });
-Route::get('password',function(){
+Route::get('Password',function(){
 	return view('ResetPassword');
 });
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
 
-Route::get('listproduct',function(){
+Route::get('ListProduct',function(){
 	return view('listproduct');
 });
 
