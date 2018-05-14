@@ -23,14 +23,18 @@
 
             <div class="col-md-8 control-infotproduct">
                 <form class="form-horizontal" role="form">
+                  <div style="padding-left: 240px;">
+                    <h3 style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'">THÔNG TIN TÀI KHOẢN</h3>
+                    <br>
+                  </div>
                   <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Họ Tên(*);</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Họ Tên*</label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="inputName" placeholder="Nhập họ và tên">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputPassword3" class="col-sm-3 control-lab">Giới tính(*):</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputPassword3" class="col-sm-3 control-lab">Giới tính*</label>
                     <div class="col-sm-9">
                         <label class="radio-inline control-tbrow">
                         <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Nam
@@ -44,31 +48,31 @@
                     </div>
                   </div>
                  <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Ngày sinh(*);</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Ngày sinh*</label>
                     <div class="col-sm-9">
                       <input type="date" class="form-control" id="inputdate" placeholder="dd/mm/yyyy">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Địa chỉ(*)</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Địa chỉ*</label>
                     <div class="col-sm-9">
                       <input type="test" class="form-control" id="inputaddress" placeholder="Nhập địa chỉ của bạn">
                     </div>
                   </div>
                    <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">số điện thoại(*)</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">số điện thoại*</label>
                     <div class="col-sm-9">
                       <input type="test" class="form-control" id="inputphone" placeholder="Nhập số điện thoại">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Email(*)</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Email*</label>
                     <div class="col-sm-9">
                       <input type="email" class="form-control" id="inputemail" placeholder="Nhập Email">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Mật khẩu mới</label>
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Mật khẩu mới*</label>
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="inputpassword" placeholder="Nhập mật khẩu mới">
                     </div>

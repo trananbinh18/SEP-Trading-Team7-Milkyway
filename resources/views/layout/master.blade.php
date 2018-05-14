@@ -199,9 +199,10 @@
                                 <a href="#" title="g"><i class="fa fa-google"></i></a>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <h3 class="title-footer">Địa chỉ</h3>
-                            <p>Văn phòng: 45 Nguyễn Khắc Nhu, Phường Cô Giang, Quận 1</p>
+                            <p>Văn phòng: 45 Nguyễn Khắc Nhu, Phường Cô Giang, Quận 1, TP.Hồ Chí Minh</p>
+                            <p>Số điện thoại: 099-999-9999</p>
                         </div>
                     </div>
                     <!-- End row -->

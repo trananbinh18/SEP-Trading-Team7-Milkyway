@@ -1,5 +1,7 @@
         @extends('layout.master')
-
+        @section (' title ')
+        Sản phẩm dang khuyến mãi
+        @stop
         @section('content')
         <div class="main-content">
             <div class="container">
@@ -24,23 +26,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -53,23 +39,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -82,23 +52,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -111,23 +65,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -140,23 +78,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -169,23 +91,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -198,23 +104,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -227,23 +117,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -256,23 +130,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -285,23 +143,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -314,23 +156,7 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                             <div class="item-inner">
                                 <div class="product">
@@ -343,26 +169,9 @@
                                     <a href="#" title="Bouble Fabric Blazer"><p class="product-title">Bouble Fabric Blazer</p></a>
                                     <p class="product-price-old">$700.00</p>
                                     <p class="product-price">$69.90</p>
-                                    
-                                    <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
-                                        </div>
-                                        <!-- End action -->
-                                    <div class="social box">
-                                        <h3>Share this :</h3>
-                                        <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                        <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                        <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                        <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                        <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
-                                    </div>
                                 </div>
-                                <!-- End product -->
                             </div>
                     </div>
-                    <!-- End product-content products  -->
                     <div class="pagination-container">
                         <nav class="pagination align-center">
                             <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
@@ -372,11 +181,9 @@
                             <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
                         </nav>
                     </div>
-                    <!-- End pagination-container -->
                 </div>
             </div>
           </div>
-        <!--End container-ver2-->
         <div id="back-to-top">
             <i class="fa fa-long-arrow-up"></i>
         </div>
