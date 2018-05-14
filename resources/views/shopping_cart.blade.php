@@ -48,7 +48,7 @@
                         <thead>
                             <tr>
                                 <th class="product-photo">Danh sách sản phẩm</th>
-                                <th class="produc-name"></th>
+                                <th class="produc-name">Tên sản phẩm</th>
                                 <th class="produc-price">Giá</th>
                                 <th class="product-quantity">Số lượng</th>
                                 <th class="total-price">Tổng</th>
