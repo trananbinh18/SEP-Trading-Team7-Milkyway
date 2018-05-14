@@ -119,7 +119,7 @@
         
         <div id="back-to-top">
             <i class="fa fa-long-arrow-up"></i>
-            </div>
+        </div>
 
 
       <script>
@@ -247,4 +247,5 @@
               });
 
     </script>
+
 @endsection

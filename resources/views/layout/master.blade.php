@@ -15,6 +15,22 @@
         <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/settings.css")!!}"/>
         <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/range-price.css")!!}"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
+       
+
+        <!-- MetisMenu CSS -->
+        <link href="{!!url("resources/assets/css/metisMenu.min.css")!!}" rel="stylesheet">
+
+        <!-- DataTables CSS -->
+        <link href="{!!url("resources/assets/css/dataTables/dataTables.bootstrap.css")!!}" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="{!!url("resources/assets/css/dataTables/dataTables.responsive.css")!!}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{!!url("resources/assets/css/startmin.css")!!}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{!!url("resources/assets/css/font-awesome.min.css")!!}" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="{!!url("resources/assets/js/jquery-3.2.0.min.js")!!}"></script>
         <title>@yield(' title ')</title>
         <meta name="description" content="@title('description')">
@@ -37,11 +53,10 @@
             <div class="modal-content popup-search">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <div class="modal-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control control-search" placeholder="Nhập nội dung mà bạn muốn tìm kiếm...">
-                        <button class="button_search" type="button">Tìm kiếm</button>
-                    </div><!-- /input-group -->
-
+                    <form class="input-group" method="get" action="{{route('search')}}">
+                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập tên rau, trái cây hay loại củ mà bạn muốn tìm kiếm...">
+                        <button class="button_search" type="submit">Tìm kiếm</button>
+                    </form>                        
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -63,8 +78,8 @@
                                 <div class="hover-menu">
                                     <a class="acc" href="#" title="USD"><img src="{!!url("resources/assets/images/icon-user-header.png")!!}" alt="icon">Tài khoản</a>
                                     <ul class="list-menu">
-                                        <li><a href="#" title="USD">Đăng nhập</a></li>
-                                        <li><a href="#" title="VND">Đăng ký</a></li>
+                                        <li><a href="{{route('signin')}}" title="USD">Đăng nhập</a></li>
+                                        <li><a href="{{route('signup')}}" title="VND">Đăng ký</a></li>
                                     </ul>
                                 </div>
                                 <!-- End hover-menu -->
@@ -89,25 +104,29 @@
                                         <div class="cart-list list-menu">
                                             <ul class="list">
                                                 <li>
+
                                                     <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
+
                                                     <div class="text">
-                                                        <p class="product-name">Dâu</p>
+                                                        <p class="product-name">Táo</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL:01</p>
+                                                        <p class="qty">SL: 01</p>
                                                     </div>
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li>
                                                 <li>
+
                                                     <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
+
                                                     <div class="text">
                                                         <p class="product-name">Đào</p>
                                                         <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL:01</p>
+                                                        <p class="qty">SL: 01</p>
                                                     </div>
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li>
                                             </ul>
-                                            <p class="total"><span class="left">Tổng:</span> <span class="right">1121.000 đ</span></p>
+                                            <p class="total"><span class="left">Tổng:</span> <span class="right">700.000 đ</span></p>
                                             <div class="bottom">
                                                 <a class="link-v1" href="#" title="viewcart">Xem giỏ hàng</a>
                                                 <a class="link-v1 rt" href="#" title="checkout">Thanh toán</a>
@@ -121,45 +140,28 @@
                             <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
-                            <li class="level1"><a href="{{action('Controller@home')}}" title="Home">Trang chủ</a></li>
-                            <li class="level1"><a href="{{action('Controller@about')}}" title="About us">Giới thiệu</a></li>
+                            <li class="level1"><a href="{{action('ControllerHome@home')}}" title="Home">Trang chủ</a></li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Category">Danh mục</a>
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
                                 <div class="top-sub-menu">
+
                                     <img src="{!!url("resources/assets/images/banner/t.jpg")!!}" alt="images">
                                 </div>
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
                                         <ul class="menu-level-2">
-                                           <!--  <li class="level3"><a href="#" title="Seatings">Hải sản</a></li>
-                                            <li class="level3"><a href="#" title="Series">Thịt</a></li> -->
-                                            <li class="level3"><a href="#" title="Series">Rau</a></li>
-                                            <li class="level3"><a href="#" title="Series">Trái cây</a></li>
-                                            <li class="level3"><a href="#" title="Series">Củ quả</a>
-
+                                            <?php $cate = DB::table('loaisanpham')->select('tenloaisp')->get(); ?>
+                                            @foreach($cate as $value)
+                                                <li class="level3"><a href="#" title="Series"><?php echo $value->tenloaisp; ?></a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <!-- <li class="level2"><a href="#">Thực phẩm sấy khô</a>
-                                        <ul class="menu-level-2">
-                                            <li class="level3"><a href="#" title="Cleaning Tools">Các loại Khô</a></li>
-                                            <li class="level3"><a href="#" title="Waste Bins">Gia vị</a></li>
-                                            <li class="level3"><a href="#" title="Pots & Pans">Các loại hạt</a></li>
-                                            <li class="level3"><a href="#" title="Beds">Nông sản khô</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <!-- <li class="level2"><a href="#">Sản phẩm khác</a>
-                                        <ul class="menu-level-2">
-                                            <li class="level3"><a href="#" title="Seatings">Sữa</a></li>
-                                            <li class="level3"><a href="#" title="Tables">Bánh</a></li>
-                                            <li class="level3"><a href="#" title="Accessories">Bột ngũ cốc</a></li>
-                                            <li class="level3"><a href="#" title="Series">Đồ uống</a></li>
-                                        </ul>
-                                    </li> -->
                                   </ul>
                                   <!-- End RightSubMenu -->
                               </div>
                               <!-- End Dropdow Menu -->
+                            <li class="level1"><a href="{{action('ControllerHome@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
                           </ul>
                         </nav>
@@ -203,15 +205,9 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6">
-                            <h3 class="title-footer">Nhận thông báo</h3>
-                            <p>Nhận thông báo về thông tin sản phẩm cũng như những chương trình khuyến mãi qua địa chỉ Email</p>
-                            <div class="subscribe">
-                                <form action="#" method="get" accept-charset="utf-8">
-                                    <input type="text" onblur="if (this.value == '') {this.value = 'Enter Your Email Address';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter Your Email Address" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
-                                    <button class="button button1 hover-white" title="Subscribe" type="submit">Theo dõi<i class="fa fa-long-arrow-right"></i></button>
-                                </form>
-                            </div>
-                            <!-- End subscribe -->
+                            <h3 class="title-footer">Địa chỉ</h3>
+                            <p>Văn phòng: 45 Nguyễn Khắc Nhu, Phường Cô Giang, Quận 1, TP.Hồ Chí Minh</p>
+                            <p>Số điện thoại: 099-999-9999</p>
                         </div>
                     </div>
                     <!-- End row -->
@@ -222,7 +218,7 @@
               <div class="footer-bottom box">
                 <div class="container container-ver2">
                     <div class="box bottom">
-                        <p class="float-left">Copyright &copy;2018 <strong>Thực phẩm sạch</strong> - All Rights Reserved.</p>
+                        <p class="float-left">Copyright &copy;2018 <strong>Team Milkyway</strong> - All Rights Reserved.</p>
                         <div class="float-right">
                             <ul class="menu-bottom-footer">
                                 <li><a href="#" title="Contact Us">Liên hệ</a></li>

@@ -27,60 +27,79 @@
                 </aside>             
             </div>
             <div class="col-md-8 control-infotproduct box-shadow">
-                <form class="form-horizontal" role="form">
+                {{-- @if(count($errors)>0)
+                  <div class="alert-danger">
+                    @foreach($errors->all()as $err)
+                      {{$err}} <br>
+                    @endforeach
+                  </div>
+                @endif --}}
+
+                @if(session('thongbao'))
+                  <div class="alert-success">
+                    {{session('thongbao')}}
+                  </div>
+                @endif
+
+                <form class="form-horizontal" role="form" action="{{route('CreateProduct')}}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
                     <div class="col-md-9">
-                      <input type="email" class="form-control " id="inputEmail3" placeholder="Nhập tên sản phẩm">
+                      <input type="text" class="form-control" name="tensanpham" id="inputEmail3" placeholder="Nhập tên sản phẩm">
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
-                    <div class="col-md-9">
-                        <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
-                          <option>Thực phẩm tươi</option>
-                          <option>Thực phẩm khô</option>
-                          <option>Sản phẩm khác</option>                      
-                      </select> 
-                    </div>
-                  </div>
+                  </div>                  
                   <div class="form-group">                  
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
                     <div class="row" style="width: 100%;">
-                      <div class="form-group col-md-3 img12">
+                      <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
-                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesSP">
                             </div>
                           </div>
                       </div>                                                                     
                     </div>
                     <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
                     <div class="row" style="width: 100%;">
-                      <div class="form-group col-md-3 img12">
+                      <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
-                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="images">
+                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesGCN">
                             </div>
                           </div>
                       </div>                                                                     
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
+                    <div class="col-md-4">
+                        <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                          <option value="4">Rau</option>
+                          <option value="5">Trái cây</option>
+                          <option value="6">Củ</option>                      
+                      </select> 
+                    </div>
+                    <label class="col-md-2 control-lab">Số lượng:</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" name="Soluong" id="inputEmail3">
+                    </div> 
                   </div>                             
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
                     <div class="col-md-4">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="VND">
+                      <input type="text" class="form-control" name="Giasanpham" id="inputEmail3" placeholder="VND">
                     </div> 
                     <label class="col-md-2 control-lab">Đơn vị:</label>
                     <div class="col-md-3">
-                      <select id="enterprise" class="Unit" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                      <select id="enterprise" class="Unit" name="cdDonvi" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                         <option>Kilogram</option>
-                        <option>Gram</option>                      
+                        <option>Trái</option>                      
                       </select>                                              
                     </div>                  
                   </div>
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
                     <div class="col-md-9">
-                      <textarea class="form-control" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
+                      <textarea type="text" class="form-control" name="mieutasanpham" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
                     </div>
                   </div>
                   <div class="form-group">
@@ -89,7 +108,7 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                        <button class="button_search" type="button">Đăng sản phẩm</button>
+                        <button class="button_search" type="submit">Đăng sản phẩm</button>
                     </div>
                   </div>
                 </form>

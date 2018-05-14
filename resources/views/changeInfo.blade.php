@@ -1,96 +1,95 @@
- <!DOCTYPE html>
- @extends('layout.master')
- @section('content')      
-       <div>
-         <div class="row Ttttk">
-            <div class="col-md-3 LTtttk">
-                <p>Tài khoản của</p>
-                <h3>BÁCH TRẦN</h3>
+ @extends ('layout.master')
+@section(' title ')
+    thông tin tài khoản
+@stop
+
+@section('content')
+    <div class="row" style="margin-bottom: 200px">
+            <div class="col-md-3 box-shadow control-infotproduct">
+                <div>
+                    <aside class="widget widget_product_categories" style="padding-left: 10px;">
+                    <div class="categories-home3">
+                       <h3>BÁCH TRẦN</h3>
+                        <i class="fa fa-chevron-circle-down icon-click"></i>
+                        <ul class="menu-vertical">
+                            <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="#" title="Danh sách sản phẩm">Thông tin tài khoản</a></li>
+                            <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Giỏ hàng</a></li>
+                        </ul>
+                    </div>
+
             </div>
-            <div class="col-md-9 RTtttk">       
-                <h2>Thông tin tài khoản</h2>
+                </aside>    
+                </div>
+
+            <div class="col-md-8 control-infotproduct">
+                <form class="form-horizontal" role="form">
+                  <div style="padding-left: 240px;">
+                    <h3 style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'">THÔNG TIN TÀI KHOẢN</h3>
+                    <br>
+                  </div>
+                  <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Họ Tên*</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="inputName" placeholder="Nhập họ và tên">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputPassword3" class="col-sm-3 control-lab">Giới tính*</label>
+                    <div class="col-sm-9">
+                        <label class="radio-inline control-tbrow">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Nam
+                        </label>
+                        <label class="radio-inline control-tbrow">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Nữ
+                        </label>
+                        <label class="radio-inline control-tbrow">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Khác
+                        </label>
+                    </div>
+                  </div>
+                 <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Ngày sinh*</label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="inputdate" placeholder="dd/mm/yyyy">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Địa chỉ*</label>
+                    <div class="col-sm-9">
+                      <input type="test" class="form-control" id="inputaddress" placeholder="Nhập địa chỉ của bạn">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">số điện thoại*</label>
+                    <div class="col-sm-9">
+                      <input type="test" class="form-control" id="inputphone" placeholder="Nhập số điện thoại">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Email*</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="inputemail" placeholder="Nhập Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="font-weight: 400; font-size: 18px; font-family: 'Roboto Slab'" for="inputEmail3" class="col-sm-3 control-lab">Mật khẩu mới*</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" id="inputpassword" placeholder="Nhập mật khẩu mới">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                        <button class="link-v1 rt" style="margin-left: 45%" type="button">Cập nhập</button>
+                    </div>
+                  </div>
+                </form>
             </div>
-         </div>
-         <br>
-         <div class="row Btttk">
-           <div class="col-md-3 LBtttk">
-             <p><a style="color: black" href="" >Thông tin tài khoản</a></p>
-             <p><a style="color: black" href="" >Quản lý đơn hàng</a></p>
-             <p><a style="color: black" href="" >Sản phẩm yêu thích</a></p>
-           </div>
-           <div class="col-md-5">
-              <div class="form-group">
-                <label class="control-label" for="full_name">Họ tên </label>
-                <div class="input-wrap">
-                  <input type="text" class="form-control"  value="" placeholder="Bách Trần">
-                  <span class="help-block"></span>
-                </div>
-              </div>
-              <div class="form-group ">
-                                <label class="control-label" for="phone_number">Số điện thoại</label>
-                                <div class="input-wrap update-phone">
-                                    <input type="text" placeholder="Hãy nhập SĐT để bảo mật tốt hơn" value="" class="form-control" name="phone_number" id="phone_number">
-                                    <span class="help-block"></span>
-                                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="full_name">Email </label>
-                <div class="input-wrap">
-                  <input type="text"  class="form-control" value="" placeholder="Email">
-                  <span class="help-block"></span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="full_name">Ngày Sinh </label>
-                <div class="input-wrap">
-                  <input type="text"  class="form-control"  value="" placeholder="dd/mm/yyyy">
-                  <span class="help-block"></span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="full_name">Mật khẩu </label>
-                <div class="input-wrap">
-                  <input type="pasword"  class="form-control"  value="" placeholder="hãy nhập mật khẩu mới">
-                  <span class="help-block"></span>
-                </div>
-              </div>
-              <div class="form-group gender-select-wrap" id="register_name">
-                            <label class="control-label" for="pasword">Giới tính</label>
-                            <div class="input-wrap">
-                                <div class="row">
-                                    <div class="col-xs-4">
-                                         <label>
-                                            <input type="radio" name="gender" value="on" id="gender_male" class="gender">
-                                            <span>
-                                                 <i class="ico"></i>
-                                            </span>
-                                             Nam
-
-                                          </label>
-
-                                    </div>
-                                    <div class="col-xs-4">
-                                         <label>
-
-                                            <input type="radio" name="gender" value="off" id="gender_female" class="gender" checked="">
-                                            <span>
-                                                 <i class="ico"></i>
-                                            </span>
-                                             Nữ
-                                         </label>
-
-                                    </div>
-                                </div>
-                                
-
-                            </div>
-                        </div>
-              <div>
-                 <button style="margin-left: 40%;" type="button" class="btn btn-success">Cập nhập</button>
-              </div>
-            </div>
-            
-         </div> 
-       </div>
-          
+       </div> 
+        <div id="back-to-top">
+            <i class="fa fa-long-arrow-up"></i>
+        </div>
 @endsection
