@@ -9,11 +9,12 @@
     <div>
       <aside class="widget widget_product_categories" style="padding-left: 10px;">
         <div class="categories-home3">
-         <h3>BÁCH TRẦN</h3>
+         <h3>Thông Tin Sản Phẩm</h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="#" title="Danh sách sản phẩm">Thông tin tài khoản</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Giỏ hàng</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Doanh Số</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Thông Báo</a></li>
         </ul>
       </div>
 
@@ -34,6 +35,7 @@
               <thead>
                 <tr>
                   <th>Tùy chọn</th>
+                  <th>STT</th>
                   <th>Loại SP</th>
                   <th>Tên SP</th>
                   <th>Số lượng</th>                                                
@@ -41,190 +43,33 @@
                   <th>Giá củ</th>
                   <th>Đơn vị</th>
                   <th>Trạng thái</th>
-                  <th>Mô Tả</th>
-                  <th>Ngày đăng</th>
                   <th>GCN</th>
                   <th>Hình</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>bưởi</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
-                 <tr class="odd gradeX">
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                  <td>1</td>
-                  <td>Dâu</td>
-                  <td>12</td>
-                  <td>100</td>
-                  <td>100</td>
-                  <td>Kg</td>
-                  <td>0</td>
-                  <td>dâu đó ahihi</td>
-                  <td>1/1/2018</td>
-                  <td>1</td>
-                  <td></td>
-                </tr>
 
+                <tr class="odd gradeX">
+                   @php ($count = 0)
+                    @foreach($products as $row)
+                    <?php $count++; ?>
+                  <td class="center">
+                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
+                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
+                    
+                  <td><?php echo $count; ?></td>
+                  <td>{{$row->TENLOAISP}}</td>
+                  <td>{{$row->TENSP}}</td>
+                  <td>{{$row->SOLUONG}}</td>
+                  <td>{{ number_format($row->GIA) }}</td>
+                  <td>{{ number_format($row->GIACU) }}</td>
+                  <td>{{$row->DONVI}}</td>
+                  <td>{{$row->TRANGTHAI}}</td>
+                  <td><img src="resources/assets/images/Certificate/{{($row->GCN)}}" alt="<?php echo $row->GCN ?>" width="60" , height="60"></td>
+                  <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
+
+                </tr>
+                  @endforeach
                                                          
                 </tbody>
               </table>
