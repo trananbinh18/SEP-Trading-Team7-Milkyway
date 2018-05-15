@@ -95,12 +95,13 @@ Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf'])
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
+Route::get('Logout',['as'=>'logout','uses'=>'ControllerAccount@Logout']);
 //Redirect to view "Đăng Ký""
 Route::get('Register',['as'=>'signup','uses'=>'ControllerHome@Register']);
 //Redirect to view "Giới thiệu"
 Route::get("about",'ControllerHome@about');
 //Redirect to view "Trang chủ"
-Route::get('home',['as'=>'homepage','uses'=>'ControllerHome@home'])->name('home');
+Route::get('home',['as'=>'homepage','uses'=>'ControllerHome@home']);
 //Đăng nhập và xử lí đăng nhập
 // Route::post('login','AuthController@postLogin');
 Route::post('Signin',['as'=>'signinacc','uses'=>'ControllerAccount@Login']);
