@@ -89,7 +89,7 @@ class Controller extends BaseController
         $fileName = substr($oldName, 0, strripos($oldName, '.')); //get file name
         $fileExtension = substr($oldName, strripos($oldName, '.')); //get file extension
         $fileNameNew = (string)Time();
-        $newName = $oldName.'_'.$fileNameNew.$fileExtension;
+        $newName = $fileName.'_'.$fileNameNew.$fileExtension;
         return $newName;
     }
     function Test(){
