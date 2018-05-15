@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Cart;
 use App\sanpham;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -51,23 +52,47 @@ class Controller extends BaseController
 
             $filenameSP = $Product_request->file('imagesSP')->getclientOriginalName();
             $filenameSPNew = $this->renameImage($filenameSP);
-            $filenameGCN = $Product_request->file('imagesGCN')->getclientOriginalName();
-            $filenameGCNNew = $this->renameImage($filenameGCN);
-            $Product = new sanpham();
-            $Product->MANB = 2;
-            $Product->MALOAISP = $Product_request->cbCategory;
-            $Product->TENSP    = $Product_request->tensanpham;
-            $Product->SOLUONG  = (double)$Product_request->Soluong;
-            $Product->GIA      = $Product_request->Giasanpham;
-            $Product->DONVI    = $Product_request->cdDonvi;
-            $Product->GCN      = $filenameGCNNew;
-            $Product->HINH     = $filenameSPNew;
-            $Product->MOTA     = $Product_request->mieutasanpham;
-            $Product_request->file('imagesSP')->move('.\resources\assets\images\products',$filenameSPNew);
-            $Product_request->file('imagesGCN')->move('.\resources\assets\images\Certificate',$filenameGCNNew);
-            $Product->save();
+            // $filenameGCN = $Product_request->file('imagesGCN')->getclientOriginalName();
+            // $filenameGCNNew = $this->renameImage($filenameGCN);
+            $srcSPProperties = getimagesize($Product_request->file('imagesSP'));
+            $uploadPath = "resources/assets/images/products/";
+            $srcSPType = $srcSPProperties[2];
+            $srcSPWidth = $srcSPProperties[0];
+            $srcSPHeight = $srcSPProperties[1];
+            switch ($srcSPType) {
+                case 2:
+                    $rsSPType = imagecreatefromjpeg($Product_request->file('imagesSP'));
+                    $imageLayer = $this->resizeImage($rsSPType,$srcSPWidth,$srcSPHeight);
+                    imagejpeg($imageLayer,$uploadPath.$filenameSPNew);
+                    break;
 
-            return redirect('Addproduct')->with('thongbao','Bạn đã thêm thành công');
+                case 1:
+                $rsSPType = imagecreatefromjpeg($Product_request->file('imageSP'));
+                $imageLayer = $this->resizeImage($rsSPType,$srcSPWidth,$srcSPHeight);
+                imagejpeg($imageLayer,$uploadPath.$filenameSPNew);
+                break;
+
+                default:
+                    $imageProcess = 0;
+                    break;
+            }
+            move_uploaded_file($Product_request->file('imagesSP'),$uploadPath.$filenameSPNew);
+            // $Product = new sanpham();
+            // $Product->MANB = 2;
+            // $Product->MALOAISP = $Product_request->cbCategory;
+            // $Product->TENSP    = $Product_request->tensanpham;
+            // $Product->SOLUONG  = (double)$Product_request->Soluong;
+            // $Product->GIA      = $Product_request->Giasanpham;
+            // $Product->DONVI    = $Product_request->cdDonvi;
+            // $Product->GCN      = $filenameGCNNew;
+            // $Product->HINH     = $filenameSPNew;
+            // $Product->MOTA     = $Product_request->mieutasanpham;
+            // $Product_request->file('imagesSP')->move('resources\assets\images\products',$filenameSPNew);
+            // $Product_request->file('imagesGCN')->move('resources\assets\images\Certificate',$filenameGCNNew);
+            // $Product->save();
+
+            // return redirect('Addproduct')->with('thongbao','Bạn đã thêm thành công');
+            echo $srcSPType;
            
     }
     
@@ -92,11 +117,25 @@ class Controller extends BaseController
         $newName = $fileName.'_'.$fileNameNew.$fileExtension;
         return $newName;
     }
+    function resizeImage($resourceType, $srcWidth, $srcHeight){
+        $dstWidth = 900;
+        $dstHeight = 900;
+        $imgLayer = imagecreatetruecolor($dstWidth, $dstHeight);
+        imagecopyresampled($imgLayer, $resourceType, 0, 0, 0, 0, $dstWidth, $dstHeight, $srcWidth, $srcHeight);
+        return $imgLayer;
+    }
     function Test(){
         $filenameSP = 'ab.jpg';
         $fileSPName = substr($filenameSP, 0, strripos($filenameSP, '.')); //get file name
         $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
         $filenameNew = (string)Time();
         echo var_dump($filenameNew.$fileSPNameEx);
+    }
+    function BuyProduct($id){
+        $Productbuy = DB::table('sanpham')->select('MASP','TENSP','GIA','DONVI','SOLUONG','HINH')->where('MASP',$id)->get();
+        // Cart::add(array('MASP'=>$id,'TENSP'=>$Productbuy->tensp,'GIA'=>$Productbuy->gia,'SOLUONG'=>1,'options'=>array('DONVI'=>$Productbuy->donvi,'HINH'=>$Productbuy->hinh));
+        // $content = Cart::content();
+        // print_r($content);
+        echo ($Productbuy);
     }
 }
