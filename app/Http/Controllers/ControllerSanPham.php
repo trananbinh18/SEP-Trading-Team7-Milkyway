@@ -24,7 +24,7 @@ class ControllerSanPham extends Controller
     public function editproduct($id){
         $sanpham = sanpham::find($id);
         if($sanpham == null){
-            return redirect()->route('home');
+            return redirect()->route('homepage');
         }
         return view('EditProduct',compact($sanpham,'sanpham'));
     }

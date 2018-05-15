@@ -95,6 +95,7 @@ Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf'])
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
+Route::get('Logout',['as'=>'logout','uses'=>'ControllerAccount@Logout']);
 //Redirect to view "Đăng Ký""
 Route::get('Register',['as'=>'signup','uses'=>'ControllerHome@Register']);
 //Redirect to view "Giới thiệu"
@@ -128,3 +129,5 @@ Route::get('ListProduct', function(){
 });
 //Trả về dữ liệu sản phẩm lên view
 Route::get('ListProduct', 'LoadDataController@index');
+//Mua sản phẩm
+Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
