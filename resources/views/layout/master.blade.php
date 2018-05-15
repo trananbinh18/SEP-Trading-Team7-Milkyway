@@ -75,14 +75,33 @@
                                 <p><img src="{!!url("resources/assets/images/icon-phone-header.png.png")!!}" alt="icon"> Gọi cho chúng tôi <span> 099-999-9999</span></p>
                             </div>
                             <div class="float-right align-right">
-                                <div class="hover-menu">
-                                    <a class="acc" href="#" title="USD"><img src="{!!url("resources/assets/images/icon-user-header.png")!!}" alt="icon">Tài khoản</a>
+                                
+                                    <?php
+                                        session_start();
+                                        if(isset($_SESSION["user"])){
+                                            if($_SESSION["typeuser"]==1){
+                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u>'.$_SESSION["user"]->TENNB.'</u></p>');
+                                            }else if($_SESSION["typeuser"]==2){
+                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u>'.$_SESSION["user"]->TENNM.'</u></p>');
+                                            }else if($_SESSION["typeuser"]==3){
+                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u> '.$_SESSION["user"]->TENNV.'</u></p>');
+                                            }
+                                            echo('<ul class="list-menu"><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
+                                        }else{
+                                            echo('<div class="hover-menu">
+                                    <a class="acc" href="#" title="USD"><img src="'.url("resources/assets/images/icon-user-header.png").'" alt="icon">Tài khoản</a>
                                     <ul class="list-menu">
-                                        <li><a href="{{route('signin')}}" title="USD">Đăng nhập</a></li>
-                                        <li><a href="{{route('signup')}}" title="VND">Đăng ký</a></li>
+                                        <li><a href="'.route('signin').'" title="USD">Đăng nhập</a></li>
+                                        <li><a href="'.route('signup').'" title="VND">Đăng ký</a></li>
                                     </ul>
+                                </div>');
+                                        }
+                                    ?>
+
+                                <!-- End hover-menu -->
+
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
