@@ -172,9 +172,23 @@
         </div>
     </div>
 </div>
-<div class="container class-cua-tao">
-    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
+<div class="banner-home3">
+    <div class="container container-ver2 space-40">
+        <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="banner-home3">
+        <div class="text">
+            <img src="resources/assets/images/icon-phone.png" alt="icon">
+            <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
+            <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
+            <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
+        </div>
+    </div>
+    <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+    </div>
 </div>
+<!-- <div class="container class-cua-tao">
+    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
+</div> -->
 
 <div class="container container-ver2 ">
     <div class="title-text-v2">
