@@ -128,3 +128,5 @@ Route::get('ListProduct', function(){
 });
 //Trả về dữ liệu sản phẩm lên view
 Route::get('ListProduct', 'LoadDataController@index');
+//Mua sản phẩm
+Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);

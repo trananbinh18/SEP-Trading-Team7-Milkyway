@@ -91,7 +91,7 @@
                                 </div>
                                 <!-- End row -->
                                 <div class="action">
-                                    <a class="link-v1 add-cart bg-brand" title="Add to cart" href="#"><span>Thêm vào giỏ</span></a>
+                                    <a class="link-v1 add-cart bg-brand" title="Add to cart" href="{!!url('BuyProduct',[$sanpham->MASP])!!}"><span>Thêm vào giỏ</span></a>
                                     <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
                                     <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
                                 </div>

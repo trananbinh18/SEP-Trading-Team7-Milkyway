@@ -50,6 +50,7 @@
                                 <th class="product-photo">Danh sách sản phẩm</th>
                                 <th class="produc-name">Tên sản phẩm</th>
                                 <th class="produc-price">Giá</th>
+                                <th class="produc-name">Đơn vị</th>
                                 <th class="product-quantity">Số lượng</th>
                                 <th class="total-price">Tổng</th>
                                 <th class="product-remove"></th>
@@ -60,6 +61,7 @@
                                 <td class="product-photo"><img src="resources/assets/images/products/featured/1.jpg" alt="Futurelife"></td>
                                 <td class="produc-name"><a href="#" title="">Name product 01</a></td>
                                 <td class="produc-price"><input value="120000" size="4" type="text"></td>
+                                <td class="produc-price"><input value="KG" size="4" type="text"></td>
                                 <td class="product-quantity">
                                     <form enctype="multipart/form-data">
                                         <div class="product-signle-options product_15 clearfix">
