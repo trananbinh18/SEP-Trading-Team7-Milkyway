@@ -86,7 +86,7 @@
                                             }else if($_SESSION["typeuser"]==3){
                                                 echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u> '.$_SESSION["user"]->TENNV.'</u></p>');
                                             }
-                                            echo('<ul class="list-menu"><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
+                                            echo('<ul class="list-menu"><li><a href="'.route('editInf').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                         }else{
                                             echo('<div class="hover-menu">
                                     <a class="acc" href="#" title="USD"><img src="'.url("resources/assets/images/icon-user-header.png").'" alt="icon">Tài khoản</a>
