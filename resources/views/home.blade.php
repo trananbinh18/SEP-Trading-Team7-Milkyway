@@ -47,21 +47,13 @@
                             </div>
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Tiếp theo</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Quay lại</span>
-                    </a>
                 </div>
             </div> 
         </div>
     </div>
 </div>
 </div>
-<div class="container container-ver2">
+<div class="container container-ver2 farmer-banner">
     <div class="choose-us choose-us-home2">
         <div class="col-md-4">
             <img class="img-responsive hidden-table" src="resources/assets/images/banner/farmer.png" alt="farmer picture">
@@ -108,9 +100,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container class-cua-tao">
-    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
 </div>
 <div class="container container-ver2 ">
     <div class="title-text-v2">
@@ -183,20 +172,10 @@
         </div>
     </div>
 </div>
-<div class="banner-home3">
-    <div class="container container-ver2 space-40">
-        <img class="img-responsive" src="resources/assets/images/banner/or.png" alt="banner-home3">
-        <div class="text">
-            <img src="resources/assets/images/icon-phone.png" alt="icon">
-            <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
-            <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
-            <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
-        </div>
-    </div>
-    <div id="back-to-top">
-        <i class="fa fa-long-arrow-up"></i>
-    </div>
+<div class="container class-cua-tao">
+    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
 </div>
+
 <div class="container container-ver2 ">
     <div class="title-text-v2">
         <h3>Sản phẩm nổi bật</h3>
@@ -250,4 +229,19 @@
         </div>
     </div>
 </div>
+<div class="banner-home3">
+    <div class="container container-ver2 space-40">
+        <img class="img-responsive" src="resources/assets/images/banner/or.png" alt="banner-home3">
+        <div class="text">
+            <img src="resources/assets/images/icon-phone.png" alt="icon">
+            <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
+            <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
+            <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
+        </div>
+    </div>
+    <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+    </div>
+</div>
+
 @stop
