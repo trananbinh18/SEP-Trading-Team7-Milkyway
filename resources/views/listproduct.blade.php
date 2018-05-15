@@ -33,18 +33,15 @@
           <div class="dataTable_wrapper">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
               <thead>
-                <tr>
-                  <th>Tùy chọn</th>
+                <tr>         
                   <th>STT</th>
                   <th>Loại SP</th>
                   <th>Tên SP</th>
                   <th>Số lượng</th>                                                
                   <th>Giá</th>
-                  <th>Giá củ</th>
-                  <th>Đơn vị</th>
                   <th>Trạng thái</th>
-                  <th>GCN</th>
                   <th>Hình</th>
+                  <th>Tùy chọn</th>
                 </tr>
               </thead>
               <tbody>
@@ -53,26 +50,23 @@
                    @php ($count = 0)
                     @foreach($products as $row)
                     <?php $count++; ?>
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                    
                   <td><?php echo $count; ?></td>
                   <td>{{$row->TENLOAISP}}</td>
                   <td>{{$row->TENSP}}</td>
-                  <td>{{$row->SOLUONG}}</td>
+                  <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
                   <td>{{ number_format($row->GIA) }}</td>
-                  <td>{{ number_format($row->GIACU) }}</td>
-                  <td>{{$row->DONVI}}</td>
                   <td>{{$row->TRANGTHAI}}</td>
-                  <td><img src="resources/assets/images/Certificate/{{($row->GCN)}}" alt="<?php echo $row->GCN ?>" width="60" , height="60"></td>
                   <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
-
+                  <td class="center">
+                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
+                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
                 </tr>
                   @endforeach
                                                          
                 </tbody>
               </table>
+
+               <a href="{{route('PostProduct')}}"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a>
             </div>
             <!-- /.table-responsive -->
 
