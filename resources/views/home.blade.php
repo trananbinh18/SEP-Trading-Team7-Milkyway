@@ -118,7 +118,7 @@
                     @if($pro->maloaisp === 4)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
@@ -136,7 +136,7 @@
                     @if($pro->maloaisp === 5)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
@@ -154,7 +154,7 @@
                     @if($pro->maloaisp === 6)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                 <img class="secondary_image" src="" alt=""/>
                             </a>
@@ -206,7 +206,7 @@
                     @if($pro->maloaisp === 5)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
@@ -224,7 +224,7 @@
                     @if($pro->maloaisp === 4)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
