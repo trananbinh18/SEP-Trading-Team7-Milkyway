@@ -20806,23 +20806,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   text-align: left;
   font-family: "TXGB";
 }
-.Ttttk{
-  font-style: Arial Black    
-}
-.LTtttk{
-  text-align: center;
-}
-.RTtttk{
-  text-align: left;
-}
-.LBtttk{
-  text-align: center;
-  line-height: 40px;
-  background-color: #f0f0f0;
-}
-.mRBtttk{
-  line-height: 50px;
-}
+
 .Btttk input{
   color: black;
 }
@@ -20869,9 +20853,4 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .carousel-caption {
   font: 400 16px/25px "Roboto Slab";
   text-shadow: 1px 2px 1px #000000;
-}
-.table-product .list-product .head-list {
-  background-color: #f03;
-  border-collapse: collapse;
-  width: 100%;
 }
