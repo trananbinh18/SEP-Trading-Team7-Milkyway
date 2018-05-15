@@ -796,6 +796,11 @@ body {
 .center {
   text-align: center;
 }
+.center button {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 /** 2.2. Default base **/
 /** 2.2.1.  Button **/
@@ -4724,6 +4729,7 @@ ul.tabs.tabs-title li span.count {
 }
 
 .choose-us.choose-us-home2 .col-md-8 {
+  margin-top: 30px;
   padding: 0px;
 }
 
@@ -20856,5 +20862,22 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .space-50 .signupseller label {
   font-weight: bold;
-  margin: 10px;
+  margin-top: 22px;
+  font-size: 18px;
+}
+.space-50 .signupseller input {
+  margin-top: 10px;
+}
+.space-50 .signupseller .img-picker {
+  margin-top: 10px;
+}
+.page-seller .content-text h2 {
+  color: #80b435;
+  font: 500 40px/40px "Roboto Slab";
+}
+.page-seller .content-text p {
+  margin-bottom: 20px;
+}
+.imgfarmer {
+  margin-top: 100px;
 }
