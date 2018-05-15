@@ -54,7 +54,7 @@
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
                 <div class="modal-body">
                     <form class="input-group" method="get" action="{{route('search')}}">
-                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập tên rau, trái cây hay loại củ mà bạn muốn tìm kiếm...">
+                        <input type="text" class="form-control control-search" name="Timkiem" placeholder="Nhập tên rau, trái cây hay loại củ quả mà bạn muốn tìm kiếm...">
                         <button class="button_search" type="submit">Tìm kiếm</button>
                     </form>                        
                 </div>
@@ -99,17 +99,16 @@
                                     ?>
 
                                 <!-- End hover-menu -->
-                            </div>
+
+                                </div>
+
                         </div>
                     </div>
-                    <!-- End container -->
                 </div>
-                <!-- End topbar -->
                 <div class="header-top">
                         <div class="container container-ver2">
                         <div class="box">
                             <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
-                            <!--End logo-->
                             <div class="logo-mobile"><a href="#" title="FreshFood"><img src="{!!url("resources/assets/images/logo-v2.png")!!}" alt="FreshFood-Logo")!!}"></a></div>
                             <div class="box-right">
                                 <div class="cart hover-menu">
@@ -154,7 +153,6 @@
                                 </div>
                             </div>
                             <nav class="mega-menu">
-                        <!-- Brand and toggle get grouped for better mobile display -->
                            <ul class="nav navbar-nav" id="navbar">
                             <li class="level1"><a href="{{action('ControllerHome@home')}}" title="Home">Trang chủ</a></li>
                             <li class="level1 dropdown">
@@ -162,7 +160,7 @@
                                 <div class="sub-menu sub-menu-v2 dropdown-menu">
                                 <div class="top-sub-menu">
 
-                                    <img src="{!!url("resources/assets/images/banner/t.jpg")!!}" alt="images">
+                                    <img src="{!!url("resources/assets/images/banner/t1.jpg")!!}" alt="images">
                                 </div>
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
@@ -174,21 +172,16 @@
                                         </ul>
                                     </li>
                                   </ul>
-                                  <!-- End RightSubMenu -->
                               </div>
-                              <!-- End Dropdow Menu -->
                             <li class="level1"><a href="{{action('ControllerHome@about')}}" title="About us">Giới thiệu</a></li>
                             <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
                           </ul>
                         </nav>
                         </div>
                         </div>
-                        <!-- End container -->
                     </div>
-                <!-- End header-top -->
             </div>
-            <!--End right-->
-        </header><!-- /header -->
+        </header>
         
         @yield('content')
 

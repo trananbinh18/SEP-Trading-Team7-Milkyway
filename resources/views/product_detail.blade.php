@@ -6,7 +6,10 @@
                     <img src="{!!url("resources/assets/images/banner-blog.jpg") !!}" alt="Banner-header">
                     <div class="text">
                     <h3>Tất cả sản phẩm</h3>
-                    <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Chi tiết sản phẩm</a><i class="fa fa-caret-right"></i><?php echo "{$sanpham['TENSP']}"; ?></p>
+                    <p><a href="{{ route('homepage') }}" title="Home">Trang chủ</a>
+                        <i class="fa fa-caret-right"></i><a href="#" title="Home">Chi tiết sản phẩm</a>
+                        <i class="fa fa-caret-right"></i><?php echo "{$sanpham['TENSP']}"; ?>
+                    </p>
                 </div>
                 </div> 
 
@@ -63,8 +66,8 @@
                                 </div>
                                 <!-- End Rating -->
                                 <div class="wrap-price">
-                                    <p class="price-old"><?php if($sanpham['GIACU'] != '0'){echo("{$sanpham['GIACU']} VND");} ?></p>
-                                    <p class="price">{{$sanpham['GIA']}} VND</p>
+                                    <!-- <p class="price-old"><?php if($sanpham['GIACU'] != '0'){echo("{$sanpham['GIACU']} VND");} ?></p> -->
+                                    <p class="price">{{ number_format($sanpham['GIA'],0,',','.')}} VND</p>
                                 </div>
                                 <!-- End Price -->
                             </div>

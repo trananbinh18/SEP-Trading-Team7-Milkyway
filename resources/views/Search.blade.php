@@ -23,7 +23,7 @@ Kết Quả Tìm Kiếm
                         @foreach($sProduct as $pro)
                         <div class="product">
                             <div class="product-images">
-                                <a href="#" title="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                     <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
                                     <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                                 </a>

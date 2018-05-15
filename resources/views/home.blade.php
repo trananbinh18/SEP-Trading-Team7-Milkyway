@@ -47,21 +47,13 @@
                             </div>
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Tiếp theo</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Quay lại</span>
-                    </a>
                 </div>
             </div> 
         </div>
     </div>
 </div>
 </div>
-<div class="container container-ver2">
+<div class="container container-ver2 farmer-banner">
     <div class="choose-us choose-us-home2">
         <div class="col-md-4">
             <img class="img-responsive hidden-table" src="resources/assets/images/banner/farmer.png" alt="farmer picture">
@@ -109,9 +101,6 @@
         </div>
     </div>
 </div>
-<div class="container class-cua-tao">
-    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
-</div>
 <div class="container container-ver2 ">
     <div class="title-text-v2">
         <h3>Sản phẩm mới nhất</h3>
@@ -129,7 +118,7 @@
                     @if($pro->maloaisp === 4)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
@@ -147,7 +136,7 @@
                     @if($pro->maloaisp === 5)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                 <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
                             </a>
@@ -165,12 +154,83 @@
                     @if($pro->maloaisp === 6)
                     <div class="product">
                         <div class="product-images">
-                            <a href="#" title="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
                                 <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
                                 <img class="secondary_image" src="" alt=""/>
                             </a>
                         </div>
                         <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <div class="box center space-padding-tb-30">
+            <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
+        </div>
+    </div>
+</div>
+<div class="banner-home3">
+    <div class="container container-ver2 space-40">
+        <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="banner-home3">
+        <div class="text">
+            <img src="resources/assets/images/icon-phone.png" alt="icon">
+            <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
+            <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
+            <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
+        </div>
+    </div>
+    <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+    </div>
+</div>
+<!-- <div class="container class-cua-tao">
+    <img class="img-responsive" src="resources/assets/images/banner/b.jpg" alt="farmer picture">
+</div> -->
+
+<div class="container container-ver2 ">
+    <div class="title-text-v2">
+        <h3>Sản phẩm nổi bật</h3>
+    </div>
+    <div class="featured-products">
+        <ul class="tabs tabs-title">
+            <li class="item" rel="tab_04">Bán chạy nhất</li>
+            <li class="item" rel="tab_05">Giảm giá</li>
+        </ul>
+        <div class="tab-container space-10">
+            <div id="tab_04" class="tab-content">
+                <div class="products">
+                    @foreach($product as $pro)
+                    @if($pro->maloaisp === 5)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
+                    </div>
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+            <div id="tab_05" class="tab-content">
+                <div class="products">
+                    @foreach($product as $pro)
+                    @if($pro->maloaisp === 4)
+                    <div class="product">
+                        <div class="product-images">
+                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                            </a>
+                        </div>
+                        <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                        <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
                         <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                     </div>
                     @endif
@@ -197,57 +257,5 @@
         <i class="fa fa-long-arrow-up"></i>
     </div>
 </div>
-<div class="container container-ver2 ">
-    <div class="title-text-v2">
-        <h3>Sản phẩm nổi bật</h3>
-    </div>
-    <div class="featured-products">
-        <ul class="tabs tabs-title">
-            <li class="item" rel="tab_04">Bán chạy nhất</li>
-            <li class="item" rel="tab_05">Giảm giá</li>
-        </ul>
-        <div class="tab-container space-10">
-            <div id="tab_04" class="tab-content">
-                <div class="products">
-                    @foreach($product as $pro)
-                    @if($pro->maloaisp === 5)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-            <div id="tab_05" class="tab-content">
-                <div class="products">
-                    @foreach($product as $pro)
-                    @if($pro->maloaisp === 4)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="#" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
-                        </div>
-                        <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="box center space-padding-tb-30">
-            <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
-        </div>
-    </div>
-</div>
+
 @stop
