@@ -4729,7 +4729,8 @@ ul.tabs.tabs-title li span.count {
 }
 
 .choose-us.choose-us-home2 .col-md-8 {
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 60px;
   padding: 0px;
 }
 
@@ -20879,5 +20880,5 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   margin-bottom: 20px;
 }
 .imgfarmer {
-  margin-top: 100px;
+  margin-top: 60px;
 }
