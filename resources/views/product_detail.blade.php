@@ -3,12 +3,12 @@
           <div class="main-content">
             <div class="container">
                 <div class="banner-header banner-lbook3">
-                    <img src="{!!url("resources/assets/images/banner-blog.jpg") !!}" alt="Banner-header">
+                    <img src="{!!url("resources/assets/images/banner/x.jpg") !!}" alt="Banner-header">
                     <div class="text">
-                    <h3>Tất cả sản phẩm</h3>
-                    <p><a href="{{ route('homepage') }}" title="Home">Trang chủ</a>
-                        <i class="fa fa-caret-right"></i><a href="#" title="Home">Chi tiết sản phẩm</a>
-                        <i class="fa fa-caret-right"></i><?php echo "{$sanpham['TENSP']}"; ?>
+                    <h3 style="text-shadow: 2px 2px 2px #000000">Thông tin sản phẩm</h3>
+                    <p style="text-shadow: 2px 2px 2px #000000"><a href="{{ route('homepage') }}" title="Home">Trang chủ</a>
+                        <i class="fa fa-caret-right"></i><a href="#" title="Home" style="text-shadow: 2px 2px 2px #000000">Chi tiết sản phẩm</a>
+                        <i class="fa fa-caret-right" style="text-shadow: 2px 2px 2px #000000"></i><?php echo "{$sanpham['TENSP']}"; ?>
                     </p>
                 </div>
                 </div> 
