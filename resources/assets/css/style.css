@@ -20854,3 +20854,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   font: 400 16px/25px "Roboto Slab";
   text-shadow: 1px 2px 1px #000000;
 }
+.space-50 .signupseller label {
+  font-weight: bold;
+  margin: 10px;
+}
