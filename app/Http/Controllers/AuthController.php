@@ -20,7 +20,7 @@ class AuthController extends Controller
     {
       return view('SignUp');
     }
-    function postSignUpBuyer(Request $SignUp_request)
+    function postSignUpBuyer(Request $SignUpBuyer_request)
     {
     // $this->validate($SignUp_request,[
     //  'name' => 'required|min:3', 
@@ -41,14 +41,14 @@ class AuthController extends Controller
     //  ]);
 
     $user = new nguoimua();
-    $user->TENNM = $SignUp_request->name;
-    $user->SĐT = $SignUp_request->phone;
-    $user->SONHA = $SignUp_request->number_house;
-    $user->PHUONG = $SignUp_request->ward;
-    $user->QUAN = $SignUp_request->district;
-    $user->TP = $SignUp_request->city;
-    $user->EMAIL = $SignUp_request->email;
-    $user->MATKHAU = $SignUp_request->password;
+    $user->TENNM = $SignUpBuyer_request->name;
+    $user->SĐT = $SignUpBuyer_request->phone;
+    $user->SONHA = $SignUpBuyer_request->number_house;
+    $user->PHUONG = $SignUpBuyer_request->ward;
+    $user->QUAN = $SignUpBuyer_request->district;
+    $user->TP = $SignUpBuyer_request->city;
+    $user->EMAIL = $SignUpBuyer_request->email;
+    $user->MATKHAU = Hash::make($SignUpBuyer_request->password);
     $user->NGAYTAO = date('Y-m-d H:i:s');
     $user->save();
 
@@ -76,20 +76,20 @@ class AuthController extends Controller
     //  'password.required' => 'Bạn chưa nhập mật khẩu' , 
     //  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
     //  ]);
- $filenameGPKD = $SignUpSeller_request->file('image')->getclientOriginalName();
-    $user = new nguoiban();
-    $user->TENNB = $SignUpSeller_request->name;
-    $user->SĐT = $SignUpSeller_request->phone;
-    $user->SONHA = $SignUpSeller_request->number_house;
-    $user->PHUONG = $SignUpSeller_request->ward;
-    $user->QUAN = $SignUpSeller_request->district;
-    $user->TP = $SignUpSeller_request->city;
-    $user->EMAIL = $SignUpSeller_request->email;
-    $user->MATKHAU = $SignUpSeller_request->password;
-    $user->GPKD = $filenameGPKD;
+    $filenameGPKD = $SignUpSeller_request->file('image')->getclientOriginalName();
+    $users = new nguoiban();
+    $users->TENNB = $SignUpSeller_request->name;
+    $users->SĐT = $SignUpSeller_request->phone;
+    $users->SONHA = $SignUpSeller_request->number_house;
+    $users->PHUONG = $SignUpSeller_request->ward;
+    $users->QUAN = $SignUpSeller_request->district;
+    $users->TP = $SignUpSeller_request->city;
+    $users->EMAIL = $SignUpSeller_request->email;
+    $users->MATKHAU = Hash::make($SignUpSeller_request->password);
+    $users->GPKD = $filenameGPKD;
     $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
-    $user->NGAYTAO = date('Y-m-d H:i:s');
-    $user->save();
+    $users->NGAYTAO = date('Y-m-d H:i:s');
+    $users->save();
 
     return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
   }

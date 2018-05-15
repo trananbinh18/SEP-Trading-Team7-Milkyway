@@ -18,7 +18,7 @@
                        <h3>Thông tin sản phẩm</h3>
                         <i class="fa fa-chevron-circle-down icon-click"></i>
                         <ul class="menu-vertical">
-                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
+                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListProduct')}}" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
                             <li><img src="resources/assets/images/icon-categories-7.png" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
                             <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
                         </ul>

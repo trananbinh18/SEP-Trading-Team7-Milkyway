@@ -46,13 +46,13 @@
                                 <div class="form-group signupseller">
                                     <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="name" id="inputemail" placeholder="Nhập Email" required>
+                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                     </div> 
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
                                     <div class="col-md-8">
-                                        <input type="password" class="form-control" name="name" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                     </div>
                                 </div>
                             </div> 
@@ -61,25 +61,25 @@
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Phường xã" required>
+                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Quận Huyện" required>
+                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố(*);</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố(*);</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố" required>
+                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
                                     </div>
                                 </div>
                             </div>
@@ -121,13 +121,13 @@
                             <div class="form-group signupseller">
                                 <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="name" id="inputemail" placeholder="Nhập Email" required>
+                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
                                 <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" name="name" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -146,28 +146,28 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập địa chỉ">
+                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Phường xã">
+                                <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Quận Huyện">
+                                <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố(*);</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="address" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
+                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
                             </div>
                         </div>
                     </div>
