@@ -102,9 +102,9 @@ class Controller extends BaseController
     }
     function BuyProduct($id){
         $Productbuy = DB::table('sanpham')->select('MASP','TENSP','GIA','DONVI','SOLUONG','HINH')->where('MASP',$id)->get();
-        // Cart::add(array('MASP'=>$id,'TENSP'=>$Productbuy->tensp,'GIA'=>$Productbuy->gia,'SOLUONG'=>1,'options'=>array('DONVI'=>$Productbuy->donvi,'HINH'=>$Productbuy->hinh));
-        // $content = Cart::content();
-        // print_r($content);
-        echo ($Productbuy);
+        Cart::add(array('MASP'=>$id,'TENSP'=>$Productbuy->tensp,'GIA'=>$Productbuy->gia,'SOLUONG'=>1,'options'=>array('DONVI'=>$Productbuy->donvi,'HINH'=>$Productbuy->hinh)));
+        $content = Cart::content();
+        print_r($content);
+        // echo ($Productbuy);
     }
 }
