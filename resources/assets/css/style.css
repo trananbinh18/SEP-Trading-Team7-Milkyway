@@ -15411,7 +15411,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 #header.header-v3-new .logo-header-v3 {
   position: absolute;
   left: 15px;
-  top: 0px;
+  ;
 }
 
 @media (max-width: 1200px) {
