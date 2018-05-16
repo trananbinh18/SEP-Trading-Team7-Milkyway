@@ -137,3 +137,4 @@ Route::get('ListProduct', function(){
 Route::get('ListProduct',['as'=>'ListProduct','uses'=>'LoadDataController@index']);
 //Mua sản phẩm
 Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
+// Route::get('shopping',['as'=>'shoppingCart','uses'=>'Controller@Cart'])
