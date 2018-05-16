@@ -13,6 +13,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Intervention\Image\Image as Img;
+use Image;
 
 class Controller extends BaseController
 {
