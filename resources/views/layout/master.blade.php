@@ -18,7 +18,7 @@
        
 
         <!-- MetisMenu CSS -->
-        <link href="{!!url("resources/assets/css/metisMenu.min.css")!!}" rel="stylesheet">
+        <link href="{!!url("resources/assets/js/metisMenu.min.js")!!}" rel="stylesheet">
 
         <!-- DataTables CSS -->
         <link href="{!!url("resources/assets/css/dataTables/dataTables.bootstrap.css")!!}" rel="stylesheet">
