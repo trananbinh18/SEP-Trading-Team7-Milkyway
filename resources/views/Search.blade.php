@@ -35,6 +35,7 @@ Kết Quả Tìm Kiếm
                     @endif
                 </div>
             </div>
+        </div>
     </div>
 </div>
 @stop
