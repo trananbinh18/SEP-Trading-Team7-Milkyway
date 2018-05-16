@@ -20862,9 +20862,10 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   text-shadow: 1px 2px 1px #000000;
 }
 .space-50 .signupseller label {
-  font-weight: bold;
+  /*font-weight: bold;*/
   margin-top: 22px;
-  font-size: 18px;
+  font: 700 16px/20px "Roboto Slab";
+
 }
 .space-50 .signupseller input {
   margin-top: 10px;
@@ -20875,6 +20876,11 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .page-seller .content-text h2 {
   color: #80b435;
   font: 500 40px/40px "Roboto Slab";
+}
+.page-seller .content-text .sloganseller h2 {
+  color: #80b435;
+  font: 500 40px/40px "Roboto Slab";
+  margin-bottom: 40px;
 }
 .page-seller .content-text p {
   margin-bottom: 20px;

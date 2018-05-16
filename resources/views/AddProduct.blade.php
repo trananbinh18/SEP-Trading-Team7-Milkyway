@@ -92,7 +92,8 @@
                     <div class="col-md-3">
                       <select id="enterprise" class="Unit" name="cdDonvi" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                         <option>Kilogram</option>
-                        <option>Trái</option>                      
+                        <option>Trái</option>   
+                        <option>Gram</option>                   
                       </select>                                              
                     </div>                  
                   </div>
