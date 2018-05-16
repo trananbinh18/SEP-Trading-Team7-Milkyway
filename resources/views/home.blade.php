@@ -55,7 +55,7 @@
 </div>
 <div class="container container-ver2 farmer-banner">
     <div class="choose-us choose-us-home2">
-        <div class="col-md-4">
+        <div class="col-md-4 imgfarmer">
             <img class="img-responsive hidden-table" src="resources/assets/images/banner/farmer.png" alt="farmer picture">
         </div>
         <div class="col-md-8">

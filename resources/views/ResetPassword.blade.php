@@ -12,8 +12,8 @@
                           <i class="fa fa-chevron-circle-down icon-click"></i>
                           <ul class="menu-vertical">
                               <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="Đơn hàng">Đơn hàng</a></li>
-                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Sửa thông tin">Sửa thông tin</a></li>
-                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
+                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="{{route('editInf')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="{{route('resetpass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
                           </ul>
                       </div>
                   </aside>

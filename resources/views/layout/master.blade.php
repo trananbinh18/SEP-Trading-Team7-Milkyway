@@ -86,7 +86,7 @@
                                             }else if($_SESSION["typeuser"]==3){
                                                 echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u> '.$_SESSION["user"]->TENNV.'</u></p>');
                                             }
-                                            echo('<ul class="list-menu"><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
+                                            echo('<ul class="list-menu"><li><a href="'.route('editInf').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                         }else{
                                             echo('<div class="hover-menu">
                                     <a class="acc" href="#" title="USD"><img src="'.url("resources/assets/images/icon-user-header.png").'" alt="icon">Tài khoản</a>
@@ -174,7 +174,7 @@
                                   </ul>
                               </div>
                             <li class="level1"><a href="{{action('ControllerHome@about')}}" title="About us">Giới thiệu</a></li>
-                            <li class="level1"><a href="contact.html" title="Contact us">Liên hệ</a></li>
+                            <li class="level1"><a href="{{route('Cnt')}}" title="Contact us">Liên hệ</a></li>
                           </ul>
                         </nav>
                         </div>
@@ -197,7 +197,7 @@
                         <div class="col-md-2 col-sm-6">
                             <h3 class="title-footer">Thông tin</h3>
                             <ul class="list-footer">
-                                <li><a href="#" title="title">Chính sách giao hàng</a></li>
+                                <li><a href="{{route('Ship')}}" title="title">Chính sách giao hàng</a></li>
                                 <li><a href="#" title="title">Pháp lý</a></li>
                                 <li><a href="#" title="title">Điều khoản & điều kiện</a></li>
                                 <li><a href="#" title="title">Giới thiệu</a></li>

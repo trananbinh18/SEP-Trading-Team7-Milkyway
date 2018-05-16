@@ -23,4 +23,10 @@ class ControllerHome extends Controller
     function Register(){
         return view('SignUp');
     }
+    function Shipping(){
+        return view('Shipping');
+    }
+    function Contact(){
+        return view('Contact');
+    }
 }

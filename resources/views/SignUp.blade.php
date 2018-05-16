@@ -19,143 +19,166 @@
     <button class="tablink" onclick="openPage('Buyer', this, '#d0d8cb')" id="defaultOpen">Người Mua</button>
 </div>
 <div id="Buyer" class="tabcontent">
-  <div class="container container-ver2">
-    <div class="page-faq">
-        <div class="container container-ver2">
-            <div class="content-text space-50">
-                <div class="row">
-                    <div style="padding-left: 500px;">
-                        <h3>Đăng kí</h3>
-                        <p>Tạo tài khoản của riêng bạn!</p>
-                        <br>
-                    </div>
-                    <div class="col-md-6 space-50">
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputname">Họ và Tên *</label>
-                            <input class="form-control" type="text" placeholder="Họ và Tên" id="inputemailres" name="name">
+   <div class="container container-ver2">
+        <div class="page-seller">
+            <div class="container container-ver2">
+                <div class="content-text space-50">
+                    <div class="row">
+                        <div class="center">
+                            <h2>ĐĂNG KÝ</h2>
+                            <p>Tạo tài khoản của riêng bạn!</p>
                         </div>
-
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputphone">Số điện thoại *</label>
-                            <input class="form-control" type="text" placeholder="Số điện thoại" id="inputemailres" name="phone">
-                        </div>
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputemailres">Email *</label>
-                            <input class="form-control" type="text" placeholder="Your email" id="inputemailres" name="email">
-                        </div>
-                        <div class="group box">
-                            <label class="control-label" for="inputpass">Mật Khẩu *</label>
-                            <input class="form-control" type="Password" placeholder="Password" id="inputpass" name="password"> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 space-50">
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputaddress">Số nhà *</label>
-                            <input class="form-control" type="text" placeholder="Số Nhà" id="inputemailres" name="number_house">
-                        </div>
-
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputaddress">Phường *</label>
-                            <input class="form-control" type="text" placeholder="Phường" id="inputemailres" name="ward">
-                        </div>
-
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputaddress">Quận *</label>
-                            <input class="form-control" type="text" placeholder="Quận" id="inputemailres" name="district">
-                        </div>
-
-                        <div class="group box space-20">
-                            <label class="control-label" for="inputaddress">Thành phố *</label>
-                            <input class="form-control" type="text" placeholder="Thành Phố" id="inputemailres" name="city">
-                        </div>
-                    </div>
-                    <div style="padding-left: 500px;">
-                        <br>
-                        <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
+                        <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
+                            <div class="col-md-6 space-50" id="bodyinput">
+                                <div class="form-group signupseller">
+                                   <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                   <label for="inputname" class="col-md-4 control-lab">Họ và tên(*);</label>
+                                   <div class="col-md-8">
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
+                                </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
+                                    </div> 
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!--end cột trái đăng kí ng bán-->
+                            <div class="col-md-6 space-50">
+                                <div class="form-group signupseller">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố(*);</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 center">
+                                <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
+                            </div></form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-<!-- End register -->  
+<!-- End register buyer -->  
 <div id="Seller" class="tabcontent">
- <div class="container container-ver2">
-    <div class="page-faq">
+   <div class="container container-ver2">
+    <div class="page-seller">
         <div class="container container-ver2">
             <div class="content-text space-50">
                 <div class="row">
-                    <div style="padding-left: 500px;">
-                        <h3>Đăng kí</h3>
+                    <div class="center">
+                        <h2>ĐĂNG KÝ</h2>
                         <p>Tạo tài khoản của riêng bạn!</p>
                     </div>
-                    <div class="col-md-6 space-50">
-                        <div class="form-group signupseller">
-                            <label for="inputname" class="col-md-4 control-lab">Họ và tên(*);</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên">
+                    <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
+                        <div class="col-md-6 space-50" id="bodyinput">
+                            <div class="form-group signupseller">
+                               <input type="hidden" name="_token" value="{{csrf_token()}}">
+                               <label for="inputname" class="col-md-4 control-lab">Họ và tên(*);</label>
+                               <div class="col-md-8">
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group signupseller">
-                            <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại(*);</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại">
+                            <div class="form-group signupseller">
+                                <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại(*);</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group signupseller">
-                            <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" name="name" id="inputemail" placeholder="Nhập Email">
+                            <div class="form-group signupseller">
+                                <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group signupseller">
-                            <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
-                            <div class="col-md-8">
-                                <input type="password" class="form-control" name="name" id="inputpass" placeholder="Nhập mậtkhẩu">
+                            <div class="form-group signupseller">
+                                <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group signupseller">
-                            <label for="inpuimgGPKD" class="col-md-4 control-lab">Giấy Phép Kinh Doanh(*)</label>
-                            <div class="row" style="width: 100%;">
-                                <div class="form-group col-md-3 img12"  >
-                                    <div class="img-picker">
-                                        <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image">
+                            <div class="form-group signupseller">
+                                <label for="inpuimgGPKD" class="col-md-4 control-lab">Giấy Phép Kinh Doanh(*)</label>
+                                <div class="row">
+                                    <div class="form-group col-md-3 img12"  >
+                                        <div class="img-picker">
+                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
-
                     </div> <!--end cột trái đăng kí ng bán-->
-<div class="col-md-6 space-50">
-    <div class="group box space-20">
-        <label class="control-label" for="inputaddress">Số nhà *</label>
-        <input class="form-control" type="text" placeholder="Số Nhà" id="inputemailres" name="number_house">
-    </div>
+                    <div class="col-md-6 space-50">
+                        <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ">
+                            </div>
+                        </div>
 
-    <div class="group box space-20">
-        <label class="control-label" for="inputaddress">Phường *</label>
-        <input class="form-control" type="text" placeholder="Phường" id="inputemailres" name="ward">
-    </div>
+                        <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
+                            </div>
+                        </div>
 
-    <div class="group box space-20">
-        <label class="control-label" for="inputaddress">Quận *</label>
-        <input class="form-control" type="text" placeholder="Quận" id="inputemailres" name="district">
-    </div>
+                        <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
+                            </div>
+                        </div>
 
-    <div class="group box space-20">
-        <label class="control-label" for="inputaddress">Thành phố *</label>
-        <input class="form-control" type="text" placeholder="Thành Phố" id="inputemailres" name="city">
+                        <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố(*);</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 center">
+
+                        <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-<div>
-    <br>
-    <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

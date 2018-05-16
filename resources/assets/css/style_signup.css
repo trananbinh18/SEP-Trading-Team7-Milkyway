@@ -24,9 +24,8 @@
     color: white;
     display: none;
     padding: 100px 20px;
-    height: 1300px;
-    margin-bottom: 200px;
+/*    height: 1300px;
+    margin-bottom: -800px;*/
 }
-
-#Buyer {background-color: #eff2ed; color : black;}
-#Seller {background-color: #eff2ed; color :black;}
+#Buyer {background-color: #fff; color : black;}
+#Seller {background-color: #fff; color :black;}
