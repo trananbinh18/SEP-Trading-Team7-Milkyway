@@ -28,7 +28,7 @@
                             <h2>ĐĂNG KÝ</h2>
                             <p>Tạo tài khoản của riêng bạn!</p>
                         </div>
-                        <form class="form-horizontal"action="{{route('SignUp')}}" method="POST">
+                        <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
                             <div class="col-md-6 space-50" id="bodyinput">
                                 <div class="form-group signupseller">
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -103,7 +103,7 @@
                         <h2>ĐĂNG KÝ</h2>
                         <p>Tạo tài khoản của riêng bạn!</p>
                     </div>
-                    <form class="form-horizontal" action="{{route('SignUp')}}" method="POST" enctype="multipart/form-data" role="form">
+                    <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
                         <div class="col-md-6 space-50" id="bodyinput">
                             <div class="form-group signupseller">
                                <input type="hidden" name="_token" value="{{csrf_token()}}">

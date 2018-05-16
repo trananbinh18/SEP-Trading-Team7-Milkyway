@@ -85,8 +85,13 @@ Route::get('deliverypolicy',function(){
 Route::get('ListProduct',function(){
 	return view('listproduct');
 });
+Route::get('Vegetables',function(){
+	return view('Vegetables');
+});
 
 
+
+//Redirect to view Rau
 
 //Redirect to view ResetPassword
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
@@ -110,10 +115,10 @@ Route::post('Signin',['as'=>'signinacc','uses'=>'ControllerAccount@Login']);
 
 //Đăng kí cho người mua
 Route::get('SignUp','AuthController@getSignUpBuyer');
-Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpBuyer']);
+Route::post('SignUpBuyer',['as'=>'SignUpBuyer','uses'=>'AuthController@postSignUpBuyer']);
 //Đăng kí cho người bán
 Route::get('SignUp','AuthController@getSignUpSeller');
-Route::post('SignUp',['as'=>'SignUp','uses'=>'AuthController@postSignUpSeller']);
+Route::post('SignUpSeller',['as'=>'SignUpSeller','uses'=>'AuthController@postSignUpSeller']);
 //Đăng sản phẩm
 Route::get('Addproduct',['as'=>'PostProduct','uses'=>'Controller@Getproduct']);
 Route::post('CreateProduct',['as'=>'CreateProduct','uses'=>'Controller@Postproduct']);
