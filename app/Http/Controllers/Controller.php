@@ -118,12 +118,9 @@ class Controller extends BaseController
         $Productbuy = sanpham::find($id);
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
-<<<<<<< HEAD
         return redirect()->route('shopping');
-=======
         return redirect()->route('shoppingCart');
-        // echo ($Productbuy);
->>>>>>> f5b3c730e7aafc4f36a0c28cc1c49840271a5325
+
     }
     function Cart(){
         $content = Cart::content();
