@@ -14,7 +14,7 @@ class ControllerSanPham extends Controller
     	$sanpham = sanpham::find($id);
         $lssanpham = sanpham::all();
     	if($sanpham == null){
-    		return redirect()->route('home');
+    		return redirect()->route('homepage');
     	}else{
     		return view('product_detail',compact($sanpham,'sanpham'),compact($lssanpham,'lssanpham'));
     	}
@@ -65,11 +65,11 @@ class ControllerSanPham extends Controller
         $sanpham->MALOAISP = $request->input('cbCategory');
         $sanpham->SOLUONG = $request->input('Soluong');
         $sanpham->DONVI = $request->input('cdDonvi');
-        $sanpham->MOTA = $request->input('cdDonvi');
+        $sanpham->MOTA = $request->input('mieutasanpham');
 
         $sanpham->save();
 
-        return redirect()->route('home');
+        return redirect()->route('homepage');
     }
 
 
