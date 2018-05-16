@@ -88,7 +88,9 @@ Route::get('ListProduct',function(){
 Route::get('Vegetables',function(){
 	return view('Vegetables');
 });
-
+Route::get('donhang',function(){
+	return view('Donhang');
+});
 
 
 //Redirect to view Rau
