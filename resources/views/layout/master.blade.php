@@ -201,7 +201,6 @@
                                 <li><a href="#" title="title">Pháp lý</a></li>
                                 <li><a href="#" title="title">Điều khoản & điều kiện</a></li>
                                 <li><a href="#" title="title">Giới thiệu</a></li>
-                                <li><a href="#" title="title">Bảo mật thanh toán</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6">
