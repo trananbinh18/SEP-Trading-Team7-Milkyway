@@ -106,7 +106,7 @@ class Controller extends BaseController
         // Cart::add(array('id'=>$id,'name'=>$Productbuy->TENSP,'GIA'=>$Productbuy->gia,'qty'=>1,'options'=>array('DONVI'=>$Productbuy->donvi,'HINH'=>$Productbuy->hinh)));
         Cart::add(['id' => $Productbuy->MASP, 'name' => $Productbuy->TENSP, 'qty' => 1, 'price' => $Productbuy->GIA,'option'=>['image'=>$Productbuy->HINH]]);
         $content = Cart::content();
-        return redirect()->route('shoppingCart')
+        return redirect()->route('shoppingCart');
         // echo ($Productbuy);
     }
     function Cart(){
