@@ -55,19 +55,20 @@
                                 <th class="total-price">Tổng</th>
                                 <th class="product-remove"></th>
                             </tr>
-                        </thead>
+                        </thead>                       
                         <tbody>
+                            @foreach($content as $item)
                             <tr class="item_cart">
-                                <td class="product-photo"><img src="resources/assets/images/products/featured/1.jpg" alt="Futurelife"></td>
-                                <td class="produc-name"><a href="#" title="">Name product 01</a></td>
-                                <td class="produc-price"><input value="120000" size="4" type="text"></td>
-                                <td class="produc-price"><input value="KG" size="4" type="text"></td>
+                                <td class="product-photo"><img src="{!!url("resources/assets/images/products/{$item->options['img']}")!!}" alt="Futurelife"></td>
+                                <td class="produc-name"><a href="#">{{$item->name}}</a></td>
+                                <td class="produc-price"><input value="{{number_format($item->price,0,',','.')}}" size="4" type=""></td>
+                                <td class="produc-price"><input value="{{$item->options['unit']}}" size="4" type=""></td>
                                 <td class="product-quantity">
                                     <form enctype="multipart/form-data">
                                         <div class="product-signle-options product_15 clearfix">
                                             <div class="selector-wrapper size">
                                                 <div class="quantity">
-                                                    <input data-step="1" value="1" title="Qty" class="qty" size="4" type="text">
+                                                    <input data-step="1" value="{{$item->qty}}" title="Qty" class="qty" size="4" type="text">
                                                 </div>
                                             </div>
                                         </div>
@@ -76,11 +77,12 @@
                                 <td class="total-price"></td>
                                 <td class="product-remove"><a class="remove" href="#" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
                             </tr>
-                        </tbody>
+                            @endforeach
+                        </tbody>                        
                     </table>
 
                     <div class="float-left">
-                        <a class="link-v1 lh-50 bg-brand" href="#" title="CONTINUS SHOPPING">Tiếp tục mua sắm</a>
+                        <a class="link-v1 lh-50 bg-brand" href="{{route('homepage')}}" title="CONTINUS SHOPPING">Tiếp tục mua sắm</a>
                     </div>
                     <div class="box cart-total space-30">
                         <!-- End col-md-4 -->

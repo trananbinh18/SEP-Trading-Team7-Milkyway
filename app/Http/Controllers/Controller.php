@@ -103,13 +103,12 @@ class Controller extends BaseController
     }
     function BuyProduct($id){
         $Productbuy = sanpham::find($id);
-        // Cart::add(array('id'=>$id,'name'=>$Productbuy->TENSP,'GIA'=>$Productbuy->gia,'qty'=>1,'options'=>array('DONVI'=>$Productbuy->donvi,'HINH'=>$Productbuy->hinh)));
-        Cart::add(['id' => $Productbuy->MASP, 'name' => $Productbuy->TENSP, 'qty' => 1, 'price' => $Productbuy->GIA,'option'=>['image'=>$Productbuy->HINH]]);
+        Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
-        return redirect()->route('shoppingCart')
-        // echo ($Productbuy);
+        return redirect()->route('shopping');
     }
     function Cart(){
-        return view('shopping_cart');
+        $content = Cart::content();
+        return view('shopping_cart',compact('content'));
     }
 }
