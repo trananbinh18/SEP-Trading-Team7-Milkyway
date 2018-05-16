@@ -111,7 +111,8 @@ Route::get('home',['as'=>'homepage','uses'=>'ControllerHome@home']);
 // Route::post('login','AuthController@postLogin');
 Route::post('Signin',['as'=>'signinacc','uses'=>'ControllerAccount@Login']);
 
-
+Route::get('Shipping',['as'=>'Ship','uses'=>'ControllerHome@Shipping']);
+Route::get('Contact',['as'=>'Cnt','uses'=>'ControllerHome@Contact']);
 
 //Đăng kí cho người mua
 Route::get('SignUp','AuthController@getSignUpBuyer');
