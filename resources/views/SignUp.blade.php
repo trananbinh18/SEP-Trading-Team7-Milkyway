@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="center">
                             <h2>ĐĂNG KÝ</h2>
-                            <p>Tạo tài khoản của riêng bạn!</p>
+                            <p>Tạo tài khoản mua cả thế giới!</p>
                         </div>
                         <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
                             <div class="col-md-6 space-50" id="bodyinput">
@@ -99,9 +99,9 @@
         <div class="container container-ver2">
             <div class="content-text space-50">
                 <div class="row">
-                    <div class="center">
-                        <h2>ĐĂNG KÝ</h2>
-                        <p>Tạo tài khoản của riêng bạn!</p>
+                    <div class="center sloganseller">
+                        <h2>ĐĂNG KÝ BÁN HÀNG CÙNG WHOLE FOODS</h2>
+                        <p> </p>
                     </div>
                     <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
                         <div class="col-md-6 space-50" id="bodyinput">
