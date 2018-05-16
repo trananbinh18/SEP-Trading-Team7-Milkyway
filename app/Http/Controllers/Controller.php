@@ -12,6 +12,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Collection;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Intervention\Image\Image as Img;
 
 class Controller extends BaseController
 {
@@ -50,11 +51,15 @@ class Controller extends BaseController
         //     'mieutasanpham.max'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự'
         // ]);
            
-
-            $filenameSP = $Product_request->file('imagesSP')->getclientOriginalName();
+            $imageSP = $Product_request->file('imagesSP');
+            $filenameSP = $imageSP->getclientOriginalName();
             $filenameSPNew = $this->renameImage($filenameSP);
-            $filenameGCN = $Product_request->file('imagesGCN')->getclientOriginalName();
+            
+
+            $imageGCN = $Product_request->file('imagesGCN');
+            $filenameGCN = $imageGCN->getclientOriginalName();
             $filenameGCNNew = $this->renameImage($filenameGCN);
+
             $Product = new sanpham();
             $Product->MANB = 2;
             $Product->MALOAISP = $Product_request->cbCategory;
@@ -65,8 +70,15 @@ class Controller extends BaseController
             $Product->GCN      = $filenameGCNNew;
             $Product->HINH     = $filenameSPNew;
             $Product->MOTA     = $Product_request->mieutasanpham;
-            $Product_request->file('imagesSP')->move('.\resources\assets\images\products',$filenameSPNew);
-            $Product_request->file('imagesGCN')->move('.\resources\assets\images\Certificate',$filenameGCNNew);
+
+            $imageSP_resize = Image::make($imageSP->getRealPath());
+            $imageSP_resize->resize(900, 900);
+            $imageSP_resize->save('resources/assets/images/products/' .$filenameSPNew);
+
+            $imageGCN_resize = Image::make($imageGCN->getRealPath());
+            $imageGCN_resize->resize(900, 900);
+            $imageGCN_resize->save('resources/assets/images/Certificate/' .$filenameGCNNew);
+
             $Product->save();
 
             return redirect('Addproduct')->with('thongbao','Bạn đã thêm thành công');
