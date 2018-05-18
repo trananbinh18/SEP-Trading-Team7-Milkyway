@@ -118,28 +118,18 @@
                                         </p>
                                         <div class="cart-list list-menu">
                                             <ul class="list">
+{{--                                                 @foreach($contenthome as $item) --}}
                                                 <li>
-
-                                                    <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
+                                                    <a href="#" title="" class="cart-product-image"><img src="{{-- {!!url("resources/assets/images/products/{$item->options['img']}")!!} --}}" alt="Product"></a>
 
                                                     <div class="text">
-                                                        <p class="product-name">Táo</p>
-                                                        <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL: 01</p>
+                                                        <p class="product-name">{{-- {{$item->name}} --}}</p>
+                                                        <p class="product-price"><span class="price">{{-- {{number_format($item->price,0,',','.')}} --}}</span></p>
+                                                        <p class="qty">{{-- {{$item->qty}} --}}</p>
                                                     </div>
                                                     <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
-                                                </li>
-                                                <li>
-
-                                                    <a href="#" title="" class="cart-product-image"><img src="{!!url("resources/assets/images/products/1.jpg")!!}" alt="Product"></a>
-
-                                                    <div class="text">
-                                                        <p class="product-name">Đào</p>
-                                                        <p class="product-price"><span class="price-old">700.000 đ</span><span class="price">350.000 đ</span></p>
-                                                        <p class="qty">SL: 01</p>
-                                                    </div>
-                                                    <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
-                                                </li>
+                                                </li> 
+{{--                                                 @endforeach  --}}                                              
                                             </ul>
                                             <p class="total"><span class="left">Tổng:</span> <span class="right">700.000 đ</span></p>
                                             <div class="bottom">

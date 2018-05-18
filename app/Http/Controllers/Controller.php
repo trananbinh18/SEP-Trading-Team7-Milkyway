@@ -119,11 +119,18 @@ class Controller extends BaseController
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
         return redirect()->route('shopping');
-        return redirect()->route('shoppingCart');
-
     }
     function Cart(){
         $content = Cart::content();
-        return view('shopping_cart',compact('content'));
+        $total = Cart::total();
+        return view('shopping_cart',compact('content','total'));
+    }
+    // function Carthome(){
+    //     $contenthome = Cart::content();
+    //     return view('home',compact('contenthome'));
+    // }
+    function Delete($id){
+        Cart::remove($id);
+        return redirect()->route('shopping');
     }
 }
