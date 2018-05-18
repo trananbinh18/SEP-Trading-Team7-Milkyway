@@ -29,11 +29,11 @@
                 <form class="form-horizontal" action="{{route('signinacc')}}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="group box space-20">
-                        <label class="control-label" for="email" >Email *</label>
+                        <label class="control-label" for="email" >Email</label>
                         <input class="form-control" type="text" placeholder="Your email" id="inputemail" name="email">
                     </div>
                     <div class="group box">
-                        <label class="control-label" for="pass" >Mật Khẩu *</label>
+                        <label class="control-label" for="pass" >Mật Khẩu</label>
                         <input class="form-control" type="Password" placeholder="Password" id="inputpass"
                         name="matkhau"> 
                     </div>
