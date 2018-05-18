@@ -52,15 +52,17 @@ Kiểm tra
                                             <li class="head">
                                                 <span class="name">Tên sản phẩm</span>
                                                 <span class="qty"><b>Số lượng</b></span>
-                                                <span class="dgia"><b>Đơn giá</b></span>    
+                                                <span class="dgia"><b>Đơn vị</b></span>    
                                                 <span class="total"><b>Thành tiền</b></span>
-                                            </li>
+                                            </li>                                           
                                             <li>
-                                                <span class="name">Bích Tơ</span>
-                                                <span class="qty">02</span>
-                                                <span class="dgiaR2">500</span>
-                                                <span class="total">1000 Đ</span>
-                                            </li>
+                                                 @foreach($content as $item)
+                                                <span class="name">{{$item->name}}</span>
+                                                <span class="qty">{{$item->qty}}</span>
+                                                <span class="dgiaR2">{{$item->options['unit']}}</span>
+                                                <span class="total">{{$item->price}}</span>
+                                                @endforeach
+                                            </li>                                           
                                         </ul>
                                     </div>
                                     <!-- End product-name -->

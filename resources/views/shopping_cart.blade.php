@@ -91,7 +91,7 @@
                                 <h3 class="title">TỔNG HÀNG: <span class="float-right"></span></h3>
                                 <p class="box"><span class="float-left">Phí vận chuyển</span><span class="float-right">40000</span></p>
                                 <p class="box space-30"><span class="float-left"><b>Tổng chi phí</b></span><span class="float-right"><b class="color-brand">520000</b></span></p>
-                                <a class="link-v1 lh-50 rt" href="#" title="POCEEED TO CHECKOUT">THANH TOÁN</a>
+                                <a class="link-v1 lh-50 rt" href="{{route('Checkout')}}" title="POCEEED TO CHECKOUT">THANH TOÁN</a>
                             </div>
                         </div>
                         <!-- End col-md-4 -->

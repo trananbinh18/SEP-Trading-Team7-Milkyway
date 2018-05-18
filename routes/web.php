@@ -62,7 +62,7 @@ Route::get('contact',function(){
 
 Route::get('checkout',function(){
 	return view('checkout');
-});
+})->name('Checkout');
 
 Route::get('shoppingcart',function(){
 	return view('shopping_cart');
@@ -134,6 +134,7 @@ Route::get('ListProduct',['as'=>'ListProduct','uses'=>'LoadDataController@index'
 //Mua sản phẩm
 Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
+Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
 // Route::get('Home',['as'=>'home','uses'=>'Controller@Carthome']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
 
