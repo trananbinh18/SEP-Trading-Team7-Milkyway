@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +22,7 @@ class AuthController extends Controller
     {
       return view('SignUp');
     }
-    function postSignUpBuyer(Request $SignUpBuyer_request)
+   function postSignUpBuyer(Request $SignUpBuyer_request)
     {
     // $this->validate($SignUp_request,[
     //  'name' => 'required|min:3', 
@@ -41,20 +42,31 @@ class AuthController extends Controller
     //  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
     //  ]);
 
-    $user = new nguoimua();
-    $user->TENNM = $SignUpBuyer_request->name;
-    $user->SĐT = $SignUpBuyer_request->phone;
-    $user->SONHA = $SignUpBuyer_request->number_house;
-    $user->PHUONG = $SignUpBuyer_request->ward;
-    $user->QUAN = $SignUpBuyer_request->district;
-    $user->TP = $SignUpBuyer_request->city;
-    $user->EMAIL = $SignUpBuyer_request->email;
-    $user->MATKHAU = Hash::make($SignUpBuyer_request->password);
-    $user->NGAYTAO = date('Y-m-d H:i:s');
-    $user->save();
+    $email = $SignUpBuyer_request->email;
+    if($email != "") {
+    $em = DB::table('nguoimua')->select('EMAIL')->where('EMAIL' , $email)->get();
+        if( count($em) >= 1 )
+        {
+            return redirect()->back()->with('thongbao', 'Email nhập bị trùng');
+             //$error = 'email error';
+        }else{
+            $user = new nguoimua();
+            $user->TENNM = $SignUpBuyer_request->name;
+            $user->SĐT = $SignUpBuyer_request->phone;
+            $user->SONHA = $SignUpBuyer_request->number_house;
+            $user->PHUONG = $SignUpBuyer_request->ward;
+            $user->QUAN = $SignUpBuyer_request->district;
+            $user->TP = $SignUpBuyer_request->city;
+            $user->EMAIL = $SignUpBuyer_request->email;
+            // $user->MATKHAU = Hash::make($SignUpBuyer_request->password);
+            $user->MATKHAU = $SignUpBuyer_request->password;
+            $user->NGAYTAO = date('Y-m-d H:i:s');
+            $user->save();
 
-    return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
-  }
+            return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
+        }
+    }    
+}
   function getSignUpSeller(){
     return view('SignUp');
   }

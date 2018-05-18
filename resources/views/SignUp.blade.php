@@ -46,6 +46,11 @@
                                 <div class="form-group signupseller">
                                     <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
                                     <div class="col-md-8">
+                                        @if(session('thongbao'))
+                                        <div class="alert-success">
+                                          {{session('thongbao')}}
+                                        </div>
+                                      @endif
                                         <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                     </div> 
                                 </div>
