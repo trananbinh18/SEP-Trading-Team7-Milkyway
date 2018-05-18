@@ -67,11 +67,11 @@ class AuthController extends Controller
         }
     }    
 }
-  function getSignUpSeller(){
+    function getSignUpSeller(){
     return view('SignUp');
-  }
+    }
 
-  function postSignUpSeller(Request $SignUpSeller_request){
+    function postSignUpSeller(Request $SignUpSeller_request){
     // $this->validate($SignUp_request,[
     //  'name' => 'required|min:3', 
     //  'phone'=> 'required|min:10', 
@@ -89,23 +89,34 @@ class AuthController extends Controller
     //  'password.required' => 'Bạn chưa nhập mật khẩu' , 
     //  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
     //  ]);
-    $filenameGPKD = $SignUpSeller_request->file('image')->getclientOriginalName();
-    $users = new nguoiban();
-    $users->TENNB = $SignUpSeller_request->name;
-    $users->SĐT = $SignUpSeller_request->phone;
-    $users->SONHA = $SignUpSeller_request->number_house;
-    $users->PHUONG = $SignUpSeller_request->ward;
-    $users->QUAN = $SignUpSeller_request->district;
-    $users->TP = $SignUpSeller_request->city;
-    $users->EMAIL = $SignUpSeller_request->email;
-    $users->MATKHAU = Hash::make($SignUpSeller_request->password);
-    $users->GPKD = $filenameGPKD;
-    $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
-    $users->NGAYTAO = date('Y-m-d H:i:s');
-    $users->save();
+    $email = $SignUpSeller_request->email;
+    if($email != "") {
+    $ems = DB::table('nguoiban')->select('EMAIL')->where('EMAIL' , $email)->get();
+        if( count($ems) >= 1 )
+        {
+           return redirect()->back()->with('thongbao', 'Email nhập bị trùng');
+             //$error = 'email error';
+        }else{
+            $filenameGPKD = $SignUpSeller_request->file('image')->getclientOriginalName();
+            $users = new nguoiban();
+            $users->TENNB = $SignUpSeller_request->name;
+            $users->SĐT = $SignUpSeller_request->phone;
+            $users->SONHA = $SignUpSeller_request->number_house;
+            $users->PHUONG = $SignUpSeller_request->ward;
+            $users->QUAN = $SignUpSeller_request->district;
+            $users->TP = $SignUpSeller_request->city;
+            $users->EMAIL = $SignUpSeller_request->email;
+            // $users->MATKHAU = Hash::make($SignUpSeller_request->password);
+            $users->MATKHAU = $SignUpSeller_request->password;
+            $users->GPKD = $filenameGPKD;
+            $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
+            $users->NGAYTAO = date('Y-m-d H:i:s');
+            $users->save();
 
-    return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
-  }
+            return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
+            }
+        }
+    }
 
    function ChangePassword(Request $PW_request){
         session_start();
