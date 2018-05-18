@@ -114,54 +114,72 @@
         <div class="tab-container space-10">
             <div id="tab_01" class="tab-content">
                 <div class="products">
+                    @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($pro->maloaisp === 4)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @if($count < 12)
+                        @if($pro->maloaisp === 4)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
+                        <?php $count++; ?>
+                        @endif
+                    @else
+                        <?php break;?>
                     @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_02" class="tab-content">
                 <div class="products">
+                    @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($pro->maloaisp === 5)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @if($count < 12)
+                        @if($pro->maloaisp === 5)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
+                        <?php $count++; ?>
+                        @endif
+                    @else
+                        <?php break;?>
                     @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_03" class="tab-content">
                 <div class="products">
+                    @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($pro->maloaisp === 6)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                <img class="secondary_image" src="" alt=""/>
-                            </a>
+                    @if($count < 12)
+                        @if($pro->maloaisp === 6)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
+                        <?php $count++; ?>
+                        @endif
+                    @else
+                        <?php break;?>
                     @endif
                     @endforeach
                 </div>
@@ -202,37 +220,49 @@
         <div class="tab-container space-10">
             <div id="tab_04" class="tab-content">
                 <div class="products">
+                    @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($pro->maloaisp === 5)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt="<?php echo $pro->hinh ?>"/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @if($count < 12)
+                        @if($pro->maloaisp === 5)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
-                        <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
+                        <?php $count++; ?>
+                        @endif
+                    @else
+                        <?php break;?>
                     @endif
                     @endforeach
                 </div>
             </div>
             <div id="tab_05" class="tab-content">
                 <div class="products">
+                    @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($pro->maloaisp === 4)
-                    <div class="product">
-                        <div class="product-images">
-                            <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
-                                <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
-                                <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
-                            </a>
+                    @if($count < 12)
+                        @if($pro->maloaisp === 4)
+                        <div class="product">
+                            <div class="product-images">
+                                <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
+                                    <img class="primary_image" src="resources/assets/images/products/<?php echo $pro->hinh ?>" alt=""/>
+                                    <img class="secondary_image" src="resources/assets/images/products/featured/1.jpg" alt=""/>
+                                </a>
+                            </div>
+                            <a href="#" title="BlueBerry"><p class="product-title"><?php echo $pro->tensp ?></p></a>
+                            <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
+                            <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
-                        <a href="#"><p class="product-title"><?php echo $pro->tensp ?></p></a>
-                        <p class="product-price-old"><?php echo number_format($pro->giacu,0,',','.')." Đ" ?></p>
-                        <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
-                    </div>
+                        <?php $count++; ?>
+                        @endif
+                    @else
+                        <?php break;?>
                     @endif
                     @endforeach
                 </div>
