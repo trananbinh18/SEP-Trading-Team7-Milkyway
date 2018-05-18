@@ -8,6 +8,7 @@ use Illuminate\Http\Request as Controller;
 use Illuminate\Http\Request;
 use App\nguoimua;
 use App\nguoiban;
+use App\nhanvien;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
@@ -93,4 +94,22 @@ class AuthController extends Controller
 
     return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
   }
+
+   function ChangePassword(Request $PW_request){
+        session_start();
+                //Đổi mật khẩu
+        if($PW_request->new_password = $PW_request->confirm_password)
+        {
+            //echo "Exactly";
+            if($PW_request->input('current_password') != $_SESSION['user']->MATKHAU){
+                return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
+                }else{
+                    $_SESSION['user']->MATKHAU = $PW_request->input('new_password');
+
+                    $_SESSION['user']->save();
+
+                    return redirect('Password')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+            }
+        }
+    }
 }

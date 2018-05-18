@@ -95,10 +95,6 @@ Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
 
 
-//Redirect to view Rau
-
-//Redirect to view ResetPassword
-Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
 //Redirect to view EditInfor
 Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf']);
 
@@ -144,3 +140,7 @@ Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct'
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
 // Route::get('Home',['as'=>'home','uses'=>'Controller@Carthome']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
+
+//Redirect to view ResetPassword
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
