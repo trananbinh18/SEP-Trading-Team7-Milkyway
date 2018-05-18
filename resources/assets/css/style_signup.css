@@ -4,7 +4,7 @@
 
 /* Style tab links */
 .tablink {
-    background-color: White;
+    background-color: #80b435;
     color: black;
     float: left;
     border: none;
@@ -16,9 +16,9 @@
     box-shadow: 1px 2px 1px #f0f0f0;
 }
 
-.tablink:hover {
-    background-color: #48bf07;
-}
+/*.tablink:hover {
+    background-color: white;
+}*/
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {

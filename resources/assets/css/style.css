@@ -20812,7 +20812,8 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   display: block;
   text-align: left;
   /*font-family: "TXGB";*/
-  font: 700 16px/20px "Roboto Slab"
+  font: 700 16px/20px "Roboto Slab";
+  text-transform: uppercase;
 }
 
 .Btttk input{
@@ -20868,6 +20869,13 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   font: 700 16px/20px "Roboto Slab";
 
 }
+.space-50 .signupseller label:after {
+ content: '*';
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
 .space-50 .signupseller input {
   margin-top: 10px;
 }
@@ -20877,14 +20885,41 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .page-seller .content-text h2 {
   color: #80b435;
   font: 500 40px/40px "Roboto Slab";
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.page-seller .content-text h2:after {
+  position: absolute;
+  content: '';
+  left: 0px;
+  width: 180px;
+  height: 1px;
+  background: #80b435;
+  bottom: 0px;
+  margin-left: 510px;
+
+}
+.page-seller .content-text .sloganseller h2:after {
+  position: absolute;
+  content: '';
+  left: 0px;
+  width: 823px;
+  height: 1px;
+  background: #80b435;
+  bottom: 0px;
+  margin-left: 188px;
+
 }
 .page-seller .content-text .sloganseller h2 {
   color: #80b435;
   font: 500 40px/40px "Roboto Slab";
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .page-seller .content-text p {
   margin-bottom: 20px;
+  font: 300 16px/20px "Roboto Slab";
 }
 .imgfarmer {
   margin-top: 60px;

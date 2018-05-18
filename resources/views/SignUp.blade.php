@@ -14,9 +14,9 @@
     </div>
 </div>
 <!-- End banner -->
-<div style="padding-left: 400px;">
-    <button class="tablink" onclick="openPage('Seller', this, '#d0d8cb')">Người Bán</button>
-    <button class="tablink" onclick="openPage('Buyer', this, '#d0d8cb')" id="defaultOpen">Người Mua</button>
+<div style="padding-left: 500px;">
+    <button class="tablink" onclick="openPage('Seller', this, '#fff')">BÁN</button>
+    <button class="tablink" onclick="openPage('Buyer', this, '#fff')" id="defaultOpen">MUA</button>
 </div>
 <div id="Buyer" class="tabcontent">
    <div class="container container-ver2">
@@ -26,31 +26,31 @@
                     <div class="row">
                         <div class="center">
                             <h2>ĐĂNG KÝ</h2>
-                            <p>Tạo tài khoản mua cả thế giới!</p>
+                            <p>Cùng tạo tài khoản mua cả thế giới!</p>
                         </div>
                         <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
                             <div class="col-md-6 space-50" id="bodyinput">
                                 <div class="form-group signupseller">
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                   <label for="inputname" class="col-md-4 control-lab">Họ và tên(*);</label>
+                                   <label for="inputname" class="col-md-4 control-lab">Họ và tên</label>
                                    <div class="col-md-8">
                                     <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
                                 </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại(*);</label>
+                                    <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
+                                    <label for="inputEmail3" class="col-md-4 control-lab">Email</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                     </div> 
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
+                                    <label for="inputpass" class="col-md-4 control-lab">Mật khẩu</label>
                                     <div class="col-md-8">
                                         <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                     </div>
@@ -59,25 +59,25 @@
                             <!--end cột trái đăng kí ng bán-->
                             <div class="col-md-6 space-50">
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Phường xã</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Quận huyện</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố(*);</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
                                     </div>
@@ -100,38 +100,38 @@
             <div class="content-text space-50">
                 <div class="row">
                     <div class="center sloganseller">
-                        <h2>ĐĂNG KÝ BÁN HÀNG CÙNG WHOLE FOODS</h2>
-                        <p> </p>
+                        <h2>ĐĂNG KÍ BÁN HÀNG CÙNG WHOLE FOODS</h2>
+                        <p>Chúng tôi sẻ đưa sản phẩm của bạn đi toàn thế giới</p>
                     </div>
                     <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
                         <div class="col-md-6 space-50" id="bodyinput">
                             <div class="form-group signupseller">
                                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                               <label for="inputname" class="col-md-4 control-lab">Họ và tên(*);</label>
+                               <label for="inputname" class="col-md-4 control-lab">Họ và tên</label>
                                <div class="col-md-8">
                                     <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
-                                <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại(*);</label>
+                                <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại</label>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
-                                <label for="inputEmail3" class="col-md-4 control-lab">Email(*);</label>
+                                <label for="inputEmail3" class="col-md-4 control-lab">Email</label>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
-                                <label for="inputpass" class="col-md-4 control-lab">Mật khẩu(*);</label>
+                                <label for="inputpass" class="col-md-4 control-lab">Mật khẩu</label>
                                 <div class="col-md-8">
                                     <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
-                                <label for="inpuimgGPKD" class="col-md-4 control-lab">Giấy Phép Kinh Doanh(*)</label>
+                                <label for="inpuimgGPKD" class="col-md-4 control-lab">Giấy Phép Kinh Doanh</label>
                                 <div class="row">
                                     <div class="form-group col-md-3 img12"  >
                                         <div class="img-picker">
@@ -144,28 +144,28 @@
                     </div> <!--end cột trái đăng kí ng bán-->
                     <div class="col-md-6 space-50">
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ(*);</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Phường xã(*);</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Phường xã</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Quận huyện(*);</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Quận huyện</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố(*);</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
                             </div>
