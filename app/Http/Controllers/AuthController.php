@@ -112,4 +112,57 @@ class AuthController extends Controller
             }
         }
     }
+
+     function ChangeInforDetail(){
+        session_start();
+        if($_SESSION['typeuser']==1){
+            $data = nguoiban::select('TENNB','SĐT','SONHA','PHUONG','QUAN','TP')->get();
+            return redirect('Information')->with('data',$data);
+        }else if($_SESSION['typeuser']==2){
+            $data = nguoimua::select('TENNM','SĐT','SONHA','PHUONG','QUAN','TP')->get();
+            return redirect('Information')->with('data',$data);
+        }else if($_SESSION['typeuser']==3){
+            $data = nhanvien::select('TENNV','SĐT','SONHA','PHUONG','QUAN','TP')->get();
+            return redirect('Information')->with('data',$data);
+        }else{
+            return redirect('Information');
+        }
+    }
+
+     function ChangeInfor(Request $Infor_request){
+        session_start();
+        echo session_status();
+        if($_SESSION['typeuser']==1){
+        //Thay đổi thông tin cho người bán
+            $_SESSION['user']->TENNB = $Infor_request->name;
+            $_SESSION['user']->SĐT =  $Infor_request->phone;
+            $_SESSION['user']->SONHA =  $Infor_request->number_house;
+            $_SESSION['user']->PHUONG =  $Infor_request->ward;
+            $_SESSION['user']->QUAN =  $Infor_request->district;
+            $_SESSION['user']->TP =  $Infor_request->city;
+            $_SESSION['user']->save();
+            return redirect('Information')->with('thongbao','Bạn đã sửa thông tin thành công');
+            }else if($_SESSION['typeuser']==2){
+                //Thay đổi thông tin cho người mua
+                $_SESSION['user']->TENNM = $Infor_request->name;
+                $_SESSION['user']->SĐT =  $Infor_request->phone;
+                $_SESSION['user']->SONHA =  $Infor_request->number_house;
+                $_SESSION['user']->PHUONG =  $Infor_request->ward;
+                $_SESSION['user']->QUAN =  $Infor_request->district;
+                $_SESSION['user']->TP =  $Infor_request->city;
+                $_SESSION['user']->save();
+                return redirect('Information')->with('thongbao','Bạn đã sửa thông tin thành công');
+                }else if($_SESSION['typeuser']==3){
+                    //Thay đổi thông tin cho nhân viên
+                    $_SESSION['user']->TENNV = $Infor_request->name;
+                    $_SESSION['user']->SĐT =  $Infor_request->phone;
+                    $_SESSION['user']->SONHA =  $Infor_request->number_house;
+                    $_SESSION['user']->PHUONG =  $Infor_request->ward;
+                    $_SESSION['user']->QUAN =  $Infor_request->district;
+                    $_SESSION['user']->TP =  $Infor_request->city;
+                    $_SESSION['user']->save();
+                    return redirect('Information')->with('thongbao','Bạn đã sửa thông tin thành công');
+            }else
+                return redirect('home');
+        }
 }

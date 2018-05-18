@@ -94,10 +94,6 @@ Route::get('donhang',function(){
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
 
-
-//Redirect to view EditInfor
-Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf']);
-
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
 Route::get('Logout',['as'=>'logout','uses'=>'ControllerAccount@Logout']);
@@ -144,3 +140,7 @@ Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delet
 //Redirect to view ResetPassword
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
+
+//Redirect to view EditInfor
+Route::get('Infomation',['as'=>'editInf', 'uses'=> 'AuthController@ChangeInforDetail']);
+Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
