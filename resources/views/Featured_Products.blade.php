@@ -6,8 +6,8 @@
         <div class="main-content">
             <div class="container">
                 <div class="banner-header banner-lbook3">
-                    <img src="resources/assets/images/discounted/banner-catalog1.jpg" alt="Banner-header">
-                    <div class="text" style="text-shadow: 2px 2px 2px #000000">
+                    <img src="resources/assets/images/banner-product-checkout.jpg" alt="Banner-header">
+                    <div class="text">
                     <h3>Sản phẩm bán chạy nhất</h3>
                     <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i><a href="#" title="Home">Sản phẩm nổi bật</a><i class="fa fa-caret-right"></i>bán chạy nhất</p>
                 </div>

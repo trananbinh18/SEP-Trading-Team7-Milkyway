@@ -6,8 +6,8 @@
         <div class="main-content">
             <div class="container">
                 <div class="banner-header banner-lbook3">
-                    <img src="resources/assets/images/banner/t1.jpg" alt="Banner-header">
-                    <div class="text" style="text-shadow: 2px 2px 2px #000000">
+                    <img src="resources/assets/images/banner-product-checkout.jpg" alt="Banner-header">
+                    <div class="text">
                     <h3>Chính sách giao hàng</h3>
                     <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right" ></i>Chính sách giao hàng</p>
                 </div>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-6 space-50">
                                 <h3>Trách nhiệm với hàng hóa vận chuyển</h3>
-                                <p>Mọi tổn thất về hàng hóa trong quá trình vận chuyển sẽ được khách hàng xác nhận với nhân viên giao hàng ngay khi giao hàng và Whole Foods Market sẽ hoàn lại 100% số lượng hư hỏng trong đợt đặt hàng kế tiếp hoặc hoàn lại tiền tuỳ theo thoả thuận với khách hàng.</p>
+                                <p>- Mọi tổn thất về hàng hóa trong quá trình vận chuyển sẽ được khách hàng xác nhận với nhân viên giao hàng ngay khi giao hàng và Whole Foods Market sẽ hoàn lại 100% số lượng hư hỏng trong đợt đặt hàng kế tiếp hoặc hoàn lại tiền tuỳ theo thoả thuận với khách hàng.</p>
                             </div>
                             <div class="col-md-6 space-50">
                                 <h3>Các điều kiện khác</h3>

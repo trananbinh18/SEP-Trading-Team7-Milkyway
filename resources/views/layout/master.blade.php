@@ -188,10 +188,9 @@
                             <h3 class="title-footer">Thông tin</h3>
                             <ul class="list-footer">
                                 <li><a href="{{route('Ship')}}" title="title">Chính sách giao hàng</a></li>
-                                <li><a href="#" title="title">Pháp lý</a></li>
-                                <li><a href="#" title="title">Điều khoản & điều kiện</a></li>
-                                <li><a href="#" title="title">Giới thiệu</a></li>
-                                <li><a href="#" title="title">Bảo mật thanh toán</a></li>
+                                <li><a href="{{route('Le')}}" title="title">Pháp lý</a></li>
+                                <li><a href="{{route('Term')}}" title="title">Điều khoản & điều kiện</a></li>
+                                <li><a href="{{route('About')}}" title="title">Giới thiệu</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -220,9 +219,9 @@
                         <p class="float-left">Copyright &copy;2018 <strong>Team Milkyway</strong> - All Rights Reserved.</p>
                         <div class="float-right">
                             <ul class="menu-bottom-footer">
-                                <li><a href="#" title="Contact Us">Liên hệ</a></li>
-                                <li><a href="#" title="Term of Use">Điều khoản sử dụng</a></li>
-                                <li><a href="#" title="Privacy Policy">Chính sách pháp lý</a></li>
+                                <li><a href="{{route('Cnt')}}" title="Contact Us">Liên hệ</a></li>
+                                <li><a href="{{route('Term')}}" title="Term of Use">Điều khoản sử dụng</a></li>
+                                <li><a href="{{route('Le')}}" title="Privacy Policy">Chính sách pháp lý</a></li>
                                 <li><a href="#" title="Site Map">Bản đồ</a></li>
                             </ul>
                             <div class="language">
