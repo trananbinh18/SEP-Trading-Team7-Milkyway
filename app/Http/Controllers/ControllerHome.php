@@ -29,4 +29,10 @@ class ControllerHome extends Controller
     function Contact(){
         return view('Contact');
     }
+    function Legal(){
+        return view('Legal');
+    }
+    function Term(){
+        return view('Term');
+    }
 }

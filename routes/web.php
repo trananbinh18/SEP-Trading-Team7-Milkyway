@@ -91,6 +91,8 @@ Route::get('Vegetables',function(){
 Route::get('donhang',function(){
 	return view('Donhang');
 });
+Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
+Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
 
 
 //Redirect to view Rau
@@ -106,7 +108,7 @@ Route::get('Logout',['as'=>'logout','uses'=>'ControllerAccount@Logout']);
 //Redirect to view "Đăng Ký""
 Route::get('Register',['as'=>'signup','uses'=>'ControllerHome@Register']);
 //Redirect to view "Giới thiệu"
-Route::get("about",'ControllerHome@about');
+Route::get("about",['as'=>'About','uses'=>'ControllerHome@about']);
 //Redirect to view "Trang chủ"
 Route::get('home',['as'=>'homepage','uses'=>'ControllerHome@home']);
 //Đăng nhập và xử lí đăng nhập
