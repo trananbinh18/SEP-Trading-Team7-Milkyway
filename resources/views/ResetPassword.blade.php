@@ -20,25 +20,30 @@
               </div>
             </div>
             <div class="col-md-8 control-infotproduct box-shadow">
-                <form class="form-horizontal"  method="POST">
+              @if(session('thongbao'))
+                  <div class="alert-success">
+                    {{session('thongbao')}}
+                  </div>
+                @endif
+                <form class="form-horizontal"  action="{{route('changePassword')}}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="group box space-20">
                         <label class="control-label" for="email" >Mật khẩu hiện tại *</label>
-                        <input class="form-control" type="Password" placeholder="Mật Khẩu Hiện Tại" id="current-password" name="current-password" name="current-password" required>
+                        <input class="form-control" type="Password" placeholder="Mật Khẩu Hiện Tại" id="current-password" name="current_password" required>
                     </div>
                     <div class="group box">
                         <label class="control-label" for="new-password" >Mật khẩu mới *</label>
-                        <input class="form-control" type="Password" placeholder="Mật Khẩu Mới" id="new-password"
-                        name="new-password" required>
+                        <input class="form-control" type="Password" placeholder="Mật Khẩu Mới" id="new_password"
+                        name="new_password" required>
                     </div>
                       <div class="group box">
                         <label class="control-label" for="new-password" >Nhập lại mật khẩu *</label>
                         <input class="form-control" type="Password" placeholder="Nhập lại mật khẩu" id="valid-new-password"
-                        name="valid-new-password" required> 
+                        name="confirm_password" required> 
                       </div>
                       <br>
                       <br>
-                    <button type="submit" class="link-v1 rt" >Đăng Nhập</button>
+                    <button type="submit" class="link-v1 rt" >Cập Nhập</button>
                 </form>
             </div>
        </div>

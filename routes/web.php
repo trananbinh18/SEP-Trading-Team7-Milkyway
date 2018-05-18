@@ -62,7 +62,7 @@ Route::get('contact',function(){
 
 Route::get('checkout',function(){
 	return view('checkout');
-});
+})->name('Checkout');
 
 Route::get('shoppingcart',function(){
 	return view('shopping_cart');
@@ -93,14 +93,6 @@ Route::get('donhang',function(){
 });
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
-
-
-//Redirect to view Rau
-
-//Redirect to view ResetPassword
-Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
-//Redirect to view EditInfor
-Route::get('Infomation',['as'=>'editInf', 'uses'=> 'InformationController@inf']);
 
 //Redirect to view "Đăng Nhập"
 Route::get('Login',['as'=>'signin','uses'=>'ControllerHome@Login']);
@@ -142,3 +134,14 @@ Route::get('ListProduct',['as'=>'ListProduct','uses'=>'LoadDataController@index'
 //Mua sản phẩm
 Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
+Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
+// Route::get('Home',['as'=>'home','uses'=>'Controller@Carthome']);
+Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
+
+//Redirect to view ResetPassword
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
+
+//Redirect to view EditInfor
+Route::get('Infomation',['as'=>'editInf', 'uses'=> 'AuthController@ChangeInforDetail']);
+Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);

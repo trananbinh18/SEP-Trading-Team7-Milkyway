@@ -75,7 +75,7 @@
                                     </form>
                                 </td>
                                 <td class="total-price"></td>
-                                <td class="product-remove"><a class="remove" href="#" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
+                                <td class="product-remove"><a class="remove" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
                             </tr>
                             @endforeach
                         </tbody>                        
@@ -88,10 +88,10 @@
                         <!-- End col-md-4 -->
                         <div class="col-md-4 space-30">
                             <div class="item">
-                                <h3 class="title">TỔNG HÀNG</h3>
+                                <h3 class="title">TỔNG HÀNG: <span class="float-right"></span></h3>
                                 <p class="box"><span class="float-left">Phí vận chuyển</span><span class="float-right">40000</span></p>
                                 <p class="box space-30"><span class="float-left"><b>Tổng chi phí</b></span><span class="float-right"><b class="color-brand">520000</b></span></p>
-                                <a class="link-v1 lh-50 rt" href="#" title="POCEEED TO CHECKOUT">THANH TOÁN</a>
+                                <a class="link-v1 lh-50 rt" href="{{route('Checkout')}}" title="POCEEED TO CHECKOUT">THANH TOÁN</a>
                             </div>
                         </div>
                         <!-- End col-md-4 -->

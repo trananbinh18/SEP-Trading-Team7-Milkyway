@@ -25,7 +25,7 @@ class Controller extends BaseController
     }
 
 
-    function Postproduct(Request $Product_request){
+    public function Postproduct(Request $Product_request){
 
         // $this->validate($Product_request,
         // [
@@ -87,13 +87,13 @@ class Controller extends BaseController
     }
     
 
-    function Getproduct(){
+    public function Getproduct(){
         return view ('Addproduct');
     }
-    function SearchResult(){
+    public function SearchResult(){
         return view('Search');
     }
-    function SearchProduct(Request $Search_request){
+    public function SearchProduct(Request $Search_request){
         if(is_null($Search_request->Timkiem)){
             return view('Search')->with('sProduct',0);
         }
@@ -107,23 +107,36 @@ class Controller extends BaseController
         $newName = $fileName.'_'.$fileNameNew.$fileExtension;
         return $newName;
     }
-    function Test(){
+   public  function Test(){
         $filenameSP = 'ab.jpg';
         $fileSPName = substr($filenameSP, 0, strripos($filenameSP, '.')); //get file name
         $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
         $filenameNew = (string)Time();
         echo var_dump($filenameNew.$fileSPNameEx);
     }
-    function BuyProduct($id){
+    public function BuyProduct($id){
         $Productbuy = sanpham::find($id);
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
         return redirect()->route('shopping');
-        return redirect()->route('shoppingCart');
-
     }
-    function Cart(){
+    public function Cart(){
         $content = Cart::content();
-        return view('shopping_cart',compact('content'));
+        $total = Cart::total();
+        return view('shopping_cart',compact('content','total'));
+    }
+    public function CheckoutCart()
+    {
+        $content = Cart::content();
+        $total = Cart::total();
+        return view('checkout',compact('content','total'));
+    }
+    // function Carthome(){
+    //     $contenthome = Cart::content();
+    //     return view('home',compact('contenthome'));
+    // }
+    public function Delete($id){
+        Cart::remove($id);
+        return redirect()->route('shopping');
     }
 }
