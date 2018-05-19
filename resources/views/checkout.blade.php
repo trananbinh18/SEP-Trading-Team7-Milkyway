@@ -6,7 +6,7 @@ Kiểm tra
         <div class="main-content">
             <div class="container">
                 <div class="banner-header banner-lbook3">
-                    <img src="resources/assets/images/banner-product-checkout.png" alt="Banner-header">
+                    <img src="resources/assets/images/banner-product-checkout.jpg" alt="Banner-header">
                     <div class="text">
                         <h3>Kiểm tra</h3>
                         <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i>Kiểm tra</p>
