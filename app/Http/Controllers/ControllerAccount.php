@@ -42,6 +42,7 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->WARD]);
                         session(['district' => $user->DISTRICT]);
                         session(['city' => $user->TP]);
+                        return redirect()->route('listpro');
                         break;
                     case 2:
                         session(['userid' => $user->MANM]);
@@ -53,6 +54,7 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->WARD]);
                         session(['district' => $user->DISTRICT]);
                         session(['city' => $user->TP]);
+                        return redirect()->route('homepage');
                     default:
                         session(['userid' => $user->MANV]);
                         session(['typeuser' => 3]);
