@@ -20905,11 +20905,11 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   position: absolute;
   content: '';
   left: 0px;
-  width: 823px;
+  width: 180px;
   height: 1px;
   background: #80b435;
   bottom: 0px;
-  margin-left: 188px;
+  margin-left: 510px;
 
 }
 .page-seller .content-text .sloganseller h2 {
@@ -20923,4 +20923,18 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .imgfarmer {
   margin-top: 60px;
+}
+.btn {
+  padding-left: 240px;
+}
+.img {
+  padding-left: 18px;
+}
+.page .content-text h2:after {
+  position: absolute;
+  content: '';
+  left: 0px;
+  height: 1px;
+  background: #80b435;
+  bottom: 0px;
 }
