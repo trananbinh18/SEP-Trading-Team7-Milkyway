@@ -125,10 +125,6 @@ Route::get('SearchResult',function(){
 	return view('Search');
 });
 Route::get('Test','Controller@Test');
-//Return view ListProduct
-Route::get('ListProduct', function(){
-	return view('ListProduct');
-});
 //Trả về dữ liệu sản phẩm lên view
 Route::get('ListProduct',['as'=>'ListProduct','uses'=>'LoadDataController@index']);
 //Mua sản phẩm
