@@ -74,7 +74,9 @@
                                         </div>
                                     </form>
                                 </td>
-                                <td class="total-price"></td>
+                                <td class="total-price">
+                                    
+                                </td>
                                 <td class="product-remove"><a class="remove" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
                             </tr>
                             @endforeach

@@ -114,7 +114,7 @@
                                 <div class="cart hover-menu">
                                         <p class="icon-cart" title="Add to cart">
                                             <i class="icon"></i>
-                                            <span class="cart-count">2</span>
+                                            <span class="cart-count">{{Cart::content()->count()}}</span>
                                         </p>
                                         <div class="cart-list list-menu">
                                             <ul class="list">
