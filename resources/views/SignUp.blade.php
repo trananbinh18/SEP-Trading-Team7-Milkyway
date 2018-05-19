@@ -143,7 +143,7 @@
                             <div class="form-group signupseller">
                                 <label for="inpuimgGPKD" class="col-md-4 control-lab">Giấy Phép Kinh Doanh</label>
                                 <div class="row">
-                                    <div class="form-group col-md-3 img12"  >
+                                    <div class="img col-md-3 img12">
                                         <div class="img-picker">
                                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" required>
                                             </div>

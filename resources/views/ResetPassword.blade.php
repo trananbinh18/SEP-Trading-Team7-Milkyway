@@ -8,43 +8,56 @@
             <div>
               <aside class="widget widget_product_categories" style="padding-left: 10px;">
                       <div class="categories-home3">
-                         <h3>Thông tin khách hàng</h3>
+                         <h3>Xin chào Hòa</h3>
                           <i class="fa fa-chevron-circle-down icon-click"></i>
                           <ul class="menu-vertical">
                               <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="Đơn hàng">Đơn hàng</a></li>
-                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="{{route('editInf')}}" title="Sửa thông tin">Sửa thông tin</a></li>
-                              <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="{{route('resetpass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
+                              <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('editInf')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+                              <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('resetpass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
                           </ul>
                       </div>
                   </aside>
               </div>
             </div>
             <div class="col-md-8 control-infotproduct box-shadow">
-              @if(session('thongbao'))
-                  <div class="alert-success">
-                    {{session('thongbao')}}
-                  </div>
-                @endif
-                <form class="form-horizontal"  action="{{route('changePassword')}}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="group box space-20">
-                        <label class="control-label" for="email" >Mật khẩu hiện tại *</label>
-                        <input class="form-control" type="Password" placeholder="Mật Khẩu Hiện Tại" id="current-password" name="current_password" required>
-                    </div>
-                    <div class="group box">
-                        <label class="control-label" for="new-password" >Mật khẩu mới *</label>
-                        <input class="form-control" type="Password" placeholder="Mật Khẩu Mới" id="new_password"
-                        name="new_password" required>
-                    </div>
-                      <div class="group box">
-                        <label class="control-label" for="new-password" >Nhập lại mật khẩu *</label>
-                        <input class="form-control" type="Password" placeholder="Nhập lại mật khẩu" id="valid-new-password"
-                        name="confirm_password" required> 
-                      </div>
-                      <br>
-                      <br>
-                    <button type="submit" class="link-v1 rt" >Cập Nhập</button>
-                </form>
+                
+        <div class="page">
+            <div class="container container-ver2">
+                <div class="content-text space-50">
+                    
+                        <form class="form-horizontal" role="form">
+                            <div class="col-md-8 space-80" id="bodyinput">
+                              <div class="center">
+                                <h2>ĐỔI MẬT KHẨU</h2>
+                              </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputpass" class="col-md-4 control-lab">Mật khẩu hiện tại</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mật khẩu hiện tại" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputpass" class="col-md-4 control-lab">Mật khẩu mới</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mật khẩu mới" required>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputpass" class="col-md-4 control-lab">Nhập lại mật khẩu</label>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập lại mật khẩu" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 center">
+                                <a href="#"><button type="submit" class="link-v1 rt">Cập nhật</button></a>
+                            </div>
+                            </div>
+                          </form>
+                    
+                </div>
             </div>
-       </div>
+        </div>
+    
+</div>
+            </div>
 @endsection
