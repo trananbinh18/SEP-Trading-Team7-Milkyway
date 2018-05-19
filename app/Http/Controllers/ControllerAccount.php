@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
+use Cart;
 
 class ControllerAccount extends Controller
 {
@@ -43,6 +44,7 @@ class ControllerAccount extends Controller
     	session_start();
 	    unset($_SESSION["user"]);
 	    unset($_SESSION["typeuser"]);
+        Cart::destroy();
     	session_destroy();
     	return redirect()->route('homepage');
     }

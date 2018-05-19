@@ -131,10 +131,6 @@ class Controller extends BaseController
         $total = Cart::total();
         return view('checkout',compact('content','total'));
     }
-    // function Carthome(){
-    //     $contenthome = Cart::content();
-    //     return view('home',compact('contenthome'));
-    // }
     public function Delete($id){
         Cart::remove($id);
         return redirect()->route('shopping');

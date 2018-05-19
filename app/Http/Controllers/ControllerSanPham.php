@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\sanpham;
 use Illuminate\Support\Collection;
 use Illuminate\Routing\Redirector;
+use Cart;
 
 class ControllerSanPham extends Controller
 {
