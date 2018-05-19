@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controller\Auth\RegisterController;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Query\Builder;
 use Illuminate\View\Compilers\BladeCompiler;
 
 class LoadDataController extends Controller
