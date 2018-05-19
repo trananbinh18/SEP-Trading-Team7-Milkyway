@@ -15,7 +15,7 @@ class LoadDataController extends Controller
 {
 	public function index(){
 	//load sản phẩm
-	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH')->get();
+	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH')->where('MANB',session()->get('userid'))->get();
 	
 		return view('ListProduct')->with('products',$products);
 	}

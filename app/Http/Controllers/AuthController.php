@@ -124,12 +124,12 @@ class AuthController extends Controller
         if($PW_request->new_password = $PW_request->confirm_password)
         {
             //echo "Exactly";
-            if($PW_request->input('current_password') != $_SESSION['user']->MATKHAU){
+            if($PW_request->input('current_password') != session()->get('password')){
                 return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
                 }else{
-                    $_SESSION['user']->MATKHAU = $PW_request->input('new_password');
+                    session()->get('password') = $PW_request->input('new_password');
 
-                    $_SESSION['user']->save();
+                    session()->get('password')->save();
 
                     return redirect('Password')->with('thongbao','Bạn đã sửa mật khẩu thành công');
             }
@@ -138,13 +138,13 @@ class AuthController extends Controller
 
      function ChangeInforDetail(){
         session_start();
-        if($_SESSION['typeuser']==1){
+        if(session()->get('typeuser')==1){
             $data = nguoiban::select('TENNB','SĐT','SONHA','PHUONG','QUAN','TP')->get();
             return redirect('Information')->with('data',$data);
-        }else if($_SESSION['typeuser']==2){
+        }else if(session()->get('typeuser')==2){
             $data = nguoimua::select('TENNM','SĐT','SONHA','PHUONG','QUAN','TP')->get();
             return redirect('Information')->with('data',$data);
-        }else if($_SESSION['typeuser']==3){
+        }else if(session()->get('typeuser')==3){
             $data = nhanvien::select('TENNV','SĐT','SONHA','PHUONG','QUAN','TP')->get();
             return redirect('Information')->with('data',$data);
         }else{
@@ -155,7 +155,7 @@ class AuthController extends Controller
      function ChangeInfor(Request $Infor_request){
         session_start();
         echo session_status();
-        if($_SESSION['typeuser']==1){
+        if(session()->get('typeuser')==1){
         //Thay đổi thông tin cho người bán
             $_SESSION['user']->TENNB = $Infor_request->name;
             $_SESSION['user']->SĐT =  $Infor_request->phone;
