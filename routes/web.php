@@ -24,6 +24,7 @@ Route::get('catalog',function(){
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
+Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
 Route::post('Editproductpost','ControllerSanPham@saveproduct')->name('Editproductpost');

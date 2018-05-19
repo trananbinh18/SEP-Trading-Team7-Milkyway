@@ -135,4 +135,13 @@ class Controller extends BaseController
         Cart::remove($id);
         return redirect()->route('shopping');
     }
+    public function continueshopping(Request $re){
+        foreach(Cart::content() as $row){
+            $quan = $re->input($row->rowId);
+            Cart::update($row->rowId, $quan);
+
+        }
+        return redirect()->route('homepage');
+      
+    }
 }

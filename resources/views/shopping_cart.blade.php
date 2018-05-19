@@ -44,6 +44,9 @@
             <!-- End container -->
             <div class="container container-ver2">
                 <div class="box cart-container">
+                    <form role="form" action="{{route('continueshopping')}}" method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <table class="table cart-table space-30">
                         <thead>
                             <tr>
@@ -57,25 +60,25 @@
                             </tr>
                         </thead>                       
                         <tbody>
-                            @foreach($content as $item)
+                            @foreach(Cart::content() as $item)
                             <tr class="item_cart">
                                 <td class="product-photo"><img src="{!!url("resources/assets/images/products/{$item->options['img']}")!!}" alt="Futurelife"></td>
                                 <td class="produc-name"><a href="#">{{$item->name}}</a></td>
                                 <td class="produc-price"><input value="{{number_format($item->price,0,',','.')}}" size="4" type=""></td>
                                 <td class="produc-price"><input value="{{$item->options['unit']}}" size="4" type=""></td>
                                 <td class="product-quantity">
-                                    <form enctype="multipart/form-data">
+                                    
                                         <div class="product-signle-options product_15 clearfix">
                                             <div class="selector-wrapper size">
                                                 <div class="quantity">
-                                                    <input data-step="1" value="{{$item->qty}}" title="Qty" class="qty" size="4" type="text">
+                                                    <input data-step="1" value="{{$item->qty}}" title="Qty" name="{{$item->rowId}}" class="qty" size="4" type="text">
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    
                                 </td>
                                 <td class="total-price">
-                                    
+
                                 </td>
                                 <td class="product-remove"><a class="remove" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
                             </tr>
@@ -84,9 +87,9 @@
                     </table>
 
                     <div class="float-left">
-                        <a class="link-v1 lh-50 bg-brand" href="{{route('homepage')}}" title="CONTINUS SHOPPING">Tiếp tục mua sắm</a>
                     </div>
                     <div class="box cart-total space-30">
+                        <button type="submit" class="link-v1 lh-50 bg-brand" title="CONTINUS SHOPPING">Tiếp tục mua sắm</button>
                         <!-- End col-md-4 -->
                         <div class="col-md-4 space-30">
                             <div class="item">
@@ -98,6 +101,7 @@
                         </div>
                         <!-- End col-md-4 -->
                     </div>
+                <?php echo "</form>"?>
                     <!-- End float-right -->
                 </div>
                 <!-- End box -->
