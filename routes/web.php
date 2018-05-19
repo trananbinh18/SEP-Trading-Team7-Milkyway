@@ -83,9 +83,6 @@ Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
 
-Route::get('ListProduct',function(){
-	return view('listproduct');
-});
 Route::get('Vegetables',function(){
 	return view('Vegetables');
 });
@@ -127,7 +124,7 @@ Route::get('SearchResult',function(){
 });
 Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm lên view
-Route::get('ListProduct',['as'=>'ListProduct','uses'=>'LoadDataController@index']);
+Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
 //Mua sản phẩm
 Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
