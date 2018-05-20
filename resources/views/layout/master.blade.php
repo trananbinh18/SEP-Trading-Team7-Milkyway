@@ -126,13 +126,13 @@
                                                         <p class="product-price"><span class="price">{{number_format($item->price,0,',','.')}}</span></p>
                                                         <p class="qty">{{$item->qty}}</p>
                                                     </div>
-                                                    <a class="close" href="#" title="close"><i class="fa fa-times-circle"></i></a>
+                                                    <a class="close" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li> 
                                                 @endforeach
                                             </ul>
                                             <p class="total"><span class="left">Tổng:</span> <span class="right">700.000 đ</span></p>
                                             <div class="bottom">
-                                                <a class="link-v1" href="#" title="viewcart">Xem giỏ hàng</a>
+                                                <a class="link-v1" href="{{route('shopping')}}" title="viewcart">Xem giỏ hàng</a>
                                                 <a class="link-v1 rt" href="#" title="checkout">Thanh toán</a>
                                             </div>
                                         </div>

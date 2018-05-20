@@ -45,47 +45,46 @@
             <div class="container container-ver2">
                 <div class="box cart-container">
                     <form role="form" action="{{route('continueshopping')}}" method="post" enctype="multipart/form-data">
-
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <table class="table cart-table space-30">
-                        <thead>
-                            <tr>
-                                <th class="product-photo">Danh sách sản phẩm</th>
-                                <th class="produc-name">Tên sản phẩm</th>
-                                <th class="produc-price">Giá</th>
-                                <th class="produc-name">Đơn vị</th>
-                                <th class="product-quantity">Số lượng</th>
-                                <th class="total-price">Tổng</th>
-                                <th class="product-remove"></th>
-                            </tr>
-                        </thead>                       
-                        <tbody>
-                            @foreach(Cart::content() as $item)
-                            <tr class="item_cart">
-                                <td class="product-photo"><img src="{!!url("resources/assets/images/products/{$item->options['img']}")!!}" alt="Futurelife"></td>
-                                <td class="produc-name"><a href="#">{{$item->name}}</a></td>
-                                <td class="produc-price"><input value="{{number_format($item->price,0,',','.')}}" size="4" type=""></td>
-                                <td class="produc-price"><input value="{{$item->options['unit']}}" size="4" type=""></td>
-                                <td class="product-quantity">
-                                    
-                                        <div class="product-signle-options product_15 clearfix">
-                                            <div class="selector-wrapper size">
-                                                <div class="quantity">
-                                                    <input data-step="1" value="{{$item->qty}}" title="Qty" name="{{$item->rowId}}" class="qty" size="4" type="text">
+                        <table class="table cart-table space-30">
+                            <thead>
+                                <tr>
+                                    <th class="product-photo">Danh sách sản phẩm</th>
+                                    <th class="produc-name">Tên sản phẩm</th>
+                                    <th class="produc-price">Giá</th>
+                                    <th class="produc-name">Đơn vị</th>
+                                    <th class="product-quantity">Số lượng</th>
+                                    <th class="total-price">Tổng</th>
+                                    <th class="product-remove"></th>
+                                </tr>
+                            </thead>                       
+                            <tbody>
+                                @foreach(Cart::content() as $item)
+                                <tr class="item_cart">
+                                    <td class="product-photo"><img src="{!!url("resources/assets/images/products/{$item->options['img']}")!!}" alt="Futurelife"></td>
+                                    <td class="produc-name"><a href="#">{{$item->name}}</a></td>
+                                    <td class="produc-price"><input value="{{number_format($item->price,0,',','.')}}" size="4" type=""></td>
+                                    <td class="produc-price"><input value="{{$item->options['unit']}}" size="4" type=""></td>
+                                    <td class="product-quantity">
+                                        
+                                            <div class="product-signle-options product_15 clearfix">
+                                                <div class="selector-wrapper size">
+                                                    <div class="quantity">
+                                                        <input data-step="1" value="{{$item->qty}}" title="Qty" name="{{$item->rowId}}" class="qty" size="4" type="text">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    
-                                </td>
-                                <td class="total-price">
+                                        
+                                    </td>
+                                    <td class="total-price">
 
-                                </td>
-                                <td class="product-remove"><a class="remove" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
-                            </tr>
-                            @endforeach
+                                    </td>
+                                    <td class="product-remove"><a class="remove" href="{{route('deleteproduct',['id'=>$item->rowId])}}" title="close"><img src="resources/assets/images/icon-delete-cart.png" alt="close"></a></td>
+                                </tr>
+                                @endforeach
                         </tbody>                        
                     </table>
-
+                </form>
                     <div class="float-left">
                     </div>
                     <div class="box cart-total space-30">

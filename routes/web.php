@@ -24,7 +24,6 @@ Route::get('catalog',function(){
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
-Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
 Route::post('Editproductpost','ControllerSanPham@saveproduct')->name('Editproductpost');
@@ -129,8 +128,8 @@ Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
 Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
 Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
-// Route::get('Home',['as'=>'home','uses'=>'Controller@Carthome']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
+Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 
 //Redirect to view ResetPassword
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
