@@ -55,7 +55,7 @@ class ControllerAccount extends Controller
                         session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
                         return redirect()->route('homepage');
-                    default:
+                    case 3:
                         session(['userid' => $user->MANV]);
                         session(['typeuser' => 3]);
                         session(['name' => $user->TENNV]);
@@ -65,9 +65,11 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->PHUONG]);
                         session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
+                        return redirect()->route('homepage');    
+                    default:
+                        return redirect()->back();
                         break;
                 }
-            	return redirect()->route('homepage');
             }
         }
         $typeuser = 0;
