@@ -125,7 +125,7 @@ Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm lên view
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
 //Mua sản phẩm
-Route::get('BuyProduct/{id}',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
+Route::get('BuyProduct',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
 Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);

@@ -34,7 +34,12 @@ function slider_owl(slider_id, visible1, visible2, visible3, visible4, margin) {
         }
     });
 }
+
+
 $(document).ready(function() {
+    $("#btnSub").click(function() {
+           $("#formSoLuong").submit();
+    });
     // Slider products
     var windowns = $(window);
     var owl = $(".product-tab-content");
@@ -339,7 +344,7 @@ $(document).ready(function() {
             var item_price = item_cart.children('.produc-price').children('input');
             var result =  item_cart.children('.total-price');
             result.html(function(){
-                return ''+(item_number.val() * item_price.val().replace('', '')).toFixed(3);
+                return ''+(item_number.val() * item_price.val().replace('', ''));
             });
 
         });
@@ -355,17 +360,17 @@ $(document).ready(function() {
             var item_price = item_cart.children('.produc-price').children('input');
             var result =  item_cart.children('.total-price');
             result.html(function(){
-                return ''+(item_number.val() * item_price.val().replace('', '')).toFixed(3);
+                return ''+(item_number.val() * item_price.val().replace('', ''));
             });
         });
         $('.item_cart').each(function() {
-        var answer = (parseInt($(this).children('.product-quantity').find('input').val(), 10) * $(this).children('.produc-price').find('input').val().replace('$', '')).toFixed(3);
+        var answer = (parseInt($(this).children('.product-quantity').find('input').val(), 10) * $(this).children('.produc-price').find('input').val().replace('$', ''));
         $(this).children('.total-price').html(answer);
         });
 
         $('.item_cart').each(function() {
         $(this).children('.product-quantity').find('input').change(function() {
-          var answer = (parseInt($(this).val(), 10) * $(this).parents('.item_cart').children('.produc-price').find('input').val().replace('$', '')).toFixed(3);
+          var answer = (parseInt($(this).val(), 10) * $(this).parents('.item_cart').children('.produc-price').find('input').val().replace('$', ''));
           $(this).parents('.item_cart').children('.total-price').html(answer);
         });
         });
