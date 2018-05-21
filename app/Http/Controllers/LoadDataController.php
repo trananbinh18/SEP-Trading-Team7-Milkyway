@@ -22,4 +22,13 @@ class LoadDataController extends Controller
 	}
 	return redirect()->route('homepage');
 	}
+
+	public function loadListProduct_Sale(){
+		if(session()->get('typeuser') == 3){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+		$sanpham = DB::table('sanpham')->join('loaisanpham', 'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP', 'TENSP', 'SOLUONG', 'GIA', 'GIACU', 'DONVI', 'TRANGTHAI', 'HINH')->get();
+
+		return view('listproduct_sale')->with('sanpham', $sanpham);
+		}
+		return redirect()->route('homepage');
+	}
 }

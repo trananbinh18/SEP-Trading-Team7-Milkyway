@@ -28,8 +28,6 @@ Route::get('shopping',function(){
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
 Route::post('Editproductpost','ControllerSanPham@saveproduct')->name('Editproductpost');
 
-
-
 Route::get('info',function(){
 	return view('changeInfo');
 });
@@ -72,12 +70,6 @@ Route::get('order',function(){
 	return view('order');
 });
 
-Route::get('Information',function(){
-	return view('EditCustomerInformation');
-});
-Route::get('Password',function(){
-	return view('ResetPassword');
-});
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
@@ -88,6 +80,7 @@ Route::get('Vegetables',function(){
 Route::get('donhang',function(){
 	return view('Donhang');
 });
+
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
 
@@ -132,9 +125,12 @@ Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delet
 Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 
 //Redirect to view ResetPassword
-Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'AuthController@Chpass']);
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
 
 //Redirect to view EditInfor
-Route::get('Infomation',['as'=>'editInf', 'uses'=> 'AuthController@ChangeInforDetail']);
+Route::get('Information',['as'=>'editInf', 'uses'=> 'AuthController@inf']);
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
+
+//Trả về toàn bộ sản phẩm trong database lên view
+Route::get('ListProductSale', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);

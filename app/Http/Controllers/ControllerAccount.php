@@ -39,8 +39,8 @@ class ControllerAccount extends Controller
                         session(['password' => $user->MATKHAU]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->WARD]);
-                        session(['district' => $user->DISTRICT]);
+                        session(['ward' => $user->PHUONG]);
+                        session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
                         return redirect()->route('listpro');
                         break;
@@ -51,8 +51,8 @@ class ControllerAccount extends Controller
                         session(['password' => $user->MATKHAU]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->WARD]);
-                        session(['district' => $user->DISTRICT]);
+                        session(['ward' => $user->PHUONG]);
+                        session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
                         return redirect()->route('homepage');
                     default:
@@ -62,8 +62,8 @@ class ControllerAccount extends Controller
                         session(['password' => $user->MATKHAU]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->WARD]);
-                        session(['district' => $user->DISTRICT]);
+                        session(['ward' => $user->PHUONG]);
+                        session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
                         break;
                 }

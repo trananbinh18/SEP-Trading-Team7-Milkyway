@@ -25,6 +25,7 @@
         {{session('thongbao')}}
       </div>
       @endif
+
       <form class="form-horizontal" action="{{route('changeInfor')}}" role="form" method="POST">
        <input type="hidden" name="_token" value="{{ csrf_token() }}">
        <div class="center">
@@ -34,37 +35,37 @@
       <div class="form-group signupseller">
         <label for="inputEmail3" class="col-sm-3 control-lab">Họ và tên</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và tên" name="name" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và tên" name="name" value="{{session()->get('name')}}" required>
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Số điện thoại</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Số điện thoại" name="phone" value="{!! old('name', isset($data)) ? $data['SĐT']  : null !!}" required >
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Số điện thoại" name="phone" value="{{session()->get('phone')}}" required >
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Địa chỉ</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Địa chỉ" name="number_house" value="{!! old('name', isset($data)) ? $data['SONHA']  : null !!}" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Địa chỉ" name="number_house" value="{{session()->get('address')}}" required>
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Phường</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Phường" name="ward" value="{!! old('name', isset($data)) ? $data['PHUONG']  : null !!}" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Phường" name="ward" value="{{session()->get('ward')}}" required>
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Quận</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Quận" name="district" value="{!! old('name', isset($data)) ? $data['QUAN']  : null !!}" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Quận" name="district" value="{{session()->get('district')}}" required>
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Thành phố</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="{!! old('name', isset($data)) ? $data['TP']  : null !!}" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="{{session()->get('city')}}" required>
         </div>
       </div>
       <div class="col-md-12 center">
