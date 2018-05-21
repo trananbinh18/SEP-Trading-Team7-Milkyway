@@ -132,9 +132,9 @@ Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delet
 Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 
 //Redirect to view ResetPassword
-Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'InformationController@Chpass']);
+Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'AuthController@Chpass']);
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
 
 //Redirect to view EditInfor
-Route::get('Infomation',['as'=>'editInf', 'uses'=> 'AuthController@ChangeInforDetail']);
+Route::get('Infomation',['as'=>'editInf', 'uses'=> 'AuthController@inf']);
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
