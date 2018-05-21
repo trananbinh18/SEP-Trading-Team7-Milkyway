@@ -69,7 +69,7 @@ Kiểm tra
                                     <ul class="product-order">
                                         <li>
                                             <span class="left">Tạm Tính</span>
-                                            <span class="right">{{Cart::total()}}VND</span>
+                                            <span class="right">{{Cart::subtotal()}} VND</span>
                                         </li>
                                         <li>
                                             <span class="left">Phí giao hàng</span>
@@ -77,7 +77,7 @@ Kiểm tra
                                         </li>
                                         <li>
                                             <span class="left">Tổng cộng</span>
-                                            <span class="right brand">{{Cart::total()}}VND</span>
+                                            <span class="right brand">{{Cart::subtotal()}} VND</span>
                                         </li>
                                     </ul>
                                 </div>
