@@ -121,6 +121,7 @@ Route::get('Search',['as'=>'search','uses'=>'Controller@SearchProduct']);
 Route::get('SearchResult',function(){
 	return view('Search');
 });
+Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sellerChangeInfomation']);
 Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm lên view
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);

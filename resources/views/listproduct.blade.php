@@ -2,7 +2,6 @@
  @section(' title ')
  Danh sách sản phẩm
  @stop
-
  @section('content')
  <div class="row" style="margin-bottom: 200px">
   <div class="col-md-3 box-shadow control-infotproduct">
@@ -13,8 +12,8 @@
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Doanh Số</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Thông Báo</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('sellerChangeInfo')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('sellerChangeInfo')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
         </ul>
       </div>
 

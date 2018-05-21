@@ -123,20 +123,23 @@ function Chpass(){
     return  view('ResetPassword');
 }
 function ChangePassword(Request $PW_request){
-if($PW_request->new_password = $PW_request->confirm_password)
-{
-    if($PW_request->input('current_password') != session()->get('password')){
-        return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
-    }else if(session()->get('typeuser')==1){
-        $pass = nguoimua::where('MANM', session()->get('userid'))->first();
-        $pass->MATKHAU = $PW_request->new_password;
-    }else if(session()->get('typeuser')==2){
-        $pass = nguoimua::where('MANM', session()->get('userid'))->first();
-        $pass->MATKHAU = $PW_request->new_password;
+    if($PW_request->new_password = $PW_request->confirm_password)
+    {
+        if($PW_request->input('current_password') != session()->get('password')){
+            return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
+        }else if(session()->get('typeuser')==1){
+            $pass = nguoiban::where('MANB', session()->get('userid'))->first();
+            $pass->MATKHAU = $PW_request->new_password;
+        }else if(session()->get('typeuser')==2){
+            $pass = nguoimua::where('MANM', session()->get('userid'))->first();
+            $pass->MATKHAU = $PW_request->new_password;
+        }else if(session()->get('typeuser')==3){
+            $pass = nhanvien::where('MANV', session()->get('userid'))->first();
+            $pass->MATKHAU = $PW_request->new_password;
+        }
     }
-}
-$pass->save();
-return redirect('Password')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+    $pass->save();
+    return redirect('Password')->with('thongbao','Bạn đã sửa mật khẩu thành công');
 }
 
 //Return view Edit Information

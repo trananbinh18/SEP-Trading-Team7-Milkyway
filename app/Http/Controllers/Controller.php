@@ -144,4 +144,7 @@ class Controller extends BaseController
         return redirect()->route('homepage');
       
     }
+    function sellerChangeInfomation(){
+        return view('sellerChangeInfomation');
+    }
 }
