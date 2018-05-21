@@ -1,7 +1,8 @@
  @extends ('layout.master')
  @section(' title ')
- Danh sách sản phẩm người bán
+ Danh sách sản phẩm
  @stop
+
  @section('content')
  <div class="row" style="margin-bottom: 200px">
   <div class="col-md-3 box-shadow control-infotproduct">
@@ -11,9 +12,9 @@
          <h3>Thông Tin Sản Phẩm</h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm của người bán</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Doanh Số</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('sellerChangeInfo')}}" title="Doanh số">Thông Báo</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Thông Báo</a></li>
         </ul>
       </div>
 
@@ -47,13 +48,13 @@
 
                 <tr class="odd gradeX">
                    @php ($count = 0)
-                    @foreach($products as $row)
+                    @foreach($sanpham as $row)
                     <?php $count++; ?>
                   <td><?php echo $count; ?></td>
                   <td>{{$row->TENLOAISP}}</td>
                   <td>{{$row->TENSP}}</td>
                   <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
-                  <td>{{ number_format($row->GIA) }}</td>
+                  <td>{{number_format($row->GIA) }}</td>
                   <td>{{$row->TRANGTHAI}}</td>
                   <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
                   <td class="center">
@@ -65,7 +66,7 @@
                 </tbody>
               </table>
 
-               <a href="{{route('PostProduct')}}"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a>
+               <a href="#"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a>
             </div>
             <!-- /.table-responsive -->
 

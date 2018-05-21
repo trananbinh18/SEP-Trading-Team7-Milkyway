@@ -54,22 +54,22 @@ Kiểm tra
                                                 <span class="qty"><b>Số lượng</b></span>
                                                 <span class="dgia"><b>Đơn vị</b></span>    
                                                 <span class="total"><b>Thành tiền</b></span>
-                                            </li>                                           
-                                            <li>
-                                                 @foreach($content as $item)
+                                            </li>
+                                            @foreach($content as $item)                                           
+                                            <li>                                                 
                                                 <span class="name">{{$item->name}}</span>
                                                 <span class="qty">{{$item->qty}}</span>
                                                 <span class="dgiaR2">{{$item->options['unit']}}</span>
-                                                <span class="total">{{$item->price}}</span>
-                                                @endforeach
-                                            </li>                                           
+                                                <span class="total">{{$item->price}}</span>                                               
+                                            </li>
+                                            @endforeach                                           
                                         </ul>
                                     </div>
                                     <!-- End product-name -->
                                     <ul class="product-order">
                                         <li>
                                             <span class="left">Tạm Tính</span>
-                                            <span class="right">1000 Đ</span>
+                                            <span class="right">{{Cart::total()}}VND</span>
                                         </li>
                                         <li>
                                             <span class="left">Phí giao hàng</span>
@@ -77,7 +77,7 @@ Kiểm tra
                                         </li>
                                         <li>
                                             <span class="left">Tổng cộng</span>
-                                            <span class="right brand">500 Đ</span>
+                                            <span class="right brand">{{Cart::total()}}VND</span>
                                         </li>
                                     </ul>
                                 </div>

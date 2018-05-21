@@ -120,7 +120,10 @@ if($email != "") {
 }
 //return view ResetPassword
 function Chpass(){
+    if(session()->get('userid') == 1 || session()->get('userid') == 2){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
     return  view('ResetPassword');
+    }
+    return redirect()->route('homepage');
 }
 function ChangePassword(Request $PW_request){
     if($PW_request->new_password = $PW_request->confirm_password)
@@ -144,7 +147,11 @@ function ChangePassword(Request $PW_request){
 
 //Return view Edit Information
 function inf(){
-    return view('EditCustomerInformation');
+    if(session()->get('userid') == 1 || session()->get('userid') == 2){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+        return view('EditCustomerInformation');
+    }
+        return redirect()->route('homepage');
+
 }
 function ChangeInfor(Request $Infor_request){
 if(session()->get('typeuser') == 1){

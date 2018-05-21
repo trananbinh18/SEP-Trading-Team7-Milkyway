@@ -84,8 +84,9 @@
                                         <div class="title">
                                             <h3>SỐ LƯỢNG</h3>
                                         </div>
-                                         <form enctype="multipart/form-data">
-                                            <input data-step="1" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
+                                         <form id="formSoLuong" action="{{route('buyproduct')}}" method="get" enctype="multipart/form-data">
+                                            <input data-step="1" id="quanty" name="quan" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
+                                            <input type="hidden" name="id" value="{{$sanpham->MASP}}">
                                         </form>
                                     </div>
                                     <!-- End col-md-5 -->
@@ -94,7 +95,8 @@
                                 </div>
                                 <!-- End row -->
                                 <div class="action">
-                                    <a class="link-v1 add-cart bg-brand" title="Add to cart" href="{!!url('BuyProduct',[$sanpham->MASP])!!}"><span>Thêm vào giỏ</span></a>
+                                    <button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button>
+                                    {{-- <a class="link-v1 add-cart bg-brand" title="Add to cart" href="{!!url('BuyProduct',[$sanpham->MASP])!!}"><span>Thêm vào giỏ</span></a> --}}
                                     <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
                                     <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
                                 </div>

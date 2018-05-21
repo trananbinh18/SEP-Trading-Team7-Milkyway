@@ -114,22 +114,21 @@ class Controller extends BaseController
         $filenameNew = (string)Time();
         echo var_dump($filenameNew.$fileSPNameEx);
     }
-    public function BuyProduct($id){
-        $Productbuy = sanpham::find($id);
-        Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
+    public function BuyProduct(Request $re){
+        $Productbuy = sanpham::find($re->input("id"));
+        Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>$re->input("quan"),'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
         return redirect()->route('shopping');
     }
     public function Cart(){
         $content = Cart::content();
-        $total = Cart::total();
         return view('shopping_cart',compact('content','total'));
     }
     public function CheckoutCart()
     {
         $content = Cart::content();
-        $total = Cart::total();
-        return view('checkout',compact('content','total'));
+        $count = Cart::count();
+        return view('checkout',compact('content','count'));
     }
     public function Delete($id){
         Cart::remove($id);
