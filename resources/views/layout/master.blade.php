@@ -130,10 +130,10 @@
                                                 </li> 
                                                 @endforeach
                                             </ul>
-                                            <p class="total"><span class="left">Tổng:</span> <span class="right">700.000 đ</span></p>
+                                            <p class="total"><span class="left">Tổng:</span> <span class="right">{{Cart::subtotal()}} VND</span></p>
                                             <div class="bottom">
                                                 <a class="link-v1" href="{{route('shopping')}}" title="viewcart">Xem giỏ hàng</a>
-                                                <a class="link-v1 rt" href="#" title="checkout">Thanh toán</a>
+                                                <a class="link-v1 rt" href="{{route('Checkout')}}" title="checkout">Thanh toán</a>
                                             </div>
                                         </div>
                                     </div>
