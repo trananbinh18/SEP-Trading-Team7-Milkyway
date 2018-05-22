@@ -124,6 +124,7 @@ Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
 Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
 Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
+Route::post('order',['as'=>'Order','uses'=>'Controller@postCheckout']);
 
 //Redirect to view ResetPassword
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'AuthController@Chpass']);

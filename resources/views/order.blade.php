@@ -46,7 +46,7 @@
                     </div>
                     <p class="box center space-50">Cảm ơn bạn đã mua hàng của WholeFoods, Đơn hàng của bạn đã được đặt thành công!</p>
                     <div class="box">
-                        <a class="link-v1 lh-50 rt space-20" href="#" title="CONTINUS SHOPPING">TIẾP TỤC MUA SẮM</a>
+                        <a class="link-v1 lh-50 rt space-20" href="{{route('homepage')}}" title="CONTINUS SHOPPING">TIẾP TỤC MUA SẮM</a>
                     </div>
                 </div>
             </div>

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers;
 use App\Http\ControllerSanpham;
+use App\Http\ControllerAccount;
 use Illuminate\Support\Facades\DB;
 use Cart;
 use App\sanpham;
+use App\nguoimua;
+use App\hoadon;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -129,6 +132,16 @@ class Controller extends BaseController
         $content = Cart::content();
         $count = Cart::count();
         return view('checkout',compact('content','count'));
+    }
+    public function postCheckout(Request $re){
+        $Customer = new hoadon;
+        $Customer->MANM = session()->get('MANM');
+        $Customer->SDT = $re->phone;
+        $Customer->TP = $re->city;
+        $Customer->QUAN = $re->district;
+        $Customer->PHUONG = $re->ward;
+        $Customer->DIACHI = $re->inputaddress;
+        $Customer->save();
     }
     public function Delete($id){
         Cart::remove($id);
