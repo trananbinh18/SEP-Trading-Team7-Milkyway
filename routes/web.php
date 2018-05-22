@@ -136,4 +136,4 @@ Route::get('Information',['as'=>'editInf', 'uses'=> 'AuthController@inf']);
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
-Route::get('Employees', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
+Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
