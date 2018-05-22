@@ -126,7 +126,9 @@ Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delet
 Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 Route::post('order',['as'=>'Order','uses'=>'Controller@postCheckout']);
 
-//Redirect to view ResetPassword
+//Redirect to view ResetPassword for Employees
+Route::get('ResetPassword',['as'=>'ResetPassword', 'uses' =>'AuthController@resetPass']);
+//Redirect to view ResetPassword for Buyer
 Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'AuthController@Chpass']);
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
 
@@ -135,4 +137,4 @@ Route::get('Information',['as'=>'editInf', 'uses'=> 'AuthController@inf']);
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
-Route::get('ListProductSale', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
+Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
