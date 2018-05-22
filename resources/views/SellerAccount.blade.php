@@ -1,6 +1,6 @@
  @extends ('layout.master')
  @section(' title ')
- Danh Sách Sản Phẩm
+ Danh sách tài khoản
  @stop
 
  @section('content')
@@ -12,10 +12,10 @@
          <h3>TRANG NHÂN VIÊN </h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Danh Sách Người Bán</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Danh Sách Người Mua</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Tài Khoản Người Bán</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Tài Khoản Người Mua</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('listprosale')}}" title="Doanh số">Danh Sách Sản Phẩm</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('ResetPassword')}}" title="Doanh số">Đổi Mật Khẩu</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Đổi Mật Khẩu</a></li>
         </ul>
       </div>
 
@@ -36,38 +36,32 @@
               <thead>
                 <tr>         
                   <th>STT</th>
-                  <th>Loại SP</th>
-                  <th>Tên SP</th>
-                  <th>Số lượng</th>                                                
-                  <th>Giá</th>
-                  <th>Trạng thái</th>
-                  <th>Hình</th>
+                  <th>Tên người bán</th>
+                  <th>Số điện thoại</th>
+                  <th>Email</th>                                                
                   <th>Tùy chọn</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr class="odd gradeX">
-                   @php ($count = 0)
-                    @foreach($sanpham as $row)
-                    <?php $count++; ?>
+                  @php ($count = 0)
+                  @foreach($account as $row)
+                  <?php $count++ ?>
                   <td><?php echo $count; ?></td>
-                  <td>{{$row->TENLOAISP}}</td>
-                  <td>{{$row->TENSP}}</td>
-                  <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
-                  <td>{{number_format($row->GIA) }}</td>
-                  <td>{{$row->TRANGTHAI}}</td>
-                  <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
+                  <td> {{ $row->TENNB}}</td>
+                  <td>{{ $row->SDT}}</td>
+                  <td>{{ $row->EMAIL}}</td>
                   <td class="center">
                     <a href="#">Xóa<span  aria-hidden="true"></span></a> 
                     <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
-                </tr>
+                  </tr>
+
                   @endforeach
-                                                         
                 </tbody>
               </table>
 
-               <!-- <a href="#"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a> -->
+              <!--  <a href="#"><button class="link-v1 rt" ></button></a> -->
             </div>
             <!-- /.table-responsive -->
 

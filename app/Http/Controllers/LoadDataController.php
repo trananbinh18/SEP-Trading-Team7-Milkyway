@@ -31,4 +31,22 @@ class LoadDataController extends Controller
 		}
 		return redirect()->route('homepage');
 	}
+
+	public function accountSeller(){
+		if(session()->get('typeuser') == 3){
+			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL')->get();
+
+			return view('SellerAccount')->with('account', $account);
+		}
+		return redirect()->route('homepage');
+	}
+
+	public function accountBuyer(){
+		if(session()->get('typeuser') == 3){
+			$account = DB::table('nguoimua')->select('TENNM','SDT', 'EMAIL')->get();
+
+			return view('BuyerAccount')->with('account', $account);
+		}
+			return redirect()->route('homepage');
+	}
 }

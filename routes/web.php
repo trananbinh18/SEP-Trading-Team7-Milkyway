@@ -137,3 +137,7 @@ Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInf
 
 //Trả về toàn bộ sản phẩm trong database lên view
 Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
+//Danh sách tài khoản người bán
+Route::get('Account_Seller',['as'=>'Account_Seller', 'uses' => 'LoadDataController@accountSeller']);
+//Danh sách tài khoản người mua
+Route::get('Account_Buyer',['as'=>'Account_Buyer', 'uses' => 'LoadDataController@accountBuyer']);
