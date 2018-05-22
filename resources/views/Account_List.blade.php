@@ -1,6 +1,6 @@
  @extends ('layout.master')
  @section(' title ')
- Danh sách sản phẩm
+ Danh sách tài khoản
  @stop
 
  @section('content')
@@ -9,12 +9,12 @@
     <div>
       <aside class="widget widget_product_categories" style="padding-left: 10px;">
         <div class="categories-home3">
-         <h3>Thông Tin Sản Phẩm</h3>
+         <h3>TRANG NHÂN VIÊN </h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Doanh Số</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Thông Báo</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Tài Khoản</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('listprosale')}}" title="Doanh số">Danh Sách Sản Phẩm</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Đổi Mật Khẩu</a></li>
         </ul>
       </div>
 
@@ -47,26 +47,17 @@
               <tbody>
 
                 <tr class="odd gradeX">
-                   @php ($count = 0)
-                    @foreach($sanpham as $row)
-                    <?php $count++; ?>
-                  <td><?php echo $count; ?></td>
-                  <td>{{$row->TENLOAISP}}</td>
-                  <td>{{$row->TENSP}}</td>
-                  <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
-                  <td>{{number_format($row->GIA) }}</td>
-                  <td>{{$row->TRANGTHAI}}</td>
-                  <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
+                  
                   <td class="center">
                     <a href="#">Xóa<span  aria-hidden="true"></span></a> 
                     <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
                 </tr>
-                  @endforeach
+                
                                                          
                 </tbody>
               </table>
 
-               <a href="#"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a>
+              <!--  <a href="#"><button class="link-v1 rt" ></button></a> -->
             </div>
             <!-- /.table-responsive -->
 
