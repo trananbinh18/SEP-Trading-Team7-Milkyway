@@ -37,12 +37,58 @@ Kiểm tra
                         </div>
                         <!-- End col-md-4 -->
                     </div>
-                </div>
+            </div>
                 <!-- End container -->
+
             <div class="cart-box-container check-out ">
                 <div class="container container-ver2">
                     <div class="row">
                         <!-- End col-md-8 -->
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <div class="optionAddress">
+                                    <label class="radio-inline checkoutchoosse">
+                                        <input  class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
+                                    </label>
+                                    <label class="radio-inline checkoutchose">
+                                        <input type="radio" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="defaultaddress" class="tabcontent">
+                                <div class="col-md-10 headerDFadd">
+                                    <h2>Hàng sẻ được giao đến địa chỉ mặc định</h2>
+                                </div>                           
+                            </div>
+                            <div id="newaddress" class="tabcontent space-50">
+
+                                <div class="form-group newaddressbox">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Họ và tên</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập họ và tên người nhân" required>
+                                    </div>
+                                </div>
+                                <div class="form-group newaddressbox">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Số điện thoại</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                    </div>
+                                </div>
+                                <div class="form-group newaddressbox">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="city" id="inputcity" placeholder="Nhập Tỉnh/Thành phố" required>
+                                    </div>
+                                </div>
+                                <div class="form-group newaddressbox">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="col-md-6 space-30">
                             <div class="box">
                                 <h3 class="title-brand">Giỏ hàng của bạn</h3>
@@ -99,5 +145,23 @@ Kiểm tra
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.zoom.js"></script>
     <script type="text/javascript" src="assets/js/store.js"></script>
+    <script>
+    function openPage(pageName,elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 
 @stop
