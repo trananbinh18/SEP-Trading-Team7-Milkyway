@@ -20938,3 +20938,30 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   background: #80b435;
   bottom: 0px;
 }
+.control-infotproduct .center h2 {
+  margin-bottom: 20px;
+}
+.optionAddress label {
+  font: 700 16px/20px "Roboto Slab";
+  color: #80b435;
+}
+.space-50 .newaddressbox label {
+  font: 700 16px/20px "Roboto Slab";
+  margin-top: 22px;
+}
+.space-50 .newaddressbox label:after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.space-50 .newaddressbox input{
+  margin-top: 10px;
+}
+.headerDFadd h2 {
+  margin-top: 50px;
+  font: 700 44px/50px "Roboto Slab";
+}
+.optionAddress {
+  margin-left: 50px;
+}
