@@ -79,11 +79,11 @@
                                     <?php
                                         if(session()->get('typeuser') != 0){
                                             if(session()->get('typeuser')==1){
-                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u>'.session()->get('name').'</u></p>');
+                                                echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p>'.session()->get('name').'</p>');
                                             }else if(session()->get('typeuser')==2){
-                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u>'.session()->get('name').'</u></p>');
+                                                echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p>'.session()->get('name').'</p>');
                                             }else if(session()->get('typeuser')==3){
-                                                echo ('<div class="hover-menu"> <small> Xin Chào </small><p><u> '.session()->get('name').'</u></p>');
+                                                echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p> '.session()->get('name').'</p>');
                                             }
                                             echo('<ul class="list-menu"><li><a href="'.route('listpro').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                         }else{
