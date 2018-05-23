@@ -58,7 +58,7 @@
                   <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
                   <td class="center">
                     <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
+                    <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                 </tr>
                   @endforeach
                                                          
