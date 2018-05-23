@@ -66,10 +66,6 @@ Route::get('shoppingcart',function(){
 	return view('shopping_cart');
 });
 
-Route::get('order',function(){
-	return view('order');
-});
-
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });

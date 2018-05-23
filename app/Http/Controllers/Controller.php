@@ -9,6 +9,7 @@ use Cart;
 use App\sanpham;
 use App\nguoimua;
 use App\hoadon;
+use App\chitiethoadon;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -134,14 +135,25 @@ class Controller extends BaseController
         return view('checkout',compact('content','count'));
     }
     public function postCheckout(Request $re){
-        $Customer = new hoadon();
-        $Customer->MANM = session()->get('MANM');
-        $Customer->SDT = $re->phone;
-        $Customer->TP = $re->city;
-        $Customer->QUAN = $re->district;
-        $Customer->PHUONG = $re->ward;
-        $Customer->DIACHI = $re->inputaddress;
-        $Customer->save();
+        $Bill = new hoadon();
+        $Bill->MANM = session()->get('userid');
+        $Bill->SDT = $re->phone;
+        $Bill->TP = $re->city;
+        $Bill->QUAN = $re->district;
+        $Bill->PHUONG = $re->ward;
+        $Bill->DIACHI = $re->inputaddress;
+        $Bill->save();
+
+        foreach (Cart::content() as $key => $value) {
+            $detailbill = new chitiethoadon();
+            $detailbill->MAHD = $Bill->MAHD;
+            $detailbill->MANB = sanpham::find($value->id)->MANB;
+            $detailbill->MASP = $value->id;
+            $detailbill->SOLUONG = $value->qty;
+            $detailbill->THANHTIEN = $value->price*$value->qty;
+            $detailbill->DONGIA = $value->price;
+            $detailbill->save();
+        }       
         return view('Order');
     }
     public function Delete($id){

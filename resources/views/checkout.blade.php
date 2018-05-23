@@ -62,34 +62,35 @@ Kiểm tra
                             </div>
                             <div id="newaddress" class="tabcontent space-50">
                                 <form id="formDiaChi" action="{{route('Order')}}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Số điện thoại</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                        <input type="text" class="form-control" name="phone"  placeholder="Nhập số điện thoại" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="city" id="inputcity" placeholder="Nhập Tỉnh/Thành phố" required>
+                                        <input type="text" class="form-control" name="city"  placeholder="Nhập Tỉnh/Thành phố" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="district " id="inputcity" placeholder="Nhập quận" required>
+                                        <input type="text" class="form-control" name="district"  placeholder="Nhập quận" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="ward" id="inputcity" placeholder="Nhập phường" required>
+                                        <input type="text" class="form-control" name="ward"  placeholder="Nhập phường" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                        <input type="text" class="form-control" name="inputaddress"  placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                                 </form>
