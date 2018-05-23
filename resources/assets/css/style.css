@@ -13975,6 +13975,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
   padding-left: 10px;
   margin-left: 10px;
   position: relative;
+  color: #80b435;
 }
 
 #topbar .float-right .hover-menu:after {
@@ -13997,6 +13998,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
   min-width: 100px;
   text-align: left;
   padding: 0px 15px;
+  margin-top: 2px;
 }
 
 #topbar .float-right .list-menu a {
@@ -20964,4 +20966,22 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .optionAddress {
   margin-left: 50px;
+}
+.texterror {
+  font: 700 44px/50px "Roboto Slab";
+  display: block;
+}
+.buttonerror button{
+  margin-top: 50px;
+  width: 200px;
+}
+.buttonerror {
+  margin-bottom: 200px;
+}
+.texterror {
+  font: 700 50px/60px "Roboto Slab";
+}
+#topbar .float-right .hover-menu p {
+  display: inline;
+
 }
