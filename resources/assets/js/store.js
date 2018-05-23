@@ -37,6 +37,9 @@ function slider_owl(slider_id, visible1, visible2, visible3, visible4, margin) {
 
 
 $(document).ready(function() {
+    $("#btnthanhtoan").click(function() {
+           $("#formDiaChi").submit();
+    });
     $("#btnSub").click(function() {
            $("#formSoLuong").submit();
     });

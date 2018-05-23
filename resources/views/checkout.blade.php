@@ -61,7 +61,7 @@ Kiểm tra
                                 </div>                           
                             </div>
                             <div id="newaddress" class="tabcontent space-50">
-                                <form action="{{route('Order')}}" method="post">
+                                <form id="formDiaChi" action="{{route('Order')}}" method="post" enctype="multipart/form-data">
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Số điện thoại</label>
                                     <div class="col-md-8">
@@ -134,7 +134,8 @@ Kiểm tra
                                     </ul>
                                 </div>
                                 <!-- End info-order -->
-                                <a class="link-v1 box lh-50 rt full" href="{{route('Order')}}" title="PLACE ORDER">THANH TOÁN</a>
+                                <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button>
+                                {{-- <a class="link-v1 box lh-50 rt full" href="{{route('Order')}}" title="PLACE ORDER">THANH TOÁN</a> --}}
                             </div>
                         </div>
                     </div>
@@ -144,13 +145,13 @@ Kiểm tra
             </div>
             <!-- End cat-box-container -->
         </div>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+   {{--  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/js/engo-plugins.js"></script>
     <script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.zoom.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
+    <script type="text/javascript" src="assets/js/store.js"></script> --}}
     <script>
     function openPage(pageName,elmnt) {
         var i, tabcontent, tablinks;

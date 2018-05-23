@@ -65,7 +65,7 @@ class Controller extends BaseController
             $filenameGCNNew = $this->renameImage($filenameGCN);
 
             $Product = new sanpham();
-            $Product->MANB = 2;
+            $Product->MANB = session()->get('userid');
             $Product->MALOAISP = $Product_request->cbCategory;
             $Product->TENSP    = $Product_request->tensanpham;
             $Product->SOLUONG  = (double)$Product_request->Soluong;
@@ -134,7 +134,7 @@ class Controller extends BaseController
         return view('checkout',compact('content','count'));
     }
     public function postCheckout(Request $re){
-        $Customer = new hoadon;
+        $Customer = new hoadon();
         $Customer->MANM = session()->get('MANM');
         $Customer->SDT = $re->phone;
         $Customer->TP = $re->city;
@@ -142,6 +142,7 @@ class Controller extends BaseController
         $Customer->PHUONG = $re->ward;
         $Customer->DIACHI = $re->inputaddress;
         $Customer->save();
+        return view('Order');
     }
     public function Delete($id){
         Cart::remove($id);
