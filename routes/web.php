@@ -76,6 +76,9 @@ Route::get('Vegetables',function(){
 Route::get('donhang',function(){
 	return view('Donhang');
 });
+Route::get('Error',function(){
+	return view('Error');
+});
 
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
