@@ -13998,7 +13998,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
   min-width: 100px;
   text-align: left;
   padding: 0px 15px;
-  margin-top: 2px;
+  
 }
 
 #topbar .float-right .list-menu a {
@@ -20926,9 +20926,9 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .imgfarmer {
   margin-top: 60px;
 }
-.btn {
+/*.btn {
   padding-left: 240px;
-}
+}*/
 .img {
   padding-left: 18px;
 }
@@ -20983,5 +20983,10 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 #topbar .float-right .hover-menu p {
   display: inline;
-
+}
+.control-infotproduct .form-group label:after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
 }
