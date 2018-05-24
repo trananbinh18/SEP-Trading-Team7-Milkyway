@@ -129,10 +129,12 @@ Route::post('order',['as'=>'Order','uses'=>'Controller@postCheckout']);
 Route::get('ResetPassword',['as'=>'ResetPassword', 'uses' =>'AuthController@resetPass']);
 //Redirect to view ResetPassword for Buyer
 Route::get('BuyerPassword',['as'=>'Buyer_Pass', 'uses'=> 'AuthController@Chpass']);
+//Handle Change Password for All
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
 
-//Redirect to view EditInfor
+//Redirect view Buyer Change Information
 Route::get('BuyerInformation',['as'=>'Buyer_Infor', 'uses'=> 'AuthController@inf']);
+//Handle Change Infor for Buyer and Seller
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
