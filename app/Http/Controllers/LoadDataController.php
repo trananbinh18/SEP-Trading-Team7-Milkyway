@@ -49,4 +49,7 @@ class LoadDataController extends Controller
 		}
 			return redirect()->route('homepage');
 	}
+	public function orders(){
+		return view('Donhang');
+	}
 }

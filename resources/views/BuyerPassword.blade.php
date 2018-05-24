@@ -1,27 +1,25 @@
- @extends ('layout.master')
- @section(' title ')
- Danh sách sản phẩm
- @stop
- @section('content')
- <div class="row" style="margin-bottom: 200px">
-  <div class="col-md-3 box-shadow control-infotproduct">
-    <div>
-      <aside class="widget widget_product_categories" style="padding-left: 10px;">
-        <div class="categories-home3">
-         <h3>Thông Tin Sản Phẩm</h3>
-         <i class="fa fa-chevron-circle-down icon-click"></i>
-         <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Sản Phẩm</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Sửa thông tin">Sửa thông tin</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
-        </ul>
+    @extends('layout.master')
+    @section (' title ')
+    Sửa mật khẩu
+    @stop
+    @section('content')
+    <div class="row row-addproduct">
+      <div class="col-md-3 box-shadow control-infotproduct">
+        <div>
+          <aside class="widget widget_product_categories" style="padding-left: 10px;">
+            <div class="categories-home3">
+             <h3>THÔNG TIN TÀI KHOẢN</h3>
+             <i class="fa fa-chevron-circle-down icon-click"></i>
+             <ul class="menu-vertical">
+              <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('Orders')}}" title="Đơn hàng">Đơn hàng</a></li>
+              <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('Buyer_Infor')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+              <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Buyer_Pass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
-
     </div>
-  </aside>    
-</div>
-
-<div class="col-md-8 control-infotproduct box-shadow">
+    <div class="col-md-8 control-infotproduct box-shadow">
       @if(session('thongbao'))
       <div class="alert-success">
         {{session('thongbao')}}
@@ -64,31 +62,7 @@
         </div>
       </div>
     </div>
-<div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
+    
+  </div>
 </div>
-<!-- jQuery -->
-<script src="resources/assets/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="resources/assets/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="resources/assets/js/metisMenu.min.js"></script>
-
-<!-- DataTables JavaScript -->
-<script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
-<script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="resources/assets/js/startmin.js"></script>
-
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-  $(document).ready(function() {
-    $('#dataTables-example').DataTable({
-      responsive: true
-    });
-  });
-</script>
 @endsection

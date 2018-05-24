@@ -18,12 +18,12 @@
                 <div>
                   <aside class="widget widget_product_categories" style="padding-left: 10px;">
                     <div class="categories-home3">
-                       <h3>Thông tin sản phẩm</h3>
+                       <h3>Thông tin tài khoản</h3>
                         <i class="fa fa-chevron-circle-down icon-click"></i>
                         <ul class="menu-vertical">
                             <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
-                            <li><img src="resources/assets/images/icon-categories-7.png" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
-                            <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
+                            <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('Seller_Infor')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+                            <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Seller_Pass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
                         </ul>
                     </div>
                 </div>

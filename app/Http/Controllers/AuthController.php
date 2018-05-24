@@ -128,9 +128,11 @@ function resetPass(){
 
 //return view ResetPassword for Buyer
 function Chpass(){
-    if(session()->get('typeuser') == 1 || session()->get('typeuser') == 2){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
-        return  view('ResetPassword');
-    }else if(session()->get('typeuser') == 3){
+    if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+        return  view('SellerPassword');
+    }else if(session()->get('typeuser') == 2){
+        return view('BuyerPassword');
+    }else if(session()->get('typeuser')== 3){
         return view('ChangePassword_Employees');
     }else{
         return redirect()->route('homepage');
@@ -141,25 +143,32 @@ function ChangePassword(Request $PW_request){
     {
         if($PW_request->input('current_password') != session()->get('password')){
             return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
-        }else if(session()->get('typeuser')==1){
+        }if(session()->get('typeuser')==1){
             $pass = nguoiban::where('MANB', session()->get('userid'))->first();
             $pass->MATKHAU = $PW_request->input('new_password');
+            $pass->save();
+            return redirect('SellerPassword')->with('thongbao','Bạn đã sửa mật khẩu thành công');
         }else if(session()->get('typeuser')==2){
             $pass = nguoimua::where('MANM', session()->get('userid'))->first();
             $pass->MATKHAU = $PW_request->input('new_password');
+            $pass->save();
+            return redirect('BuyerPassword')->with('thongbao','Bạn đã sửa mật khẩu thành công');
         }else if(session()->get('typeuser')==3){
             $pass = nhanvien::where('MANV', session()->get('userid'))->first();
             $pass->MATKHAU = $PW_request->input('new_password');
+            $pass->save();
+            return redirect('ChangePassword_Employees')->with('thongbao','Bạn đã sửa mật khẩu thành công');
         }
     }
-    $pass->save();
-    return redirect('ChangePassword')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+    
 }
 
 //Return view Edit Information
 function inf(){
-    if(session()->get('typeuser') == 1 || session()->get('typeuser') == 2){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
-        return view('EditCustomerInformation');
+    if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+        return view('SellerInformation');
+    }else if(session()->get('typeuser')==2){
+        return view('BuyerInformation');
     }else{
         return redirect()->route('homepage');
     }   
@@ -173,6 +182,8 @@ function ChangeInfor(Request $Infor_request){
         $user->PHUONG = $Infor_request->input('ward');
         $user->QUAN = $Infor_request->input('district');
         $user->TP = $Infor_request->input('city');
+        $user->save();
+        return redirect('SellerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
     }else if(session()->get('typeuser') == 2){
         $user = nguoimua::where('MANM',session()->get('userid'))->first();
         $user->TENNM = $Infor_request->input('name');
@@ -181,17 +192,20 @@ function ChangeInfor(Request $Infor_request){
         $user->PHUONG = $Infor_request->input('ward');
         $user->QUAN = $Infor_request->input('district');
         $user->TP = $Infor_request->input('city');
+        $user->save();
+        return redirect('BuyerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
     }else{
-        $user = nhanvien::where('MANV',session()->get('userid'))->first();
-        $user->TENNV = $Infor_request->input('name');
-        $user->SDT = $Infor_request->input('phone');
-        $user->SONHA = $Infor_request->input('number_house');
-        $user->PHUONG = $Infor_request->input('ward');
-        $user->QUAN = $Infor_request->input('district');
-        $user->TP = $Infor_request->input('city');
+        return route('homepage');
+        // $user = nhanvien::where('MANV',session()->get('userid'))->first();
+        // $user->TENNV = $Infor_request->input('name');
+        // $user->SDT = $Infor_request->input('phone');
+        // $user->SONHA = $Infor_request->input('number_house');
+        // $user->PHUONG = $Infor_request->input('ward');
+        // $user->QUAN = $Infor_request->input('district');
+        // $user->TP = $Infor_request->input('city');
+        // $user->save();
+        // return redirect('')->with('thongbao', 'Cập nhật thông tin thành công');
+        }
     }
-    $user->save();
-    return redirect()->back()->with('thongbao', 'Cập nhật thông tin thành công');
-}
 }
 
