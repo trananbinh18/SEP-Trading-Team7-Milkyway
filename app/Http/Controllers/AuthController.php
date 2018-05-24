@@ -128,7 +128,8 @@ function resetPass(){
 
 //return view ResetPassword for Buyer
 function Chpass(){
-    if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+    //Check Session
+    if(session()->get('typeuser') == 1){
         return  view('SellerPassword');
     }else if(session()->get('typeuser') == 2){
         return view('BuyerPassword');
@@ -165,7 +166,8 @@ function ChangePassword(Request $PW_request){
 
 //Return view Edit Information
 function inf(){
-    if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+    //Check session
+    if(session()->get('typeuser') == 1){
         return view('SellerInformation');
     }else if(session()->get('typeuser')==2){
         return view('BuyerInformation');
@@ -196,15 +198,6 @@ function ChangeInfor(Request $Infor_request){
         return redirect('BuyerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
     }else{
         return route('homepage');
-        // $user = nhanvien::where('MANV',session()->get('userid'))->first();
-        // $user->TENNV = $Infor_request->input('name');
-        // $user->SDT = $Infor_request->input('phone');
-        // $user->SONHA = $Infor_request->input('number_house');
-        // $user->PHUONG = $Infor_request->input('ward');
-        // $user->QUAN = $Infor_request->input('district');
-        // $user->TP = $Infor_request->input('city');
-        // $user->save();
-        // return redirect('')->with('thongbao', 'Cập nhật thông tin thành công');
         }
     }
 }
