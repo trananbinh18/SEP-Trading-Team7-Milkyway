@@ -18,12 +18,12 @@
                 <div>
                   <aside class="widget widget_product_categories" style="padding-left: 10px;">
                     <div class="categories-home3">
-                       <h3>Thông tin sản phẩm</h3>
+                       <h3>Thông tin tài khoản</h3>
                         <i class="fa fa-chevron-circle-down icon-click"></i>
                         <ul class="menu-vertical">
-                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListProduct')}}" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
-                            <li><img src="resources/assets/images/icon-categories-7.png" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
-                            <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
+                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="Danh sách sản phẩm">Danh sách sản phẩm</a></li>
+                            <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('Seller_Infor')}}" title="Sửa thông tin">Sửa thông tin</a></li>
+                            <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Seller_Pass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,6 +49,9 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
                     <div class="col-md-9">
+                      @if ($errors->has('tensanpham'))
+                        <span class="text-danger">{{ $errors->first('tensanpham') }}</span>
+                      @endif
                       <input type="text" class="form-control" name="tensanpham" id="inputEmail3" placeholder="Nhập tên sản phẩm">
                     </div>
                   </div>                  
@@ -57,6 +60,9 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px">
                           <div class="img-picker">
+                            @if ($errors->has('imagesSP'))
+                              <span class="text-danger">{{ $errors->first('imagesSP') }}</span>
+                            @endif
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesSP">
                             </div>
                           </div>
@@ -66,6 +72,9 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px">
                           <div class="img-picker">
+                            @if ($errors->has('imagesGCN'))
+                              <span class="text-danger">{{ $errors->first('imagesGCN') }}</span>
+                            @endif
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="imagesGCN">
                             </div>
                           </div>
@@ -83,12 +92,18 @@
                     </div>
                     <label class="col-md-2 control-lab">Số lượng:</label>
                     <div class="col-md-3">
+                      @if ($errors->has('Soluong'))
+                          <span class="text-danger">{{ $errors->first('Soluong') }}</span>
+                      @endif
                       <input type="text" class="form-control" name="Soluong" id="inputEmail3">
                     </div> 
                   </div>                             
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
                     <div class="col-md-4">
+                      @if ($errors->has('Giasanpham'))
+                          <span class="text-danger">{{ $errors->first('Giasanpham') }}</span>
+                      @endif
                       <input type="text" class="form-control" name="Giasanpham" id="inputEmail3" placeholder="VND">
                     </div> 
                     <label class="col-md-2 control-lab">Đơn vị:</label>
@@ -103,6 +118,9 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
                     <div class="col-md-9">
+                      @if ($errors->has('mieutasanpham'))
+                          <span class="text-danger">{{ $errors->first('mieutasanpham') }}</span>
+                      @endif
                       <textarea type="text" class="form-control" name="mieutasanpham" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."></textarea>
                     </div>
                   </div>

@@ -31,13 +31,13 @@
                 
 
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm</label>
                     <div class="col-md-9">
                       <input type="text" class="form-control" name="tensanpham" id="inputEmail3" placeholder="Nhập tên sản phẩm" value="<?php echo "{$sanpham['TENSP']}";?>">
                     </div>
                   </div>                  
                   <div class="form-group">                  
-                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm</label>                    
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
@@ -46,7 +46,7 @@
                           </div>
                       </div>                                                                     
                     </div>
-                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận</label>
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
@@ -57,7 +57,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
+                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục</label>
                     <div class="col-md-4">
                         <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                           <option value="4" <?php if($sanpham['MALOAISP'] == '4'){echo("selected");} ?> >Rau</option>
@@ -65,17 +65,17 @@
                           <option value="6" <?php if($sanpham['MALOAISP'] == '6'){echo("selected");} ?> >Củ</option>                      
                       </select> 
                     </div>
-                    <label class="col-md-2 control-lab">Số lượng:</label>
+                    <label class="col-md-2 control-lab">Số lượng</label>
                     <div class="col-md-3">
                       <input type="text" class="form-control" name="Soluong" id="inputEmail3" value="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                     </div> 
                   </div>                             
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Giá cũ(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá cũ</label>
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="giacu" id="inputEmail3" placeholder="VND" value="<?php echo "{$sanpham['GIA']}"; ?>">
                     </div> 
-                    <label class="col-md-2 control-lab">Đơn vị:</label>
+                    <label class="col-md-2 control-lab">Đơn vị</label>
                     <div class="col-md-3">
                       <select id="enterprise" class="Unit" name="cdDonvi" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                         <option <?php if($sanpham['DONVI'] == 'Kilogram'){echo("selected");} ?> >Kilogram</option>
@@ -85,7 +85,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Giá mơi(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá mơi</label>
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="giamoi" id="giamoi" placeholder="VND" disabled >
                     </div>
@@ -99,7 +99,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm</label>
                     <div class="col-md-9">
                       <textarea type="text" class="form-control" name="mieutasanpham" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."><?php echo"{$sanpham['MOTA']}"?></textarea>
                     </div>
@@ -143,10 +143,10 @@
             $(".imgin1").siblings("i").remove();
             $(".imgin1").siblings(".img222").remove();
 
-            $(".imgin1").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['HINH']}") !!}' class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+            $(".imgin1").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['HINH']}") !!}' class='img-responsive img-rounded img222' style='height:70%; width:100%; position:absolute;top:0px;left:0px'/>");
 
 
-            $(".imgin1").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            $(".imgin1").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Xóa</button>");
             
             $(".imgin1").hide();
             $(".imgin1").siblings(".btn").click(function () {
@@ -164,10 +164,10 @@
             $(this).siblings("i").remove();
             $(this).siblings(".img222").remove();
 
-            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ; width:100%; position:absolute;top:0px;left:0px'/>");
 
 
-            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Xóa</button>");
             readURL(this, $(this).siblings(".img222"));
             $(this).hide();
             $(this).siblings(".btn").click(function () {
@@ -190,10 +190,10 @@
             $(".imgin2").siblings("i").remove();
             $(".imgin2").siblings(".img222").remove();
 
-            $(".imgin2").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['GCN']}") !!}' class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+            $(".imgin2").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['GCN']}") !!}' class='img-responsive img-rounded img222' style='height:70%; width:100% ;position:absolute;top:0px;left:0px'/>");
 
 
-            $(".imgin2").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            $(".imgin2").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Xóa</button>");
             
             $(".imgin2").hide();
             $(".imgin2").siblings(".btn").click(function () {
@@ -212,10 +212,10 @@
             $(this).siblings("i").remove();
             $(this).siblings(".img222").remove();
 
-            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70% ;position:absolute;top:0px;left:0px'/>");
+            $(this).parent(".form-control").prepend("<img class='img-responsive img-rounded img222' style='height:70%; width:100% ;position:absolute;top:0px;left:0px'/>");
 
 
-            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Remove</button>");
+            $(this).siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Xóa</button>");
             readURL(this, $(this).siblings(".img222"));
             $(this).hide();
             $(this).siblings(".btn").click(function () {

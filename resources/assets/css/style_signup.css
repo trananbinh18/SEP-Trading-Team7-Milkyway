@@ -4,7 +4,7 @@
 
 /* Style tab links */
 .tablink {
-    background-color: #80b435;
+    /*background-color: #fff;*/
     color: black;
     float: left;
     border: none;
@@ -13,7 +13,7 @@
     padding: 14px 16px;
     font-size: 17px;
     width: 25%;
-    box-shadow: 1px 2px 1px #f0f0f0;
+    box-shadow: 0px 7px 1px #f0f0f0;
 }
 
 /*.tablink:hover {

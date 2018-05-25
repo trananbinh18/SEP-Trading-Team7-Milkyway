@@ -65,10 +65,6 @@ Route::get('shoppingcart',function(){
 	return view('shopping_cart');
 });
 
-Route::get('order',function(){
-	return view('order');
-});
-
 Route::get('deliverypolicy',function(){
 	return view('FAQ');
 });
@@ -78,6 +74,9 @@ Route::get('Vegetables',function(){
 });
 Route::get('donhang',function(){
 	return view('Donhang');
+});
+Route::get('Error',function(){
+	return view('Error');
 });
 
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
@@ -130,15 +129,30 @@ Route::post('order',['as'=>'Order','uses'=>'Controller@postCheckout']);
 //Redirect to view ResetPassword for Employees
 Route::get('ResetPassword',['as'=>'ResetPassword', 'uses' =>'AuthController@resetPass']);
 //Redirect to view ResetPassword for Buyer
-Route::get('ChangePassword',['as'=>'resetpass', 'uses'=> 'AuthController@Chpass']);
+Route::get('BuyerPassword',['as'=>'Buyer_Pass', 'uses'=> 'AuthController@Chpass']);
+//Handle Change Password for All
 Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@ChangePassword']);
 
-//Redirect to view EditInfor
-Route::get('Information',['as'=>'editInf', 'uses'=> 'AuthController@inf']);
+//Redirect view Buyer Change Information
+Route::get('BuyerInformation',['as'=>'Buyer_Infor', 'uses'=> 'AuthController@inf']);
+//Handle Change Infor for Buyer and Seller
 Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
 Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
 
+
 //
 Route::get('ProductFilter/{dm}/{sx}', ['as' => 'productfilter', 'uses'=> 'ControllerSanPham@productfilter']);
+
+//Danh sách tài khoản người bán
+Route::get('Account_Seller',['as'=>'Account_Seller', 'uses' => 'LoadDataController@accountSeller']);
+//Danh sách tài khoản người mua
+Route::get('Account_Buyer',['as'=>'Account_Buyer', 'uses' => 'LoadDataController@accountBuyer']);
+//Return view Đơn Hàng
+Route::get('Orders',['as' =>'Orders','uses' => 'LoadDataController@orders']);
+//Return view Seller Change Passowrd
+Route::get('SellerPassword', ['as'=>'Seller_Pass','uses' =>'AuthController@Chpass']);
+//Return view Seller Change Information
+Route::get('SellerInformation', ['as'=>'Seller_Infor','uses'=>'AuthController@inf']);
+

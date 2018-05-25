@@ -14,9 +14,9 @@
     </div>
 </div>
 <!-- End banner -->
-<div style="padding-left: 500px;">
-    <button class="tablink" onclick="openPage('Seller', this, '#fff')">BÁN</button>
-    <button class="tablink" onclick="openPage('Buyer', this, '#fff')" id="defaultOpen">MUA</button>
+<div style="padding-left: 480px;">
+    <button class="tablink" onclick="openPage('Seller', this, '#80b435')">BÁN</button>
+    <button class="tablink" onclick="openPage('Buyer', this, '#80b435')" id="defaultOpen">MUA</button>
 </div>
 <div id="Buyer" class="tabcontent">
    <div class="container container-ver2">

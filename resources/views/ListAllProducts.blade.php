@@ -12,7 +12,8 @@
          <h3>TRANG NHÂN VIÊN </h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Danh sách sản phẩm">Danh Sách Tài Khoản</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Danh Sách Người Bán</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Danh Sách Người Mua</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('listprosale')}}" title="Doanh số">Danh Sách Sản Phẩm</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('ResetPassword')}}" title="Doanh số">Đổi Mật Khẩu</a></li>
         </ul>
@@ -59,7 +60,7 @@
                   <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
                   <td class="center">
                     <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
+                    <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                 </tr>
                   @endforeach
                                                          

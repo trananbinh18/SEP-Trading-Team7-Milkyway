@@ -9,6 +9,7 @@ use Cart;
 use App\sanpham;
 use App\nguoimua;
 use App\hoadon;
+use App\chitiethoadon;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -17,6 +18,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Intervention\Image\Image as Img;
 use Image;
+use App\Http\Requests\CheckRequest;
 
 class Controller extends BaseController
 {
@@ -28,32 +30,7 @@ class Controller extends BaseController
     }
 
 
-    public function Postproduct(Request $Product_request){
-
-        // $this->validate($Product_request,
-        // [
-        //     'cbCategory=>'=>'required',
-        //     'tensanpham'=>'required|min:2|max:20',
-        //     'Soluong'=>'required',
-        //     'Giasanpham'=>'required',
-        //     'cbDonvi'=>'required',
-        //     'imagesSP'=>'required',
-        //     'imagesGCN'=>'required',
-        //     'mieutasanpham'=>'required|min:10|max:200'
-        // ],
-        // [
-        //     'cbCategory.required'=>'Bạn chưa chọn danh mục cho sản phẩm',
-        //     'tensanpham.required'=>'Bạn chưa đặt tên sản phẩm',
-        //     'tensanpham.min'=>'Tên sản phẩm phải từ 2 đến 50 ký tự',
-        //     'tensanpham.max'=>'Tên sản phẩm phải từ 2 đến 50 ký tự',
-        //     'Soluong.required'=>'Bạn chưa nhập số lượng',
-        //     'cbDonvi.required'=>'Bạn chưa chọn đơn vị',
-        //     'imagesSP.required'=>'Bạn chưa chọn ảnh sản phẩm',
-        //     'imagesGCN.required'=>'Bạn chưa chọn ảnh chứng nhận sản phẩm',
-        //     'mieutasanpham.required'=>'Bạn chưa miêu tả sản phẩm',
-        //     'mieutasanpham.min'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự',
-        //     'mieutasanpham.max'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự'
-        // ]);
+    public function Postproduct(CheckRequest $Product_request){
            
             $imageSP = $Product_request->file('imagesSP');
             $filenameSP = $imageSP->getclientOriginalName();
@@ -65,7 +42,7 @@ class Controller extends BaseController
             $filenameGCNNew = $this->renameImage($filenameGCN);
 
             $Product = new sanpham();
-            $Product->MANB = 2;
+            $Product->MANB = session()->get('userid');
             $Product->MALOAISP = $Product_request->cbCategory;
             $Product->TENSP    = $Product_request->tensanpham;
             $Product->SOLUONG  = (double)$Product_request->Soluong;
@@ -140,14 +117,26 @@ class Controller extends BaseController
         return view('checkout',compact('content','count'));
     }
     public function postCheckout(Request $re){
-        $Customer = new hoadon;
-        $Customer->MANM = session()->get('MANM');
-        $Customer->SDT = $re->phone;
-        $Customer->TP = $re->city;
-        $Customer->QUAN = $re->district;
-        $Customer->PHUONG = $re->ward;
-        $Customer->DIACHI = $re->inputaddress;
-        $Customer->save();
+        $Bill = new hoadon();
+        $Bill->MANM = session()->get('userid');
+        $Bill->SDT = $re->phone;
+        $Bill->TP = $re->city;
+        $Bill->QUAN = $re->district;
+        $Bill->PHUONG = $re->ward;
+        $Bill->DIACHI = $re->inputaddress;
+        $Bill->save();
+
+        foreach (Cart::content() as $key => $value) {
+            $detailbill = new chitiethoadon();
+            $detailbill->MAHD = $Bill->MAHD;
+            $detailbill->MANB = sanpham::find($value->id)->MANB;
+            $detailbill->MASP = $value->id;
+            $detailbill->SOLUONG = $value->qty;
+            $detailbill->THANHTIEN = $value->price*$value->qty;
+            $detailbill->DONGIA = $value->price;
+            $detailbill->save();
+        }       
+        return view('Order');
     }
     public function Delete($id){
         Cart::remove($id);

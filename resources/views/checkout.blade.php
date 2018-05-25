@@ -61,35 +61,36 @@ Kiểm tra
                                 </div>                           
                             </div>
                             <div id="newaddress" class="tabcontent space-50">
-                                <form action="{{route('Order')}}" method="post">
+                                <form id="formDiaChi" action="{{route('Order')}}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Số điện thoại</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                        <input type="text" class="form-control" name="phone"  placeholder="Nhập số điện thoại" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="city" id="inputcity" placeholder="Nhập Tỉnh/Thành phố" required>
+                                        <input type="text" class="form-control" name="city"  placeholder="Nhập Tỉnh/Thành phố" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="district " id="inputcity" placeholder="Nhập quận" required>
+                                        <input type="text" class="form-control" name="district"  placeholder="Nhập quận" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="ward" id="inputcity" placeholder="Nhập phường" required>
+                                        <input type="text" class="form-control" name="ward"  placeholder="Nhập phường" required>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                        <input type="text" class="form-control" name="inputaddress"  placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                                 </form>
@@ -134,7 +135,8 @@ Kiểm tra
                                     </ul>
                                 </div>
                                 <!-- End info-order -->
-                                <a class="link-v1 box lh-50 rt full" href="{{route('Order')}}" title="PLACE ORDER">THANH TOÁN</a>
+                                <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button>
+                                {{-- <a class="link-v1 box lh-50 rt full" href="{{route('Order')}}" title="PLACE ORDER">THANH TOÁN</a> --}}
                             </div>
                         </div>
                     </div>
@@ -144,13 +146,13 @@ Kiểm tra
             </div>
             <!-- End cat-box-container -->
         </div>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+   {{--  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="assets/js/engo-plugins.js"></script>
     <script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="assets/js/slick.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.zoom.js"></script>
-    <script type="text/javascript" src="assets/js/store.js"></script>
+    <script type="text/javascript" src="assets/js/store.js"></script> --}}
     <script>
     function openPage(pageName,elmnt) {
         var i, tabcontent, tablinks;

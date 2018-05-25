@@ -11,15 +11,16 @@
              <h3>TRANG NHÂN VIÊN</h3>
              <i class="fa fa-chevron-circle-down icon-click"></i>
              <ul class="menu-vertical">
-              <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="Đơn hàng">Danh Sách Tài Khoản</a></li>
-              <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('listprosale')}}" title="Sửa thông tin">Danh Sách Sản Phẩm</a></li>
-              <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('ResetPassword')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </div>
-    <div class="col-md-8 control-infotproduct box-shadow">
+               <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Danh Sách Người Bán</a></li>
+               <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Danh Sách Người Mua</a></li>
+               <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('listprosale')}}" title="Sửa thông tin">Danh Sách Sản Phẩm</a></li>
+               <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('ResetPassword')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
+             </ul>
+           </div>
+         </aside>
+       </div>
+     </div>
+     <div class="col-md-8 control-infotproduct box-shadow">
       @if(session('thongbao'))
       <div class="alert-success">
         {{session('thongbao')}}
