@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\sanpham;
+use App\loaisanpham;
 use Illuminate\Support\Collection;
 use Illuminate\Routing\Redirector;
+use Illuminate\Database\Eloquent\Model;
 use Cart;
 
 class ControllerSanPham extends Controller
@@ -71,6 +73,37 @@ class ControllerSanPham extends Controller
         $sanpham->save();
 
         return redirect()->route('homepage');
+    }
+
+
+    public function catalog(){
+        $sanpham = sanpham::all();
+        return view('catalog_sidebar',compact($sanpham,'sanpham'));
+    }
+
+    public function productfilter($dm,$sx){
+        $dm = (int)$dm;
+        if($dm!=0){
+            $sanpham = sanpham::where('MALOAISP',$dm);
+            if($sx=="ct"){
+                $sanpham = $sanpham->orderBy('GIA','desc');
+                }else if($sx=="tc"){
+                $sanpham = $sanpham->orderBy('GIA');
+                }else{
+                $sanpham = $sanpham->orderBy('NGAYDANG','desc');
+                }
+        }else{
+            if($sx=="ct"){
+                $sanpham = sanpham::orderBy('GIA','desc');
+                }else if($sx=="tc"){
+                $sanpham = sanpham::orderBy('GIA');
+                }else{
+                $sanpham = sanpham::orderBy('NGAYDANG','desc');
+                }
+        }
+        
+        $sanpham = $sanpham->get()->toJson();
+        return $sanpham;
     }
 
 

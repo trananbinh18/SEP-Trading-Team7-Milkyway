@@ -117,6 +117,12 @@ class Controller extends BaseController
         $filenameNew = (string)Time();
         echo var_dump($filenameNew.$fileSPNameEx);
     }
+    //Add product only
+    public function AddToCart($id){
+        $Productbuy = sanpham::find($id);
+        Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
+        return back()->withInput();
+    }
     public function BuyProduct(Request $re){
         $Productbuy = sanpham::find($re->input("id"));
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>$re->input("quan"),'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));

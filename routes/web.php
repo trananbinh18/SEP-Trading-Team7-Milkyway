@@ -18,9 +18,8 @@ Route::get('/', function () {
 
 Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Productdetail');
 
-Route::get('catalog',function(){
-	return view('catalog_sidebar');
-});
+Route::get('catalog','ControllerSanPham@catalog');
+
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
@@ -118,6 +117,8 @@ Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sell
 Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm lên view
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
+//chi add product
+Route::get('AddToCart/{id}',['as'=>'buyproduct','uses'=>'Controller@AddToCart']);
 //Mua sản phẩm
 Route::get('BuyProduct',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
@@ -138,3 +139,6 @@ Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInf
 
 //Trả về toàn bộ sản phẩm trong database lên view
 Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);
+
+//
+Route::get('ProductFilter/{dm}/{sx}', ['as' => 'productfilter', 'uses'=> 'ControllerSanPham@productfilter']);
