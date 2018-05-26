@@ -190,7 +190,7 @@
             $(".imgin2").siblings("i").remove();
             $(".imgin2").siblings(".img222").remove();
 
-            $(".imgin2").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/products/{$sanpham['GCN']}") !!}' class='img-responsive img-rounded img222' style='height:70%; width:100% ;position:absolute;top:0px;left:0px'/>");
+            $(".imgin2").parent(".form-control").prepend("<img src='{!! url("resources/assets/images/Certificate/{$sanpham['GCN']}") !!}' class='img-responsive img-rounded img222' style='height:70%; width:100% ;position:absolute;top:0px;left:0px'/>");
 
 
             $(".imgin2").siblings(".img222").after("<button type='button' class='btn btn-danger' style='font-weight: bold; width:100%; height:30%; position:absolute;top:70%;left:0'>Xóa</button>");
