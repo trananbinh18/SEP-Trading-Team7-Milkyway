@@ -110,6 +110,7 @@
                             <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
                             <div class="logo-mobile"><a href="#" title="FreshFood"><img src="{!!url("resources/assets/images/logo-v2.png")!!}" alt="FreshFood-Logo")!!}"></a></div>
                             <div class="box-right">
+                                @if(session()->get('typeuser')==2)
                                 <div class="cart hover-menu">
                                         <p class="icon-cart" title="Add to cart">
                                             <i class="icon"></i>
@@ -136,10 +137,11 @@
                                                 <a class="link-v1 rt" href="{{route('Checkout')}}" title="checkout">Thanh toán</a>
                                             </div>
                                         </div>
-                                    </div>
+                                </div>
+                                @endif
                                 <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                     <i class="icon"></i>
-                                </div>
+                                </div>                               
                             </div>
                             <nav class="mega-menu">
                            <ul class="nav navbar-nav" id="navbar">
@@ -315,6 +317,11 @@
         });
         
 
+    });
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
     });
 
     </script>

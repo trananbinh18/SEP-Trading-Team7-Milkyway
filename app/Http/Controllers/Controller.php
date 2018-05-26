@@ -88,11 +88,12 @@ class Controller extends BaseController
         return $newName;
     }
    public  function Test(){
-        $filenameSP = 'ab.jpg';
-        $fileSPName = substr($filenameSP, 0, strripos($filenameSP, '.')); //get file name
-        $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
-        $filenameNew = (string)Time();
-        echo var_dump($filenameNew.$fileSPNameEx);
+        // $filenameSP = 'ab.jpg';
+        // $fileSPName = substr($filenameSP, 0, strripos($filenameSP, '.')); //get file name
+        // $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
+        // $filenameNew = (string)Time();
+        // echo var_dump($filenameNew.$fileSPNameEx);
+        echo session()->get('status');
     }
     //Add product only
     public function AddToCart($id){

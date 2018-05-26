@@ -42,6 +42,7 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->PHUONG]);
                         session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
+                        session(['status'=>$user->TTNB]);
                         return redirect()->route('listpro');
                         break;
                     case 2:
