@@ -12,7 +12,7 @@
                         <ul class="menu-vertical">
                             <li><img src="resources/assets/images/icon-categories-2.png" alt=""><a href="#" title="Vegetable">Rau</a></li>
                             <li><img src="resources/assets/images/icon-categories-3.png" alt=""><a href="#" title="Fruit">Trái cây</a></li>
-                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="All Products">Các loại củ</a></li>
+                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="All Products">Các loại củ quả</a></li>
                             <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Hot Deals">Khuyến mãi</a></li>
                         </ul>
                     </div>
@@ -109,7 +109,7 @@
         <ul class="tabs tabs-title">
             <li class="item" rel="tab_01">Rau</li>
             <li class="item" rel="tab_02">Trái cây</li>
-            <li class="item" rel="tab_03">Các loại củ</li>
+            <li class="item" rel="tab_03">Các loại củ quả</li>
         </ul>
         <div class="tab-container space-10">
             <div id="tab_01" class="tab-content">
