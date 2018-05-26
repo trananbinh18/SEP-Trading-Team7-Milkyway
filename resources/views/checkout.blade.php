@@ -136,7 +136,6 @@ Kiểm tra
                                 </div>
                                 <!-- End info-order -->
                                 <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button>
-                                {{-- <a class="link-v1 box lh-50 rt full" href="{{route('Order')}}" title="PLACE ORDER">THANH TOÁN</a> --}}
                             </div>
                         </div>
                     </div>

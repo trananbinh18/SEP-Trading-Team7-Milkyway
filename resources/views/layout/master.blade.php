@@ -75,17 +75,18 @@
                                 <p><img src="{!!url("resources/assets/images/icon-phone-header.png.png")!!}" alt="icon"> Gọi cho chúng tôi <span> 099-999-9999</span></p>
                             </div>
                             <div class="float-right align-right">
-                                
                                     <?php
                                         if(session()->get('typeuser') != 0){
                                             if(session()->get('typeuser')==1){
                                                 echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p>'.session()->get('name').'</p>');
+                                                echo('<ul class="list-menu"><li><a href="'.route('listpro').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                             }else if(session()->get('typeuser')==2){
                                                 echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p>'.session()->get('name').'</p>');
+                                                echo('<ul class="list-menu"><li><a href="'.route('Buyer_Infor').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                             }else if(session()->get('typeuser')==3){
                                                 echo ('<div class="hover-menu"> <p> Xin Chào,  </p><p> '.session()->get('name').'</p>');
+                                                echo('<ul class="list-menu"><li><a href="'.route('homepage').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                             }
-                                            echo('<ul class="list-menu"><li><a href="'.route('listpro').'" title="Thông Tin Tài Khoản">Tài Khoản</a></li><li><a href="'.route('logout').'" title="Đăng Xuất">Đăng Xuất</a></li></ul></div>');
                                         }else{
                                             echo('<div class="hover-menu">
                                     <a class="acc" href="#" title="USD"><img src="'.url("resources/assets/images/icon-user-header.png").'" alt="icon">Tài khoản</a>
@@ -110,6 +111,7 @@
                             <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
                             <div class="logo-mobile"><a href="#" title="FreshFood"><img src="{!!url("resources/assets/images/logo-v2.png")!!}" alt="FreshFood-Logo")!!}"></a></div>
                             <div class="box-right">
+                                @if(session()->get('typeuser')==2)
                                 <div class="cart hover-menu">
                                         <p class="icon-cart" title="Add to cart">
                                             <i class="icon"></i>
@@ -136,10 +138,11 @@
                                                 <a class="link-v1 rt" href="{{route('Checkout')}}" title="checkout">Thanh toán</a>
                                             </div>
                                         </div>
-                                    </div>
+                                </div>
+                                @endif
                                 <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
                                     <i class="icon"></i>
-                                </div>
+                                </div>                               
                             </div>
                             <nav class="mega-menu">
                            <ul class="nav navbar-nav" id="navbar">
@@ -315,6 +318,11 @@
         });
         
 
+    });
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            rƯesponsive: true
+        });
     });
 
     </script>

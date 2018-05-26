@@ -20981,8 +20981,9 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .texterror {
   font: 700 50px/60px "Roboto Slab";
 }
-#topbar .float-right .hover-menu p {
-  display: inline;
+#topbar .float-right .hover-menu small {
+  display: inline-block;
+  color: black;
 }
 .control-infotproduct .form-group label:after {
   content: '*';
