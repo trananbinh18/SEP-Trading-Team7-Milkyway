@@ -55,7 +55,7 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->PHUONG]);
                         session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
-                        return redirect()->route('homepage');
+                        return redirect()->route('Buyer_Infor');
                     case 3:
                         session(['userid' => $user->MANV]);
                         session(['typeuser' => 3]);
@@ -73,10 +73,9 @@ class ControllerAccount extends Controller
                 }
             }
         }
-        $typeuser = 0;
-        $_SESSION["typeuser"]=$typeuser;
+        // $typeuser = 0;
+        // $_SESSION["typeuser"]=$typeuser;
         return redirect()->back();
-        
     }
 
     function Logout(){

@@ -93,7 +93,7 @@ class Controller extends BaseController
         // $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
         // $filenameNew = (string)Time();
         // echo var_dump($filenameNew.$fileSPNameEx);
-        echo session()->get('status');
+        echo "Type User: ".session()->get('typeuser')." - "."User ID: ".session()->get('userid');
     }
     //Add product only
     public function AddToCart($id){
