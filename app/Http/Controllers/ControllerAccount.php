@@ -55,7 +55,7 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->PHUONG]);
                         session(['district' => $user->QUAN]);
                         session(['city' => $user->TP]);
-                        return redirect()->route('Buyer_Infor');
+                        return redirect()->route('homepage');
                     case 3:
                         session(['userid' => $user->MANV]);
                         session(['typeuser' => 3]);

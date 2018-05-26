@@ -18,7 +18,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Intervention\Image\Image as Img;
 use Image;
+use Datetime;
 use App\Http\Requests\CheckRequest;
+use Carbon\Carbon;
 
 class Controller extends BaseController
 {
@@ -93,7 +95,15 @@ class Controller extends BaseController
         // $fileSPNameEx = substr($filenameSP, strripos($filenameSP, '.')); //get file extension
         // $filenameNew = (string)Time();
         // echo var_dump($filenameNew.$fileSPNameEx);
-        echo "Type User: ".session()->get('typeuser')." - "."User ID: ".session()->get('userid');
+        // $timeA = now()->date('D-M-Y');
+        // $timeA = Carbon::('Asia/Ho_Chi_Minh');
+        echo session()->get('typeuser');
+        // $nHB = DB::table('hoadon')->count();
+        // $year = Carbon::now('Asia/Ho_Chi_Minh')->format('Y');
+        // $month = Carbon::now('Asia/Ho_Chi_Minh')->format('m');
+        // $day = Carbon::now('Asia/Ho_Chi_Minh')->format('d');
+        // $th = $day.$month.$year.$nHB;
+        // echo $th;
     }
     //Add product only
     public function AddToCart($id){
@@ -118,8 +128,16 @@ class Controller extends BaseController
         return view('checkout',compact('content','count'));
     }
     public function postCheckout(Request $re){
+        // Mã hóa đơn tăng theo ngày/tháng/năm/số hóa đơn
+        $year = Carbon::now('Asia/Ho_Chi_Minh')->format('Y');
+        $month = Carbon::now('Asia/Ho_Chi_Minh')->format('m');
+        $day = Carbon::now('Asia/Ho_Chi_Minh')->format('d');
+        $nHB = DB::table('hoadon')->count();
+        $th = $day.$month.$year.$nHB;
+
         $Bill = new hoadon();
         $Bill->MANM = session()->get('userid');
+        $Bill->SOHD = $th;
         $Bill->SDT = $re->phone;
         $Bill->TP = $re->city;
         $Bill->QUAN = $re->district;
@@ -136,8 +154,9 @@ class Controller extends BaseController
             $detailbill->THANHTIEN = $value->price*$value->qty;
             $detailbill->DONGIA = $value->price;
             $detailbill->save();
-        }       
-        return view('Order');
+        }
+        Cart::destroy();
+        return view('Order')->with('SOHD',$th);
     }
     public function Delete($id){
         Cart::remove($id);
