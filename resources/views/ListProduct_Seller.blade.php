@@ -74,10 +74,12 @@ Danh sách sản phẩm người bán
       <!-- /.col-lg-12 -->
       </div>
       @endif
-      @if(session()->get('status') == 0)
-        <h2>Tài khoản của bạn chưa được duyệt</h2>
-        <p>Bạn vui lòng chờ chúng tôi duyệt tài khoản và bạn có thể sử dụng được các chức năng của website</p>
-      @endif
+      <div class="centerr">
+        @if(session()->get('status') == 0)
+          <h2>Tài khoản của bạn chưa được duyệt</h2>
+          <p>Bạn vui lòng chờ chúng tôi duyệt tài khoản và bạn có thể sử dụng được các chức năng của website</p>
+        @endif
+    </div>
     </div>
 </div>
 <div id="back-to-top">

@@ -20992,3 +20992,11 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   margin-left: 5px;
   margin-right: 5px;
 }
+.centerr {
+  text-align: center;
+  color: blue;
+}
+.control-infotproduct .centerr h2 {
+  color: red;
+  margin-bottom: 20px;
+}
