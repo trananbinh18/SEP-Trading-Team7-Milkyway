@@ -53,8 +53,9 @@
                   <td>{{ $row->SDT}}</td>
                   <td>{{ $row->EMAIL}}</td>
                   <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="#">Sửa<span  aria-hidden="true"></span></a> </td>
+                    <a href="#">Xóa<span  aria-hidden="true"></span></a>
+                    <span> | </span>
+                    <a href="{{ url('EditBuyer',[$row->MANM]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                   </tr>
 
                   @endforeach
@@ -98,6 +99,8 @@
   $(document).ready(function() {
     $('#dataTables-example').DataTable({
       responsive: true
+      paging: false,
+      searching: false
     });
   });
 </script>

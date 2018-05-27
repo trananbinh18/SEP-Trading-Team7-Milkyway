@@ -45,25 +45,24 @@
                   <th>Tùy chọn</th>
                 </tr>
               </thead>
-              <tbody>
-
-                <tr class="odd gradeX">
+              <tbody>            
                    @php ($count = 0)
                     @foreach($sanpham as $row)
                     <?php $count++; ?>
-                  <td><?php echo $count; ?></td>
-                  <td>{{$row->TENLOAISP}}</td>
-                  <td>{{$row->TENSP}}</td>
-                  <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
-                  <td>{{number_format($row->GIA) }}</td>
-                  <td>{{$row->TRANGTHAI}}</td>
-                  <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
-                  <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a> 
-                    <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
-                </tr>
-                  @endforeach
-                                                         
+                  <tr class="odd gradeX">
+                    <td><?php echo $count; ?></td>
+                    <td>{{$row->TENLOAISP}}</td>
+                    <td>{{$row->TENSP}}</td>
+                    <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
+                    <td>{{number_format($row->GIA) }}</td>
+                    <td>{{$row->TRANGTHAI}}</td>
+                    <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
+                    <td class="center">
+                      <a href="#">Xóa<span  aria-hidden="true"></span></a>
+                      <span> | </span>
+                      <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
+                  </tr>
+                  @endforeach                                           
                 </tbody>
               </table>
 
@@ -104,6 +103,8 @@
   $(document).ready(function() {
     $('#dataTables-example').DataTable({
       responsive: true
+      paging: false,
+      searching: false
     });
   });
 </script>
