@@ -65,4 +65,7 @@
     
   </div>
 </div>
+<div id="back-to-top">
+  <i class="fa fa-long-arrow-up"></i>
+</div>
 @endsection

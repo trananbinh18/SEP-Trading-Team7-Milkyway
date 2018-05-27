@@ -155,4 +155,12 @@ Route::get('Orders',['as' =>'Orders','uses' => 'LoadDataController@orders']);
 Route::get('SellerPassword', ['as'=>'Seller_Pass','uses' =>'AuthController@Chpass']);
 //Return view Seller Change Information
 Route::get('SellerInformation', ['as'=>'Seller_Infor','uses'=>'AuthController@inf']);
+//Edit Information Buyer for Employees
+Route::get('EditBuyer/{id}', 'AuthController@editbuyer');
+//Update Information Buyer for Employees
+Route::post('EditBuyer','AuthController@updatebuyer')->name('EditBuyer');
+//Edit Information Seller for Employees
+Route::get('EditSeller/{id}', 'AuthController@editseller');
+//Update Information Seller for Employees
+Route::post('EditSeller','AuthController@updateseller')->name('EditSeller');
 

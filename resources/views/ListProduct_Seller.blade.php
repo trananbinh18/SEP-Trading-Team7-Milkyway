@@ -55,7 +55,8 @@ Danh sách sản phẩm người bán
                       <td>{{$row->TRANGTHAI}}</td>
                       <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                       <td class="center">
-                        <a href="#">Xóa<span aria-hidden="true"></span></a> 
+                        <a href="#">Xóa<span aria-hidden="true"></span></a>
+                        <span> | </span>
                         <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> 
                       </td>
                     </tr>
@@ -82,5 +83,31 @@ Danh sách sản phẩm người bán
 <div id="back-to-top">
   <i class="fa fa-long-arrow-up"></i>
 </div>
+<!-- jQuery -->
+<script src="resources/assets/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="resources/assets/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="resources/assets/js/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
+<script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="resources/assets/js/startmin.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+$(document).ready(function() {
+  $('#dataTables-example').DataTable({
+    responsive: true
+    paging: false,
+    searching: false
+  });
+});
+</script>
 
 @endsection

@@ -15,10 +15,10 @@ class LoadDataController extends Controller
 {
 	public function index(){
 	//load sản phẩm
-	if(session()->get('typeuser') == 1 || session()->get('typeuser') == 2 || session()->get('typeuser') == 3){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+	if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
 	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->get();
 	
-		return view('ListProduct')->with('products',$products);
+		return view('ListProduct_Seller')->with('products',$products);
 	}
 	return redirect()->route('homepage');
 	}
@@ -34,7 +34,7 @@ class LoadDataController extends Controller
 
 	public function accountSeller(){
 		if(session()->get('typeuser') == 3){
-			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL')->get();
+			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL','MANB')->get();
 
 			return view('SellerAccount')->with('account', $account);
 		}
@@ -43,13 +43,19 @@ class LoadDataController extends Controller
 
 	public function accountBuyer(){
 		if(session()->get('typeuser') == 3){
-			$account = DB::table('nguoimua')->select('TENNM','SDT', 'EMAIL')->get();
+			$account = DB::table('nguoimua')->select('TENNM','SDT', 'EMAIL', 'MANM')->get();
 
 			return view('BuyerAccount')->with('account', $account);
 		}
 			return redirect()->route('homepage');
 	}
 	public function orders(){
-		return view('Donhang');
+		if(session()->get('typeuser') == 2){
+			$orders = DB::table('hoadon')->join('chitiethoadon', 'chitiethoadon.MAHD' , '=', 'hoadon.MAHD')->select('NLHD', 'THANHTIEN','TTHD','SOHD')->where('MANM', session()->get('userid'))->get();
+
+			return view('Donhang')->with('orders', $orders);
+		}else{
+			return redirect()->route('homepage');
+		}
 	}
 }
