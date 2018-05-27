@@ -44,12 +44,14 @@
                     <div class="icon space-20">
                         <img src="resources/assets/images/icon-order-complete.png" alt="icon">
                     </div>
-                    <p class="box center space-50">Cảm ơn bạn đã mua hàng của WholeFoods, Đơn hàng của bạn đã được đặt thành công!</p>
-                    <p>Mã hóa đơn của bạn là: <strong><?php
-                        echo $SOHD;
-                    ?></strong></p>
-                    <div class="box">
-                        <a class="link-v1 lh-50 rt space-20" href="{{route('homepage')}}" title="CONTINUS SHOPPING">TIẾP TỤC MUA SẮM</a>
+                    <div class="centerr">
+                        <p>Cảm ơn bạn đã mua hàng của WholeFoods, Đơn hàng của bạn đã được đặt thành công!</p>
+                        <p>Mã hóa đơn của bạn là: <strong><?php
+                            echo $SOHD;
+                        ?></strong></p>
+                        <div class="box">
+                            <a class="link-v1 lh-50 rt space-20" href="{{route('homepage')}}" title="CONTINUS SHOPPING">TIẾP TỤC MUA SẮM</a>
+                        </div>
                     </div>
                 </div>
             </div>
