@@ -101,7 +101,7 @@
                                         <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
 
                                     @endif
-                                    @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1 )
+                                    @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3)
                                         <a href="{{route('signin')}}"><button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button></a>
                                         <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
                                         <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
