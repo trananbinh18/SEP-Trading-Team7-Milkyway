@@ -123,6 +123,7 @@ Route::get('BuyProduct',['as'=>'buyproduct','uses'=>'Controller@BuyProduct']);
 Route::get('shopping',['as'=>'shopping','uses'=>'Controller@Cart']);
 Route::get('checkout',['as'=>'Checkout','uses'=>'Controller@CheckoutCart']);
 Route::get('DeleteProduct/{id}',['as'=>'deleteproduct','uses'=>'Controller@Delete']);
+Route::get('DeleteProductMaster/{id}',['as'=>'deleteproductmaster','uses'=>'Controller@DeleteProductMaster']);
 Route::post('continueshopping','Controller@continueshopping')->name('continueshopping');
 Route::post('order',['as'=>'Order','uses'=>'Controller@postCheckout']);
 
