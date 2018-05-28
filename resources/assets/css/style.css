@@ -6786,6 +6786,7 @@ ul.tabs.tabs-title li span.count {
   padding-left: 10px;
   padding-right: 45px;
   position: relative;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 440px) {
