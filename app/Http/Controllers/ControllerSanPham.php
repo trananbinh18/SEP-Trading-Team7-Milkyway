@@ -77,7 +77,7 @@ class ControllerSanPham extends Controller
 
 
     public function catalog(){
-        $sanpham = sanpham::all();
+        $sanpham = sanpham::paginate(12);
         return view('catalog_sidebar',compact($sanpham,'sanpham'));
     }
 

@@ -69,11 +69,15 @@
                     <!-- End product-content products  -->
                     <div class="pagination-container">
                         <nav class="pagination align-center">
-                            <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
-                            <span class="page-numbers current">1</span>
-                            <a class="page-numbers" href="#">2</a>
-                            <a class="page-numbers" href="#">3</a>
-                            <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+                            @if($sanpham->currentPage()!=1)
+                            <a class="prev page-numbers" href="{{$sanpham->url($sanpham->currentPage() - 1) }}"><i class="fa fa-angle-left"></i></a>
+                            @endif
+                            @for($i = 1;$i <= $sanpham->lastPage();$i= $i + 1)
+                            <a href="{{$sanpham->url($i)}}"><span class="page-numbers current">{{$i}}</span></a>   
+                            @endfor
+                            @if($sanpham->currentPage()!=$sanpham->lastPage())                        
+                            <a class="next page-numbers" href="{{$sanpham->url($sanpham->currentPage() + 1) }}"><i class="fa fa-angle-right"></i></a>
+                            @endif
                         </nav>
                     </div>
                     <!-- End pagination-container -->
