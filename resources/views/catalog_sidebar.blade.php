@@ -91,15 +91,15 @@
                 </aside>
                 <aside class="widget widget_feature">
                     <h3 class="widget-title">SẢN PHẨM liên quan</h3>
-                    <ul>
-                        @for($i = 0; $i < 4; $i++)
+                    <ul>  
+                        @for($i = 0; $i < 4; $i++)                  
                         <li>
-                            <a class="images" href="#" title="images">
+                            <a class="images" href="{{url('Productdetail',[$sanpham->get($i)->MASP])}}" title="images">
                                 <img class="img-responsive" src="resources/assets/images/products/{{$sanpham->get($i)['HINH']}}" alt="images">
                             </a>
                             <div class="text">
                                 <h2>
-                                    <a href="#" title="Butterfly Bar Stool">{{$sanpham->get($i)['TENSP']}}</a>
+                                    <a href="{{url('Productdetail',[$sanpham->get($i)->MASP])}}" title="Butterfly Bar Stool">{{$sanpham->get($i)['TENSP']}}</a>
                                 </h2>
                                 <p><span>{{$sanpham->get($i)['GIA']}} VND</span></p>
                                 <p class="rating">
@@ -110,10 +110,10 @@
                                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                                 </p>
                             </div>
-                        </li>
+                        </li>                      
                         @endfor
                     </ul>
-                </aside>
+                </aside>e
             </div>
             <!-- End Secondary -->
         </div>
