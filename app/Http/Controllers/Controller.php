@@ -25,13 +25,7 @@ use Carbon\Carbon;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    public function hamcuaCl(){
-    	$name = 'binhtran';
-    	return view('catalog_sidebar')->with('minh',$name);
-    }
-
-
+    // Thêm sản phẩm của người bán
     public function Postproduct(CheckRequest $Product_request){
            
             $imageSP = $Product_request->file('imagesSP');
@@ -72,6 +66,7 @@ class Controller extends BaseController
     public function Getproduct(){
         return view ('Addproduct');
     }
+    // Tìm kiếm sản phẩm
     public function SearchResult(){
         return view('Search');
     }
@@ -105,12 +100,13 @@ class Controller extends BaseController
         // $th = $day.$month.$year.$nHB;
         // echo $th;
     }
-    //Add product only
+    //Thêm sản phẩm vào trang shopping từ trang catalog
     public function AddToCart($id){
         $Productbuy = sanpham::find($id);
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         return back()->withInput();
     }
+    // Thêm sản phẩm vào trang shopping từ trang chi tiết sản phẩm
     public function BuyProduct(Request $re){
         $Productbuy = sanpham::find($re->input("id"));
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>$re->input("quan"),'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
@@ -121,12 +117,14 @@ class Controller extends BaseController
         $content = Cart::content();
         return view('shopping_cart',compact('content','total'));
     }
+    //
     public function CheckoutCart()
     {
         $content = Cart::content();
         $count = Cart::count();
         return view('checkout',compact('content','count'));
     }
+    // Thêm hóa đơn và chi tiết hóa đơn vào database
     public function postCheckout(Request $re){
         // Mã hóa đơn tăng theo ngày/tháng/năm/số hóa đơn
         $year = Carbon::now('Asia/Ho_Chi_Minh')->format('Y');
@@ -158,9 +156,15 @@ class Controller extends BaseController
         Cart::destroy();
         return view('Order')->with('SOHD',$th);
     }
+    // Xóa sản phẩm trên view shopping
     public function Delete($id){
         Cart::remove($id);
         return redirect()->route('shopping');
+    }
+    // Xóa sản phẩm trên view master
+    public function DeleteProductMaster($id){
+        Cart::remove($id);
+        return redirect()->route('homepage');
     }
     public function continueshopping(Request $re){
         foreach(Cart::content() as $row){

@@ -43,9 +43,14 @@
                                     <p class="product-price">{{$pham['GIA']}} VND</p>
                                     <p class="description">{{$pham['MOTA']}}</p>
                                     <div class="action">
+                                            @if(session()->get('typeuser')==2)
                                             <a class="add-cart" href="{{url('AddToCart',[$pham['MASP']])}}" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="{{url('Productdetail',[$pham['MASP']])}}" title="Quick view"></a>
+                                            @endif
+                                            @if(session()->get('typeuser')!==2)
+                                            <a class="add-cart" href="{{route('signin')}}" title="Add to cart"></a>
+                                            @endif
+                                            {{-- <a class="wish" href="#" title="Wishlist"></a>
+                                            <a class="zoom" href="{{url('Productdetail',[$pham['MASP']])}}" title="Quick view"></a> --}}
                                         </div>
                                         <!-- End action -->
                                     <div class="social box">

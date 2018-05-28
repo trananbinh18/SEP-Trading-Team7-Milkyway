@@ -186,7 +186,7 @@
             </div>
         </div>
         <div class="box center space-padding-tb-30">
-            <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
+            <a class="link-v1 color-brand font-300" href="{{route('Catalog')}}" title="View All">Xem tất cả</a>
         </div>
     </div>
 </div>
@@ -269,7 +269,7 @@
             </div>
         </div>
         <div class="box center space-padding-tb-30">
-            <a class="link-v1 color-brand font-300" href="#" title="View All">Xem tất cả</a>
+            <a class="link-v1 color-brand font-300" href="{{route('Catalog')}}" title="View All">Xem tất cả</a>
         </div>
     </div>
 </div>
@@ -283,9 +283,7 @@
             <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
         </div>
     </div>
-    <div id="back-to-top">
-        <i class="fa fa-long-arrow-up"></i>
-    </div>
+    
 </div>
 
 @stop
