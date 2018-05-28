@@ -44,8 +44,8 @@
                     <div class="icon space-20">
                         <img src="resources/assets/images/icon-order-complete.png" alt="icon">
                     </div>
-                    <div class="center">
-                        <p class="box center space-50">Cảm ơn bạn đã mua hàng của WholeFoods, Đơn hàng của bạn đã được đặt thành công!</p>
+                    <div class="centerrr">
+                        <p>Cảm ơn bạn đã mua hàng của WholeFoods, Đơn hàng của bạn đã được đặt thành công!</p>
                         <p>Mã hóa đơn của bạn là: <strong><?php
                             echo $SOHD;
                         ?></strong></p>

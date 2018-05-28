@@ -20994,9 +20994,14 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .centerr {
   text-align: center;
-  color: blue;
 }
 .control-infotproduct .centerr h2 {
-  color: red;
+  color: #80b435;
+  margin-bottom: 20px;
+}
+.centerrr {
+  text-align: center;
+}
+.control-infotproduct .centerrr p {
   margin-bottom: 20px;
 }
