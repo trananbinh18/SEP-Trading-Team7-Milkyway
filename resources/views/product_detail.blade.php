@@ -97,8 +97,8 @@
                                 <div class="action">
                                     @if(session()->get('typeuser')==2)
                                         <button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button>
-                                        <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
-                                        <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
+                                        <!-- <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
+                                        <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a> -->
 
                                     @endif
                                     @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1 )
@@ -110,11 +110,8 @@
                                 </div>
                                 <div class="social box">
                                     <h3>Chia sẻ :</h3>
-                                    <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
-                                    <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
-                                    <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
-                                    <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
-                                    <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
+                                    <a class="twitter" href="https://twitter.com/login?lang=vi" title="social"><i class="fa fa-twitter-square"></i></a>
+                                    <a class="facebook" href="https://www.facebook.com" title="social"><i class="fa fa-facebook-square"></i></a>
                                 </div>
                                 <!-- End share -->
                             </div>
