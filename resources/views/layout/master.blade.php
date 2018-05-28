@@ -176,7 +176,9 @@
         </header>
         
         @yield('content')
-
+        <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+        </div>
         <footer id="footer" class="footer-v3 align-left">
               <div class="container container-ver2">
                 <div class="footer-inner">

@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Productdetail');
 
-Route::get('catalog','ControllerSanPham@catalog');
+Route::get('catalog','ControllerSanPham@catalog')->name('Catalog');
 
 Route::get('shopping',function(){
 	return view('shopping_cart');
