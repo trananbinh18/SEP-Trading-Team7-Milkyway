@@ -30,7 +30,7 @@
                       </tr>
                       @foreach($orders as $row)
                       <tr>
-                          <th>{{$row -> SOHD}}</th>
+                          <th><a href="{{ url('Ordersdetail',[$row->MACTHD]) }}">{{$row -> SOHD}}</a></th>
                           <th>{{$row -> NLHD}}</th>
                           <th>{{$row -> THANHTIEN}}</th>
                           @if($row->TTHD == 0)
@@ -46,5 +46,9 @@
                   </table>
               </form>
           </div>
-     </div>
+      </div>
+      <div id="back-to-top">
+        <i class="fa fa-long-arrow-up"></i>
+      </div>
+
 @endsection

@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
+use App\hoadon;
+use App\chitiethoadon;
 use Illuminate\Support\Facades\DB;  
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
@@ -239,6 +241,13 @@ function ChangeInfor(Request $Infor_request){
 
         $ngban->save();
         return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+    }
+    public function ordersdetail($id){
+        $hoadon = chitiethoadon::find($id);
+        $sanpham = DB::table('chitiethoadon')->join('sanpham','sanpham.MASP' ,'=','chitiethoadon.MASP')->select('SOLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI');
+        //$sanpham = chitiethoadon::all();
+
+        return view('Ordersdetail', compact($sanpham,'sanpham'), compact($hoadon,'hoadon'));
     }
 }
 

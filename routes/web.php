@@ -164,4 +164,6 @@ Route::post('EditBuyer','AuthController@updatebuyer')->name('EditBuyer');
 Route::get('EditSeller/{id}', 'AuthController@editseller');
 //Update Information Seller for Employees
 Route::post('EditSeller','AuthController@updateseller')->name('EditSeller');
+//Orders Details
+Route::get("Ordersdetail/{id}",'AuthController@ordersdetail')->name('Ordersdetail');
 

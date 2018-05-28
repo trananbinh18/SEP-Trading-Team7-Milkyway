@@ -51,7 +51,7 @@ class LoadDataController extends Controller
 	}
 	public function orders(){
 		if(session()->get('typeuser') == 2){
-			$orders = DB::table('hoadon')->join('chitiethoadon', 'chitiethoadon.MAHD' , '=', 'hoadon.MAHD')->select('NLHD', 'THANHTIEN','TTHD','SOHD')->where('MANM', session()->get('userid'))->get();
+			$orders = DB::table('hoadon')->join('chitiethoadon', 'chitiethoadon.MAHD' , '=', 'hoadon.MAHD')->select('NLHD', 'THANHTIEN','TTHD','SOHD','MACTHD')->where('MANM', session()->get('userid'))->get();
 
 			return view('Donhang')->with('orders', $orders);
 		}else{
