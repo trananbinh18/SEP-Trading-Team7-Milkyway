@@ -60,7 +60,7 @@
                     <td class="center">
                       <a href="#">Xóa<span  aria-hidden="true"></span></a>
                       <span> | </span>
-                      <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
+                      <a href="{{ url('ChangeStatus',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                   </tr>
                   @endforeach                                           
                 </tbody>

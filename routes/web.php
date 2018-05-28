@@ -166,4 +166,8 @@ Route::get('EditSeller/{id}', 'AuthController@editseller');
 Route::post('EditSeller','AuthController@updateseller')->name('EditSeller');
 //Orders Details
 Route::get("Ordersdetail/{id}",'AuthController@ordersdetail')->name('Ordersdetail');
+//Edit ChangeStatus view
+Route::get('ChangeStatus/{id}','AuthController@editstatus');
+//Update ChangeStatus view
+Route::post('ChangeStatus','AuthController@updatestatus')->name('ChangeStatus');
 

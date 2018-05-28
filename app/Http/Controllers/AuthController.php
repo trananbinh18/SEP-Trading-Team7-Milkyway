@@ -11,6 +11,7 @@ use App\nguoiban;
 use App\nhanvien;
 use App\hoadon;
 use App\chitiethoadon;
+use App\sanpham;
 use Illuminate\Support\Facades\DB;  
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
@@ -245,9 +246,21 @@ function ChangeInfor(Request $Infor_request){
     public function ordersdetail($id){
         $hoadon = chitiethoadon::find($id);
         $sanpham = DB::table('chitiethoadon')->join('sanpham','sanpham.MASP' ,'=','chitiethoadon.MASP')->select('SOLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI');
-        //$sanpham = chitiethoadon::all();
 
         return view('Ordersdetail', compact($sanpham,'sanpham'), compact($hoadon,'hoadon'));
+    }
+    public function editstatus($id){
+        $status = sanpham::find($id);
+
+        return view('ChangeStatus', compact($status,'status'));
+    }
+    public function updatestatus(Request $Status_request){
+        $status = sanpham::find($Status_request->input('MASP'));
+
+        $status->TRANGTHAI = $Status_request->input('status');
+        $status->save();
+
+        return redirect()->back()->with('thongbao','Bạn đã thay đổi thành công');
     }
 }
 
