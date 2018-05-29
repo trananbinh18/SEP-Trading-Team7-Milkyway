@@ -1,4 +1,4 @@
-    @extends('layout.master')
+@extends('layout.master')
     @section (' title ')
     Sửa thông tin
     @stop
@@ -11,7 +11,7 @@
              <h3>THÔNG TIN TÀI KHOẢN</h3>
              <i class="fa fa-chevron-circle-down icon-click"></i>
              <ul class="menu-vertical">
-              <li><img src="resources/assets/images/icon-categories-2.png" alt=""><a href="" title="Sửa thông tin">Sửa thông tin</a></li>
+              <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="" title="Sửa thông tin">Sửa thông tin</a></li>
             </ul>
            </div>
           </aside>
@@ -64,6 +64,12 @@
           <label for="inputpass" class="col-sm-3 control-lab">Thành phố</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="<?php echo "{$ngban['TP']}"; ?>" required>
+          </div>
+        </div>
+        <div class="form-group signupseller">
+          <label for="inputpass" class="col-sm-3 control-lab">Trạng Thái</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Trạng thái" name="status" value="<?php echo "{$ngban['TTNB']}"; ?>" required>
           </div>
         </div>
         <div class="col-md-12 center">
