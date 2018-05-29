@@ -18,9 +18,9 @@
             </div>
           </div>
           <div class="col-md-8 control-infotproduct box-shadow">
-              <form class="form-horizontal"  method="POST">
-
-                 <div id="product-tags" class="tab-content">
+            <div class="hoz-tab-container1 space-padding-tb-30">
+                 <div id="product-tags1" class="tab-content1">
+                  
                   <p>
                       <span>Tên Sản Phẩm :</span>
                       <span><?php echo "{$hoadon->sanpham['TENSP']}"; ?></span>
@@ -38,7 +38,8 @@
                       <span><?php echo "{$hoadon['THANHTIEN']}"; ?> VND</span>
                     </p>
                   </div>
-              </form>
+                </div>  
+           </div>
           </div>
       </div>
       <div id="back-to-top">
