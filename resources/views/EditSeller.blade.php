@@ -1,4 +1,4 @@
-    @extends('layout.master')
+@extends('layout.master')
     @section (' title ')
     Sửa thông tin
     @stop
@@ -64,6 +64,12 @@
           <label for="inputpass" class="col-sm-3 control-lab">Thành phố</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="<?php echo "{$ngban['TP']}"; ?>" required>
+          </div>
+        </div>
+        <div class="form-group signupseller">
+          <label for="inputpass" class="col-sm-3 control-lab">Trạng Thái</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="Trạng thái" name="status" value="<?php echo "{$ngban['TTNB']}"; ?>" required>
           </div>
         </div>
         <div class="col-md-12 center">

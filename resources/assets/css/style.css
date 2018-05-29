@@ -20776,7 +20776,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   position: relative;
   margin-top: 20px;
   margin-left: 37px;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 30px;
   padding-left: 15px;
   color:#171313;
@@ -21006,4 +21006,18 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .control-infotproduct .centerrr p {
   margin-bottom: 20px;
+}
+.hoz-tab-container1 #product-tags1 p {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #dddddd;
+  margin: 0px;
+}
+.hoz-tab-container1 #product-tags1 p span:first-child {
+    float: left;
+    color: #2b2b2b;
+}
+.hoz-tab-container1 #product-tags1 p span {
+    font: 400 16px/60px "Roboto Slab";
+    float: right;
 }

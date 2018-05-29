@@ -239,6 +239,7 @@ function ChangeInfor(Request $Infor_request){
         $ngban->PHUONG  = $Seller_request->input('ward');
         $ngban->QUAN    = $Seller_request->input('district');
         $ngban->TP      = $Seller_request->input('city');
+        $ngban->TTNB    = $Seller_request->input('status');
 
         $ngban->save();
         return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
