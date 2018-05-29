@@ -135,7 +135,12 @@ Kiểm tra
                                     </ul>
                                 </div>
                                 <!-- End info-order -->
+                                @if(Cart::count()!=0)
                                 <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button>
+                                @endif
+                                @if(Cart::count()==0)
+                                <a href="{{route('Checkout')}}"><button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button></a>
+                                @endif
                             </div>
                         </div>
                     </div>
