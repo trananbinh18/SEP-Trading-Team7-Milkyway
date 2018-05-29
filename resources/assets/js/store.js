@@ -46,22 +46,76 @@ function checkGiaCu(giacu){
 $(document).ready(function() {
     var sx = "moi";
     var dm = "0";
+    var page = 1;
     $("#sortbar").change(function(){
         sx = $(this).val();
         $(".products").empty();
         $.getJSON('ProductFilter/'+dm+'/'+sx, function (data){
-            for(var i in data){
+            var numofpage = (data.length/15)+1;
+            numofpage = parseInt(numofpage);
+            var i=(page-1)*15;
+            var lim = (page*15)+1;
+            for(i;i<data.length; i++){
+                if(i==lim){
+                    break;
+                }
             $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'></p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
             }
+
+            $(".pagination").empty();
+            //paging
+            for(var j=0;j<numofpage;j++){
+                var pagethis = j+1;
+                $(".pagination").append("<a href='#'><span class='page-numbers current'>"+ pagethis +"</span></a>")
+            }
+            $(".page-numbers").click(function(){
+                page = parseInt($(this).html());
+                $(".products").empty();
+                var i=(page-1)*15;
+                var lim = (page*15)+1;
+                for(i;i<data.length; i++){
+                    console.log(i);
+                    if(i==lim){
+                        break;
+                    }
+                        $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            }
+            });
         });
     });
     $("li .loaisp").click(function(){
         dm = $(this).attr('title');
         $(".products").empty();
         $.getJSON('ProductFilter/'+dm+'/'+sx, function (data){
-            for(var i in data){
-            $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'></p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            var numofpage = (data.length/15)+1;
+            numofpage = parseInt(numofpage);
+            var i=(page-1)*15;
+            var lim = (page*15)+1;
+            for(i;i<data.length; i++){
+                if(i==lim){
+                    break;
+                }
+            $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
             }
+
+            $(".pagination").empty();
+            //paging
+            for(var j=0;j<numofpage;j++){
+                var pagethis = j+1;
+                $(".pagination").append("<a href='#'><span class='page-numbers current'>"+ pagethis +"</span></a>")
+            }
+            $(".page-numbers").click(function(){
+                page = parseInt($(this).html());
+                $(".products").empty();
+                var i=(page-1)*15;
+                var lim = (page*15)+1;
+                for(i;i<data.length; i++){
+                    if(i==lim){
+                        break;
+                    }
+                        $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            }
+            });
         });
     });
 

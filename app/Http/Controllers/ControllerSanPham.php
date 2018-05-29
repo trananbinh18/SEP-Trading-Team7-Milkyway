@@ -101,7 +101,6 @@ class ControllerSanPham extends Controller
                 $sanpham = sanpham::orderBy('NGAYDANG','desc');
                 }
         }
-        
         $sanpham = $sanpham->get()->toJson();
         return $sanpham;
     }
