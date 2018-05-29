@@ -16,9 +16,8 @@
           <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Seller_Pass')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
         </ul>
       </div>
-
-    </div>
   </aside>    
+</div>
 </div>
 
 <div class="col-md-8 control-infotproduct box-shadow">
@@ -64,6 +63,8 @@
         </div>
       </div>
     </div>
+</div>
+</div>
 <div id="back-to-top">
   <i class="fa fa-long-arrow-up"></i>
 </div>
