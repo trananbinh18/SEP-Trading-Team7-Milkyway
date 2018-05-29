@@ -23,7 +23,7 @@
                  <div id="product-tags" class="tab-content">
                   <p>
                       <span>Tên Sản Phẩm :</span>
-                      <span><?php echo "{$hoadon->sanpham['TENSP']}"; ?></span>
+                      <span><a href="{{ url('Productdetail',[$hoadon->MASP]) }}"><?php echo "{$hoadon->sanpham['TENSP']}"; ?></a></span>
                     </p>
                     <p>
                       <span>Số lượng :</span>
