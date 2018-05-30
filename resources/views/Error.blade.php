@@ -11,7 +11,7 @@ Error
         	<p>Trang này không tồn tại !</p>
         </div>
         <div class="buttonerror">
-            <a href="#"><button type="submit" class="link-v1 rt">Quay lại trang chủ</button></a>
+            <a href="{{route('homepage')}}"><button type="submit" class="link-v1 rt">Quay lại trang chủ</button></a>
         </div>
     </div>
 @stop

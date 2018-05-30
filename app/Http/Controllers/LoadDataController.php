@@ -20,7 +20,7 @@ class LoadDataController extends Controller
 	
 		return view('ListProduct_Seller')->with('products',$products);
 	}
-	return redirect()->route('homepage');
+	return view('Error');
 	}
 
 	public function loadListProduct_Sale(){
@@ -29,7 +29,7 @@ class LoadDataController extends Controller
 
 		return view('ListAllProducts')->with('sanpham', $sanpham);
 		}
-		return redirect()->route('homepage');
+		return view('Error');
 	}
 
 	public function accountSeller(){
@@ -38,7 +38,7 @@ class LoadDataController extends Controller
 
 			return view('SellerAccount')->with('account', $account);
 		}
-		return redirect()->route('homepage');
+		return view('Error');
 	}
 
 	public function accountBuyer(){
@@ -47,7 +47,7 @@ class LoadDataController extends Controller
 
 			return view('BuyerAccount')->with('account', $account);
 		}
-			return redirect()->route('homepage');
+			return view('Error');
 	}
 	public function orders(){
 		if(session()->get('typeuser') == 2){
@@ -55,7 +55,7 @@ class LoadDataController extends Controller
 
 			return view('Donhang')->with('orders', $orders);
 		}else{
-			return redirect()->route('homepage');
+			return view('Error');
 		}
 	}
 }
