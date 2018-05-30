@@ -134,7 +134,7 @@
                                             </ul>
                                             <p class="total"><span class="left">Tổng:</span> <span class="right">{{Cart::subtotal()}} VND</span></p>
                                             <div class="bottom">
-                                                <a class="link-v1" href="{{route('shopping')}}" title="viewcart">Xem giỏ hàng</a>
+                                                <a class="link-v1 rt" href="{{route('shopping')}}" title="viewcart">Xem giỏ hàng</a>
                                                 @if(Cart::count()==0)
                                                 <a class="link-v1 rt" href="{{route('homepage')}}" title="checkout">Thanh toán</a>
                                                 @endif()
