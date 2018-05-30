@@ -55,7 +55,12 @@
                     <td>{{$row->TENSP}}</td>
                     <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
                     <td>{{number_format($row->GIA) }}</td>
-                    <td>{{$row->TRANGTHAI}}</td>
+                    <td> 
+                        @if($row->TRANGTHAI == 0)
+                        <?php echo "chưa duyệt" ?>
+                        @elseif($row -> TRANGTHAI == 1)
+                        <?php echo "đã duyệt" ?></td>
+                        @endif
                     <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
                     <td class="center">
                       <a href="#">Xóa<span  aria-hidden="true"></span></a>

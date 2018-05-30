@@ -16,20 +16,20 @@ class LoadDataController extends Controller
 	public function index(){
 	//load sản phẩm
 	if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
-	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->get();
+	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->orderBy('sanpham.MASP', 'DESC')->get();
 	
 		return view('ListProduct_Seller')->with('products',$products);
 	}
-	return redirect()->route('homepage');
+	return view('Error');
 	}
 
 	public function loadListProduct_Sale(){
 		if(session()->get('typeuser') == 3){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
-		$sanpham = DB::table('sanpham')->join('loaisanpham', 'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP', 'TENSP', 'SOLUONG', 'GIA', 'GIACU', 'DONVI', 'TRANGTHAI', 'HINH', 'MASP')->orderBy('GIA', 'ASC')->get();
+		$sanpham = DB::table('sanpham')->join('loaisanpham', 'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP', 'TENSP', 'SOLUONG', 'GIA', 'GIACU', 'DONVI', 'TRANGTHAI', 'HINH', 'MASP')->orderBy('sanpham.MASP', 'DESC')->get();
 
 		return view('ListAllProducts')->with('sanpham', $sanpham);
 		}
-		return redirect()->route('homepage');
+		return view('Error');
 	}
 
 	public function accountSeller(){
@@ -38,7 +38,7 @@ class LoadDataController extends Controller
 
 			return view('SellerAccount')->with('account', $account);
 		}
-		return redirect()->route('homepage');
+		return view('Error');
 	}
 
 	public function accountBuyer(){
@@ -47,7 +47,7 @@ class LoadDataController extends Controller
 
 			return view('BuyerAccount')->with('account', $account);
 		}
-			return redirect()->route('homepage');
+			return view('Error');
 	}
 	public function orders(){
 		if(session()->get('typeuser') == 2){
@@ -55,7 +55,7 @@ class LoadDataController extends Controller
 
 			return view('Donhang')->with('orders', $orders);
 		}else{
-			return redirect()->route('homepage');
+			return view('Error');
 		}
 	}
 }

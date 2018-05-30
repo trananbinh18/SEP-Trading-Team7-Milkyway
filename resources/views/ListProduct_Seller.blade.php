@@ -52,7 +52,12 @@ Danh sách sản phẩm người bán
                       <td>{{$row->TENSP}}</td>
                       <td>{{$row->SOLUONG}} {{$row->DONVI}}</td>
                       <td>{{ number_format($row->GIA) }}</td>
-                      <td>{{$row->TRANGTHAI}}</td>
+                      <td> 
+                        @if($row->TRANGTHAI == 0)
+                        <?php echo "chưa duyệt" ?>
+                        @elseif($row -> TRANGTHAI == 1)
+                        <?php echo "đã duyệt" ?></td>
+                        @endif
                       <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                       <td class="center">
                         <a href="#">Ẩn<span aria-hidden="true"></span></a>
