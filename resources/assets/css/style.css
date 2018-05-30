@@ -6808,7 +6808,7 @@ ul.tabs.tabs-title li span.count {
   content: "";
   left: -110px;
   right: 15px;
-  bottom: -80px;
+  bottom: -5  0px;
   top: 16px;
   border: 1px solid #80b435;
   display: inline-block;
@@ -21020,4 +21020,17 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 .hoz-tab-container1 #product-tags1 p span {
     font: 400 16px/60px "Roboto Slab";
     float: right;
+}
+.BchangeSB {
+  margin-left: 36%;
+}
+#formSoLuong label {
+  font: 700 20px/38px "Roboto Slab";
+  margin-left: 10px;
+}
+#formSoLuong {
+  width: 500px;
+}
+#map iframe {
+  width: 100%;
 }
