@@ -14,7 +14,7 @@
                             <div class="float-left">
                                 <span class="col active"></span>
                                 <span class="list"></span>
-                                <p class="result-count">Hiển thị 1-12 trong 30 kết quả</p>
+                                <p class="result-count">Hiển thị 1-16 trong 30 kết quả</p>
                             </div>
                             <div class="float-right">
                             <form action="#" method="get" class="order-by">
