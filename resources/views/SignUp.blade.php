@@ -14,7 +14,7 @@
     </div>
 </div>
 <!-- End banner -->
-<div style="padding-left: 480px;">
+<div class="BchangeSB">
     <button class="tablink" onclick="openPage('Seller', this, '#80b435')">BÁN</button>
     <button class="tablink" onclick="openPage('Buyer', this, '#80b435')" id="defaultOpen">MUA</button>
 </div>
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="center">
                             <h2>ĐĂNG KÝ</h2>
-                            <p>Cùng tạo tài khoản mua cả thế giới!</p>
+                            <p>Cùng tạo tài khoản mua mua rau củ quả thượng hạng!</p>
                         </div>
                         <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
                             <div class="col-md-6 space-50" id="bodyinput">
@@ -70,13 +70,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Phường xã</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Quận huyện</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
                                     </div>
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 center">
-                                <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
+                                <a href="#"><button type="submit" class="link-v1 rt">Đăng Ký</button></a>
                             </div></form>
                     </div>
                 </div>
@@ -161,21 +161,21 @@
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Phường xã</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Quận huyện</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Tĩnh/Thành phố</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                             <div class="col-md-8">
                                 <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
                             </div>
@@ -183,7 +183,7 @@
                     </div>
                     <div class="col-md-12 center">
 
-                        <a href="#"><button type="submit" class="link-v1 rt">Đăng Kí</button></a>
+                        <a href="#"><button type="submit" class="link-v1 rt">Đăng Ký</button></a>
                     </div>
                 </form>
             </div>
