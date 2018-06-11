@@ -26,7 +26,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     // Thêm sản phẩm của người bán
-    public function Postproduct(CheckRequest $Product_request){
+    public function Postproduct(Request $Product_request){
            
             $imageSP = $Product_request->file('imagesSP');
             $filenameSP = $imageSP->getclientOriginalName();
