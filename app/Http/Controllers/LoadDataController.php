@@ -33,14 +33,18 @@ class LoadDataController extends Controller
 		return view('Error');
 	}
 	//Ẩn sản phẩm nhanh
-	public function QuickHide($id){
-		// echo $id;
-		//$Product = new sanpham();
+	public function QuickHide($id){;
 		$Product = sanpham::find($id);		
 		$Product->TRANGTHAI = 2;
 		$Product->save();
 		return redirect()->route('listpro')->with('thongbao','Bạn đã ẩn sản phẩm thành công');
 
+	}
+	public function QuickShow($id){
+		$Product = sanpham::find($id);		
+		$Product->TRANGTHAI = 0;
+		$Product->save();
+		return redirect()->route('ListHide')->with('thongbao','Bạn đã ẩn sản phẩm thành công');
 	}
 	//Load sản phẩm ẩn
 	public function ListHide(){

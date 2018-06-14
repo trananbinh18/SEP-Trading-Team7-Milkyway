@@ -32,6 +32,11 @@ Danh sách sản phẩm người bán
             <div class="panel-body" style="font-size: 11px;">
               <div class="dataTable_wrapper">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                  @if(session('thongbao'))
+                  <div class="alert-success">
+                    {{session('thongbao')}}
+                  </div>
+                  @endif
                   <thead>
                     <tr>         
                       <th>STT</th>
@@ -60,7 +65,7 @@ Danh sách sản phẩm người bán
                         @endif
                       <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                       <td class="center">
-                        <a href="#">Hiện<span aria-hidden="true"></span></a>
+                        <a href="{{ url('QuickShowProduct',[$row->MASP]) }}">Hiện<span aria-hidden="true"></span></a>
                         <span> | </span>
                         <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> 
                       </td>

@@ -32,6 +32,11 @@ Danh sách sản phẩm người bán
             <div class="panel-body" style="font-size: 11px;">
               <div class="dataTable_wrapper">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                  @if(session('thongbao'))
+                  <div class="alert-success">
+                    {{session('thongbao')}}
+                  </div>
+                  @endif
                   <thead>
                     <tr>         
                       <th>STT</th>
