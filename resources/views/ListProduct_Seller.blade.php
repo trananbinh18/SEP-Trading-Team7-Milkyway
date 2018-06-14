@@ -62,7 +62,8 @@ Danh sách sản phẩm người bán
                         @endif
                       <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                       <td class="center">
-                        <a href="{{route('QuickHide')}}">Ẩn<span aria-hidden="true"></span></a>
+                        
+                        <a href="{{ url('QuickHideProduct',[$row->MASP]) }}">Ẩn<span aria-hidden="true"></span></a>
                         <span> | </span>
                         <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> 
                       </td>

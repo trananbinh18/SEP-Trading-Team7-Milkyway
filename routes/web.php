@@ -121,7 +121,7 @@ Route::get('ListproductApproved',['as'=>'ListApproved','uses'=>'LoadDataControll
 //Trả về dữ liệu sản phẩm đã ẩn của người bán
 Route::get('ListproductHide',['as'=>'ListHide','uses'=>'LoadDataController@ListHide']);
 //Ẩn sản phẩm nhanh
-Route::get('QuickHideProduct',['as'=>'QuickHide','uses'=>'LoadDataController@QuickHide']);
+Route::get('QuickHideProduct/{id}','LoadDataController@QuickHide');
 //chi add product
 Route::get('AddToCart/{id}',['as'=>'buyproduct','uses'=>'Controller@AddToCart']);
 //Mua sản phẩm
