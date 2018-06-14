@@ -59,8 +59,6 @@ Danh sách sản phẩm người bán
                         <?php echo "Chưa duyệt" ?>
                         @elseif($row -> TRANGTHAI == 1)
                         <?php echo "Đã duyệt" ?></td>
-                        @elseif($row -> TRANGTHAI == 2)
-                        <?php echo "Ẩn" ?></td>
                         @endif
                       <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                       <td class="center">
