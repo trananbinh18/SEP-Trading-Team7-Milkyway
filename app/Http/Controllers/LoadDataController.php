@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\sanpham;
+use App\hoadon;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Query\Builder;
@@ -84,11 +85,17 @@ class LoadDataController extends Controller
 	}
 	public function orders(){
 		if(session()->get('typeuser') == 2){
-			$orders = DB::table('hoadon')->join('chitiethoadon', 'chitiethoadon.MAHD' , '=', 'hoadon.MAHD')->select('NLHD', 'THANHTIEN','TTHD','SOHD','MACTHD')->where('MANM', session()->get('userid'))->get();
+			$orders = DB::table('hoadon')->select('NLHD', 'TONGTIEN','TTHD','SOHD','MAHD')->where('MANM', session()->get('userid'))->whereIn('TTHD', [0,3])->get();
 
 			return view('Donhang')->with('orders', $orders);
 		}else{
 			return view('Error');
 		}
+	}
+	public function deleteOrders($id){
+		$huyhoadon = hoadon::find($id);
+		$huyhoadon->TTHD = 4;
+		$huyhoadon->save();
+		return redirect()->route('Orders')->with('thanhcong','Bạn đã hủy hóa đơn thành công');
 	}
 }

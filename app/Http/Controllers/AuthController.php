@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
-use\App\Http\Controllers\ControllerAccount;
+use App\Http\Controllers\ControllerAccount;
+use Illuminate\Support\MessageBag;
 
 class AuthController extends Controller
 {
@@ -26,25 +27,29 @@ class AuthController extends Controller
     {
       return view('SignUp');
   }
+  
   function postSignUpBuyer(Request $SignUpBuyer_request)
   {
-// $this->validate($SignUp_request,[
-//  'name' => 'required|min:3', 
-//  'phone'=> 'required|min:10', 
-//  'number_house' => 'required',
-//  'emai' => 'required|email|unique:users,email', 
-//  'password'=> 'required|min:6'
+    // $this->validate($SignUpBuyer_request,
+    //     ["name" => "required"],
+    //     ["name.required" => "Vui lòng nhập tên"]
+    // );
+//     'name' => 'required|min:3', 
+//     'phone'=> 'required|min:10', 
+//     'number_house' => 'required',
+//     'emai' => 'required|email|unique:users,email', 
+//     'password'=> 'required|min:6'
 
 
-// ],[
-//  'name.required' => 'Bạn chưa nhập tên người dùng',
-//  'name.min'=> 'Tên người dùng phải có ít nhất 3 kí tự',
-//  'phone.required' => 'Bạn chưa nhập số điện thoại',
-//  'phone.min' => 'Số điện thoại phải có ít nhất 10 kí tự' , 
-//  'address.required' => 'Bạn chưa nhập địa chỉ', 
-//  'password.required' => 'Bạn chưa nhập mật khẩu' , 
-//  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
-//  ]);
+//     ],[
+//     'name.required' => 'Bạn chưa nhập tên người dùng',
+//     'name.min'=> 'Tên người dùng phải có ít nhất 3 kí tự',
+//     'phone.required' => 'Bạn chưa nhập số điện thoại',
+//     'phone.min' => 'Số điện thoại phải có ít nhất 10 kí tự' , 
+//     'address.required' => 'Bạn chưa nhập địa chỉ', 
+//     'password.required' => 'Bạn chưa nhập mật khẩu' , 
+//     'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
+// ]);
 
     $email = $SignUpBuyer_request->email;
     if($email != "") {
@@ -71,6 +76,33 @@ class AuthController extends Controller
         }
     }    
 }
+function getemployees(){
+    return view('Employees_SignUp');
+}
+function signupemployees(Request $Employees_request){
+    $email = $Employees_request->email;
+    if($email != ""){
+        $ems = DB::table('nhanvien')->select('EMAIL')->where('EMAIL', $email)->get();
+        if( count($ems) >=1) {
+            return redirect()->back()->with('thongbao' ,'Email nhập đã tồn tại');
+        }else{
+            $users          = new nhanvien();
+            $users->TENNV   = $Employees_request->name;
+            $users->SDT     = $Employees_request->phone;
+            $users->SONHA   = $Employees_request->number_house;
+            $users->PHUONG  = $Employees_request->ward;
+            $users->QUAN    = $Employees_request->district;
+            $users->TP      = $Employees_request->city;
+            $users->EMAIL   = $Employees_request->email;
+            $users->MATKHAU = $Employees_request->password;
+            $users->NGAYTAO = date('Y-m-d H:i:s');
+
+            $users->save();
+            return redirect()->back()->with('thanhcong', 'Chúc mừng bạn đã tạo tài khoản thành công');
+        }
+    }
+}
+
 function getSignUpSeller(){
     return view('SignUp');
 }
@@ -118,14 +150,14 @@ function postSignUpSeller(Request $SignUpSeller_request){
         $users->save();
 
         return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
-        }
     }
+}
 }
 function resetPass(){
     if(session()->get('typeuser')==3){
         return view('ChangePassword_Employees');
     }else{
-        return redirect()->route('homepage');
+        return view('Error');
     }
 }
 
@@ -133,13 +165,13 @@ function resetPass(){
 function Chpass(){
     //Check Session
     if(session()->get('typeuser') == 1){
-            return  view('SellerPassword');
-        }else if(session()->get('typeuser') == 2){
-            return view('BuyerPassword');
-        }else{
-            return redirect()->route('homepage');
-        }
+        return  view('SellerPassword');
+    }else if(session()->get('typeuser') == 2){
+        return view('BuyerPassword');
+    }else{
+        return view('Error');
     }
+}
 function ChangePassword(Request $PW_request){
     if($PW_request->new_password = $PW_request->confirm_password)
     {
@@ -173,7 +205,7 @@ function inf(){
     }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
         return view('BuyerInformation');
     }else{
-        return redirect()->route('homepage');
+        return view('Error');
     }   
 }
 function ChangeInfor(Request $Infor_request){
@@ -198,70 +230,69 @@ function ChangeInfor(Request $Infor_request){
         $user->save();
         return redirect('BuyerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
     }else{
-        return route('homepage');
-        }
+        return view('Error');
     }
-    public function editbuyer($id){
-        $ngmua = nguoimua::find($id);
-        if($ngmua == null){
-            return redirect('BuyerAccount');
-        }else{
-            return view('EditBuyer', compact($ngmua, 'ngmua'));
-        }
+}
+public function editbuyer($id){
+    $ngmua = nguoimua::find($id);
+    if($ngmua == null){
+        return redirect('BuyerAccount');
+    }else{
+        return view('EditBuyer', compact($ngmua, 'ngmua'));
     }
-    public function updatebuyer(Request $Buyer_request){
-        $ngmua = nguoimua::find($Buyer_request->input('MANM'));
+}
+public function updatebuyer(Request $Buyer_request){
+    $ngmua = nguoimua::find($Buyer_request->input('MANM'));
 
-        $ngmua->TENNM   = $Buyer_request->input('name'); 
-        $ngmua->SDT     = $Buyer_request->input('phone');
-        $ngmua->SONHA   = $Buyer_request->input('number_house');
-        $ngmua->PHUONG  = $Buyer_request->input('ward');
-        $ngmua->QUAN    = $Buyer_request->input('district');
-        $ngmua->TP      = $Buyer_request->input('city');
+    $ngmua->TENNM   = $Buyer_request->input('name'); 
+    $ngmua->SDT     = $Buyer_request->input('phone');
+    $ngmua->SONHA   = $Buyer_request->input('number_house');
+    $ngmua->PHUONG  = $Buyer_request->input('ward');
+    $ngmua->QUAN    = $Buyer_request->input('district');
+    $ngmua->TP      = $Buyer_request->input('city');
 
-        $ngmua->save();
-        return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+    $ngmua->save();
+    return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+}
+public function editseller($id){
+    $ngban = nguoiban::find($id);
+    if($ngban == null){
+        return redirect('SellerAccount');
+    }else{
+        return view('EditSeller', compact($ngban ,'ngban'));
     }
-    public function editseller($id){
-        $ngban = nguoiban::find($id);
-        if($ngban == null){
-            return redirect('SellerAccount');
-        }else{
-            return view('EditSeller', compact($ngban ,'ngban'));
-        }
-    }
-    public function updateseller(Request $Seller_request){
-        $ngban = nguoiban::find($Seller_request->input('MANB'));
+}
+public function updateseller(Request $Seller_request){
+    $ngban = nguoiban::find($Seller_request->input('MANB'));
 
-        $ngban->TENNB   = $Seller_request->input('name'); 
-        $ngban->SDT     = $Seller_request->input('phone');
-        $ngban->SONHA   = $Seller_request->input('number_house');
-        $ngban->PHUONG  = $Seller_request->input('ward');
-        $ngban->QUAN    = $Seller_request->input('district');
-        $ngban->TP      = $Seller_request->input('city');
-        $ngban->TTNB    = $Seller_request->input('status');
+    $ngban->TENNB   = $Seller_request->input('name'); 
+    $ngban->SDT     = $Seller_request->input('phone');
+    $ngban->SONHA   = $Seller_request->input('number_house');
+    $ngban->PHUONG  = $Seller_request->input('ward');
+    $ngban->QUAN    = $Seller_request->input('district');
+    $ngban->TP      = $Seller_request->input('city');
+    $ngban->TTNB    = $Seller_request->input('status');
 
-        $ngban->save();
-        return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
-    }
-    public function ordersdetail($id){
-        $hoadon = chitiethoadon::find($id);
-        $sanpham = DB::table('chitiethoadon')->join('sanpham','sanpham.MASP' ,'=','chitiethoadon.MASP')->select('SOLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI');
+    $ngban->save();
+    return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+}
+public function ordersdetail($id){
+        //$hoadon = chitiethoadon::find($id);
+    $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI')->where('MAHD' , $id)->get();
+    return view('Ordersdetail', compact($sanpham,'sanpham'));
+}
+public function editstatus($id){
+    $status = sanpham::find($id);
 
-        return view('Ordersdetail', compact($sanpham,'sanpham'), compact($hoadon,'hoadon'));
-    }
-    public function editstatus($id){
-        $status = sanpham::find($id);
+    return view('ChangeStatus', compact($status,'status'));
+}
+public function updatestatus(Request $Status_request){
+    $status = sanpham::find($Status_request->input('MASP'));
 
-        return view('ChangeStatus', compact($status,'status'));
-    }
-    public function updatestatus(Request $Status_request){
-        $status = sanpham::find($Status_request->input('MASP'));
+    $status->TRANGTHAI = $Status_request->input('status');
+    $status->save();
 
-        $status->TRANGTHAI = $Status_request->input('status');
-        $status->save();
-
-        return redirect()->back()->with('thongbao','Bạn đã thay đổi thành công');
-    }
+    return redirect()->back()->with('thongbao','Bạn đã thay đổi thành công');
+}
 }
 

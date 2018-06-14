@@ -178,4 +178,6 @@ Route::get("Ordersdetail/{id}",'AuthController@ordersdetail')->name('Ordersdetai
 Route::get('ChangeStatus/{id}','AuthController@editstatus');
 //Update ChangeStatus view
 Route::post('ChangeStatus','AuthController@updatestatus')->name('ChangeStatus');
+//Ẩn/Hủy đơn hàng nhanh
+Route::get('QuickHideOrders/{id}','LoadDataController@deleteOrders');
 
