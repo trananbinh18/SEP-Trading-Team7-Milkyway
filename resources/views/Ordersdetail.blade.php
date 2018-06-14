@@ -1,6 +1,6 @@
  @extends ('layout.master')
  @section(' title ')
- Đơn hàng
+ Chi tiết đơn hàng
  @stop
 
  @section('content')
@@ -12,7 +12,7 @@
          <h3>Thông tin tài khoản </h3>
          <i class="fa fa-chevron-circle-down icon-click"></i>
          <ul class="menu-vertical">
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="" title="Danh sách sản phẩm">Đơn Hàng</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Orders')}}" title="Đơn Hàng">Đơn Hàng</a></li>
         </ul>
       </div>
     </div>

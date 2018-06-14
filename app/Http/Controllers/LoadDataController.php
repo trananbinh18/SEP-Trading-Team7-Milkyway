@@ -65,7 +65,7 @@ class LoadDataController extends Controller
 		}
 		return view('Error');
 	}
-
+	//Load tài khoản của người bán trong trang nhân viên
 	public function accountSeller(){
 		if(session()->get('typeuser') == 3){
 			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL','MANB')->get();
@@ -74,7 +74,7 @@ class LoadDataController extends Controller
 		}
 		return view('Error');
 	}
-
+	//Load tài khoản của người mua trong trang nhân viên
 	public function accountBuyer(){
 		if(session()->get('typeuser') == 3){
 			$account = DB::table('nguoimua')->select('TENNM','SDT', 'EMAIL', 'MANM')->get();
@@ -83,6 +83,7 @@ class LoadDataController extends Controller
 		}
 			return view('Error');
 	}
+	//Load thông tin đơn hàng của người mua
 	public function orders(){
 		if(session()->get('typeuser') == 2){
 			$orders = DB::table('hoadon')->select('NLHD', 'TONGTIEN','TTHD','SOHD','MAHD')->where('MANM', session()->get('userid'))->whereIn('TTHD', [0,3])->get();
@@ -92,10 +93,21 @@ class LoadDataController extends Controller
 			return view('Error');
 		}
 	}
+	//Hủy đơn hàng do người mua thực hiện
 	public function deleteOrders($id){
 		$huyhoadon = hoadon::find($id);
 		$huyhoadon->TTHD = 4;
 		$huyhoadon->save();
 		return redirect()->route('Orders')->with('thanhcong','Bạn đã hủy hóa đơn thành công');
+	}
+	//Load lịch sử mua hàng của người mua
+	public function historyOrders(){
+		if(session()->get('typeuser') == 2){
+			$history = DB::table('hoadon')->select('NLHD', 'TONGTIEN', 'TTHD', 'SOHD' , 'MAHD')->where('MANM', session()->get('userid'))->whereIn('TTHD', [3,4])->get();
+
+			return view('HistoryBuyItem')->with('history', $history);
+		}else{
+			return view('Error');
+		}
 	}
 }
