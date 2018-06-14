@@ -18,10 +18,10 @@
         </div>
       </div>
     <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
-      <div class="alert-success">
-        {{session('thongbao')}}
-      </div>
+      @if(session('thanhcong'))
+          <div class="alert-success">
+            {{session('thanhcong')}}
+          </div>
       @endif
 
       <form class="form-horizontal" action="{{route('EditBuyer')}}" role="form" method="POST">
@@ -78,7 +78,4 @@
       </form>
     </div>
   </div>
-  <div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
-</div>
   @endsection

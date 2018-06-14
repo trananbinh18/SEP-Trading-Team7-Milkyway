@@ -137,4 +137,5 @@
             </div>
        </div>
 </div>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 @endsection

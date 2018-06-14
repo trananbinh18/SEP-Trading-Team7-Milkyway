@@ -18,9 +18,9 @@
        </div>
      </div>
      <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
+      @if(session('thanhcong'))
       <div class="alert-success">
-        {{session('thongbao')}}
+        {{session('thanhcong')}}
       </div>
       @endif
       <div class="page">
@@ -36,8 +36,13 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="MASP" value="<?php echo "{$status['MASP']}";?>">
                 <label for="" class="col-md-3 control-lab">Trạng thái</label>
-                <div class="col-md-2">
-                  <input type="text" class="form-control" value="<?php echo "{$status['TRANGTHAI']}"; ?>" placeholder="trạng thái" name="status">
+                <div class="col-md-4">
+                  <select id="enterprise" class="Unit" name="trangthai" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                          <option value="0" <?php if($status['TRANGTHAI'] == '0'){echo("selected");} ?> >Chưa Duyệt</option>
+                          <option value="1" <?php if($status['TRANGTHAI'] == '1'){echo("selected");} ?> >Đã Duyệt</option>
+                          <option value="2" <?php if($status['TRANGTHAI'] == '2'){echo("selected");} ?> >Đã Ẩn</option>                      
+                      </select>
+                  
                 </div>
               </div>
               <div class="col-md-12 center">
@@ -57,4 +62,5 @@
     
   </div>
 </div>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 @endsection

@@ -20,9 +20,9 @@
         </div>
       </div>
     <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
+      @if(session('thanhcong'))
       <div class="alert-success">
-        {{session('thongbao')}}
+        {{session('thanhcong')}}
       </div>
       @endif
 
@@ -74,7 +74,5 @@
       </form>
     </div>
   </div>
-  <div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
-</div>
+  <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
   @endsection

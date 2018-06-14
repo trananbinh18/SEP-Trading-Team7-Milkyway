@@ -21,9 +21,9 @@
 </div>
 
 <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
+      @if(session('thanhcong'))
       <div class="alert-success">
-        {{session('thongbao')}}
+        {{session('thanhcong')}}
       </div>
       @endif
       <div class="page">
@@ -82,6 +82,7 @@
 <script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 <script src="resources/assets/js/startmin.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->

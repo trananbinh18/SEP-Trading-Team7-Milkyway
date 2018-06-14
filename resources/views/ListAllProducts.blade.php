@@ -59,7 +59,10 @@
                         @if($row->TRANGTHAI == 0)
                         <?php echo "chưa duyệt" ?>
                         @elseif($row -> TRANGTHAI == 1)
-                        <?php echo "đã duyệt" ?></td>
+                        <?php echo "đã duyệt" ?>
+                        @else($row -> TRANGTHAI == 2)
+                        <?php echo "đã ẩn" ?> 
+                      </td>
                         @endif
                     <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
                     <td class="center">

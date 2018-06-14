@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
-      <div class="alert-success">
-        {{session('thongbao')}}
-      </div>
+      @if(session('thanhcong'))
+          <div class="alert-success">
+            {{session('thanhcong')}}
+          </div>
       @endif
       <div class="page">
         <div class="container container-ver2">
@@ -66,7 +66,5 @@
     
   </div>
 </div>
-<div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
-</div>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 @endsection

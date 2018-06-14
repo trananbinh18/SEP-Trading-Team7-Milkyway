@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
-      <div class="alert-success">
-        {{session('thongbao')}}
-      </div>
+      @if(session('thanhcong'))
+          <div class="alert-success">
+            {{session('thanhcong')}}
+          </div>
       @endif
 
       <form class="form-horizontal" action="{{route('changeInfor')}}" role="form" method="POST">
@@ -75,4 +75,5 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
   @endsection
