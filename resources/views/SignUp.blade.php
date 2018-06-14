@@ -28,7 +28,13 @@
                             <h2>ĐĂNG KÝ</h2>
                             <p>Cùng tạo tài khoản mua mua rau củ quả thượng hạng!</p>
                         </div>
+
                         <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
+                             @if(session('thanhcong'))
+                                <div class="alert-success">
+                                    {{session('thanhcong')}}
+                                </div>
+                            @endif
                             <div class="col-md-6 space-50" id="bodyinput">
                                 <div class="form-group signupseller">
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -109,6 +115,11 @@
                         <p>Chúng tôi sẻ đưa sản phẩm của bạn đi toàn thế giới</p>
                     </div>
                     <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
+                         @if(session('thanhcong'))
+                                <div class="alert-success">
+                                    {{session('thanhcong')}}
+                                </div>
+                            @endif
                         <div class="col-md-6 space-50" id="bodyinput">
                             <div class="form-group signupseller">
                                <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -192,6 +203,7 @@
 </div>
 </div>
 </div>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 <script>
     function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;

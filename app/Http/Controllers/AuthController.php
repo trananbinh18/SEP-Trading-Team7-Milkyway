@@ -67,7 +67,7 @@ class AuthController extends Controller
             $user->NGAYTAO  = date('Y-m-d H:i:s');
             $user->save();
 
-            return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
+            return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
         }
     }    
 }
@@ -117,7 +117,7 @@ function postSignUpSeller(Request $SignUpSeller_request){
         $users->NGAYTAO = date('Y-m-d H:i:s');
         $users->save();
 
-        return redirect('home')->with('thongbao','Chúc mừng bạn đã đăng kí thành công');
+        return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
         }
     }
 }
