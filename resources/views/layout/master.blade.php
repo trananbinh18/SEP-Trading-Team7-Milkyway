@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/slick.css")!!}"/>
         <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/settings.css")!!}"/>
         <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/vendor/range-price.css")!!}"/>
+        <link rel="stylesheet" type="text/css" href="{!!url("resources/assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css")!!}"/>
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'>
        
 
