@@ -14,8 +14,10 @@ Danh sách sản phẩm người bán
                 <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="">Sản phẩm chờ duyệt</a></li>
                 <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListApproved')}}" title="">Sản phẩm đã duyệt</a></li>
                 <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListHide')}}" title="">Danh sách sản phẩm ẩn</a></li>
+                <li><img src="{!!url("resources/assets/images/icon-categories-7.jpg") !!}" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
                 <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('Seller_Infor')}}" title="Sửa thông tin">Sửa thông tin</a></li>
                 <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Seller_Pass')}}"" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
+                <li><img src="{!!url("resources/assets/images/icon-categories-8.jpg") !!}" alt=""><a href="#" title="Thông báo">Thông báo</a></li>
               </ul>
             </div>
           </aside>
