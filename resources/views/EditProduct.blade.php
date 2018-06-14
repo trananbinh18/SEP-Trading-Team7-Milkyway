@@ -36,10 +36,10 @@
                       <input type="text" class="form-control" name="tensanpham" id="inputEmail3" placeholder="Nhập tên sản phẩm" value="<?php echo "{$sanpham['TENSP']}";?>">
                     </div>
                     <label for="inputEmail3" class="col-md-3 control-lab">Trạng thái sản phẩm</label>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <select id="enterprise" class="Unit" name="cbChangeStatus" onchange="document.getElementById('price3').innerHTML='$'+this.value">
-                          <option value="2" > >Hiện sản phẩm</option>
-                          <option value="1" > >Ẩn sản phẩm</option>                     
+                          <option value="0" > Hiện sản phẩm</option>
+                          <option value="2" > Ẩn sản phẩm</option>                     
                       </select> 
                     </div>
                   </div>                  
@@ -92,7 +92,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Giá mơi</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá mới</label>
                     <div class="col-md-4">
                       <input type="text" class="form-control" name="giamoi" id="giamoi" placeholder="VND" disabled >
                     </div>
@@ -117,7 +117,7 @@
                   </div>
                   <div class="form-group">
                     <div class="input-group">
-                        <button class="button_search" id="dangsanpham" type="submit">Đăng sản phẩm</button>
+                        <button class="button_search" id="dangsanpham" type="submit">Lưu chỉnh sửa</button>
                     </div>
                   </div>
                 </form>

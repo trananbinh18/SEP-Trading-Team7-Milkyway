@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\sanpham;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Query\Builder;
@@ -13,14 +14,42 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 class LoadDataController extends Controller
 {
+	//Load sản phẩm chưa duyệt
 	public function index(){
-	//load sản phẩm
-	if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
-	$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->orderBy('sanpham.MASP', 'DESC')->get();
+		if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+		$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
 	
 		return view('ListProduct_Seller')->with('products',$products);
 	}
-	return view('Error');
+		return view('Error');
+	}
+	//Load sản phẩm đã duyệt
+	public function ListApproved(){
+		if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+		$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+	
+		return view('ListProduct_Seller')->with('products',$products);
+		}
+		return view('Error');
+	}
+	//Ẩn sản phẩm nhanh
+	public function QuickHide(){
+		$Product = new sanpham();
+		$Product->MANB = session()->get('userid');
+		$Product->TRANGTHAI = 2;
+		$Product->save();
+
+		return view('ListProduct_Seller')->with('thongbao','Bạn đã ẩn sản phẩm thành công');
+
+	}
+	//Load sản phẩm ẩn
+	public function ListHide(){
+		if(session()->get('typeuser') == 1){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+		$products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+		
+		return view('ListHideProduct')->with('products',$products);
+		}
+		return view('Error');
 	}
 
 	public function loadListProduct_Sale(){

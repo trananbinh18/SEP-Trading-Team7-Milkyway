@@ -14,14 +14,14 @@ class ControllerSanPham extends Controller
  
    //
     public function productdetail($id){
-    	$sanpham = sanpham::find($id);
+        $sanpham = sanpham::find($id);
         $lssanpham = sanpham::all();
-    	if($sanpham == null){
-    		return redirect()->route('homepage');
-    	}else{
-    		return view('product_detail',compact($sanpham,'sanpham'),compact($lssanpham,'lssanpham'));
-    	}
-    	
+        if($sanpham == null){
+            return redirect()->route('homepage');
+        }else{
+            return view('product_detail',compact($sanpham,'sanpham'),compact($lssanpham,'lssanpham'));
+        }
+        
     }
 
     public function editproduct($id){
@@ -65,6 +65,7 @@ class ControllerSanPham extends Controller
         // $sanpham->HINH = $request->input('tensanpham');
         // $sanpham->GCN = $request->input('tensanpham');
         $sanpham->TENSP = $request->input('tensanpham');
+        $sanpham->TRANGTHAI = $request->input('cbChangeStatus');
         $sanpham->MALOAISP = $request->input('cbCategory');
         $sanpham->SOLUONG = $request->input('Soluong');
         $sanpham->DONVI = $request->input('cdDonvi');
@@ -72,7 +73,7 @@ class ControllerSanPham extends Controller
 
         $sanpham->save();
 
-        return redirect()->route('homepage');
+        return redirect()->route('listpro');
     }
 
 

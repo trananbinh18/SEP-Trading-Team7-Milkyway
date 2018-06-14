@@ -114,8 +114,14 @@ Route::get('SearchResult',function(){
 });
 Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sellerChangeInfomation']);
 Route::get('Test','Controller@Test');
-//Trả về dữ liệu sản phẩm lên view
+//Trả về dữ liệu sản phẩm chưa duyệt của người bán
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
+//Trả về dữ liệu sản phẩm đã duyệt của người bán
+Route::get('ListproductApproved',['as'=>'ListApproved','uses'=>'LoadDataController@ListApproved']);
+//Trả về dữ liệu sản phẩm đã ẩn của người bán
+Route::get('ListproductHide',['as'=>'ListHide','uses'=>'LoadDataController@ListHide']);
+//Ẩn sản phẩm nhanh
+Route::get('QuickHideProduct',['as'=>'QuickHide','uses'=>'LoadDataController@QuickHide']);
 //chi add product
 Route::get('AddToCart/{id}',['as'=>'buyproduct','uses'=>'Controller@AddToCart']);
 //Mua sản phẩm

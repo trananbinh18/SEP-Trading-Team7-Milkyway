@@ -87,7 +87,7 @@
                                             <form id="formSoLuong" action="{{route('buyproduct')}}" method="get" enctype="multipart/form-data">
                                                 <input data-step="1" id="quanty" name="quan" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                                                 <input type="hidden" name="id" value="{{$sanpham->MASP}}">
-                                                 <label>Kg</label>
+                                                 <label><?php echo "{$sanpham['DONVI']}"; ?></label>
                                             </form>    
                                     </div>
                                     <!-- End col-md-5 -->
