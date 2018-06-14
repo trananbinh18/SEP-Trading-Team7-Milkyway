@@ -117,7 +117,7 @@
                         </li>                      
                         @endfor
                     </ul>
-                </aside>e
+                </aside>
             </div>
             <!-- End Secondary -->
         </div>
