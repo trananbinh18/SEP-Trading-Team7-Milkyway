@@ -85,6 +85,11 @@ class Controller extends BaseController
         $newName = $fileName.'_'.$fileNameNew.$fileExtension;
         return $newName;
     }
+
+    public function Message(){
+        $informationMessage = DB::table('nguoimua')->join('hoadon','nguoimua.MANM','=','nguoimua.MANM')->join('chitiethoadon','hoadon.MAHD','=','chitiethoadon.MAHD')->join('sanpham','chitiethoadon.MASP','=','sanpham.MASP')->select('MACTHD','TENNM','nguoimua.SDT','TENSP','SLUONG','THANHTIEN','nguoimua.TP','nguoimua.QUAN','nguoimua.PHUONG','DIACHI')->get();
+    }
+
    public  function Test(){
         // $filenameSP = 'ab.jpg';
         // $fileSPName = substr($filenameSP, 0, strripos($filenameSP, '.')); //get file name
@@ -93,7 +98,7 @@ class Controller extends BaseController
         // echo var_dump($filenameNew.$fileSPNameEx);
         // $timeA = now()->date('D-M-Y');
         // $timeA = Carbon::('Asia/Ho_Chi_Minh');
-        echo session()->get('typeuser');
+        // echo session()->get('typeuser');
         // $nHB = DB::table('hoadon')->count();
         // $year = Carbon::now('Asia/Ho_Chi_Minh')->format('Y');
         // $month = Carbon::now('Asia/Ho_Chi_Minh')->format('m');

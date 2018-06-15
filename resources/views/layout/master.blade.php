@@ -127,7 +127,7 @@
                                                     <div class="text">
                                                         <p class="product-name">{{$item->name}}</p>
                                                         <p class="product-price"><span class="price">{{number_format($item->price,0,',','.')}}</span></p>
-                                                        <p class="qty">{{$item->qty}}</p>
+                                                        <p class="qty">{{$item->qty}}</p><p>{{$item->options['unit']}}</p>
                                                     </div>
                                                     <a class="close" href="{{route('deleteproductmaster',['id'=>$item->rowId])}}" title="close"><i class="fa fa-times-circle"></i></a>
                                                 </li> 
