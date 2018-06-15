@@ -30,19 +30,12 @@
                 </aside>             
             </div>
             <div class="col-md-8 control-infotproduct box-shadow">
-                {{-- @if(count($errors)>0)
-                  <div class="alert-danger">
-                    @foreach($errors->all()as $err)
-                      {{$err}} <br>
-                    @endforeach
-                  </div>
-                @endif --}}
-
-                @if(session('thongbao'))
+                @if(isset($thongbao))
                   <div class="alert-success">
-                    {{session('thongbao')}}
+                    Thanh cong roi to oi
                   </div>
                 @endif
+
 
                 <form class="form-horizontal" role="form" action="{{route('CreateProduct')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
