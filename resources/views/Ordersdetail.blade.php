@@ -26,7 +26,7 @@
         <div class="panel-heading">
           Danh sách sản phẩm
         </div>
-        <div class="panel-body" style="font-size: 11px;">
+        <div class="panel-body">
           <div class="dataTable_wrapper">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
               <thead>
@@ -44,53 +44,53 @@
                 <tr class="odd gradeX">
                   <?php $count ++ ?>
                   <td><?php echo $count; ?></td>
-                  <td>{{$row->TENSP}}</td>
+                  <td><a href="{{url('Productdetail', [$row->MASP])}}">{{$row->TENSP}}</a></td>
                   <td>{{$row->SLUONG}} {{$row->DONVI}}</td>
                   <td>{{$row->GIAMGIA}}</td>
                   <td>{{$row->THANHTIEN}}</td>
                 </tr>
-                @endforeach                            
-              </tbody>
-            </table>
-          </div>
-          <!-- /.table-responsive -->
+                @endforeach                                            
+                </tbody>
+              </table>
 
+               <!-- <a href="#"><button class="link-v1 rt" >Đăng Sản Phẩm</button></a> -->
+            </div>
+            <!-- /.table-responsive -->
+
+          </div>
+          <!-- /.panel-body -->
         </div>
-        <!-- /.panel-body -->
+        <!-- /.panel -->
       </div>
-      <!-- /.panel -->
+      <!-- /.col-lg-12 -->
     </div>
-    <!-- /.col-lg-12 -->
   </div>
 </div>
 </div> 
-<div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
-</div>
 <!-- jQuery -->
-<script src="resources/assets/js/jquery.min.js"></script>
+      <script src="resources/assets/js/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="resources/assets/js/bootstrap.min.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script src="resources/assets/js/bootstrap.min.js"></script>
 
-<!-- Metis Menu Plugin JavaScript -->
-<script src="resources/assets/js/metisMenu.min.js"></script>
+      <!-- Metis Menu Plugin JavaScript -->
+      <script src="resources/assets/js/metisMenu.min.js"></script>
 
-<!-- DataTables JavaScript -->
-<script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
-<script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+      <!-- DataTables JavaScript -->
+      <script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
+      <script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
 
-<!-- Custom Theme JavaScript -->
-<script src="resources/assets/js/startmin.js"></script>
+      <!-- Custom Theme JavaScript -->
+      <script src="resources/assets/js/startmin.js"></script>
 
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-  $(document).ready(function() {
-    $('#dataTables-example').DataTable({
-      responsive: true
-      paging: false,
-      searching: false
-    });
-  });
-</script>
+      <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+      <script>
+        $(document).ready(function() {
+          $('#dataTables-example').DataTable({
+            responsive: true
+            paging: false,
+            searching: false
+          });
+        });
+      </script>
 @endsection

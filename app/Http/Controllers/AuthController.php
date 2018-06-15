@@ -271,7 +271,7 @@ public function updateseller(Request $Seller_request){
 }
 public function ordersdetail($id){
         //$hoadon = chitiethoadon::find($id);
-    $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI')->where('MAHD' , $id)->get();
+    $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI', 'sanpham.MASP')->where('MAHD' , $id)->get();
     return view('Ordersdetail', compact($sanpham,'sanpham'));
 }
 public function editstatus($id){

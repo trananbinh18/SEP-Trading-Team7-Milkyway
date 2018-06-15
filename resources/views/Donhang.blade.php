@@ -20,18 +20,31 @@
                 </aside>
             </div>
           </div>
-          <div class="col-md-8 control-infotproduct box-shadow">
-              <form class="form-horizontal"  method="POST">
-                  <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                      <tr>
-                          <th>Mã đơn hàng</th>
-                          <th>Ngày mua</th>  
-                          <th>Tổng tiền</th>
-                          <th>Trạng thái đơn hàng</th>
-                          <th>Tùy Chọn</th>
-                      </tr>
+<div class="col-md-8 table-product">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Danh sách sản phẩm
+        </div>
+        <div class="panel-body">
+          <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã đơn hàng</th>
+                  <th>Ngày mua</th>  
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái đơn hàng</th>
+                  <th>Tùy Chọn</th>
+                </tr>
+              </thead>           
+                   @php ($count = 0)
                       @foreach($orders as $row)
+                      <?php $count++ ?>
                       <tr>
+                        <th><?php echo $count; ?></th>
                           <th><a href="{{ url('Ordersdetail',[$row->MAHD]) }}">{{$row -> SOHD}}</a></th>
                           <th>{{$row -> NLHD}}</th>
                           <th>{{$row -> TONGTIEN}}</th>
@@ -48,14 +61,46 @@
                               <span><a href="{{ url('QuickHideOrders',[$row->MAHD]) }}"><i class="far fa-trash-alt"></i> Hủy đơn hàng</a></span>
                           </th>
                       </tr>     
-                      @endforeach
-                      
-                  </table>
-              </form>
+                      @endforeach                                      
+              </table>
+            </div>
+            <!-- /.table-responsive -->
+
           </div>
+          <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
       </div>
-      <div id="back-to-top">
-        <i class="fa fa-long-arrow-up"></i>
+      <!-- /.col-lg-12 -->
+    </div>
+  </div>
+</div> 
       </div>
+      <!-- jQuery -->
+      <script src="resources/assets/js/jquery.min.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="resources/assets/js/bootstrap.min.js"></script>
+
+      <!-- Metis Menu Plugin JavaScript -->
+      <script src="resources/assets/js/metisMenu.min.js"></script>
+
+      <!-- DataTables JavaScript -->
+      <script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
+      <script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+      <!-- Custom Theme JavaScript -->
+      <script src="resources/assets/js/startmin.js"></script>
+
+      <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+      <script>
+        $(document).ready(function() {
+          $('#dataTables-example').DataTable({
+            responsive: true
+            paging: false,
+            searching: false
+          });
+        });
+      </script>
 
 @endsection

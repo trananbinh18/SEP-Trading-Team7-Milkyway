@@ -24,13 +24,17 @@
               <form class="form-horizontal"  method="POST">
                   <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                       <tr>
+                        <th>STT</th>
                           <th>Mã đơn hàng</th>
                           <th>Ngày mua</th>  
                           <th>Tổng tiền</th>
                           <th>Trạng thái đơn hàng</th>
                       </tr>
+                      @php ($count = 0)
                       @foreach($history as $row)
+                      <?php $count++ ?>
                       <tr>
+                        <th><?php echo $count; ?></th>
                           <th><a href="{{ url('Ordersdetail',[$row->MAHD]) }}">{{$row -> SOHD}}</a></th>
                           <th>{{$row -> NLHD}}</th>
                           <th>{{$row -> TONGTIEN}}</th>
@@ -46,8 +50,31 @@
               </form>
           </div>
       </div>
-      <div id="back-to-top">
-        <i class="fa fa-long-arrow-up"></i>
-      </div>
+        <!-- jQuery -->
+      <script src="resources/assets/js/jquery.min.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="resources/assets/js/bootstrap.min.js"></script>
+
+      <!-- Metis Menu Plugin JavaScript -->
+      <script src="resources/assets/js/metisMenu.min.js"></script>
+
+      <!-- DataTables JavaScript -->
+      <script src="resources/assets/js/dataTables/jquery.dataTables.min.js"></script>
+      <script src="resources/assets/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+      <!-- Custom Theme JavaScript -->
+      <script src="resources/assets/js/startmin.js"></script>
+
+      <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+      <script>
+        $(document).ready(function() {
+          $('#dataTables-example').DataTable({
+            responsive: true
+            paging: false,
+            searching: false
+          });
+        });
+      </script>
 
 @endsection

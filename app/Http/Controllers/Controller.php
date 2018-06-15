@@ -133,6 +133,8 @@ class Controller extends BaseController
         $nHB = DB::table('hoadon')->count();
         $th = $day.$month.$year.$nHB;
 
+        //foreach (Cart::content() as $key => $value) {
+        //$detailbill = new chitiethoadon();
         $Bill = new hoadon();
         $Bill->MANM = session()->get('userid');
         $Bill->SOHD = $th;
@@ -141,8 +143,9 @@ class Controller extends BaseController
         $Bill->QUAN = $re->district;
         $Bill->PHUONG = $re->ward;
         $Bill->DIACHI = $re->inputaddress;
+        //$Bill->TONGTIEN = $re->input('price*qty');
         $Bill->save();
-
+//}
         foreach (Cart::content() as $key => $value) {
             $detailbill = new chitiethoadon();
             $detailbill->MAHD = $Bill->MAHD;
