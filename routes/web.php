@@ -78,7 +78,6 @@ Route::get('donhang',function(){
 Route::get('Error',function(){
 	return view('Error');
 });
-
 Route::get('Legal',['as'=>'Le','uses'=>'ControllerHome@Legal']);
 Route::get('Term&Condition',['as'=>'Term','uses'=>'ControllerHome@Term']);
 
@@ -180,4 +179,6 @@ Route::get('ChangeStatus/{id}','AuthController@editstatus');
 Route::post('ChangeStatus','AuthController@updatestatus')->name('ChangeStatus');
 //Ẩn/Hủy đơn hàng nhanh
 Route::get('QuickHideOrders/{id}','LoadDataController@deleteOrders');
+//Return view History Buyer Item
+Route::get('HistoryOrders',['as' => 'HistoryOrders' , 'uses' => 'LoadDataController@historyOrders']);
 

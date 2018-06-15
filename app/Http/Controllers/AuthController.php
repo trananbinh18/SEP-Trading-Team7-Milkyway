@@ -181,17 +181,17 @@ function ChangePassword(Request $PW_request){
             $pass           = nguoiban::where('MANB', session()->get('userid'))->first();
             $pass->MATKHAU  = $PW_request->input('new_password');
             $pass->save();
-            return redirect('SellerPassword')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+            return redirect('SellerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
         }else if(session()->get('typeuser')==2){
             $pass           = nguoimua::where('MANM', session()->get('userid'))->first();
             $pass->MATKHAU  = $PW_request->input('new_password');
             $pass->save();
-            return redirect('BuyerPassword')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+            return redirect('BuyerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
         }else if(session()->get('typeuser')==3){
             $pass           = nhanvien::where('MANV', session()->get('userid'))->first();
             $pass->MATKHAU  = $PW_request->input('new_password');
             $pass->save();
-            return redirect('ChangePassword_Employees')->with('thongbao','Bạn đã sửa mật khẩu thành công');
+            return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
         }
     }
     
@@ -218,7 +218,7 @@ function ChangeInfor(Request $Infor_request){
         $user->QUAN     = $Infor_request->input('district');
         $user->TP       = $Infor_request->input('city');
         $user->save();
-        return redirect('SellerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
+        return redirect('SellerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
     }else if(session()->get('typeuser') == 2){
         $user           = nguoimua::where('MANM',session()->get('userid'))->first();
         $user->TENNM    = $Infor_request->input('name');
@@ -228,7 +228,7 @@ function ChangeInfor(Request $Infor_request){
         $user->QUAN     = $Infor_request->input('district');
         $user->TP       = $Infor_request->input('city');
         $user->save();
-        return redirect('BuyerInformation')->with('thongbao', 'Cập nhật thông tin thành công');
+        return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
     }else{
         return view('Error');
     }
@@ -252,7 +252,7 @@ public function updatebuyer(Request $Buyer_request){
     $ngmua->TP      = $Buyer_request->input('city');
 
     $ngmua->save();
-    return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+    return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
 }
 public function editseller($id){
     $ngban = nguoiban::find($id);
@@ -274,7 +274,7 @@ public function updateseller(Request $Seller_request){
     $ngban->TTNB    = $Seller_request->input('status');
 
     $ngban->save();
-    return redirect()->back()->with('thongbao','Bạn đã cập nhật thành công');
+    return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
 }
 public function ordersdetail($id){
         //$hoadon = chitiethoadon::find($id);
@@ -289,10 +289,10 @@ public function editstatus($id){
 public function updatestatus(Request $Status_request){
     $status = sanpham::find($Status_request->input('MASP'));
 
-    $status->TRANGTHAI = $Status_request->input('status');
+    $status->TRANGTHAI = $Status_request->input('trangthai');
     $status->save();
 
-    return redirect()->back()->with('thongbao','Bạn đã thay đổi thành công');
+    return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
 }
 }
 

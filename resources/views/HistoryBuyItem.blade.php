@@ -1,6 +1,6 @@
   @extends('layout.master')
       @section (' title ')
-      Đơn hàng
+      Lịch sử mua hàng
       @stop
       @section('content')
       <div class="row row-addproduct">
@@ -28,25 +28,17 @@
                           <th>Ngày mua</th>  
                           <th>Tổng tiền</th>
                           <th>Trạng thái đơn hàng</th>
-                          <th>Tùy Chọn</th>
                       </tr>
-                      @foreach($orders as $row)
+                      @foreach($history as $row)
                       <tr>
                           <th><a href="{{ url('Ordersdetail',[$row->MAHD]) }}">{{$row -> SOHD}}</a></th>
                           <th>{{$row -> NLHD}}</th>
                           <th>{{$row -> TONGTIEN}}</th>
-                          @if($row->TTHD == 0)
-                          <th><?php echo 'Đang chờ tiếp nhận' ?></th>
-                          @elseif($row -> TTHD == 1)
-                          <th><?php echo 'Đang xử lí' ?></th>
-                          @elseif($row -> TTHD == 2)
-                          <th><?php echo 'Đang giao' ?></th>
-                          @else($row -> TTHD == 3)
-                          <th><?php echo 'Giao hàng thành công'?></th>
+                          @if($row->TTHD == 3)
+                          <th><?php echo 'Giao hàng thành công' ?></th>
+                          @else($row -> TTHD == 4)
+                          <th><?php echo 'Đơn hàng đã hủy' ?></th>
                           @endif
-                          <th><span><a href="{{ url('Ordersdetail',[$row->MAHD]) }}"><i class="fas fa-info-circle"></i> Xem chi tiết</a></span> |
-                              <span><a href="{{ url('QuickHideOrders',[$row->MAHD]) }}"><i class="far fa-trash-alt"></i> Hủy đơn hàng</a></span>
-                          </th>
                       </tr>     
                       @endforeach
                       
