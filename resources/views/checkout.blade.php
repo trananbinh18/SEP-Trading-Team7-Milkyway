@@ -48,16 +48,25 @@ Kiểm tra
                             <div class="form-group ">
                                 <div class="optionAddress">
                                     <label class="radio-inline checkoutchoosse">
-                                        <input  class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
+                                        <input id="optmacdinh"  class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
                                     </label>
                                     <label class="radio-inline checkoutchose">
-                                        <input type="radio" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
+                                        <input type="radio" id="opttuychon" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
                                     </label>
                                 </div>
                             </div>
                             <div id="defaultaddress" class="tabcontent">
                                 <div class="col-md-10 headerDFadd">
-                                    <h2>Hàng sẻ được giao đến địa chỉ mặc định</h2>
+                                <h2>Hàng sẽ được giao đến địa chỉ mặc định</h2>
+                                <form id="formMacDinh" action="{{route('Order')}}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="phone" value="{{session()->get('phone')}}" >
+                               <!--  <input type="hidden" name="address" value="{{session()->get('address')}}" > -->
+                                <input type="hidden" name="city" value="{{session()->get('city')}}" >
+                                <input type="hidden" name="district" value="{{session()->get('district')}}" >
+                                <input type="hidden" name="ward" value="{{session()->get('ward')}}" >
+                                <input type="hidden" name="inputaddress" value="{{session()->get('address')}}" >
+                                </form>
                                 </div>                           
                             </div>
                             <div id="newaddress" class="tabcontent space-50">
