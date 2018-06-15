@@ -46,7 +46,6 @@ class CheckRequest extends FormRequest
     }
     public function messages(){
         return [
-
         //Messages SignUp
         // 'name.required' => 'Bạn chưa nhập tên người dùng',
         // 'phone.required' => 'Bạn chưa nhập số điện thoại',
@@ -73,7 +72,6 @@ class CheckRequest extends FormRequest
         'mieutasanpham.min'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự',
         'mieutasanpham.max'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự',
         'Giasanpham.required' => 'Bạn chưa nhập giá',
-
         ];
     }
 }

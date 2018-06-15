@@ -142,18 +142,23 @@ class Controller extends BaseController
         $Bill->QUAN = $re->district;
         $Bill->PHUONG = $re->ward;
         $Bill->DIACHI = $re->inputaddress;
-        $Bill->save();
+        $Bill->TONGTIEN = 0;
 
+        $Bill->save();
+        $Tongtien = 0;
         foreach (Cart::content() as $key => $value) {
             $detailbill = new chitiethoadon();
             $detailbill->MAHD = $Bill->MAHD;
             $detailbill->MANB = sanpham::find($value->id)->MANB;
             $detailbill->MASP = $value->id;
-            $detailbill->SOLUONG = $value->qty;
+            $detailbill->SLUONG = $value->qty;
             $detailbill->THANHTIEN = $value->price*$value->qty;
             $detailbill->DONGIA = $value->price;
             $detailbill->save();
+            $Tongtien = $Tongtien+$detailbill->THANHTIEN;
         }
+        $Bill->TONGTIEN = $Tongtien;
+        $Bill->save();
         Cart::destroy();
         return view('Order')->with('SOHD',$th);
     }
