@@ -15,7 +15,7 @@
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Tài Khoản Người Bán</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Tài Khoản Người Mua</a></li>
           <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('listprosale')}}" title="Doanh số">Danh Sách Sản Phẩm</a></li>
-          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="#" title="Doanh số">Đổi Mật Khẩu</a></li>
+          <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('ResetPassword')}}" title="Doanh số">Đổi Mật Khẩu</a></li>
         </ul>
       </div>
 
@@ -38,7 +38,8 @@
                   <th>STT</th>
                   <th>Tên người bán</th>
                   <th>Số điện thoại</th>
-                  <th>Email</th>                                                
+                  <th>Email</th>                                      
+                  <th>Trạng Thái</th>                                      
                   <th>Tùy chọn</th>
                 </tr>
               </thead>
@@ -52,9 +53,11 @@
                   <td> {{ $row->TENNB}}</td>
                   <td>{{ $row->SDT}}</td>
                   <td>{{ $row->EMAIL}}</td>
+                  <td>@if($row -> TTNB == 0) <?php echo "Chưa duyệt"?>
+                      @elseif($row->TTNB == 1) <?php echo "Đã duyệt"?>
+                      @endif
+                  </td>
                   <td class="center">
-                    <a href="#">Xóa<span  aria-hidden="true"></span></a>
-                    <span> | </span>
                     <a href="{{ url('EditSeller',[$row->MANB]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                   </tr>
 

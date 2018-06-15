@@ -264,13 +264,6 @@ public function editseller($id){
 }
 public function updateseller(Request $Seller_request){
     $ngban = nguoiban::find($Seller_request->input('MANB'));
-
-    $ngban->TENNB   = $Seller_request->input('name'); 
-    $ngban->SDT     = $Seller_request->input('phone');
-    $ngban->SONHA   = $Seller_request->input('number_house');
-    $ngban->PHUONG  = $Seller_request->input('ward');
-    $ngban->QUAN    = $Seller_request->input('district');
-    $ngban->TP      = $Seller_request->input('city');
     $ngban->TTNB    = $Seller_request->input('status');
 
     $ngban->save();

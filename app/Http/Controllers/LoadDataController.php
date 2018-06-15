@@ -68,7 +68,7 @@ class LoadDataController extends Controller
 	//Load tài khoản của người bán trong trang nhân viên
 	public function accountSeller(){
 		if(session()->get('typeuser') == 3){
-			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL','MANB')->get();
+			$account = DB::table('nguoiban')->select('TENNB', 'SDT', 'EMAIL','MANB','TTNB')->get();
 
 			return view('SellerAccount')->with('account', $account);
 		}

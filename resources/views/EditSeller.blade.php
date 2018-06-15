@@ -18,9 +18,9 @@
         </div>
       </div>
     <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
+      @if(session('thanhcong'))
       <div class="alert-success">
-        {{session('thongbao')}}
+        {{session('thanhcong')}}
       </div>
       @endif
 
@@ -28,49 +28,18 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="MANB" value="<?php echo "{$ngban['MANB']}";?>">
         <div class="center">
-          <h2>THÔNG TIN TÀI KHOẢN</h2>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputEmail3" class="col-sm-3 control-lab">Họ và tên</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và tên" name="name" value="<?php echo "{$ngban['TENNB']}"; ?>" required>
-          </div>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputpass" class="col-sm-3 control-lab">Số điện thoại</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Số điện thoại" name="phone" value="<?php echo "{$ngban['SDT']}"; ?>" required >
-          </div>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputpass" class="col-sm-3 control-lab">Địa chỉ</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Địa chỉ" name="number_house" value="<?php echo "{$ngban['SONHA']}"; ?>" required>
-          </div>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputpass" class="col-sm-3 control-lab">Phường</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Phường" name="ward" value="<?php echo "{$ngban['PHUONG']}"; ?>" required>
-          </div>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputpass" class="col-sm-3 control-lab">Quận</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Quận" name="district" value="<?php echo "{$ngban['QUAN']}"; ?>" required>
-          </div>
-        </div>
-        <div class="form-group signupseller">
-          <label for="inputpass" class="col-sm-3 control-lab">Thành phố</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="<?php echo "{$ngban['TP']}"; ?>" required>
-          </div>
+          <h2></h2>
         </div>
         <div class="form-group signupseller">
           <label for="inputpass" class="col-sm-3 control-lab">Trạng Thái</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="Trạng thái" name="status" value="<?php echo "{$ngban['TTNB']}"; ?>" required>
-          </div>
+         
+            <div class="col-md-4">
+                  <select id="enterprise" class="Unit" name="status" onchange="document.getElementById('price3').innerHTML='$'+this.value">
+                          <option value="0" <?php if($ngban['TTNB'] == '0'){echo("selected");} ?> >Chưa Duyệt</option>
+                          <option value="1" <?php if($ngban['TTNB'] == '1'){echo("selected");} ?> >Đã Duyệt</option>                    
+                      </select>
+                  
+                </div>
         </div>
         <div class="col-md-12 center">
           <br>
@@ -84,7 +53,5 @@
       </form>
     </div>
   </div>
-  <div id="back-to-top">
-  <i class="fa fa-long-arrow-up"></i>
-</div>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
   @endsection
