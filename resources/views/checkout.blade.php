@@ -51,7 +51,7 @@ Kiểm tra
                                         <input id="optmacdinh"  class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
                                     </label>
                                     <label class="radio-inline checkoutchose">
-                                        <input type="radio" id="opttuychon" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
+                                        <input checked="true" type="radio" id="opttuychon" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
                                     </label>
                                 </div>
                             </div>
