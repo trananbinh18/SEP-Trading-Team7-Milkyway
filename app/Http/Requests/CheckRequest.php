@@ -28,7 +28,7 @@ class CheckRequest extends FormRequest
         // 'name' => 'required',
         // 'phone'=> 'required',
         // 'number_house' => 'required',
-        // 'email' => 'required|email|unique:users,email', 
+        // 'email' => 'required|email|unique:users,email',  
         // 'password'=> 'required|min:6',
         // 'ward' => 'required',
         // 'district' => 'required',
@@ -46,8 +46,7 @@ class CheckRequest extends FormRequest
     }
     public function messages(){
         return [
-
-        // //Messages SignUp
+        //Messages SignUp
         // 'name.required' => 'Bạn chưa nhập tên người dùng',
         // 'phone.required' => 'Bạn chưa nhập số điện thoại',
         // 'number_house.required' => 'Bạn chưa nhập địa chỉ',
@@ -73,7 +72,6 @@ class CheckRequest extends FormRequest
         'mieutasanpham.min'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự',
         'mieutasanpham.max'=>'Miêu tả sản phẩm phải từ 10 đến 200 ký tự',
         'Giasanpham.required' => 'Bạn chưa nhập giá',
-
         ];
     }
 }

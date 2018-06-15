@@ -22,11 +22,12 @@ use Datetime;
 use App\Http\Requests\CheckRequest;
 use Carbon\Carbon;
 
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     // Thêm sản phẩm của người bán
-    public function Postproduct(Request $Product_request){
+    public function Postproduct(CheckRequest $Product_request){
            
             $imageSP = $Product_request->file('imagesSP');
             $filenameSP = $imageSP->getclientOriginalName();
@@ -58,7 +59,7 @@ class Controller extends BaseController
 
             $Product->save();
 
-            return redirect('Addproduct')->with('thongbao','Bạn đã thêm thành công');
+            return view('Addproduct')->with('thongbao','Bạn đã thêm thành công');
            
     }
     
