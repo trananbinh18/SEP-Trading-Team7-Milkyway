@@ -10,10 +10,11 @@ use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
 use Cart;
+use App\Http\Requests\CheckLoginRequest;
 
 class ControllerAccount extends Controller
 {
-    function Login(Request $re){
+    function Login(CheckLoginRequest $re){
     	$user = nguoiban::where('EMAIL',$re->input('email'))->first();
     	$typeuser = 1;
     	if($user == null){

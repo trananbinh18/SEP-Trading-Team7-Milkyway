@@ -40,13 +40,19 @@
                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                    <label for="inputname" class="col-md-4 control-lab">Họ và tên</label>
                                    <div class="col-md-8">
-                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
+                                    @if ($errors->has('name'))
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
+                                    @endif
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" >
                                 </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                        @if ($errors->has('phone'))
+                                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" >
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -56,14 +62,20 @@
                                         <div class="alert-success">
                                           {{session('thongbao')}}
                                         </div>
-                                      @endif
-                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
+                                        @endif
+                                        @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" >
                                     </div> 
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputpass" class="col-md-4 control-lab">Mật khẩu</label>
                                     <div class="col-md-8">
-                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                        @if ($errors->has('password'))
+                                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                                        @endif
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" >
                                     </div>
                                 </div>
                             </div> 
@@ -72,25 +84,37 @@
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
+                                         @if ($errors->has('number_house'))
+                                            <span class="text-danger">{{ $errors->first('number_house') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" >
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
+                                        @if ($errors->has('ward'))
+                                            <span class="text-danger">{{ $errors->first('ward') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" >
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
+                                        @if ($errors->has('district'))
+                                            <span class="text-danger">{{ $errors->first('district') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" >
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
-                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
+                                        @if ($errors->has('city'))
+                                            <span class="text-danger">{{ $errors->first('city') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" >
                                     </div>
                                 </div>
                             </div>
@@ -125,13 +149,19 @@
                                <input type="hidden" name="_token" value="{{csrf_token()}}">
                                <label for="inputname" class="col-md-4 control-lab">Họ và tên</label>
                                <div class="col-md-8">
-                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
+                                    @if ($errors->has('name'))
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
+                                    @endif
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" >
                                 </div>
                             </div>
                             <div class="form-group signupseller">
                                 <label for="inpuphone" class="col-md-4 control-lab">Số điện thoại</label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
+                                    @if ($errors->has('phone'))
+                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                    @endif
+                                    <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" >
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -142,13 +172,19 @@
                                           {{session('thongbao')}}
                                         </div>
                                       @endif
-                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
+                                      @if ($errors->has('email'))
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                                    @endif
+                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" >
                                 </div>
                             </div>
                             <div class="form-group signupseller">
                                 <label for="inputpass" class="col-md-4 control-lab">Mật khẩu</label>
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
+                                    @if ($errors->has('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                    @endif
+                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" >
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -156,7 +192,10 @@
                                 <div class="row">
                                     <div class="img col-md-3 img12">
                                         <div class="img-picker">
-                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" required>
+                                            @if ($errors->has('image'))
+                                                <span class="text-danger">{{ $errors->first('image') }}</span>
+                                             @endif
+                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" >
                                             </div>
                                         </div>
                                     </div>
@@ -167,6 +206,9 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                             <div class="col-md-8">
+                                @if ($errors->has('number_house'))
+                                        <span class="text-danger">{{ $errors->first('number_house') }}</span>
+                                    @endif
                                 <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ">
                             </div>
                         </div>
@@ -174,6 +216,9 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                             <div class="col-md-8">
+                                @if ($errors->has('ward'))
+                                        <span class="text-danger">{{ $errors->first('ward') }}</span>
+                                    @endif
                                 <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
                             </div>
                         </div>
@@ -181,6 +226,9 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
+                                @if ($errors->has('district'))
+                                        <span class="text-danger">{{ $errors->first('district') }}</span>
+                                    @endif
                                 <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
                             </div>
                         </div>
@@ -188,7 +236,10 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tĩnh/Thành phố">
+                                @if ($errors->has('city'))
+                                        <span class="text-danger">{{ $errors->first('city') }}</span>
+                                    @endif
+                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố">
                             </div>
                         </div>
                     </div>

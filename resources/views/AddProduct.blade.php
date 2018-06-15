@@ -32,7 +32,7 @@
             <div class="col-md-8 control-infotproduct box-shadow">
                 @if(isset($thongbao))
                   <div class="alert-success">
-                    Thanh cong roi to oi
+                    <!-- Bạn thêm sản phẩm thành công -->
                   </div>
                 @endif
 

@@ -12,6 +12,8 @@ use App\nhanvien;
 use App\hoadon;
 use App\chitiethoadon;
 use App\sanpham;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;  
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controller\Auth\RegisterController;
@@ -19,6 +21,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
 use App\Http\Controllers\ControllerAccount;
 use Illuminate\Support\MessageBag;
+use App\Http\Requests\CheckSignUpSellerRequest;
+use App\Http\Requests\CheckSignUpBuyerRequest;
 
 class AuthController extends Controller
 {
@@ -28,29 +32,8 @@ class AuthController extends Controller
       return view('SignUp');
   }
   
-  function postSignUpBuyer(Request $SignUpBuyer_request)
+  function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
   {
-    // $this->validate($SignUpBuyer_request,
-    //     ["name" => "required"],
-    //     ["name.required" => "Vui lòng nhập tên"]
-    // );
-//     'name' => 'required|min:3', 
-//     'phone'=> 'required|min:10', 
-//     'number_house' => 'required',
-//     'emai' => 'required|email|unique:users,email', 
-//     'password'=> 'required|min:6'
-
-
-//     ],[
-//     'name.required' => 'Bạn chưa nhập tên người dùng',
-//     'name.min'=> 'Tên người dùng phải có ít nhất 3 kí tự',
-//     'phone.required' => 'Bạn chưa nhập số điện thoại',
-//     'phone.min' => 'Số điện thoại phải có ít nhất 10 kí tự' , 
-//     'address.required' => 'Bạn chưa nhập địa chỉ', 
-//     'password.required' => 'Bạn chưa nhập mật khẩu' , 
-//     'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
-// ]);
-
     $email = $SignUpBuyer_request->email;
     if($email != "") {
         $em = DB::table('nguoimua')->select('EMAIL')->where('EMAIL' , $email)->get();
@@ -107,24 +90,7 @@ function getSignUpSeller(){
     return view('SignUp');
 }
 
-function postSignUpSeller(Request $SignUpSeller_request){
-// $this->validate($SignUp_request,[
-//  'name' => 'required|min:3', 
-//  'phone'=> 'required|min:10', 
-//  'number_house' => 'required',
-//  'emai' => 'required|email|unique:users,email', 
-//  'password'=> 'required|min:6'
-
-
-// ],[
-//  'name.required' => 'Bạn chưa nhập tên người dùng',
-//  'name.min'=> 'Tên người dùng phải có ít nhất 3 kí tự',
-//  'phone.required' => 'Bạn chưa nhập số điện thoại',
-//  'phone.min' => 'Số điện thoại phải có ít nhất 10 kí tự' , 
-//  'address.required' => 'Bạn chưa nhập địa chỉ', 
-//  'password.required' => 'Bạn chưa nhập mật khẩu' , 
-//  'password.min'=> 'Mật khẩu phải có ít nhất 6 kí tự' 
-//  ]);
+function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
     $email = $SignUpSeller_request->email;
     if($email != "") {
         $ems = DB::table('nguoiban')->select('EMAIL')->where('EMAIL' , $email)->get();

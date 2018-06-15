@@ -30,12 +30,18 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="group box space-20">
                         <label class="control-label" for="email" >Email</label>
-                        <input class="form-control" type="text" placeholder="Your email" id="inputemail" name="email">
+                        @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                        <input class="form-control" type="text" placeholder="Your email" id="inputemail" name="email" required>
                     </div>
                     <div class="group box">
                         <label class="control-label" for="pass" >Mật Khẩu</label>
+                        @if ($errors->has('matkhau'))
+                        <span class="text-danger">{{ $errors->first('matkhau') }}</span>
+                        @endif
                         <input class="form-control" type="Password" placeholder="Password" id="inputpass"
-                        name="matkhau"> 
+                        name="matkhau" required> 
                     </div>
                     <div class="remember">
                         <input id="remeber" type="checkbox" name="check" value="remeber">
