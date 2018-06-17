@@ -86,7 +86,7 @@ class LoadDataController extends Controller
 	//Load thông tin đơn hàng của người mua
 	public function orders(){
 		if(session()->get('typeuser') == 2){
-			$orders = DB::table('hoadon')->select('NLHD', 'TONGTIEN','TTHD','SOHD','MAHD')->where('MANM', session()->get('userid'))->whereIn('TTHD', [0,3])->get();
+			$orders = DB::table('hoadon')->select('NLHD', 'TONGTIEN','TTHD','SOHD','MAHD')->where('MANM', session()->get('userid'))->whereIn('TTHD', [0,3])->orderBy('hoadon.MAHD','DESC')->get();
 
 			return view('Donhang')->with('orders', $orders);
 		}else{

@@ -43,7 +43,7 @@
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     @endif
-                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" >
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
                                 </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -52,7 +52,7 @@
                                         @if ($errors->has('phone'))
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" >
+                                        <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -66,7 +66,7 @@
                                         @if ($errors->has('email'))
                                             <span class="text-danger">{{ $errors->first('email') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" >
+                                        <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                     </div> 
                                 </div>
                                 <div class="form-group signupseller">
@@ -75,7 +75,7 @@
                                         @if ($errors->has('password'))
                                             <span class="text-danger">{{ $errors->first('password') }}</span>
                                         @endif
-                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" >
+                                        <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                     </div>
                                 </div>
                             </div> 
@@ -87,7 +87,7 @@
                                          @if ($errors->has('number_house'))
                                             <span class="text-danger">{{ $errors->first('number_house') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" >
+                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -96,7 +96,7 @@
                                         @if ($errors->has('ward'))
                                             <span class="text-danger">{{ $errors->first('ward') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" >
+                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -105,7 +105,7 @@
                                         @if ($errors->has('district'))
                                             <span class="text-danger">{{ $errors->first('district') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" >
+                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -114,7 +114,7 @@
                                         @if ($errors->has('city'))
                                             <span class="text-danger">{{ $errors->first('city') }}</span>
                                         @endif
-                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" >
+                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     @endif
-                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" >
+                                    <input type="text" class="form-control" name="name" id="inputname" placeholder="Nhập Họ và tên" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -161,7 +161,7 @@
                                     @if ($errors->has('phone'))
                                         <span class="text-danger">{{ $errors->first('phone') }}</span>
                                     @endif
-                                    <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" >
+                                    <input type="text" class="form-control" name="phone" id="inputphone" placeholder="Nhập số điện thoại" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -175,7 +175,7 @@
                                       @if ($errors->has('email'))
                                         <span class="text-danger">{{ $errors->first('email') }}</span>
                                     @endif
-                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" >
+                                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="Nhập Email" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -184,7 +184,7 @@
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
-                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" >
+                                    <input type="password" class="form-control" name="password" id="inputpass" placeholder="Nhập mậtkhẩu" required>
                                 </div>
                             </div>
                             <div class="form-group signupseller">
@@ -195,7 +195,7 @@
                                             @if ($errors->has('image'))
                                                 <span class="text-danger">{{ $errors->first('image') }}</span>
                                              @endif
-                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" >
+                                            <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin" name="image" required>
                                             </div>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                 @if ($errors->has('number_house'))
                                         <span class="text-danger">{{ $errors->first('number_house') }}</span>
                                     @endif
-                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ">
+                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                             </div>
                         </div>
 
@@ -219,7 +219,7 @@
                                 @if ($errors->has('ward'))
                                         <span class="text-danger">{{ $errors->first('ward') }}</span>
                                     @endif
-                                <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã">
+                                <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
                             </div>
                         </div>
 
@@ -229,7 +229,7 @@
                                 @if ($errors->has('district'))
                                         <span class="text-danger">{{ $errors->first('district') }}</span>
                                     @endif
-                                <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện">
+                                <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
                             </div>
                         </div>
 
@@ -238,8 +238,8 @@
                             <div class="col-md-8">
                                 @if ($errors->has('city'))
                                         <span class="text-danger">{{ $errors->first('city') }}</span>
-                                    @endif
-                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố">
+                                @endif
+                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
                             </div>
                         </div>
                     </div>

@@ -60,6 +60,7 @@
                           <th><span><a href="{{ url('Ordersdetail',[$row->MAHD]) }}"><i class="fas fa-info-circle"></i> Xem chi tiết</a></span> |
                               <span><a href="{{ url('QuickHideOrders',[$row->MAHD]) }}"><i class="far fa-trash-alt"></i> Hủy đơn hàng</a></span>
                           </th>
+                           
                       </tr>     
                       @endforeach                                      
               </table>
@@ -77,6 +78,7 @@
 </div> 
       </div>
       <!-- jQuery -->
+
       <script src="resources/assets/js/jquery.min.js"></script>
 
       <!-- Bootstrap Core JavaScript -->

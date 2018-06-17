@@ -20,6 +20,7 @@ use Intervention\Image\Image as Img;
 use Image;
 use Datetime;
 use App\Http\Requests\CheckRequest;
+use App\Http\Requests\CheckoutRequest;
 use Carbon\Carbon;
 
 
@@ -126,7 +127,7 @@ class Controller extends BaseController
         return view('checkout',compact('content','count'));
     }
     // Thêm hóa đơn và chi tiết hóa đơn vào database
-    public function postCheckout(Request $re){
+    public function postCheckout(CheckoutRequest $re){
         // Mã hóa đơn tăng theo ngày/tháng/năm/số hóa đơn
         $year = Carbon::now('Asia/Ho_Chi_Minh')->format('Y');
         $month = Carbon::now('Asia/Ho_Chi_Minh')->format('m');
