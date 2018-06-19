@@ -23,7 +23,7 @@
             </div>
             <!-- End col-sm-3 -->
             <div class="col-sm-6 sign-in space-80">
-                <h3>Đăng nhập</h3>
+                <h3 id="titleLogin">Đăng nhập</h3>
                 <p>Xin chào, Mời bạn đăng nhập</p>
                 {{ $error or ''}}
                 <form class="form-horizontal" action="{{route('signinacc')}}" method="POST">
