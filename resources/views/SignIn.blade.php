@@ -48,7 +48,7 @@
                         <label for="remeber" class="label-check">Lưu Nhớ!</label>
                         <a class="help" href="#" title="help ?">Quên mật khẩu?</a>   
                     </div>           
-                    <button type="submit" class="link-v1 rt" name="btnLogin">Đăng Nhập</button>
+                    <button type="submit" class="link-v1 rt" id="btnLogin">Đăng Nhập</button>
                 </form>
                 <!-- End form -->
             </div>
