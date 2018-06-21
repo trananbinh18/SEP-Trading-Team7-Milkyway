@@ -16,18 +16,25 @@ class ControllerAccount extends Controller
 {
     function Login(CheckLoginRequest $re){
     	$user = nguoiban::where('EMAIL',$re->input('email'))->first();
+        //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
+        //$query = "INSERT INTO nguoiban(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
     	$typeuser = 1;
     	if($user == null){
     		$user = nguoimua::where('EMAIL',$re->input('email'))->first();
+            //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
+            //$query = "INSERT INTO nguoimua(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
     		$typeuser = 2;
     	}
     	if($user==null){
     		$user = nhanvien::where('EMAIL',$re->input('email'))->first();
+            //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
+            //$query = "INSERT INTO nhanvien(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
     		$typeuser = 3;
     	}
 
         if($user!=null) {
             //check password
+            //
             if($re->input('matkhau')==$user->MATKHAU){
             	// session_start();
             	// $_SESSION["user"]=$user;

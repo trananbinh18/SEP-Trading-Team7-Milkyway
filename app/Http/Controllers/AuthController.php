@@ -50,8 +50,8 @@ class AuthController extends Controller
             $user->QUAN     = $SignUpBuyer_request->district;
             $user->TP       = $SignUpBuyer_request->city;
             $user->EMAIL    = $SignUpBuyer_request->email;
-        // $user->MATKHAU = Hash::make($SignUpBuyer_request->password);
-            $user->MATKHAU  = $SignUpBuyer_request->password;
+            $user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
+          //  $user->MATKHAU  = $SignUpBuyer_request->password;
             $user->NGAYTAO  = date('Y-m-d H:i:s');
             $user->save();
 
