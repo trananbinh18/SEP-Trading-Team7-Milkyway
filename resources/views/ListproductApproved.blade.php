@@ -11,10 +11,9 @@ Danh sách sản phẩm người bán
                <h3>THÔNG TIN TÀI KHOẢN</h3>
                <i class="fa fa-chevron-circle-down icon-click"></i>
               <ul class="menu-vertical">
-                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="">Sản phẩm chờ duyệt</a><span class="badge">{{count($products)}}
-                </span></li>
-                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListApproved')}}" title="">Sản phẩm đã duyệt</a><span class="badge">{{$product}}</span></li>
-                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListHide')}}" title="">Danh sách sản phẩm ẩn</a><span class="badge"></span></li>
+                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="">Sản phẩm chờ duyệt</a><span class="badge"></span></li>
+                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListApproved')}}" title="">Sản phẩm đã duyệt</a><span class="badge">{{count($product)}}</span></li>
+                <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('ListHide')}}" title="">Danh sách sản phẩm ẩn</a></li>
                 <li><img src="{!!url("resources/assets/images/icon-categories-7.jpg") !!}" alt=""><a href="#" title="Doanh số">Doanh số</a></li>
                 <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('Seller_Infor')}}" title="Sửa thông tin">Sửa thông tin</a></li>
                 <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('Seller_Pass')}}"" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
@@ -53,7 +52,7 @@ Danh sách sản phẩm người bán
                   </thead>
                   <tbody>
                     @php ($count = 0)
-                    @foreach($products as $row)
+                    @foreach($product as $row)
                     <tr class="odd gradeX">   
                         <?php $count++; ?>
                       <td><?php echo $count; ?></td>

@@ -113,6 +113,7 @@ class Controller extends BaseController
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>1,'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         return back()->withInput();
     }
+    
     // Thêm sản phẩm vào trang shopping từ trang chi tiết sản phẩm
     public function BuyProduct(Request $re){
         $Productbuy = sanpham::find($re->input("id"));
