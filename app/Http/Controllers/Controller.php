@@ -106,6 +106,8 @@ class Controller extends BaseController
         // $day = Carbon::now('Asia/Ho_Chi_Minh')->format('d');
         // $th = $day.$month.$year.$nHB;
         // echo $th;
+    $productSecond = DB::table('chitiethoadon')->join('sanpham','chitiethoadon.masp','=','sanpham.masp')->select('chitiethoadon.masp', 'maloaisp','tensp','gia','giacu','donvi','hinh','trangthai', DB::raw('count(*) as soluong'))->groupBy('chitiethoadon.masp','sanpham.maloaisp','sanpham.tensp','sanpham.gia','sanpham.giacu','sanpham.donvi','sanpham.hinh','sanpham.trangthai')->where('sanpham.trangthai','1')->orderBy('soluong','desc')->get();
+    echo $productSecond;
     }
     //Thêm sản phẩm vào trang shopping từ trang catalog
     public function AddToCart($id){

@@ -14,7 +14,7 @@ class ControllerHome extends Controller
         return view('about');
     }
     function home(){
-        $product = DB::table('sanpham')->select('masp','maloaisp','tensp','gia','giacu','donvi','hinh')->get();
+        $product = DB::table('sanpham')->select('masp','maloaisp','tensp','gia','giacu','donvi','hinh','trangthai')->orderBy('masp','desc')->get();
         // view()->share('cate',$cate);
         return view('home')->with('product',$product);
     }

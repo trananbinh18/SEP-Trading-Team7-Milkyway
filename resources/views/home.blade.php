@@ -117,7 +117,7 @@
                     @php ($count = 0)
                     @foreach($product as $pro)
                     @if($count < 12)
-                        @if($pro->maloaisp === 4)
+                        @if(($pro->maloaisp === 4) && ($pro->trangthai === 1))
                         <div class="product">
                             <div class="product-images">
                                 <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
@@ -141,7 +141,7 @@
                     @php ($count = 0)
                     @foreach($product as $pro)
                     @if($count < 12)
-                        @if($pro->maloaisp === 5)
+                        @if(($pro->maloaisp === 5) && ($pro->trangthai === 1))
                         <div class="product">
                             <div class="product-images">
                                 <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
@@ -165,7 +165,7 @@
                     @php ($count = 0)
                     @foreach($product as $pro)
                     @if($count < 12)
-                        @if($pro->maloaisp === 6)
+                        @if(($pro->maloaisp === 6) && ($pro->trangthai === 1))
                         <div class="product">
                             <div class="product-images">
                                 <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
@@ -220,10 +220,10 @@
         <div class="tab-container space-10">
             <div id="tab_04" class="tab-content">
                 <div class="products">
+                    <?php $productSecond = DB::table('chitiethoadon')->join('sanpham','chitiethoadon.masp','=','sanpham.masp')->select('chitiethoadon.masp', 'maloaisp','tensp','gia','giacu','donvi','hinh','trangthai', DB::raw('count(*) as soluong'))->groupBy('chitiethoadon.masp','sanpham.maloaisp','sanpham.tensp','sanpham.gia','sanpham.giacu','sanpham.donvi','sanpham.hinh','sanpham.trangthai')->where('sanpham.trangthai','1')->orderBy('soluong','desc')->get(); ?>
                     @php ($count = 0)
-                    @foreach($product as $pro)
-                    @if($count < 12)
-                        @if($pro->maloaisp === 5)
+                    @foreach($productSecond as $pro)
+                    @if($count < 6)
                         <div class="product">
                             <div class="product-images">
                                 <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
@@ -235,7 +235,6 @@
                             <p class="product-price"><?php echo number_format($pro->gia,0,',','.')." Đ" ?></p>
                         </div>
                         <?php $count++; ?>
-                        @endif
                     @else
                         <?php break;?>
                     @endif
@@ -246,8 +245,8 @@
                 <div class="products">
                     @php ($count = 0)
                     @foreach($product as $pro)
-                    @if($count < 12)
-                        @if($pro->maloaisp === 4)
+                    @if($count < 6)
+                        @if($pro->giacu !== 0 && $pro->trangthai === 1)
                         <div class="product">
                             <div class="product-images">
                                 <a href="{{ url('Productdetail',[$pro->masp]) }}" title="product-images">
