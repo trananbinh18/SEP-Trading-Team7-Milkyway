@@ -33,9 +33,9 @@ Danh sách sản phẩm người bán
             <div class="panel-body" style="font-size: 11px;">
               <div class="dataTable_wrapper">
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                  @if(session('thongbao'))
+                  @if(session('thanhcong'))
                   <div class="alert-success">
-                    {{session('thongbao')}}
+                    {{session('thanhcong')}}
                   </div>
                   @endif
                   <thead>
@@ -111,6 +111,7 @@ Danh sách sản phẩm người bán
 
 <!-- Custom Theme JavaScript -->
 <script src="resources/assets/js/startmin.js"></script>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>

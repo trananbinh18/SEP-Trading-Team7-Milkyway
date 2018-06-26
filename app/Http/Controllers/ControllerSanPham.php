@@ -73,7 +73,7 @@ class ControllerSanPham extends Controller
 
         $sanpham->save();
 
-        return redirect()->route('listpro');
+        return redirect()->route('listpro')->with('thanhcong', 'Bạn đã sửa sản phẩm thành công');
     }
 
 

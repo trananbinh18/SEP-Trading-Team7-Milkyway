@@ -32,7 +32,6 @@
                 <input type="hidden" name="GCN" value="<?php echo "{$sanpham['GCN']}";?>">
                 <input type="hidden" name="MANB" value="<?php echo "{$sanpham['MANB']}";?>">
                 <input type="hidden" name="MASP" value="<?php echo "{$sanpham['MASP']}";?>">
-
                 
 
                   <div class="form-group">
