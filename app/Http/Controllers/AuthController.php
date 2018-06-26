@@ -127,6 +127,27 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         }
     }
 
+
+//return view ResetPassword for Buyer
+function Chpass(){
+    //Check Session
+    if(session()->get('typeuser') == 1){
+
+        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countUnapprovedproduct = count($products);
+
+        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countApproveproduct = count($product);
+
+        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countHideproduct = count($productHide);
+
+        return  view('SellerPassword',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct);
+    }else if(session()->get('typeuser') == 2){
+        return view('BuyerPassword');
+    }else{
+        return view('Error');
+
     //return view ResetPassword for Buyer
     function Chpass(){
         //Check Session
@@ -137,6 +158,7 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         }else{
             return view('Error');
         }
+
     }
     function ChangePassword(Request $PW_request){
         if($PW_request->new_password = $PW_request->confirm_password)
@@ -163,6 +185,53 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         
     }
 
+
+//Return view Edit Information
+function inf(){
+    //Check session
+    if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
+
+        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countUnapprovedproduct = count($products);
+
+        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countApproveproduct = count($product);
+
+        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countHideproduct = count($productHide);
+
+        return view('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct);
+    }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
+        return view('BuyerInformation');
+    }else{
+        return view('Error');
+    }
+
+}
+function ChangeInfor(Request $Infor_request){
+    if(session()->get('typeuser') == 1){
+        $user           = nguoiban::where('MANB',session()->get('userid'))->first();
+        $user->TENNB    = $Infor_request->input('name');
+        $user->SDT      = $Infor_request->input('phone');
+        $user->SONHA    = $Infor_request->input('number_house');
+        $user->PHUONG   = $Infor_request->input('ward');
+        $user->QUAN     = $Infor_request->input('district');
+        $user->TP       = $Infor_request->input('city');
+        $user->save();
+        return redirect('SellerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
+    }else if(session()->get('typeuser') == 2){
+        $user           = nguoimua::where('MANM',session()->get('userid'))->first();
+        $user->TENNM    = $Infor_request->input('name');
+        $user->SDT      = $Infor_request->input('phone');
+        $user->SONHA    = $Infor_request->input('number_house');
+        $user->PHUONG   = $Infor_request->input('ward');
+        $user->QUAN     = $Infor_request->input('district');
+        $user->TP       = $Infor_request->input('city');
+        $user->save();
+        return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
+    }else{
+        return view('Error');
+
     //Return view Edit Information
     function inf(){
         //Check session
@@ -173,6 +242,7 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         }else{
             return view('Error');
         }   
+
     }
     function ChangeInfor(Request $Infor_request){
         if(session()->get('typeuser') == 1){

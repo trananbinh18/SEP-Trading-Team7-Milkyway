@@ -5652,7 +5652,7 @@ ul.tabs.tabs-title li span.count {
 .popup-content-wrapper .not-again span {
   color: #333;
   margin-left: 10px;
-  text-transform: uppercase;
+  text-transform: upprcase;
   font: 700 10px/15px "Oswald";
   letter-spacing: 2px;
   text-decoration: underline;
@@ -11387,10 +11387,11 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 
 .widget ul li span {
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: 15px;
   font: 400 14px "Roboto Condensed";
   color: #d6d6d6;
+  margin-top: 7px;
 }
 
 .widget h4 {
