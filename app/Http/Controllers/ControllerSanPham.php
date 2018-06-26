@@ -7,6 +7,7 @@ use App\loaisanpham;
 use Illuminate\Support\Collection;
 use Illuminate\Routing\Redirector;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\CheckEditProducts;
 use Cart;
 
 class ControllerSanPham extends Controller
@@ -32,7 +33,7 @@ class ControllerSanPham extends Controller
         return view('EditProduct',compact($sanpham,'sanpham'));
     }
 
-    public function saveproduct(Request $request){
+    public function saveproduct(CheckEditProducts $request){
         $sanpham = sanpham::find($request->input('MASP'));
             
         if($request->input('giamoi')==null){
