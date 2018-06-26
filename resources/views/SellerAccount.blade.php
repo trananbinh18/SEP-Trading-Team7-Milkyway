@@ -25,6 +25,11 @@
 
 <div class="col-md-8 table-product">
   <div class="row">
+      @if(session('thanhcong'))
+        <div class="alert-success">
+          {{session('thanhcong')}}
+        </div>
+      @endif
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -53,7 +58,8 @@
                   <td> {{ $row->TENNB}}</td>
                   <td>{{ $row->SDT}}</td>
                   <td>{{ $row->EMAIL}}</td>
-                  <td>@if($row -> TTNB == 0) <?php echo "Chưa duyệt"?>
+                  <td>@if($row -> TTNB == 0) 
+                      <a href="{{ url('changeStatusforSeller', [$row->MANB]) }}"><?php echo "Chưa duyệt"?></a>
                       @elseif($row->TTNB == 1) <?php echo "Đã duyệt"?>
                       @endif
                   </td>
@@ -96,6 +102,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="resources/assets/js/startmin.js"></script>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>

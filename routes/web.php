@@ -182,4 +182,8 @@ Route::post('ChangeStatus','AuthController@updatestatus')->name('ChangeStatus');
 Route::get('QuickHideOrders/{id}','LoadDataController@deleteOrders');
 //Return view History Buyer Item
 Route::get('HistoryOrders',['as' => 'HistoryOrders' , 'uses' => 'LoadDataController@historyOrders']);
+//Chuyển trạng thái sản phẩm nhanh
+Route::get('unapprovedProducts/{id}','AuthController@unapprovedProducts');
+//Thay đổi nhanh trạng thái tài khoản người bán
+Route::get('changeStatusforSeller/{id}','AuthController@changeStatusforSeller');
 

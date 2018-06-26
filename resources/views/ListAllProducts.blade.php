@@ -25,6 +25,11 @@
 
 <div class="col-md-8 table-product">
   <div class="row">
+      @if(session('thanhcong'))
+        <div class="alert-success">
+          {{session('thanhcong')}}
+        </div>
+      @endif
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -57,7 +62,7 @@
                     <td>{{number_format($row->GIA) }}</td>
                     <td> 
                         @if($row->TRANGTHAI == 0)
-                        <?php echo "chưa duyệt" ?>
+                        <a href="{{ url('unapprovedProducts',[$row->MASP]) }}"><?php echo "chưa duyệt" ?></a>
                         @elseif($row -> TRANGTHAI == 1)
                         <?php echo "đã duyệt" ?>
                         @else($row -> TRANGTHAI == 2)
@@ -101,6 +106,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="resources/assets/js/startmin.js"></script>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
