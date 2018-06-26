@@ -50,8 +50,8 @@ class AuthController extends Controller
             $user->QUAN     = $SignUpBuyer_request->district;
             $user->TP       = $SignUpBuyer_request->city;
             $user->EMAIL    = $SignUpBuyer_request->email;
-            $user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
-          //  $user->MATKHAU  = $SignUpBuyer_request->password;
+            //$user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
+            $user->MATKHAU  = $SignUpBuyer_request->password;
             $user->NGAYTAO  = date('Y-m-d H:i:s');
             $user->save();
 
@@ -108,7 +108,7 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         $users->QUAN    = $SignUpSeller_request->district;
         $users->TP      = $SignUpSeller_request->city;
         $users->EMAIL   = $SignUpSeller_request->email;
-        // $users->MATKHAU = Hash::make($SignUpSeller_request->password);
+        //$users->MATKHAU = Hash::make($SignUpSeller_request->password);
         $users->MATKHAU = $SignUpSeller_request->password;
         $users->GPKD    = $filenameGPKD;
         $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
@@ -116,16 +116,17 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         $users->save();
 
         return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
+        }
     }
 }
-}
-function resetPass(){
-    if(session()->get('typeuser')==3){
-        return view('ChangePassword_Employees');
-    }else{
-        return view('Error');
+    function resetPass(){
+        if(session()->get('typeuser')==3){
+            return view('ChangePassword_Employees');
+        }else{
+            return view('Error');
+        }
     }
-}
+
 
 //return view ResetPassword for Buyer
 function Chpass(){
@@ -146,32 +147,44 @@ function Chpass(){
         return view('BuyerPassword');
     }else{
         return view('Error');
-    }
-}
-function ChangePassword(Request $PW_request){
-    if($PW_request->new_password = $PW_request->confirm_password)
-    {
-        if($PW_request->input('current_password') != session()->get('password')){
-            return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
-        }if(session()->get('typeuser')==1){
-            $pass           = nguoiban::where('MANB', session()->get('userid'))->first();
-            $pass->MATKHAU  = $PW_request->input('new_password');
-            $pass->save();
-            return redirect('SellerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
-        }else if(session()->get('typeuser')==2){
-            $pass           = nguoimua::where('MANM', session()->get('userid'))->first();
-            $pass->MATKHAU  = $PW_request->input('new_password');
-            $pass->save();
-            return redirect('BuyerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
-        }else if(session()->get('typeuser')==3){
-            $pass           = nhanvien::where('MANV', session()->get('userid'))->first();
-            $pass->MATKHAU  = $PW_request->input('new_password');
-            $pass->save();
-            return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
+
+    //return view ResetPassword for Buyer
+    function Chpass(){
+        //Check Session
+        if(session()->get('typeuser') == 1){
+            return  view('SellerPassword');
+        }else if(session()->get('typeuser') == 2){
+            return view('BuyerPassword');
+        }else{
+            return view('Error');
         }
+
     }
-    
-}
+    function ChangePassword(Request $PW_request){
+        if($PW_request->new_password = $PW_request->confirm_password)
+        {
+            if($PW_request->input('current_password') != session()->get('password')){
+                return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
+            }if(session()->get('typeuser')==1){
+                $pass           = nguoiban::where('MANB', session()->get('userid'))->first();
+                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->save();
+                return redirect('SellerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
+            }else if(session()->get('typeuser')==2){
+                $pass           = nguoimua::where('MANM', session()->get('userid'))->first();
+                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->save();
+                return redirect('BuyerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
+            }else if(session()->get('typeuser')==3){
+                $pass           = nhanvien::where('MANV', session()->get('userid'))->first();
+                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->save();
+                return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
+            }
+        }
+        
+    }
+
 
 //Return view Edit Information
 function inf(){
@@ -218,61 +231,108 @@ function ChangeInfor(Request $Infor_request){
         return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
     }else{
         return view('Error');
-    }
-}
-public function editbuyer($id){
-    $ngmua = nguoimua::find($id);
-    if($ngmua == null){
-        return redirect('BuyerAccount');
-    }else{
-        return view('EditBuyer', compact($ngmua, 'ngmua'));
-    }
-}
-public function updatebuyer(Request $Buyer_request){
-    $ngmua = nguoimua::find($Buyer_request->input('MANM'));
 
-    $ngmua->TENNM   = $Buyer_request->input('name'); 
-    $ngmua->SDT     = $Buyer_request->input('phone');
-    $ngmua->SONHA   = $Buyer_request->input('number_house');
-    $ngmua->PHUONG  = $Buyer_request->input('ward');
-    $ngmua->QUAN    = $Buyer_request->input('district');
-    $ngmua->TP      = $Buyer_request->input('city');
+    //Return view Edit Information
+    function inf(){
+        //Check session
+        if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
+            return view('SellerInformation');
+        }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
+            return view('BuyerInformation');
+        }else{
+            return view('Error');
+        }   
 
-    $ngmua->save();
-    return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
-}
-public function editseller($id){
-    $ngban = nguoiban::find($id);
-    if($ngban == null){
-        return redirect('SellerAccount');
-    }else{
-        return view('EditSeller', compact($ngban ,'ngban'));
     }
-}
-public function updateseller(Request $Seller_request){
-    $ngban = nguoiban::find($Seller_request->input('MANB'));
-    $ngban->TTNB    = $Seller_request->input('status');
+    function ChangeInfor(Request $Infor_request){
+        if(session()->get('typeuser') == 1){
+            $user           = nguoiban::where('MANB',session()->get('userid'))->first();
+            $user->TENNB    = $Infor_request->input('name');
+            $user->SDT      = $Infor_request->input('phone');
+            $user->SONHA    = $Infor_request->input('number_house');
+            $user->PHUONG   = $Infor_request->input('ward');
+            $user->QUAN     = $Infor_request->input('district');
+            $user->TP       = $Infor_request->input('city');
+            $user->save();
+            return redirect('SellerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
+        }else if(session()->get('typeuser') == 2){
+            $user           = nguoimua::where('MANM',session()->get('userid'))->first();
+            $user->TENNM    = $Infor_request->input('name');
+            $user->SDT      = $Infor_request->input('phone');
+            $user->SONHA    = $Infor_request->input('number_house');
+            $user->PHUONG   = $Infor_request->input('ward');
+            $user->QUAN     = $Infor_request->input('district');
+            $user->TP       = $Infor_request->input('city');
+            $user->save();
+            return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
+        }else{
+            return view('Error');
+        }
+    }
+    public function editbuyer($id){
+        $ngmua = nguoimua::find($id);
+        if($ngmua == null){
+            return redirect('BuyerAccount');
+        }else{
+            return view('EditBuyer', compact($ngmua, 'ngmua'));
+        }
+    }
+    public function updatebuyer(Request $Buyer_request){
+        $ngmua = nguoimua::find($Buyer_request->input('MANM'));
 
-    $ngban->save();
-    return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
-}
-public function ordersdetail($id){
+        $ngmua->TENNM   = $Buyer_request->input('name'); 
+        $ngmua->SDT     = $Buyer_request->input('phone');
+        $ngmua->SONHA   = $Buyer_request->input('number_house');
+        $ngmua->PHUONG  = $Buyer_request->input('ward');
+        $ngmua->QUAN    = $Buyer_request->input('district');
+        $ngmua->TP      = $Buyer_request->input('city');
+
+        $ngmua->save();
+        return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
+    }
+    public function editseller($id){
+        $ngban = nguoiban::find($id);
+        if($ngban == null){
+            return redirect('SellerAccount');
+        }else{
+            return view('EditSeller', compact($ngban ,'ngban'));
+        }
+    }
+    public function updateseller(Request $Seller_request){
+        $ngban = nguoiban::find($Seller_request->input('MANB'));
+        $ngban->TTNB    = $Seller_request->input('status');
+
+        $ngban->save();
+        return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
+    }
+    public function changeStatusforSeller($id){
+        $status = nguoiban::find($id);
+        $status->TTNB = 1 ;
+        $status->save();
+        return redirect()->route('Account_Seller')->with('thanhcong', 'Bạn đã thay đổi thành công');
+    }
+    public function ordersdetail($id){
         //$hoadon = chitiethoadon::find($id);
-    $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI', 'sanpham.MASP')->where('MAHD' , $id)->get();
-    return view('Ordersdetail', compact($sanpham,'sanpham'));
-}
-public function editstatus($id){
-    $status = sanpham::find($id);
+        $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI', 'sanpham.MASP')->where('MAHD' , $id)->get();
+        return view('Ordersdetail', compact($sanpham,'sanpham'));
+    }
+    public function editstatus($id){
+        $status = sanpham::find($id);
 
-    return view('ChangeStatus', compact($status,'status'));
-}
-public function updatestatus(Request $Status_request){
-    $status = sanpham::find($Status_request->input('MASP'));
+        return view('ChangeStatus', compact($status,'status'));
+    }
+    public function updatestatus(Request $Status_request){
+        $status = sanpham::find($Status_request->input('MASP'));
+        $status->TRANGTHAI = $Status_request->input('trangthai');
+        $status->save();
 
-    $status->TRANGTHAI = $Status_request->input('trangthai');
-    $status->save();
-
-    return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
-}
+        return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
+    }
+    public function unapprovedProducts($id){
+        $sanpham = sanpham::find($id);
+        $sanpham->TRANGTHAI = 1 ;
+        $sanpham->save();
+        return redirect()->route('listprosale')->with('thanhcong','Bạn đã thay đổi trạng thái thành công'); 
+    }
 }
 

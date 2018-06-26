@@ -35,14 +35,14 @@
             <div class="col-md-8 control-infotproduct box-shadow">
                 @if(isset($thongbao))
                   <div class="alert-success">
-                    <!-- Bạn thêm sản phẩm thành công -->
+                     Bạn thêm sản phẩm thành công
                   </div>
                 @endif
 
                 <form class="form-horizontal" role="form" action="{{route('CreateProduct')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm(*);</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm</label>
                     <div class="col-md-9">
                       @if ($errors->has('tensanpham'))
                         <span class="text-danger">{{ $errors->first('tensanpham') }}</span>
@@ -51,7 +51,7 @@
                     </div>
                   </div>                  
                   <div class="form-group">                  
-                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm(*):</label>                    
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh sản phẩm</label>                    
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px">
                           <div class="img-picker">
@@ -63,7 +63,7 @@
                           </div>
                       </div>                                                                     
                     </div>
-                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Ảnh chứng nhận</label>
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px">
                           <div class="img-picker">
@@ -77,7 +77,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục(*):</label>
+                    <label for="inputPassword3" class="col-md-3 control-lab">Danh mục</label>
                     <div class="col-md-4">
                         <select id="enterprise" class="Unit" name="cbCategory" onchange="document.getElementById('price3').innerHTML='$'+this.value">
                           <option value="4">Rau</option>
@@ -85,7 +85,7 @@
                           <option value="6">Củ</option>                      
                       </select> 
                     </div>
-                    <label class="col-md-2 control-lab">Số lượng:</label>
+                    <label class="col-md-2 control-lab">Số lượng</label>
                     <div class="col-md-3">
                       @if ($errors->has('Soluong'))
                           <span class="text-danger">{{ $errors->first('Soluong') }}</span>
@@ -94,7 +94,7 @@
                     </div> 
                   </div>                             
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm(*):</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Giá sản phẩm</label>
                     <div class="col-md-4">
                       @if ($errors->has('Giasanpham'))
                           <span class="text-danger">{{ $errors->first('Giasanpham') }}</span>
@@ -111,7 +111,7 @@
                     </div>                  
                   </div>
                   <div class="form-group">
-                    <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm:</label>
+                    <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm</label>
                     <div class="col-md-9">
                       @if ($errors->has('mieutasanpham'))
                           <span class="text-danger">{{ $errors->first('mieutasanpham') }}</span>

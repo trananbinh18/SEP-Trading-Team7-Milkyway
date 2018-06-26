@@ -31,7 +31,6 @@
                 <input type="hidden" name="GCN" value="<?php echo "{$sanpham['GCN']}";?>">
                 <input type="hidden" name="MANB" value="<?php echo "{$sanpham['MANB']}";?>">
                 <input type="hidden" name="MASP" value="<?php echo "{$sanpham['MASP']}";?>">
-
                 
 
                   <div class="form-group">
@@ -52,6 +51,9 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
+                            @if ($errors->has('imagesSP'))
+                              <span class="text-danger">{{ $errors->first('imagesSP') }}</span>
+                            @endif
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin1" name="imagesSP">
                             </div>
                           </div>
@@ -61,6 +63,9 @@
                     <div class="row" style="width: 100%;">
                       <div class="form-group col-md-3 img12" style="padding-left: 18px;">
                           <div class="img-picker">
+                            @if ($errors->has('imagesGCN'))
+                              <span class="text-danger">{{ $errors->first('imagesGCN') }}</span>
+                            @endif
                             <div class="form-control btn btn-default btn-block img-upload-btn"><i class="glyphicon glyphicon-plus"></i><input type="file" class="imgin2" name="imagesGCN">
                             </div>
                           </div>
