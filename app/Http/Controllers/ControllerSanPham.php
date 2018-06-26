@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\sanpham;
 use App\loaisanpham;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 use Illuminate\Routing\Redirector;
 use Illuminate\Database\Eloquent\Model;
@@ -29,7 +30,17 @@ class ControllerSanPham extends Controller
         if($sanpham == null){
             return redirect()->route('homepage');
         }
-        return view('EditProduct',compact($sanpham,'sanpham'));
+
+        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countUnapprovedproduct = count($products);
+
+        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countApproveproduct = count($product);
+
+        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+        $countHideproduct = count($productHide);
+
+        return view('EditProduct',compact($sanpham,'sanpham'),compact('countUnapprovedproduct','$countUnapprovedproduct'))->with('countApproveproduct',$countApproveproduct)->with('countHideproduct',$countHideproduct);
     }
 
     public function saveproduct(Request $request){

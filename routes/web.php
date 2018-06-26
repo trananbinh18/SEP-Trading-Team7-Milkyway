@@ -27,6 +27,9 @@ Route::get('shopping',function(){
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
 Route::post('Editproductpost','ControllerSanPham@saveproduct')->name('Editproductpost');
 
+Route::get('popUp',function(){
+	return view('popup');
+});
 Route::get('info',function(){
 	return view('changeInfo');
 });
