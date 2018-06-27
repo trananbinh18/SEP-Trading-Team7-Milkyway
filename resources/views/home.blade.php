@@ -10,10 +10,10 @@
                         <h3>Loại sản phẩm</h3>
                         <i class="fa fa-chevron-circle-down icon-click"></i>
                         <ul class="menu-vertical">
-                            <li><img src="resources/assets/images/icon-categories-2.png" alt=""><a href="#" title="4">Rau</a></li>
-                            <li><img src="resources/assets/images/icon-categories-3.png" alt=""><a href="#" title="5">Trái cây</a></li>
-                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="#" title="6">Các loại củ quả</a></li>
-                            <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="#" title="Hot Deals">Khuyến mãi</a></li>
+                            <li><img src="resources/assets/images/icon-categories-2.png" alt=""><a href="{{url('catalog?id=4')}}" title="4">Rau</a></li>
+                            <li><img src="resources/assets/images/icon-categories-3.png" alt=""><a href="{{url('catalog?id=5')}}" title="5">Trái cây</a></li>
+                            <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{url('catalog?id=6')}}" title="6">Các loại củ quả</a></li>
+                            <li><img src="resources/assets/images/icon-categories-8.png" alt=""><a href="{{url('catalog?id=0')}}" title="Hot Deals">Khuyến mãi</a></li>
                         </ul>
                     </div>
                 </div>

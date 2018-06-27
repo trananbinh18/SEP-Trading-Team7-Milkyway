@@ -89,13 +89,17 @@ class ControllerSanPham extends Controller
     }
 
 
-    public function catalog($id=-1){
-        $sanpham = sanpham::paginate(12);
-        if($id==-1){
-            return view('catalog_sidebar',compact($sanpham,'sanpham'));
+    public function catalog(Request $request){
+        if($request->query('id')==null){
+            $sanpham = sanpham::paginate(16);
         }else{
-            return view('catalog_sidebar',compact($sanpham,'sanpham'))->with('dm',$id);
+            if($request->query('id')==0){
+                $sanpham = sanpham::where([['GIACU', '>','GIA'],['GIACU', '<>','0'],])->paginate(16);
+            }else{
+                $sanpham = sanpham::where('MALOAISP', '=', $request->query('id'))->paginate(16);
+            }
         }
+        return view('catalog_sidebar',compact($sanpham,'sanpham'));
         
     }
 

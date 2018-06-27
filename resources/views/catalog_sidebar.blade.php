@@ -3,10 +3,9 @@
                 <?php $loaisp = App\loaisanpham::all();?>
     <div class="container">
             <div class="banner-header banner-lbook3 space-30">
-                <img src="resources/assets/images/banner/1.png" alt="Banner-header">
+                <img src="{{url('resources/assets/images/banner/1.png')}}" alt="Banner-header">
             </div>
         </div>
-
          <!-- End Banner Grid -->
         <div class="container">
             <div id="primary" class="col-xs-12 col-md-9">  
@@ -97,14 +96,15 @@
                 <aside class="widget widget_feature">
                     <h3 class="widget-title">SẢN PHẨM liên quan</h3>
                     <ul>  
-                        @for($i = 0; $i < 4; $i++)                  
-                        <li>
-                            <a class="images" href="{{url('Productdetail',[$sanpham->get($i)->MASP])}}" title="images">
-                                <img class="img-responsive" src="resources/assets/images/products/{{$sanpham->get($i)['HINH']}}" alt="images">
+                        @for($i = 0; $i < 4; $i++)  
+                        @if($sanpham->get($i)!=null)
+                            <li>
+                            <a class="images" href="{{url('Productdetail',$sanpham->get($i)["MASP"])}}" title="images">
+                                <img class="img-responsive" src='{!!url("resources/assets/images/products/{$sanpham->get($i)['HINH']}")!!}' alt="images">
                             </a>
                             <div class="text">
                                 <h2>
-                                    <a href="{{url('Productdetail',[$sanpham->get($i)->MASP])}}" title="Butterfly Bar Stool">{{$sanpham->get($i)['TENSP']}}</a>
+                                    <a href="{{url('Productdetail',[$sanpham->get($i)['MASP']])}}" title="Butterfly Bar Stool">{{$sanpham->get($i)['TENSP']}}</a>
                                 </h2>
                                 <p><span>{{$sanpham->get($i)['GIA']}} VND</span></p>
                                 <p class="rating">
@@ -115,9 +115,14 @@
                                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                                 </p>
                             </div>
-                        </li>                      
+                        </li>
+                        @else
+                            @break
+                        @endif                      
                         @endfor
                     </ul>
+
+                        
                 </aside>
             </div>
             <!-- End Secondary -->
@@ -125,13 +130,81 @@
         <!-- end product sidebar -->
 
         <script type="text/javascript">
-            var sx = "moi";
-            @if(isset($dm)){
-                var dm = {{$dm}};
-            }@else{
-                var dm = "0";    
+    $(document).ready(function(){
+    var sx = "moi";
+    var dm = "0";
+    var page = 1;
+    $("#sortbar").change(function(){
+        sx = $(this).val();
+        $(".products").empty();
+        $.getJSON('ProductFilter/'+dm+'/'+sx, function (data){
+            var numofpage = (data.length/16)+1;
+            numofpage = parseInt(numofpage);
+            var i=(page-1)*16;
+            var lim = (page*16);
+            for(i;i<data.length; i++){
+                if(i==lim){
+                    break;
+                }
+            $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
             }
-            @endif
-            
+
+            $(".pagination").empty();
+            //paging
+            for(var j=0;j<numofpage;j++){
+                var pagethis = j+1;
+                $(".pagination").append("<a href='#'><span class='page-numbers current'>"+ pagethis +"</span></a>")
+            }
+            $(".page-numbers").click(function(){
+                page = parseInt($(this).html());
+                $(".products").empty();
+                var i=(page-1)*16;
+                var lim = (page*16);
+                for(i;i<data.length; i++){
+                    console.log(i);
+                    if(i==lim){
+                        break;
+                    }
+                $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            }
+            });
+        });
+    });
+    $("li .loaisp").click(function(){
+        dm = $(this).attr('title');
+        $(".products").empty();
+        $.getJSON('ProductFilter/'+dm+'/'+sx, function (data){
+            var numofpage = (data.length/16)+1;
+            numofpage = parseInt(numofpage);
+            var i=(page-1)*16;
+            var lim = (page*16);
+            for(i;i<data.length; i++){
+                if(i==lim){
+                    break;
+                }
+            $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            }
+
+            $(".pagination").empty();
+            //paging
+            for(var j=0;j<numofpage;j++){
+                var pagethis = j+1;
+                $(".pagination").append("<a href='#'><span class='page-numbers current'>"+ pagethis +"</span></a>")
+            }
+            $(".page-numbers").click(function(){
+                page = parseInt($(this).html());
+                $(".products").empty();
+                var i=(page-1)*16;
+                var lim = (page*16);
+                for(i;i<data.length; i++){
+                    if(i==lim){
+                        break;
+                    }
+                        $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='#' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='#' title='Bouble Fabric Blazer'><p class='product-title'>"+checkGiaCu(data[i].TENSP)+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'><a class='add-cart' href='AddToCart/"+data[i].MASP+"' title='Add to cart'></a><a class='wish' href='#' title='Wishlist'></a><a class='zoom' href='Productdetail/"+data[i].MASP+"' title='Quick view'></a></div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
+            }
+            });
+        });
+    });
+});
         </script>
 @endsection

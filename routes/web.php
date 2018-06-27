@@ -20,7 +20,7 @@ Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Produc
 
 Route::get('catalog','ControllerSanPham@catalog')->name('Catalog');
 
-Route::get('catalog/{id}','ControllerSanPham@catalog');
+// Route::get('catalog/{id}','ControllerSanPham@catalog');
 
 Route::get('shopping',function(){
 	return view('shopping_cart');
