@@ -137,4 +137,32 @@ class LoadDataController extends Controller
 			return view('Error');
 		}
 	}
+
+	//Trả lại trang thống kê
+	public function salerevenue(){
+		if(session()->get('typeuser') == 1){
+			return view('revenue');	
+		}else{
+			return view('Error');
+		}
+		
+	}
+
+	//Trả lại dữ liệu thống kê theo thang gồm [tháng,tổng số tiền bán được trong tháng đó]
+	public function loadDataAnalyzethang($id){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('MONTH(NLHD) as thang'),DB::raw('SUM(THANHTIEN) as tong'))->where('MANB','=',$id)->groupBy(DB::raw('MONTH(NLHD)'))->orderBy(DB::raw('MONTH(NLHD)'))->get();
+	}
+
+	//Trả lại dữ liệu thống kê theo ngay gồm [ngay,tổng số tiền bán được trong tháng đó]
+	public function loadDataAnalyzengay($id){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('DAY(NLHD) as ngay,MONTH(NLHD) as thang'),DB::raw('SUM(THANHTIEN) as tong'))->where('MANB','=',$id)->groupBy(DB::raw('DAY(NLHD),MONTH(NLHD)'))->orderBy(DB::raw('NLHD'))->get();
+	}
+
+	//Trả lại dữ liệu thống kê theo tuan gồm [tuan,tổng số tiền bán được trong tháng đó]
+	public function loadDataAnalyzetuan($id){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('WEEK(NLHD) as tuan'),DB::raw('SUM(THANHTIEN) as tong'))->where('MANB','=',$id)->groupBy(DB::raw('WEEK(NLHD)'))->orderBy(DB::raw('WEEK(NLHD)'))->get();
+	}
 }

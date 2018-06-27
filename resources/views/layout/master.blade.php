@@ -329,7 +329,7 @@
     });
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-            rƯesponsive: true
+            responsive: true
         });
     });
 

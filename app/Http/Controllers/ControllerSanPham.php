@@ -89,9 +89,14 @@ class ControllerSanPham extends Controller
     }
 
 
-    public function catalog(){
+    public function catalog($id=-1){
         $sanpham = sanpham::paginate(12);
-        return view('catalog_sidebar',compact($sanpham,'sanpham'));
+        if($id==-1){
+            return view('catalog_sidebar',compact($sanpham,'sanpham'));
+        }else{
+            return view('catalog_sidebar',compact($sanpham,'sanpham'))->with('dm',$id);
+        }
+        
     }
 
     public function productfilter($dm,$sx){

@@ -43,6 +43,67 @@ function checkGiaCu(giacu){
     }
 }
 
+function takeindex(datal,max){
+    var result=0;
+    if(datal-max>=0){
+        result = datal-max;
+        return result;
+    }
+    return result;
+}
+
+//function to do canvas
+//Get month 
+function monthArray(data,max){
+    var result = [];
+    var ind = takeindex(data.length,max);
+    for(var i=ind;i<data.length;i++){
+        if(data[i]==undefined){
+            break;
+        }
+        result.push("Tháng "+data[i]["thang"]);
+    }
+    return result;
+}
+//Get Day
+function dayArray(data,max){
+    var result = [];
+    var ind = takeindex(data.length,max);
+    for(var i=ind;i<data.length;i++){
+        if(data[i]==undefined){
+            break;
+        }
+        result.push("Ngày "+data[i]["ngay"]+"/"+data[i]["thang"]);
+    }
+    return result;
+}
+//Get Week
+function weekArray(data,max){
+    var result = [];
+    var ind = takeindex(data.length,max);
+    for(var i=ind;i<data.length;i++){
+        if(data[i]==undefined){
+            break;
+        }
+        result.push("Tuần "+data[i]["tuan"]);
+    }
+    return result;
+}
+
+function priceArray(data,max){
+    var result = [];
+    var ind = takeindex(data.length,max);
+    for(var i=ind;i<data.length;i++){
+        if(data[i]==undefined){
+            break;
+        }
+        result.push(data[i]["tong"]);
+    }
+    return result;
+}
+
+//end update canvas
+
 $(document).ready(function() {
     var sx = "moi";
     var dm = "0";

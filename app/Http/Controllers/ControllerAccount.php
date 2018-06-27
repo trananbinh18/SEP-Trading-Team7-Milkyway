@@ -10,6 +10,7 @@ use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
 use Cart;
+use \Crypt;
 use App\Http\Requests\CheckLoginRequest;
 
 class ControllerAccount extends Controller
@@ -35,7 +36,7 @@ class ControllerAccount extends Controller
         if($user!=null) {
             //check password
             //
-            if($re->input('matkhau')==$user->MATKHAU){
+            if($re->input('matkhau')==Crypt::decrypt($user->MATKHAU)){
             	// session_start();
             	// $_SESSION["user"]=$user;
             	// $_SESSION["typeuser"]=$typeuser;
@@ -44,7 +45,7 @@ class ControllerAccount extends Controller
                         session(['userid' => $user->MANB]);
                         session(['typeuser' => 1]);
                         session(['name' => $user->TENNB]);
-                        session(['password' => $user->MATKHAU]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
                         session(['ward' => $user->PHUONG]);

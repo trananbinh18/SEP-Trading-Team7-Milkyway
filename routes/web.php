@@ -20,6 +20,8 @@ Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Produc
 
 Route::get('catalog','ControllerSanPham@catalog')->name('Catalog');
 
+Route::get('catalog/{id}','ControllerSanPham@catalog');
+
 Route::get('shopping',function(){
 	return view('shopping_cart');
 });
@@ -118,6 +120,14 @@ Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sell
 Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm chưa duyệt của người bán
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
+//Trả về view Thống kê
+Route::get('Salerevenue',['as'=>'Salerevenue','uses'=>'LoadDataController@Salerevenue']);
+//Trả về dữ liệu thống kê theo thang
+Route::get('SalerevenueDatathang/{id}','LoadDataController@loadDataAnalyzethang');
+//Trả về dữ liệu thống kê theo ngay
+Route::get('SalerevenueDatangay/{id}','LoadDataController@loadDataAnalyzengay');
+//Trả về dữ liệu thống kê theo tuan
+Route::get('SalerevenueDatatuan/{id}','LoadDataController@loadDataAnalyzetuan');
 //Trả về dữ liệu sản phẩm đã duyệt của người bán
 Route::get('ListproductApproved',['as'=>'ListApproved','uses'=>'LoadDataController@ListApproved']);
 //Trả về dữ liệu sản phẩm đã ẩn của người bán

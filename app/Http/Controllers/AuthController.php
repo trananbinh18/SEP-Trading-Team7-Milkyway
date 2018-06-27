@@ -23,14 +23,14 @@ use App\Http\Controllers\ControllerAccount;
 use Illuminate\Support\MessageBag;
 use App\Http\Requests\CheckSignUpBuyerRequest;
 use App\Http\Requests\CheckSignUpSellerRequest;
+use \Crypt;
 
 class AuthController extends Controller
 {
 
-    function getSignUpBuyer()
-    {
+    function getSignUpBuyer(){
       return view('SignUp');
-  }
+    }
   
   function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
   {
@@ -46,12 +46,12 @@ class AuthController extends Controller
             $user->TENNM    = $SignUpBuyer_request->name;
             $user->SDT      = $SignUpBuyer_request->phone;
             $user->SONHA    = $SignUpBuyer_request->number_house;
-            $user->PHUONG   = $SignUpBuyer_request->ward;
-            $user->QUAN     = $SignUpBuyer_request->district;
+            $user->MAPHUONG   = $SignUpBuyer_request->ward;
+            $user->MAQUAN     = $SignUpBuyer_request->district;
             $user->TP       = $SignUpBuyer_request->city;
             $user->EMAIL    = $SignUpBuyer_request->email;
             //$user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
-            $user->MATKHAU  = $SignUpBuyer_request->password;
+            $user->MATKHAU  = Crypt::encrypt($SignUpBuyer_request->password);
             $user->NGAYTAO  = date('Y-m-d H:i:s');
             $user->save();
 
@@ -104,12 +104,12 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         $users->TENNB   = $SignUpSeller_request->name;
         $users->SDT     = $SignUpSeller_request->phone;
         $users->SONHA   = $SignUpSeller_request->number_house;
-        $users->PHUONG  = $SignUpSeller_request->ward;
-        $users->QUAN    = $SignUpSeller_request->district;
+        $users->MAPHUONG  = $SignUpSeller_request->ward;
+        $users->MAQUAN    = $SignUpSeller_request->district;
         $users->TP      = $SignUpSeller_request->city;
         $users->EMAIL   = $SignUpSeller_request->email;
         //$users->MATKHAU = Hash::make($SignUpSeller_request->password);
-        $users->MATKHAU = $SignUpSeller_request->password;
+        $users->MATKHAU = Crypt::encrypt($SignUpSeller_request->password);
         $users->GPKD    = $filenameGPKD;
         $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
         $users->NGAYTAO = date('Y-m-d H:i:s');
@@ -147,37 +147,27 @@ function Chpass(){
         return view('BuyerPassword');
     }else{
         return view('Error');
-
-    //return view ResetPassword for Buyer
-    function Chpass(){
-        //Check Session
-        if(session()->get('typeuser') == 1){
-            return  view('SellerPassword');
-        }else if(session()->get('typeuser') == 2){
-            return view('BuyerPassword');
-        }else{
-            return view('Error');
-        }
-
     }
+}
+    
     function ChangePassword(Request $PW_request){
-        if($PW_request->new_password = $PW_request->confirm_password)
+        if($PW_request->new_password == $PW_request->confirm_password)
         {
             if($PW_request->input('current_password') != session()->get('password')){
                 return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
             }if(session()->get('typeuser')==1){
                 $pass           = nguoiban::where('MANB', session()->get('userid'))->first();
-                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
                 $pass->save();
                 return redirect('SellerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }else if(session()->get('typeuser')==2){
                 $pass           = nguoimua::where('MANM', session()->get('userid'))->first();
-                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
                 $pass->save();
                 return redirect('BuyerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }else if(session()->get('typeuser')==3){
                 $pass           = nhanvien::where('MANV', session()->get('userid'))->first();
-                $pass->MATKHAU  = $PW_request->input('new_password');
+                $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
                 $pass->save();
                 return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }
@@ -231,44 +221,11 @@ function ChangeInfor(Request $Infor_request){
         return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
     }else{
         return view('Error');
-
-    //Return view Edit Information
-    function inf(){
-        //Check session
-        if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
-            return view('SellerInformation');
-        }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
-            return view('BuyerInformation');
-        }else{
-            return view('Error');
-        }   
-
     }
-    function ChangeInfor(Request $Infor_request){
-        if(session()->get('typeuser') == 1){
-            $user           = nguoiban::where('MANB',session()->get('userid'))->first();
-            $user->TENNB    = $Infor_request->input('name');
-            $user->SDT      = $Infor_request->input('phone');
-            $user->SONHA    = $Infor_request->input('number_house');
-            $user->PHUONG   = $Infor_request->input('ward');
-            $user->QUAN     = $Infor_request->input('district');
-            $user->TP       = $Infor_request->input('city');
-            $user->save();
-            return redirect('SellerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
-        }else if(session()->get('typeuser') == 2){
-            $user           = nguoimua::where('MANM',session()->get('userid'))->first();
-            $user->TENNM    = $Infor_request->input('name');
-            $user->SDT      = $Infor_request->input('phone');
-            $user->SONHA    = $Infor_request->input('number_house');
-            $user->PHUONG   = $Infor_request->input('ward');
-            $user->QUAN     = $Infor_request->input('district');
-            $user->TP       = $Infor_request->input('city');
-            $user->save();
-            return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
-        }else{
-            return view('Error');
-        }
-    }
+}
+
+
+
     public function editbuyer($id){
         $ngmua = nguoimua::find($id);
         if($ngmua == null){
@@ -277,6 +234,8 @@ function ChangeInfor(Request $Infor_request){
             return view('EditBuyer', compact($ngmua, 'ngmua'));
         }
     }
+
+
     public function updatebuyer(Request $Buyer_request){
         $ngmua = nguoimua::find($Buyer_request->input('MANM'));
 

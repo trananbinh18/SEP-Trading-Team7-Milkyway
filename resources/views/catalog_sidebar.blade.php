@@ -6,6 +6,7 @@
                 <img src="resources/assets/images/banner/1.png" alt="Banner-header">
             </div>
         </div>
+
          <!-- End Banner Grid -->
         <div class="container">
             <div id="primary" class="col-xs-12 col-md-9">  
@@ -122,4 +123,15 @@
             <!-- End Secondary -->
         </div>
         <!-- end product sidebar -->
+
+        <script type="text/javascript">
+            var sx = "moi";
+            @if(isset($dm)){
+                var dm = {{$dm}};
+            }@else{
+                var dm = "0";    
+            }
+            @endif
+            
+        </script>
 @endsection
