@@ -81,6 +81,7 @@
                                     <div class="row">
                                     <!-- End col-md-6 -->
                                     <div class="col-md-5">
+                                        @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1)
                                            <div class="title">
                                                     <h3>SỐ LƯỢNG</h3>
                                             </div>
@@ -88,7 +89,8 @@
                                                 <input data-step="1" id="quanty" name="quan" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                                                 <input type="hidden" name="id" value="{{$sanpham->MASP}}">
                                                  <label><?php echo "{$sanpham['DONVI']}"; ?></label>
-                                            </form>    
+                                            </form>
+                                        @endif    
                                     </div>
                                     <!-- End col-md-5 -->
                                     </div>
@@ -102,10 +104,8 @@
                                         <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a> -->
 
                                     @endif
-                                    @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3)
+                                    @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1)
                                         <a href="{{route('signin')}}"><button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button></a>
-                                        <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
-                                        <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a>
                                     @endif
                                     
                                 </div>
