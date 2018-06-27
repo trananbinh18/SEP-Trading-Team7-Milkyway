@@ -14327,7 +14327,9 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 }
 
 .cart-list ul {
+  overflow: auto;
   padding: 0 20px;
+  height: 100px;
 }
 
 .cart-list li {

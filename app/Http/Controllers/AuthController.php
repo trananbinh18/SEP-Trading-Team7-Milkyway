@@ -21,9 +21,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
 use App\Http\Controllers\ControllerAccount;
 use Illuminate\Support\MessageBag;
+
 use App\Http\Requests\CheckSignUpBuyerRequest;
 use App\Http\Requests\CheckSignUpSellerRequest;
 use \Crypt;
+
 
 class AuthController extends Controller
 {
@@ -50,8 +52,10 @@ class AuthController extends Controller
             $user->MAQUAN     = $SignUpBuyer_request->district;
             $user->TP       = $SignUpBuyer_request->city;
             $user->EMAIL    = $SignUpBuyer_request->email;
+
             //$user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
             $user->MATKHAU  = Crypt::encrypt($SignUpBuyer_request->password);
+
             $user->NGAYTAO  = date('Y-m-d H:i:s');
             $user->save();
 
@@ -108,47 +112,39 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
         $users->MAQUAN    = $SignUpSeller_request->district;
         $users->TP      = $SignUpSeller_request->city;
         $users->EMAIL   = $SignUpSeller_request->email;
+
         //$users->MATKHAU = Hash::make($SignUpSeller_request->password);
         $users->MATKHAU = Crypt::encrypt($SignUpSeller_request->password);
+
         $users->GPKD    = $filenameGPKD;
         $SignUpSeller_request->file('image')->move('resources\assets\images\BusinessLicense',$filenameGPKD);
         $users->NGAYTAO = date('Y-m-d H:i:s');
         $users->save();
 
         return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
-        }
     }
 }
-    function resetPass(){
-        if(session()->get('typeuser')==3){
-            return view('ChangePassword_Employees');
-        }else{
-            return view('Error');
-        }
+}
+function resetPass(){
+    if(session()->get('typeuser')==3){
+        return view('ChangePassword_Employees');
+    }else{
+        return view('Error');
     }
-
+}
 
 //return view ResetPassword for Buyer
 function Chpass(){
     //Check Session
-    if(session()->get('typeuser') == 1){
-
-        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countUnapprovedproduct = count($products);
-
-        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countApproveproduct = count($product);
-
-        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countHideproduct = count($productHide);
-
-        return  view('SellerPassword',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct);
+    if(session()->get('typeuser') == 1){           
+        return  view('SellerPassword');
     }else if(session()->get('typeuser') == 2){
         return view('BuyerPassword');
     }else{
         return view('Error');
     }
 }
+
     
     function ChangePassword(Request $PW_request){
         if($PW_request->new_password == $PW_request->confirm_password)
@@ -171,32 +167,24 @@ function Chpass(){
                 $pass->save();
                 return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }
-        }
-        
-    }
 
+        }else{
+            return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
+        }
+    }
+    
+}
 
 //Return view Edit Information
 function inf(){
     //Check session
     if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
-
-        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countUnapprovedproduct = count($products);
-
-        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countApproveproduct = count($product);
-
-        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
-        $countHideproduct = count($productHide);
-
-        return view('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct);
+        return view('SellerInformation');
     }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
         return view('BuyerInformation');
     }else{
         return view('Error');
-    }
-
+    }   
 }
 function ChangeInfor(Request $Infor_request){
     if(session()->get('typeuser') == 1){
@@ -249,49 +237,39 @@ function ChangeInfor(Request $Infor_request){
         $ngmua->save();
         return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
     }
-    public function editseller($id){
-        $ngban = nguoiban::find($id);
-        if($ngban == null){
-            return redirect('SellerAccount');
-        }else{
-            return view('EditSeller', compact($ngban ,'ngban'));
-        }
-    }
-    public function updateseller(Request $Seller_request){
-        $ngban = nguoiban::find($Seller_request->input('MANB'));
-        $ngban->TTNB    = $Seller_request->input('status');
 
-        $ngban->save();
-        return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
+public function editseller($id){
+    $ngban = nguoiban::find($id);
+    if($ngban == null){
+        return redirect('SellerAccount');
+    }else{
+        return view('EditSeller', compact($ngban ,'ngban'));
     }
-    public function changeStatusforSeller($id){
-        $status = nguoiban::find($id);
-        $status->TTNB = 1 ;
-        $status->save();
-        return redirect()->route('Account_Seller')->with('thanhcong', 'Bạn đã thay đổi thành công');
-    }
-    public function ordersdetail($id){
+}
+public function updateseller(Request $Seller_request){
+    $ngban = nguoiban::find($Seller_request->input('MANB'));
+    $ngban->TTNB    = $Seller_request->input('status');
+
+    $ngban->save();
+    return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
+}
+public function ordersdetail($id){
         //$hoadon = chitiethoadon::find($id);
-        $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI', 'sanpham.MASP')->where('MAHD' , $id)->get();
-        return view('Ordersdetail', compact($sanpham,'sanpham'));
-    }
-    public function editstatus($id){
-        $status = sanpham::find($id);
+    $sanpham = DB::table('chitiethoadon')->join('sanpham', 'sanpham.MASP' , '=' , 'chitiethoadon.MASP')->select('SLUONG', 'TENSP', 'MAHD','GIAMGIA','THANHTIEN','DONVI', 'sanpham.MASP')->where('MAHD' , $id)->get();
+    return view('Ordersdetail', compact($sanpham,'sanpham'));
+}
+public function editstatus($id){
+    $status = sanpham::find($id);
 
-        return view('ChangeStatus', compact($status,'status'));
-    }
-    public function updatestatus(Request $Status_request){
-        $status = sanpham::find($Status_request->input('MASP'));
-        $status->TRANGTHAI = $Status_request->input('trangthai');
-        $status->save();
+    return view('ChangeStatus', compact($status,'status'));
+}
+public function updatestatus(Request $Status_request){
+    $status = sanpham::find($Status_request->input('MASP'));
 
-        return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
-    }
-    public function unapprovedProducts($id){
-        $sanpham = sanpham::find($id);
-        $sanpham->TRANGTHAI = 1 ;
-        $sanpham->save();
-        return redirect()->route('listprosale')->with('thanhcong','Bạn đã thay đổi trạng thái thành công'); 
-    }
+    $status->TRANGTHAI = $Status_request->input('trangthai');
+    $status->save();
+
+    return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
+}
 }
 
