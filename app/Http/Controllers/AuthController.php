@@ -271,5 +271,6 @@ public function updatestatus(Request $Status_request){
 
     return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
 }
+
 }
 
