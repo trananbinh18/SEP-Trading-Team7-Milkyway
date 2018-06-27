@@ -173,7 +173,6 @@ function Chpass(){
         }
     }
     
-}
 
 //Return view Edit Information
 function inf(){
