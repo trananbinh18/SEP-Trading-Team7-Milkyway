@@ -81,7 +81,7 @@
                                     <div class="row">
                                     <!-- End col-md-6 -->
                                     <div class="col-md-5">
-                                        @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1)
+                                        @if(session()->get('typeuser')!= 1 && session()->get('typeuser')!= 3)
                                            <div class="title">
                                                     <h3>SỐ LƯỢNG</h3>
                                             </div>
@@ -98,13 +98,13 @@
                                 </div>
                                 <!-- End row -->
                                 <div class="action">
-                                    @if(session()->get('typeuser')==2)
+                                    @if(session()->get('typeuser')== 2)
                                         <button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button>
                                         <!-- <a class="link-v1 wish" title="Wishlist" href="#"><i class="icon icon-heart"></i></a>
                                         <a class="link-v1 chart" title="Compare" href="#"><i class="icon icon-magnifier"></i></a> -->
 
                                     @endif
-                                    @if(session()->get('typeuser')!=2 && session()->get('typeuser')!=3 && session()->get('typeuser')!=1)
+                                    @if(session()->get('typeuser')!= 2 && session()->get('typeuser')!= 3 && session()->get('typeuser')!= 1)
                                         <a href="{{route('signin')}}"><button class="link-v1 add-cart bg-brand" id="btnSub" title="Add to cart"><span>Thêm vào giỏ</span></button></a>
                                     @endif
                                     

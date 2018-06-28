@@ -277,6 +277,8 @@
     <script type="text/javascript" src="{!!url("resources/assets/js/jquery.mousewheel.min.js")!!}"></script>
     <script type="text/javascript" src="{!!url("resources/assets/js/price-range.js")!!}"></script>
     <script type="text/javascript" src="{!!url("resources/assets/js/mainjs.js")!!}"></script>
+    {{-- <!-- jQuery -->
+    <script type="text/javascript" src="{!!url("resources/assets/js/jquery.min.js")!!}"></script> --}}
     <script type="text/javascript">
       jQuery("#Slider1").slider({ 
         from: 0,

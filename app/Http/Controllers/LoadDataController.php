@@ -46,7 +46,7 @@ class LoadDataController extends Controller
 
 		$countHideproduct = count($productHide);
 
-		return view('ListproductApproved',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countHideproduct',$countHideproduct))->with('product',$product);
+		return view('ListproductApproved',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countHideproduct',$countHideproduct))->with('product',$product);	
 
 		}
 		return view('Error');

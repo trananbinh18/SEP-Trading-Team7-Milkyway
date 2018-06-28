@@ -98,14 +98,23 @@ class Controller extends BaseController
         return $newName;
     }
 
-    public function Message(){
-        $informationMessage = DB::table('nguoimua')->join('hoadon','nguoimua.MANM','=','nguoimua.MANM')->join('chitiethoadon','hoadon.MAHD','=','chitiethoadon.MAHD')->join('sanpham','chitiethoadon.MASP','=','sanpham.MASP')->select('MACTHD','TENNM','nguoimua.SDT','TENSP','SLUONG','THANHTIEN','nguoimua.TP','nguoimua.QUAN','nguoimua.PHUONG','DIACHI')->get();
-    }
     public function HistoryBuyProducts(){
         if(session()->get('typeuser') == 1){
             $history = DB::table('hoadon')->join('chitiethoadon','hoadon.MAHD','=','chitiethoadon.MAHD')->join('sanpham','chitiethoadon.MASP','=','sanpham.MASP')->select('TENSP','NLHD','SLUONG','DONGIA','THANHTIEN','TTHD')->where('chitiethoadon.MANB', session()->get('userid'))->whereIn('TTHD', [3,4])->get();
 
-            return view('HistoryBuyProducts')->with('history', $history);
+
+            $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countUnapprovedproduct = count($products); 
+
+            $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+            $countApproveproduct = count($product);
+
+            $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countHideproduct = count($productHide);   
+
+            return view('HistoryBuyProducts',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('history', $history);
         }else{
             return view('Error');
         }
