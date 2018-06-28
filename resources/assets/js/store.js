@@ -35,11 +35,25 @@ function slider_owl(slider_id, visible1, visible2, visible3, visible4, margin) {
     });
 }
 
+function getAbsolutePath() {
+    var loc = window.location;
+    var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+    return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
+    }
+
 function checkGiaCu(giacu){
     if(giacu==0){
         return "";
     }else{
-        return giacu;
+        return giacu+" VND";
+    }
+;}
+
+function checkUsertype(usertype,masp,pathname){
+    if(usertype!=2){
+        return "<a class='add-cart' href='"+pathname+"/Login' title='Add to cart'></a>";
+    }else{
+        return "<a class='add-cart' href='"+pathname+"/AddToCart/"+masp+"' title='Add to cart'></a>";
     }
 }
 
