@@ -12,6 +12,8 @@ use App\nhanvien;
 use App\hoadon;
 use App\chitiethoadon;
 use App\sanpham;
+use App\phuong;
+use App\quan;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;  
@@ -30,10 +32,17 @@ use \Crypt;
 class AuthController extends Controller
 {
 
-    function getSignUpBuyer(){
-      return view('SignUp');
+    public function getSignUpBuyer(){
+        return view('SignUp');
     }
-  
+    //Ajax ward and district
+    public function ward(Request $request)
+    {
+        if($request->ajax()){
+        $phuong = DB::table('phuong')->where('MAQUAN',$request->MAQUAN)->select('MAPHUONG','TENPHUONG')->get();
+        return response()->json($phuong);
+    }
+}
   public function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
   {
     $email = $SignUpBuyer_request->email;

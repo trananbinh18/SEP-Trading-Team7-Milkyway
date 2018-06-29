@@ -30,8 +30,6 @@ class CheckSignUpBuyerRequest extends FormRequest
         'number_house' => 'required|max:50',
         'email' => 'required|email|max:50',  
         'password'=> 'required|between:8,30',
-        'ward' => 'required|max:30',
-        'district' => 'required|max:20',
         'city' => 'required|max:20|regex:/[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u',
         ];
     }
@@ -48,10 +46,6 @@ class CheckSignUpBuyerRequest extends FormRequest
         'password.required' => 'Bạn chưa nhập mật khẩu', 
         'password.required' => 'Bạn chưa nhập mật khẩu' , 
         'password.between'=> 'Mật khẩu nên nhập từ 8 - 30 kí tự',
-        'ward.required' => 'Bạn chưa nhập phường',
-        'ward.max' => 'Bạn nhập quá độ dài cho phép',
-        'district.required' => 'Bạn chưa nhập quận',
-        'district.max' => 'Bạn nhập quá độ dài cho phép',
         'city.required' => 'Bạn chưa nhập thành phố',
         'city.max' => 'Bạn nhập quá độ dài cho phép',
         'city.regex' => 'Bạn nhập sai định dạng',
