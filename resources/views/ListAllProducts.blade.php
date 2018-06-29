@@ -92,6 +92,7 @@
 </div> 
 
 <!-- jQuery -->
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 <script src="resources/assets/js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -106,7 +107,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="resources/assets/js/startmin.js"></script>
-<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
+
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
