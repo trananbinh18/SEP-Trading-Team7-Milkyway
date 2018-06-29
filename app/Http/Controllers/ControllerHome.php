@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use Cart;
+use App\phuong;
+use App\quan;
 
 class ControllerHome extends Controller
 {
@@ -22,7 +24,8 @@ class ControllerHome extends Controller
         return view('SignIn');
     }
     function Register(){
-        return view('SignUp');
+        $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
+        return view('SignUp', compact('district', $district));
     }
     function Shipping(){
         return view('Shipping');

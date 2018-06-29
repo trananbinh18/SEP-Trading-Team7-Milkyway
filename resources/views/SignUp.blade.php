@@ -50,7 +50,7 @@
                     <div class="row">
                         <div class="center">
                             <h2>ĐĂNG KÝ</h2>
-                            <p>Cùng tạo tài khoản mua mua rau củ quả thượng hạng!</p>
+                            <p>Cùng tạo tài khoản mua rau củ quả thượng hạng!</p>
                         </div>
 
                         <form id="formbuyer" class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
@@ -117,19 +117,17 @@
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('ward'))
-                                            <span class="text-danger">{{ $errors->first('ward') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
+                                         <select class="form-control" id="ward" name="ward"></select>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('district'))
-                                            <span class="text-danger">{{ $errors->first('district') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
+                                         <select class="form-control" name="district">
+                                            @foreach($district as $row)
+                                                <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -256,8 +254,8 @@
                             <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
                             <div class="col-md-8">
                                 @if ($errors->has('number_house'))
-                                        <span class="text-danger">{{ $errors->first('number_house') }}</span>
-                                    @endif
+                                    <span class="text-danger">{{ $errors->first('number_house') }}</span>
+                                @endif
                                 <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                             </div>
                         </div>
@@ -265,20 +263,18 @@
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                             <div class="col-md-8">
-                                @if ($errors->has('ward'))
-                                        <span class="text-danger">{{ $errors->first('ward') }}</span>
-                                    @endif
-                                <input type="text" class="form-control" name="ward" id="inputaddress" placeholder="Nhập Phường xã" required>
+                                <select class="form-control" id="ward" name="ward"></select>
                             </div>
                         </div>
 
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
-                                @if ($errors->has('district'))
-                                        <span class="text-danger">{{ $errors->first('district') }}</span>
-                                    @endif
-                                <input type="text" class="form-control" name="district" id="inputaddress" placeholder="Nhập Quận Huyện" required>
+                                <select class="form-control" name="district">
+                                    @foreach($district as $row)
+                                        <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 
@@ -305,6 +301,29 @@
 </div>
 </div>
 <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
+<script type="text/javascript">
+var url = "{{ url('ward') }}";
+    $("select[name='district']").change(function(){
+        var MAQUAN = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: "json",
+            data: {
+                MAQUAN: MAQUAN,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='ward'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
 <script>
     function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;

@@ -27,8 +27,8 @@ class CheckRequest extends FormRequest
             //Check request validate of add product
         'cbCategory'=>'required',
         'tensanpham'=>'required|min:2|max:20',
-        'Soluong'=>'required|numeric|digits_between:1,100',
-        'Giasanpham'=>'required|numeric|digits_between:0,11',
+        'Soluong'=>'required|numeric|digits_between:1,3',
+        'Giasanpham'=>'required|numeric|digits_between:3,9',
         'cdDonvi'=>'required',
         'imagesSP'=>'required|mimes:jpeg,jpg,png',
         'imagesGCN'=>'required|mimes:jpeg,jpg,png',
@@ -43,7 +43,7 @@ class CheckRequest extends FormRequest
         'tensanpham.min'=>'Tên sản phẩm nhập quá ngắn',
         'tensanpham.max'=>'Tên sản phẩm nhập quá độ dài cho phép',
         'Soluong.required'=>'Bạn chưa nhập số lượng',
-        'Soluong.digits_between' => 'Số lượng nhập nên trong khoảng 1 - 100 kí tự',
+        'Soluong.digits_between' => 'Số lượng nên nhập trong khoảng 1 - 3 kí tự',
         'Soluong.numeric' => 'Số lượng phải nhập số',
         'cdDonvi.required'=>'Bạn chưa chọn đơn vị',
         'imagesSP.required'=>'Bạn chưa chọn ảnh sản phẩm',
@@ -55,7 +55,7 @@ class CheckRequest extends FormRequest
         'mieutasanpham.max'=>'Miêu tả sản phẩm phải từ 1 đến 200 ký tự',
         'Giasanpham.required' => 'Bạn chưa nhập giá',
         'Giasanpham.numeric' => 'Giá sản phẩm phải nhập số',
-        'Giasanpham.digits_between' => 'Giá sản phẩm nên nhập trong khoảng 0 - 11 kí tự',
+        'Giasanpham.digits_between' => 'Giá sản phẩm nên nhập trong khoảng 3 - 9 kí tự',
         ];
     }
 }

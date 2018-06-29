@@ -12,6 +12,8 @@ use App\nhanvien;
 use App\hoadon;
 use App\chitiethoadon;
 use App\sanpham;
+use App\phuong;
+use App\quan;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;  
@@ -30,11 +32,18 @@ use \Crypt;
 class AuthController extends Controller
 {
 
-    function getSignUpBuyer(){
-      return view('SignUp');
+    public function getSignUpBuyer(){
+        return view('SignUp');
     }
-  
-  function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
+    //Ajax ward and district
+    public function ward(Request $request)
+    {
+        if($request->ajax()){
+        $phuong = DB::table('phuong')->where('MAQUAN',$request->MAQUAN)->select('MAPHUONG','TENPHUONG')->get();
+        return response()->json($phuong);
+    }
+}
+  public function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
   {
     $email = $SignUpBuyer_request->email;
     if($email != "") {
@@ -90,11 +99,11 @@ class AuthController extends Controller
 //     }
 // }
 
-function getSignUpSeller(){
+public function getSignUpSeller(){
     return view('SignUp');
 }
 
-function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
+public function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
     $email = $SignUpSeller_request->email;
     if($email != "") {
         $ems = DB::table('nguoiban')->select('EMAIL')->where('EMAIL' , $email)->get();
@@ -125,7 +134,7 @@ function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request){
     }
 }
 }
-function resetPass(){
+public function resetPass(){
     if(session()->get('typeuser')==3){
         return view('ChangePassword_Employees');
     }else{
@@ -134,7 +143,7 @@ function resetPass(){
 }
 
 //return view ResetPassword for Buyer
-function Chpass(){
+public function Chpass(){
     //Check Session
     if(session()->get('typeuser') == 1){ 
     $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
@@ -158,7 +167,7 @@ function Chpass(){
 }
 
     
-    function ChangePassword(Request $PW_request){
+    public function ChangePassword(Request $PW_request){
         if($PW_request->new_password == $PW_request->confirm_password)
         {
             if($PW_request->input('current_password') != session()->get('password')){
@@ -187,7 +196,7 @@ function Chpass(){
     
 
 //Return view Edit Information
-function inf(){
+public function inf(){
     //Check session
     if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
     $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
@@ -209,7 +218,7 @@ function inf(){
         return view('Error');
     }   
 }
-function ChangeInfor(Request $Infor_request){
+public function ChangeInfor(Request $Infor_request){
     if(session()->get('typeuser') == 1){
         $user           = nguoiban::where('MANB',session()->get('userid'))->first();
         $user->TENNB    = $Infor_request->input('name');
@@ -248,8 +257,6 @@ function ChangeInfor(Request $Infor_request){
     }
 }
 
-
-
     public function editbuyer($id){
         $ngmua = nguoimua::find($id);
         if($ngmua == null){
@@ -258,7 +265,6 @@ function ChangeInfor(Request $Infor_request){
             return view('EditBuyer', compact($ngmua, 'ngmua'));
         }
     }
-
 
     public function updatebuyer(Request $Buyer_request){
         $ngmua = nguoimua::find($Buyer_request->input('MANM'));
@@ -307,6 +313,17 @@ public function updatestatus(Request $Status_request){
 
     return redirect()->back()->with('thanhcong','Bạn đã thay đổi thành công');
 }
-
+public function changeStatusforSeller($id){
+    $status = nguoiban::find($id);
+    $status->TTNB = 1 ;
+    $status->save();
+    return redirect()->route('Account_Seller')->with('thanhcong', 'Bạn đã thay đổi thành công');
+    }
+public function unapprovedProducts($id){
+    $sanpham = sanpham::find($id);
+    $sanpham->TRANGTHAI = 1 ;
+    $sanpham->save();
+    return redirect()->route('listprosale')->with('thanhcong','Bạn đã thay đổi trạng thái thành công'); 
+    }
 }
 
