@@ -21,12 +21,39 @@
             </div>
                 </div>
           
-                
+            {{-- approval box --}}
+
+            <div class="quickview-wrapper open" style="display: none">
+       <div onclick="hideQuickView()" class="overlay-bg"></div>
+       <div class="quick-modal show">
+          <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+          <div id="quickview-content">
+             <div class="woocommerce product product-details-content">
+              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+             	<p>Bạn có đồng ý sửa thông tin sản phẩm.</p>
+             	
+             	<div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>
+             	
+
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+
+            {{-- end approval box --}}    
                 
 
 
             <div class="col-md-8 control-infotproduct box-shadow">
-                <form class="form-horizontal" role="form" action="{{route('Editproductpost')}}" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" role="form" id="formEdit" action="{{route('Editproductpost')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="HINH" value="<?php echo "{$sanpham['HINH']}";?>">
                 <input type="hidden" name="GCN" value="<?php echo "{$sanpham['GCN']}";?>">
@@ -125,12 +152,13 @@
                     <div class="col-md-offset-2 col-md-10">
                     </div>
                   </div>
+                  </form>
                   <div class="form-group">
                     <div class="input-group">
                         <button class="button_search" id="dangsanpham" type="submit">Lưu chỉnh sửa</button>
                     </div>
                   </div>
-                </form>
+                
             </div>
        </div>
         
@@ -255,13 +283,24 @@
                           $("#giamoi").prop('disabled', false); 
                         else
                           $("#giamoi").prop('disabled', true); 
-              })
+              });
 
               $("#dangsanpham").click(function(){
-                   if($("#optgiamgia").is(':checked')==false)
-                    $("#giamoi").remove();
-              })
+                  
+                   $(".quickview-wrapper").show();
               });
+
+
+              $("#btnaccept").click(function(){
+                 if($("#optgiamgia").is(':checked')==false){
+                    $("#giamoi").remove();
+                 }
+                    $("#formEdit").submit();
+                 });
+
+              });
+
+
 
     </script>
 

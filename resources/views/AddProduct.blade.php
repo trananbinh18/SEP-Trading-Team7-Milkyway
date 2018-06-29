@@ -12,6 +12,30 @@
       </div>
     </div>
 </div>
+{{-- Confirm popup --}}
+      <div class="quickview-wrapper open" style="display: none">
+       <div onclick="hideQuickView()" class="overlay-bg"></div>
+       <div class="quick-modal show">
+          <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+          <div id="quickview-content">
+             <div class="woocommerce product product-details-content">
+              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+              <p>Bạn có đồng ý đăng sản phẩm này.</p>
+              
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>  
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
 <div class="container">
     <div class="row row-addproduct">
             <div class="col-md-3 box-shadow control-infotproduct">
@@ -40,7 +64,7 @@
                   </div>
                 @endif
 
-                <form class="form-horizontal" role="form" action="{{route('CreateProduct')}}" method="post" enctype="multipart/form-data">
+                <form id="formAdd" class="form-horizontal" role="form" action="{{route('CreateProduct')}}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Tên sản phẩm</label>
@@ -124,14 +148,31 @@
                     <div class="col-md-offset-2 col-md-10">
                     </div>
                   </div>
+                  </form>
                   <div class="form-group">
                     <div class="input-group">
-                        <button class="button_search" type="submit">Đăng sản phẩm</button>
+                        <button id="dangsanpham" class="button_search" type="submit">Đăng sản phẩm</button>
                     </div>
                   </div>
-                </form>
+                
             </div>
        </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+              $("#dangsanpham").click(function(){
+                   $(".quickview-wrapper").show();
+              });
+
+
+              $("#btnaccept").click(function(){
+                    $("#formAdd").submit();
+              });
+                 
+
+      });
+
+</script>
 <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 @endsection

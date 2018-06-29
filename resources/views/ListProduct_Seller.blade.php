@@ -24,6 +24,32 @@
             </aside>
           </div>
       </div>
+      {{-- Confirm popup --}}
+      <div class="quickview-wrapper open" style="display: none">
+       <div onclick="hideQuickView()" class="overlay-bg"></div>
+       <div class="quick-modal show">
+          <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+          <div id="quickview-content">
+             <div class="woocommerce product product-details-content">
+              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+              <p>Bạn có đồng ý ẩn sản phẩm.</p>
+              
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>
+              
+
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
       <div class="col-md-8 control-infotproduct box-shadow">
         @if(session()->get('status') == 1)
         <div class="col-md-12 table-product">
@@ -71,7 +97,7 @@
                         <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
                         <td class="center">
                           
-                          <a href="{{ url('QuickHideProduct',[$row->MASP]) }}">Ẩn<span aria-hidden="true"></span></a>
+                          <a class="linkAn" href="{{ url('QuickHideProduct',[$row->MASP]) }}">Ẩn<span aria-hidden="true"></span></a>
                           <span> | </span>
                           <a href="{{ url('Editproduct',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> 
                         </td>
@@ -115,11 +141,22 @@
   <!-- Page-Level Demo Scripts - Tables - Use for reference -->
   <script>
   $(document).ready(function() {
-    $('#dataTables-example').DataTable({
-      responsive: true
-      paging: false,
-      searching: false
+    // $('#dataTables-example').DataTable({
+    //   responsive: true
+    //   paging: false,
+    //   searching: false
+    // });
+
+    $(".linkAn").click(function(){
+      $(".quickview-wrapper").show();
+      var url = this.getAttribute('href');
+      $("#btnaccept").click(function(){
+        window.location.href = url;
+      });
+      return false;
     });
+
+      
   });
   </script>
 

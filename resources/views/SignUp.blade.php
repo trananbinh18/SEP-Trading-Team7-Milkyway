@@ -19,6 +19,30 @@
     <button class="tablink" onclick="openPage('Buyer', this, '#80b435')" id="defaultOpen">MUA</button>
 </div>
 <div id="Buyer" class="tabcontent">
+    {{-- Confirm popup --}}
+      <div class="quickview-wrapper buyerpopup open" style="display: none">
+       <div onclick="hideQuickViwrapperew()" class="overlay-bg"></div>
+       <div class="quick-modal show">
+          <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+          <div id="quickview-content">
+             <div class="woocommerce product product-details-content">
+              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+              <p>Bạn có đồng ý đăng ký tài khoản mua hàng bằng toàn bộ thông tin trên.</p>
+              
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnacceptbuyer" type="submit">Đồng ý</button>
+                    </div>
+              </div>  
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
    <div class="container container-ver2">
         <div class="page-seller">
             <div class="container container-ver2">
@@ -29,7 +53,7 @@
                             <p>Cùng tạo tài khoản mua mua rau củ quả thượng hạng!</p>
                         </div>
 
-                        <form class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
+                        <form id="formbuyer" class="form-horizontal"action="{{route('SignUpBuyer')}}" method="POST">
                              @if(session('thanhcong'))
                                 <div class="alert-success">
                                     {{session('thanhcong')}}
@@ -118,9 +142,10 @@
                                     </div>
                                 </div>
                             </div>
+                            </form>
                             <div class="col-md-12 center">
-                                <a href="#"><button type="submit" class="link-v1 rt">Đăng Ký</button></a>
-                            </div></form>
+                                <a href="#"><button id="submitbuyer" type="submit" class="link-v1 rt">Đăng Ký</button></a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +154,30 @@
 </div>
 <!-- End register buyer -->  
 <div id="Seller" class="tabcontent">
+    {{-- Confirm popup --}}
+      <div class="quickview-wrapper sellerpopup open" style="display: none">
+       <div onclick="hideQuickView()" class="overlay-bg"></div>
+       <div class="quick-modal show">
+          <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+          <div id="quickview-content">
+             <div class="woocommerce product product-details-content">
+              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+              <p>Bạn có đồng ý đăng ký tài khoản bán hàng bằng toàn bộ thông tin tài trên.</p>
+              
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnacceptseller" type="submit">Đồng ý</button>
+                    </div>
+              </div>  
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
    <div class="container container-ver2">
     <div class="page-seller">
         <div class="container container-ver2">
@@ -138,7 +187,7 @@
                         <h2>ĐĂNG KÍ BÁN HÀNG CÙNG WHOLE FOODS</h2>
                         <p>Chúng tôi sẻ đưa sản phẩm của bạn đi toàn thế giới</p>
                     </div>
-                    <form class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
+                    <form id="formseller" class="form-horizontal" action="{{route('SignUpSeller')}}" method="POST" enctype="multipart/form-data" role="form">
                          @if(session('thanhcong'))
                                 <div class="alert-success">
                                     {{session('thanhcong')}}
@@ -243,11 +292,12 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                     <div class="col-md-12 center">
 
-                        <a href="#"><button type="submit" class="link-v1 rt">Đăng Ký</button></a>
+                        <a href="#"><button id="submitseller" type="submit" class="link-v1 rt">Đăng Ký</button></a>
                     </div>
-                </form>
+                
             </div>
         </div>
     </div>
@@ -272,5 +322,21 @@
     }
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+    $(document).ready(function(){
+        $("#submitbuyer").click(function(){
+            $(".buyerpopup").show();
+            $("#btnacceptbuyer").click(function(){
+                $("#formbuyer").submit();
+            });
+        });
+
+        $("#submitseller").click(function(){
+            $(".sellerpopup").show();
+            $("#btnacceptseller").click(function(){
+                $("#formseller").submit();
+            });
+        });
+    });
+
 </script>
 @stop

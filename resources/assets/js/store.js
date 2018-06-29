@@ -121,13 +121,6 @@ function priceArray(data,max){
 $(document).ready(function() {
     
 
-    $("#btnthanhtoan").click(function() {
-        if($('#optmacdinh').is(':checked')){
-            $("#formMacDinh").submit();
-        }else{
-           $("#formDiaChi").submit();
-        }
-    });
     $("#btnSub").click(function() {
         $("#formSoLuong").submit();
     });

@@ -13,6 +13,32 @@ Kiểm tra
                     </div>
                 </div>
             </div>
+            {{-- Confirm popup --}}
+              <div class="quickview-wrapper open" style="display: none">
+               <div onclick="hideQuickView()" class="overlay-bg"></div>
+               <div class="quick-modal show">
+                  <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+                  <div id="quickview-content">
+                     <div class="woocommerce product product-details-content">
+                      <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+                      <p>Bạn có đồng ý thanh toán tất cả sản phẩm trong giỏ hàng.</p>
+                      
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>
+              
+
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
             <div class="container container-ver2 space-padding-tb-30">
                     <div class="row head-cart">
                         <div class="col-md-4 space-30">
@@ -197,7 +223,20 @@ Kiểm tra
 
     }
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+// document.getElementById("defaultOpen").click();
+
+    $(document).ready(function(){
+        $("#btnthanhtoan").click(function() {
+            $(".quickview-wrapper").show();
+            $("#btnaccept").click(function(){
+                if($('#optmacdinh').is(':checked')){
+                    $("#formMacDinh").submit();
+                }else{
+                   $("#formDiaChi").submit();
+                }
+            });
+        });
+    });
 </script>
 
 @stop
