@@ -8,7 +8,7 @@
           <div>
             <aside class="widget widget_product_categories" style="padding-left: 10px;">
               <div class="categories-home3">
-                 <h3>THÔNG TIN TÀI KHOẢN</h3>
+                 <h3>THÔNG TIN TÀI KHOẢN</h3> 
                  <i class="fa fa-chevron-circle-down icon-click"></i>
                 <ul class="menu-vertical">
                   <li><img src="resources/assets/images/icon-categories-1.png" alt=""><a href="{{route('listpro')}}" title="Sản phẩm chờ duyệt">Sản phẩm chờ duyệt</a><span class="badge">{{count($products)}}

@@ -117,7 +117,7 @@
                                           @if ($errors->has('district'))
                                             <span class="text-danger">{{ $errors->first('district') }}</span>
                                           @endif
-                                         <select class="form-control" name="district">
+                                         <select class="form-control" id="cbxquanbuyer" name="district">
                                                 <option disabled selected>--Chọn Quận--</option>
                                             @foreach($district as $row)
                                                 <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
@@ -131,7 +131,7 @@
                                        @if ($errors->has('ward'))
                                             <span class="text-danger">{{ $errors->first('ward') }}</span>
                                           @endif
-                                      <select class="form-control" id="ward" name="ward">
+                                      <select class="form-control" id="cbxphuongbuyer" name="ward">
                                         <option value="" disabled selected>--Chọn Phường--</option>
                                       </select>
                                     </div>
@@ -268,7 +268,7 @@
                                @if ($errors->has('district'))
                                             <span class="text-danger">{{ $errors->first('district') }}</span>
                                 @endif
-                                <select class="form-control" name="district">
+                                <select class="form-control" id="cbxquanseller" name="district">
                                   <option disabled selected>--Chọn Quận--</option>
                                     @foreach($district as $row)
                                         <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
@@ -282,7 +282,7 @@
                                @if ($errors->has('ward'))
                                             <span class="text-danger">{{ $errors->first('ward') }}</span>
                                           @endif
-                              <select class="form-control" id="ward" name="ward">
+                              <select class="form-control" id="cbxphuongseller" name="ward">
                                 <option value="" disabled selected>--Chọn Phường--</option>
                               </select>
                             </div>
@@ -310,29 +310,7 @@
 </div>
 </div>
 <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
-<script type="text/javascript">
-var url = "{{ url('ward') }}";
-    $("select[name='district']").change(function(){
-        var MAQUAN = $(this).val();
-        var token = $("input[name='_token']").val();
-        $.ajax({
-            url: url,
-            method: 'POST',
-            dataType: "json",
-            data: {
-                MAQUAN: MAQUAN,
-                _token: token
-            },
-            success: function(data) {
-                $("select[name='ward'").html('');
-                $.each(data, function(key, value){
-                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
-                    );
-                });
-            }
-        });
-    });
-</script>
+
 <script>
     function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
@@ -364,6 +342,24 @@ document.getElementById("defaultOpen").click();
                 $("#formseller").submit();
             });
         });
+
+        $("#cbxquanseller").change(function(){
+      		$.getJSON('ward/'+$(this).val(), function (data){
+        		$("#cbxphuongseller").empty();
+        		for(i=0;i<data.length;i++){
+          			$("#cbxphuongseller").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+        		}
+      		});
+    	});
+
+    	$("#cbxquanbuyer").change(function(){
+      		$.getJSON('ward/'+$(this).val(), function (data){
+        		$("#cbxphuongbuyer").empty();
+        		for(i=0;i<data.length;i++){
+          			$("#cbxphuongbuyer").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+        		}
+      		});
+    	});
     });
 
 </script>
