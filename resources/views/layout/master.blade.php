@@ -337,11 +337,11 @@
         
 
     });
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
+    // $(document).ready(function() {
+    //     $('#dataTables-example').DataTable({
+    //         responsive: true
+    //     });
+    // });
 
     </script>
     </body>    

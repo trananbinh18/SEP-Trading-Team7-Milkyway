@@ -204,5 +204,5 @@ Route::get('unapprovedProducts/{id}','AuthController@unapprovedProducts');
 //Thay đổi nhanh trạng thái tài khoản người bán
 Route::get('changeStatusforSeller/{id}','AuthController@changeStatusforSeller');
 //Ajax Quận và Phường
-Route::post('ward','AuthController@ward');
+Route::get('ward/{idquan}','AuthController@ward');
 

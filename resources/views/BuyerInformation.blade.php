@@ -69,7 +69,7 @@
        <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Quận</label>
         <div class="col-sm-9">
-          <select class="form-control" name="district">
+          <select class="form-control" name="district" id="cbxquan">
             @foreach($district as $row)
               <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
             @endforeach
@@ -79,8 +79,8 @@
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Phường</label>
         <div class="col-sm-9">
-          <select class="form-control" id="ward" name="ward">
-            <option value="" disabled selected>--Chọn Phường--</option>
+          <select class="form-control" id="cbxphuong" name="ward">
+            <option value="" disabled selected>--Tải Phường--</option>
           </select>
         </div>
       </div>
@@ -91,27 +91,23 @@
     </div>
   </div>
   <script type="text/javascript">
-  var url = "{{ url('ward') }}";
-    $("select[name='district']").change(function(){
-        var MAQUAN = $(this).val();
-        var token = $("input[name='_token']").val();
-        $.ajax({
-            url: url,
-            method: 'POST',
-            dataType: "json",
-            data: {
-                MAQUAN: MAQUAN,
-                _token: token
-            },
-            success: function(data) {
-                $("select[name='ward'").html('');
-                $.each(data, function(key, value){
-                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
-                    );
-                });
-            }
-        });
+  $(document).ready(function(){
+    $("#cbxquan").val({{session()->get('district')}});
+    $.getJSON('ward/'+{{session()->get('district')}}, function (data){
+      $("#cbxphuong").empty();
+      for(i=0;i<data.length;i++){
+        $("#cbxphuong").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+      }
     });
+    $("#cbxquan").change(function(){
+      $.getJSON('ward/'+$(this).val(), function (data){
+        $("#cbxphuong").empty();
+        for(i=0;i<data.length;i++){
+          $("#cbxphuong").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+        }
+      });
+    });
+  });
   </script>
   <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
   @endsection

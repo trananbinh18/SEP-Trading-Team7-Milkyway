@@ -48,8 +48,8 @@ class ControllerAccount extends Controller
                         session(['password' => Crypt::decrypt($user->MATKHAU)]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->PHUONG]);
-                        session(['district' => $user->QUAN]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
                         session(['city' => $user->TP]);
                         session(['status'=>$user->TTNB]);
                         return redirect()->route('listpro');
@@ -61,8 +61,8 @@ class ControllerAccount extends Controller
                         session(['password' => $user->MATKHAU]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->PHUONG]);
-                        session(['district' => $user->QUAN]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
                         session(['city' => $user->TP]);
                         return redirect()->route('homepage');
                     case 3:
@@ -72,8 +72,8 @@ class ControllerAccount extends Controller
                         session(['password' => $user->MATKHAU]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
-                        session(['ward' => $user->PHUONG]);
-                        session(['district' => $user->QUAN]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
                         session(['city' => $user->TP]);
                         return redirect()->route('homepage');    
                     default:

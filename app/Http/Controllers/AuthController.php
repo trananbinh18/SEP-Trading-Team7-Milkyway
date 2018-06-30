@@ -38,13 +38,11 @@ class AuthController extends Controller
         return view('SignUp');
     }
     //Ajax ward and district
-    public function ward(Request $request)
+    public function ward($idquan)
     {
-        if($request->ajax()){
-        $phuong = DB::table('phuong')->where('MAQUAN',$request->MAQUAN)->select('MAPHUONG','TENPHUONG')->get();
-        return response()->json($phuong);
+        $phuong = DB::table('phuong')->where('MAQUAN',$idquan)->get();
+        return $phuong;
     }
-}
   public function postSignUpBuyer(CheckSignUpBuyerRequest $SignUpBuyer_request)
   {
     $email = $SignUpBuyer_request->email;
