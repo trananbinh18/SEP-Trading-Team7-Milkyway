@@ -10,6 +10,8 @@ use App\sanpham;
 use App\nguoimua;
 use App\hoadon;
 use App\chitiethoadon;
+use App\phuong;
+use App\quan;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -171,9 +173,10 @@ class Controller extends BaseController
     //
     public function CheckoutCart()
     {
+        $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
         $content = Cart::content();
         $count = Cart::count();
-        return view('checkout',compact('content','count'));
+        return view('checkout',compact('content','count'),compact($district, 'district'));
     }
     // Thêm hóa đơn và chi tiết hóa đơn vào database
     public function postCheckout(CheckoutRequest $re){
@@ -189,8 +192,8 @@ class Controller extends BaseController
         $Bill->SOHD = $th;
         $Bill->SDT = $re->phone;
         $Bill->TP = $re->city;
-        $Bill->QUAN = $re->district;
-        $Bill->PHUONG = $re->ward;
+        $Bill->MAQUAN = $re->district;
+        $Bill->MAPHUONG = $re->ward;
         $Bill->DIACHI = $re->inputaddress;
         $Bill->TONGTIEN = 0;
 
