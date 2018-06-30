@@ -117,9 +117,9 @@ Kiểm tra
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Quận</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab" >Quận</label>
                                     <div class="col-md-8">
-                                        <select class="form-control" name="district">
+                                        <select class="form-control" name="district" style="margin: 10px 0px 10px 0px">
                                             @foreach($district as $row)
                                                 <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
                                             @endforeach
@@ -129,7 +129,7 @@ Kiểm tra
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường</label>
                                     <div class="col-md-8">
-                                       <select class="form-control" id="ward" name="ward">
+                                       <select class="form-control" id="ward" name="ward" style="margin: 10px 0px 10px 0px">
                                             <option value="" disabled selected>--Chọn Phường--</option>
                                         </select>
                                     </div>

@@ -31,6 +31,8 @@ class CheckSignUpSellerRequest extends FormRequest
         'email' => 'required|email|max:50',
         'password'=> 'required|between:8,30',
         'image' => 'required|mimes:jpeg,jpg,png',
+        'ward' => 'required',
+        'district' => 'required',
         ];
     }
     public function messages(){
@@ -51,6 +53,8 @@ class CheckSignUpSellerRequest extends FormRequest
         'email.max' => 'Bạn nhập quá độ dài cho phép',
         'image.required' => 'Bạn chưa chọn hình',
         'image.mimes' => 'Vui lòng nhập lại ảnh',
+        'ward.required' => 'Bạn chưa chọn phường',
+        'district.required' => 'Bạn chưa chọn quận',
         ];
     } 
 }

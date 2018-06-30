@@ -114,6 +114,9 @@
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                                     <div class="col-md-8">
+                                          @if ($errors->has('district'))
+                                            <span class="text-danger">{{ $errors->first('district') }}</span>
+                                          @endif
                                          <select class="form-control" name="district">
                                                 <option disabled selected>--Chọn Quận--</option>
                                             @foreach($district as $row)
@@ -125,6 +128,9 @@
                                 <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                                     <div class="col-md-8">
+                                       @if ($errors->has('ward'))
+                                            <span class="text-danger">{{ $errors->first('ward') }}</span>
+                                          @endif
                                       <select class="form-control" id="ward" name="ward">
                                         <option value="" disabled selected>--Chọn Phường--</option>
                                       </select>
@@ -259,6 +265,9 @@
                          <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
+                               @if ($errors->has('district'))
+                                            <span class="text-danger">{{ $errors->first('district') }}</span>
+                                @endif
                                 <select class="form-control" name="district">
                                   <option disabled selected>--Chọn Quận--</option>
                                     @foreach($district as $row)
@@ -270,6 +279,9 @@
                          <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                             <div class="col-md-8">
+                               @if ($errors->has('ward'))
+                                            <span class="text-danger">{{ $errors->first('ward') }}</span>
+                                          @endif
                               <select class="form-control" id="ward" name="ward">
                                 <option value="" disabled selected>--Chọn Phường--</option>
                               </select>

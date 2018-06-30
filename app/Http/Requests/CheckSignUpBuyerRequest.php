@@ -30,6 +30,8 @@ class CheckSignUpBuyerRequest extends FormRequest
         'number_house' => 'required|max:50',
         'email' => 'required|email|max:50',  
         'password'=> 'required|between:8,30',
+        'ward' => 'required',
+        'district' => 'required',
         ];
     }
     public function messages(){
@@ -48,6 +50,8 @@ class CheckSignUpBuyerRequest extends FormRequest
         'email.required' => 'Bạn chưa nhập email',
         'email.email' => 'Bạn nhập sai định dạng email',
         'email.max' => 'Bạn nhập quá độ dài cho phép',
+        'ward.required' => 'Bạn chưa chọn phường',
+        'district.required' => 'Bạn chưa chọn quận',
         ];
     }
 }
