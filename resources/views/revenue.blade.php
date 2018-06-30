@@ -114,7 +114,7 @@ $(document).ready(function() {
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Tổng Doanh Thu',
+                    labelString: 'VNĐ',
                     fontSize: 14,
                     padding:6
                 }
@@ -172,7 +172,7 @@ $.getJSON('SalerevenueDatathang/'+userid, function (data){
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Tổng Doanh Thu',
+                    labelString: 'VNĐ',
                     fontSize: 14,
                     padding:6
                 }
@@ -226,7 +226,7 @@ $.getJSON('SalerevenueDatathang/'+userid, function (data){
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Tổng Doanh Thu',
+                    labelString: 'VNĐ',
                     fontSize: 14,
                     padding:6
                 }
@@ -280,7 +280,7 @@ $.getJSON('SalerevenueDatathang/'+userid, function (data){
             yAxes: [{
                 scaleLabel: {
                     display: true,
-                    labelString: 'Tổng Doanh Thu',
+                    labelString: 'VNĐ',
                     fontSize: 14,
                     padding:6
                 }

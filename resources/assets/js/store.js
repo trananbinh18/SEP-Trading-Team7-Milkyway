@@ -49,6 +49,7 @@ function checkGiaCu(giacu){
     }
 ;}
 
+
 function checkUsertype(usertype,masp,pathname){
     if(usertype!=2){
         return "<a class='add-cart' href='"+pathname+"/Login' title='Add to cart'></a>";

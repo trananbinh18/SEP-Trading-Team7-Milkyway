@@ -16,8 +16,8 @@ class ControllerSanPham extends Controller
  
    //
     public function productdetail($id){
-        $sanpham = sanpham::find($id);
-        $lssanpham = sanpham::all();
+        $sanpham = sanpham::where('TRANGTHAI','=',1)->find($id);
+        $lssanpham = sanpham::where('TRANGTHAI','=',1)->get();
         if($sanpham == null){
             return redirect()->route('homepage');
         }else{
@@ -100,12 +100,12 @@ class ControllerSanPham extends Controller
 
     public function catalog(Request $request){
         if($request->query('id')==null){
-            $sanpham = sanpham::paginate(16);
+            $sanpham = sanpham::where('TRANGTHAI','=',1)->paginate(16);
         }else{
             if($request->query('id')==0){
-                $sanpham = sanpham::where([['GIACU', '>','GIA'],['GIACU', '<>','0'],])->paginate(16);
+                $sanpham = sanpham::where([['GIACU', '>','GIA'],['GIACU', '<>','0'],['TRANGTHAI','=',1]])->paginate(16);
             }else{
-                $sanpham = sanpham::where('MALOAISP', '=', $request->query('id'))->paginate(16);
+                $sanpham = sanpham::where('MALOAISP', '=', $request->query('id'))->where('TRANGTHAI','=',1)->paginate(16);
             }
         }
         return view('catalog_sidebar',compact($sanpham,'sanpham'));
@@ -115,7 +115,7 @@ class ControllerSanPham extends Controller
     public function productfilter($dm,$sx){
         $dm = (int)$dm;
         if($dm!=0){
-            $sanpham = sanpham::where('MALOAISP',$dm);
+            $sanpham = sanpham::where('MALOAISP',$dm)->where('TRANGTHAI','=',1);
             if($sx=="ct"){
                 $sanpham = $sanpham->orderBy('GIA','desc');
                 }else if($sx=="tc"){
@@ -125,11 +125,11 @@ class ControllerSanPham extends Controller
                 }
         }else{
             if($sx=="ct"){
-                $sanpham = sanpham::orderBy('GIA','desc');
+                $sanpham = sanpham::where('TRANGTHAI','=',1)->orderBy('GIA','desc');
                 }else if($sx=="tc"){
-                $sanpham = sanpham::orderBy('GIA');
+                $sanpham = sanpham::where('TRANGTHAI','=',1)->orderBy('GIA');
                 }else{
-                $sanpham = sanpham::orderBy('NGAYDANG','desc');
+                $sanpham = sanpham::where('TRANGTHAI','=',1)->orderBy('NGAYDANG','desc');
                 }
         }
         $sanpham = $sanpham->get()->toJson();
