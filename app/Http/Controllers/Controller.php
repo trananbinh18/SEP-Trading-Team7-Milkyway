@@ -98,7 +98,7 @@ class Controller extends BaseController
         if(is_null($Search_request->Timkiem)){
             return view('Search')->with('sProduct',0);
         }
-        $Search_product = DB::table('sanpham')->select('masp','maloaisp','tensp','gia','giacu','donvi','hinh')->where('tensp','like','%'.$Search_request->Timkiem.'%')->get();
+        $Search_product = DB::table('sanpham')->select('masp','maloaisp','tensp','gia','giacu','donvi','hinh')->where('tensp','like','%'.$Search_request->Timkiem.'%')->whereIn('TRANGTHAI', [1])->get();
         return view('Search')->with('sProduct',$Search_product);
     }
     public function renameImage($oldName){
@@ -164,7 +164,7 @@ class Controller extends BaseController
         $Productbuy = sanpham::find($re->input("id"));
         Cart::add(array('id'=>$Productbuy->MASP,'name'=>$Productbuy->TENSP,'price'=>$Productbuy->GIA,'qty'=>$re->input("quan"),'options'=>array('unit'=>$Productbuy->DONVI,'img'=>$Productbuy->HINH)));
         $content = Cart::content();
-        return redirect()->route('shopping');
+        return redirect()->back();
     }
     public function Cart(){
         $content = Cart::content();

@@ -228,9 +228,9 @@
                                             <img class="secondary_image" src="{!!url("resources/assets/images/products/{$sanpham1['HINH']}") !!}" alt=""/>
                                         </a>
                                         <div class="action">
-                                            <a class="add-cart" href="#" title="Add to cart"></a>
-                                            <a class="wish" href="#" title="Wishlist"></a>
-                                            <a class="zoom" href="#" title="Quick view"></a>
+                                            <a class="add-cart" href="{{url('AddToCart',[$sanpham1['MASP']])}}" title="Add to cart"></a>
+                                           {{--  <a class="wish" href="#" title="Wishlist"></a>
+                                            <a class="zoom" href="#" title="Quick view"></a> --}}
                                         </div>
                                         <!-- End action -->
                                     </div>

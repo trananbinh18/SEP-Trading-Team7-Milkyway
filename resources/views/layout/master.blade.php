@@ -163,9 +163,17 @@
                                   <ul class="menu-level-1">
                                     <li class="level2"><a href="#">Thực phẩm tươi sạch</a>
                                         <ul class="menu-level-2">
-                                            <?php $cate = DB::table('loaisanpham')->select('tenloaisp')->get(); ?>
+                                            <?php $cate = DB::table('loaisanpham')->select('tenloaisp','MALOAISP')->get(); ?>
                                             @foreach($cate as $value)
-                                                <li class="level3"><a href="#" title="Series"><?php echo $value->tenloaisp; ?></a></li>
+                                                @if($value->MALOAISP == 4)
+                                                    <li class="level3"><a href="{{url('catalog?id=4')}}" title="Series"><?php echo $value->tenloaisp; ?></a></li>
+                                                @endif()
+                                                @if($value->MALOAISP == 5)
+                                                    <li class="level3"><a href="{{url('catalog?id=5')}}" title="Series"><?php echo $value->tenloaisp; ?></a></li>
+                                                @endif
+                                                @if($value->MALOAISP == 6)
+                                                    <li class="level3"><a href="{{url('catalog?id=6')}}" title="Series"><?php echo $value->tenloaisp; ?></a></li>
+                                                @endif
                                             @endforeach
                                         </ul>
                                     </li>
