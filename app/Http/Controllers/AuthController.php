@@ -168,7 +168,6 @@ public function Chpass(){
     }
 }
 
-    
     public function ChangePassword(Request $PW_request){
         if($PW_request->new_password == $PW_request->confirm_password)
         {
@@ -190,7 +189,6 @@ public function Chpass(){
                 $pass->save();
                 return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }
-
         }else{
             return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
         }
@@ -223,35 +221,7 @@ public function inf(){
         return view('Error');
     }   
 }
-public function ChangeSellerInfor(CheckUpdateSellerInfor $Infor_request){
-    if(session()->get('typeuser') == 1){
-        $user           = nguoiban::where('MANB',session()->get('userid'))->first();
-        $user->TENNB    = $Infor_request->name;
-        $user->SDT      = $Infor_request->phone;
-        $user->SONHA    = $Infor_request->number_house;
-        $user->MAPHUONG   = $Infor_request->ward;
-        $user->MAQUAN     = $Infor_request->district;
-        $user->TP       =   'Hồ Chí Minh';
-        $user->save();
-
-        $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
-
-        $countUnapprovedproduct = count($products);
-
-        $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
-
-        $countApproveproduct = count($product);
-
-        $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
-
-        $countHideproduct = count($productHide);
-
-        return redirect('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('thanhcong', 'Cập nhật thông tin thành công');
-        }else{
-            return view('Error');
-        }
-    }
-    public function ChangeBuyerInfor(Request $Infor_request){
+    public function ChangeBuyerInfor(CheckSignUpBuyerRequest $Infor_request){
         if(session()->get('typeuser') == 2){
             $user           = nguoimua::where('MANM',session()->get('userid'))->first();
             $user->TENNM    = $Infor_request->name;
@@ -267,7 +237,35 @@ public function ChangeSellerInfor(CheckUpdateSellerInfor $Infor_request){
             return view('Error');
         }
     }
+    public function ChangeSellerInfor(CheckUpdateSellerInfor $Infor_request){
+        //Check Session
+         if(session()->get('typeuser') == 1){
+            $user           = nguoiban::where('MANB',session()->get('userid'))->first();
+            $user->TENNB    = $Infor_request->name;
+            $user->SDT      = $Infor_request->phone;
+            $user->SONHA    = $Infor_request->number_house;
+            $user->MAPHUONG   = $Infor_request->ward;
+            $user->MAQUAN     = $Infor_request->district;
+            $user->TP       =   'Hồ Chí Minh';
+            $user->save();
 
+            $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countUnapprovedproduct = count($products);
+
+            $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countApproveproduct = count($product);
+
+            $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countHideproduct = count($productHide);
+
+            return redirect('SellerInformation')->with('thanhcong','Cập nhật thông tin thành công');
+         }else{
+            return view('Error');
+         }
+    }
     // public function editbuyer($id){
     //     $ngmua = nguoimua::find($id);
     //     if($ngmua == null){

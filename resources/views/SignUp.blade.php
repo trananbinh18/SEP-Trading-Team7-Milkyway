@@ -106,15 +106,6 @@
                             <!--end cột trái đăng kí ng bán-->
                             <div class="col-md-6 space-50">
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
-                                    <div class="col-md-8">
-                                         @if ($errors->has('number_house'))
-                                            <span class="text-danger">{{ $errors->first('number_house') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
-                                    </div>
-                                </div>
-                                <div class="form-group signupseller">
                                     <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" id="inputEmail3" placeholder="Hồ Chí Minh" name="city" disabled>
@@ -124,6 +115,7 @@
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                                     <div class="col-md-8">
                                          <select class="form-control" name="district">
+                                                <option disabled selected>--Chọn Quận--</option>
                                             @foreach($district as $row)
                                                 <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
                                             @endforeach
@@ -136,6 +128,15 @@
                                       <select class="form-control" id="ward" name="ward">
                                         <option value="" disabled selected>--Chọn Phường--</option>
                                       </select>
+                                    </div>
+                                </div>
+                                <div class="form-group signupseller">
+                                    <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
+                                    <div class="col-md-8">
+                                         @if ($errors->has('number_house'))
+                                            <span class="text-danger">{{ $errors->first('number_house') }}</span>
+                                        @endif
+                                        <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                                     </div>
                                 </div>
                             </div>
@@ -248,18 +249,7 @@
                                 </div>
                             </div>
                     </div> <!--end cột trái đăng kí ng bán-->
-                    <div class="col-md-6 space-50">
-                        <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
-                            <div class="col-md-8">
-                                @if ($errors->has('number_house'))
-                                    <span class="text-danger">{{ $errors->first('number_house') }}</span>
-                                @endif
-                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
-                            </div>
-                        </div>
-
-                       
+                    <div class="col-md-6 space-50"> 
                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                             <div class="col-md-8">
@@ -270,6 +260,7 @@
                             <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="district">
+                                  <option disabled selected>--Chọn Quận--</option>
                                     @foreach($district as $row)
                                         <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
                                     @endforeach
@@ -282,6 +273,15 @@
                               <select class="form-control" id="ward" name="ward">
                                 <option value="" disabled selected>--Chọn Phường--</option>
                               </select>
+                            </div>
+                        </div>
+                        <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Địa chỉ</label>
+                            <div class="col-md-8">
+                                @if ($errors->has('number_house'))
+                                    <span class="text-danger">{{ $errors->first('number_house') }}</span>
+                                @endif
+                                <input type="text" class="form-control" name="number_house" id="inputaddress" placeholder="Nhập địa chỉ" required>
                             </div>
                         </div>
                     </div>

@@ -157,9 +157,9 @@ Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@Cha
 //Redirect view Buyer Change Information
 Route::get('BuyerInformation',['as'=>'Buyer_Infor', 'uses'=> 'AuthController@inf']);
 //Handle Change Infor for Seller
-Route::post('changeSellerInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeSellerInfor']);
+Route::post('changeSellerInfor',['as'=>'changeSellerInfor','uses'=>'AuthController@ChangeSellerInfor']);
 //Handle Change Infor for Buyer
-Route::post('changeBuyerInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeBuyerInfor']);
+Route::post('changeBuyerInfor',['as'=>'changeBuyerInfor','uses'=>'AuthController@ChangeBuyerInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
 Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);

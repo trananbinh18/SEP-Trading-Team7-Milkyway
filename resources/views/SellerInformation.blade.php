@@ -30,7 +30,7 @@
       </div>
       @endif
 
-      <form class="form-horizontal" action="{{route('changeInfor')}}" role="form" method="POST">
+      <form class="form-horizontal" action="{{route('changeSellerInfor')}}" role="form" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="center">
           <h2>THÔNG TIN TÀI KHOẢN</h2>
