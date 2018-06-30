@@ -119,19 +119,19 @@ Kiểm tra
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Quận</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('district'))
-                                        <span class="text-danger">{{ $errors->first('district') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="district"  placeholder="Nhập quận" required>
+                                        <select class="form-control" name="district">
+                                            @foreach($district as $row)
+                                                <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('ward'))
-                                        <span class="text-danger">{{ $errors->first('ward') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="ward"  placeholder="Nhập phường" required>
+                                       <select class="form-control" id="ward" name="ward">
+                                            <option value="" disabled selected>--Chọn Phường--</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
@@ -238,5 +238,27 @@ Kiểm tra
         });
     });
 </script>
-
+<script type="text/javascript">
+var url = "{{ url('ward') }}";
+    $("select[name='district']").change(function(){
+        var MAQUAN = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: "json",
+            data: {
+                MAQUAN: MAQUAN,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='ward'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
+                    );
+                });
+            }
+        });
+    });
+</script>
 @stop

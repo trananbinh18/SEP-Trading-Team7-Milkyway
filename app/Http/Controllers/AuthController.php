@@ -26,6 +26,8 @@ use Illuminate\Support\MessageBag;
 
 use App\Http\Requests\CheckSignUpBuyerRequest;
 use App\Http\Requests\CheckSignUpSellerRequest;
+use App\Http\Requests\CheckUpdateBuyerInfor;
+use App\Http\Requests\CheckUpdateSellerInfor;
 use \Crypt;
 
 
@@ -50,7 +52,7 @@ class AuthController extends Controller
         $em = DB::table('nguoimua')->select('EMAIL')->where('EMAIL' , $email)->get();
         if( count($em) >= 1 )
         {
-            return redirect()->back()->with('thongbao', 'Email nhập bị trùng');
+            return redirect()->back()->with('thongbao','Email nhập bị trùng');
          //$error = 'email error';
         }else{
             $user           = new nguoimua();
@@ -59,7 +61,7 @@ class AuthController extends Controller
             $user->SONHA    = $SignUpBuyer_request->number_house;
             $user->MAPHUONG   = $SignUpBuyer_request->ward;
             $user->MAQUAN     = $SignUpBuyer_request->district;
-            $user->TP       = $SignUpBuyer_request->city;
+            $user->TP       = 'Hồ Chí Minh';
             $user->EMAIL    = $SignUpBuyer_request->email;
 
             //$user->MATKHAU  = Hash::make($SignUpBuyer_request->password);
@@ -119,7 +121,7 @@ public function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request)
         $users->SONHA   = $SignUpSeller_request->number_house;
         $users->MAPHUONG  = $SignUpSeller_request->ward;
         $users->MAQUAN    = $SignUpSeller_request->district;
-        $users->TP      = $SignUpSeller_request->city;
+        $users->TP      = 'Hồ Chí Minh';
         $users->EMAIL   = $SignUpSeller_request->email;
 
         //$users->MATKHAU = Hash::make($SignUpSeller_request->password);
@@ -131,8 +133,8 @@ public function postSignUpSeller(CheckSignUpSellerRequest $SignUpSeller_request)
         $users->save();
 
         return redirect()->back()->with('thanhcong','Chúc mừng bạn đã đăng kí thành công');
+        }
     }
-}
 }
 public function resetPass(){
     if(session()->get('typeuser')==3){
@@ -197,8 +199,11 @@ public function Chpass(){
 
 //Return view Edit Information
 public function inf(){
+    //Load quận lên form sửa thông tin tài khoản
+    $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
     //Check session
     if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
+    $distr = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
     $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
 
         $countUnapprovedproduct = count($products);
@@ -211,22 +216,22 @@ public function inf(){
 
         $countHideproduct = count($productHide);
 
-        return view('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct);
+        return view('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('distr', $distr);
     }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
-        return view('BuyerInformation');
+        return view('BuyerInformation',compact('district',$district));
     }else{
         return view('Error');
     }   
 }
-public function ChangeInfor(Request $Infor_request){
+public function ChangeSellerInfor(CheckUpdateSellerInfor $Infor_request){
     if(session()->get('typeuser') == 1){
         $user           = nguoiban::where('MANB',session()->get('userid'))->first();
-        $user->TENNB    = $Infor_request->input('name');
-        $user->SDT      = $Infor_request->input('phone');
-        $user->SONHA    = $Infor_request->input('number_house');
-        $user->PHUONG   = $Infor_request->input('ward');
-        $user->QUAN     = $Infor_request->input('district');
-        $user->TP       = $Infor_request->input('city');
+        $user->TENNB    = $Infor_request->name;
+        $user->SDT      = $Infor_request->phone;
+        $user->SONHA    = $Infor_request->number_house;
+        $user->MAPHUONG   = $Infor_request->ward;
+        $user->MAQUAN     = $Infor_request->district;
+        $user->TP       =   'Hồ Chí Minh';
         $user->save();
 
         $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
@@ -242,43 +247,49 @@ public function ChangeInfor(Request $Infor_request){
         $countHideproduct = count($productHide);
 
         return redirect('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('thanhcong', 'Cập nhật thông tin thành công');
-    }else if(session()->get('typeuser') == 2){
-        $user           = nguoimua::where('MANM',session()->get('userid'))->first();
-        $user->TENNM    = $Infor_request->input('name');
-        $user->SDT      = $Infor_request->input('phone');
-        $user->SONHA    = $Infor_request->input('number_house');
-        $user->PHUONG   = $Infor_request->input('ward');
-        $user->QUAN     = $Infor_request->input('district');
-        $user->TP       = $Infor_request->input('city');
-        $user->save();
-        return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
-    }else{
-        return view('Error');
-    }
-}
-
-    public function editbuyer($id){
-        $ngmua = nguoimua::find($id);
-        if($ngmua == null){
-            return redirect('BuyerAccount');
         }else{
-            return view('EditBuyer', compact($ngmua, 'ngmua'));
+            return view('Error');
+        }
+    }
+    public function ChangeBuyerInfor(Request $Infor_request){
+        if(session()->get('typeuser') == 2){
+            $user           = nguoimua::where('MANM',session()->get('userid'))->first();
+            $user->TENNM    = $Infor_request->name;
+            $user->SDT      = $Infor_request->phone;
+            $user->SONHA    = $Infor_request->number_house;
+            $user->MAPHUONG   = $Infor_request->ward;
+            $user->MAQUAN     = $Infor_request->district;
+            $user->TP       = 'Hồ Chí Minh';
+            $user->save();
+
+            return redirect('BuyerInformation')->with('thanhcong', 'Cập nhật thông tin thành công');
+        }else{
+            return view('Error');
         }
     }
 
-    public function updatebuyer(Request $Buyer_request){
-        $ngmua = nguoimua::find($Buyer_request->input('MANM'));
+    // public function editbuyer($id){
+    //     $ngmua = nguoimua::find($id);
+    //     if($ngmua == null){
+    //         return redirect('BuyerAccount');
+    //     }else{
+    //         return view('EditBuyer', compact($ngmua, 'ngmua'));
+    //     }
+    // }
 
-        $ngmua->TENNM   = $Buyer_request->input('name'); 
-        $ngmua->SDT     = $Buyer_request->input('phone');
-        $ngmua->SONHA   = $Buyer_request->input('number_house');
-        $ngmua->PHUONG  = $Buyer_request->input('ward');
-        $ngmua->QUAN    = $Buyer_request->input('district');
-        $ngmua->TP      = $Buyer_request->input('city');
+    // public function updatebuyer(Request $Buyer_request){
+    //     $ngmua = nguoimua::find($Buyer_request->input('MANM'));
 
-        $ngmua->save();
-        return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
-    }
+    //     $ngmua->TENNM   = $Buyer_request->input('name'); 
+    //     $ngmua->SDT     = $Buyer_request->input('phone');
+    //     $ngmua->SONHA   = $Buyer_request->input('number_house');
+    //     $ngmua->PHUONG  = $Buyer_request->input('ward');
+    //     $ngmua->QUAN    = $Buyer_request->input('district');
+    //     $ngmua->TP      = $Buyer_request->input('city');
+
+    //     $ngmua->save();
+    //     return redirect()->back()->with('thanhcong','Bạn đã cập nhật thành công');
+    // }
 
 public function editseller($id){
     $ngban = nguoiban::find($id);

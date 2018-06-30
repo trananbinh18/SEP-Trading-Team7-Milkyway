@@ -36,37 +36,52 @@
       <div class="form-group signupseller">
         <label for="inputEmail3" class="col-sm-3 control-lab">Họ và tên</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và tên" name="name" value="{{session()->get('name')}}" required>
+          @if ($errors->has('name'))
+            <span class="text-danger">{{ $errors->first('name') }}</span>
+          @endif
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Họ và tên" name="name" value="{{session()->get('name')}}">
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Số điện thoại</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Số điện thoại" name="phone" value="{{session()->get('phone')}}" required >
+          @if ($errors->has('phone'))
+            <span class="text-danger">{{ $errors->first('phone') }}</span>
+          @endif
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Số điện thoại" name="phone" value="{{session()->get('phone')}}">
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Địa chỉ</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Địa chỉ" name="number_house" value="{{session()->get('address')}}" required>
-        </div>
-      </div>
-      <div class="form-group signupseller">
-        <label for="inputpass" class="col-sm-3 control-lab">Phường</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Phường" name="ward" value="{{session()->get('ward')}}" required>
-        </div>
-      </div>
-      <div class="form-group signupseller">
-        <label for="inputpass" class="col-sm-3 control-lab">Quận</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Quận" name="district" value="{{session()->get('district')}}" required>
+          @if ($errors->has('number_house'))
+            <span class="text-danger">{{ $errors->first('number_house') }}</span>
+          @endif
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Địa chỉ" name="number_house" value="{{session()->get('address')}}">
         </div>
       </div>
       <div class="form-group signupseller">
         <label for="inputpass" class="col-sm-3 control-lab">Thành phố</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="Thành phố" name="city" value="{{session()->get('city')}}" required>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Hồ Chí Minh" name="city" disabled>
+        </div>
+      </div>
+       <div class="form-group signupseller">
+        <label for="inputpass" class="col-sm-3 control-lab">Quận</label>
+        <div class="col-sm-9">
+          <select class="form-control" name="district">
+            @foreach($district as $row)
+              <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
+            @endforeach
+          </select>
+        </div>
+      </div>
+      <div class="form-group signupseller">
+        <label for="inputpass" class="col-sm-3 control-lab">Phường</label>
+        <div class="col-sm-9">
+          <select class="form-control" id="ward" name="ward">
+            <option value="" disabled selected>--Chọn Phường--</option>
+          </select>
         </div>
       </div>
       <div class="col-md-12 center">
@@ -75,5 +90,28 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  var url = "{{ url('ward') }}";
+    $("select[name='district']").change(function(){
+        var MAQUAN = $(this).val();
+        var token = $("input[name='_token']").val();
+        $.ajax({
+            url: url,
+            method: 'POST',
+            dataType: "json",
+            data: {
+                MAQUAN: MAQUAN,
+                _token: token
+            },
+            success: function(data) {
+                $("select[name='ward'").html('');
+                $.each(data, function(key, value){
+                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
+                    );
+                });
+            }
+        });
+    });
+  </script>
   <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
   @endsection

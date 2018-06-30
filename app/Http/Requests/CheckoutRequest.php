@@ -27,7 +27,6 @@ class CheckoutRequest extends FormRequest
         'phone'=> 'required|max:20',
         'ward' => 'required|max:30',
         'district' => 'required|max:20',
-        'city' => 'required|max:20',
         'inputaddress' => 'required|max:50'
         ];
     }
@@ -39,8 +38,6 @@ class CheckoutRequest extends FormRequest
             'ward.max' => 'Bạn nhập quá độ dài cho phép',
             'district.required' => 'Bạn chưa nhập quận',
             'district.max' => 'Bạn nhập quá độ dài cho phép',
-            'city.required' => 'Bạn chưa nhập thành phố',
-            'city.max' => 'Bạn nhập quá độ dài cho phép',
             'inputaddress.required' => 'Bạn chưa nhập địa chỉ',
             'inputaddress.max' => 'Bạn nhập quá độ dài cho phép' 
         ];

@@ -116,7 +116,7 @@ Route::get('Search',['as'=>'search','uses'=>'Controller@SearchProduct']);
 Route::get('SearchResult',function(){
 	return view('Search');
 });
-Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sellerChangeInfomation']);
+// Route::get('ChangeInfomation',['as'=>'sellerChangeInfo','uses'=>'Controller@sellerChangeInfomation']);
 Route::get('Test','Controller@Test');
 //Trả về dữ liệu sản phẩm chưa duyệt của người bán
 Route::get('Listproduct',['as'=>'listpro','uses'=>'LoadDataController@index']);
@@ -156,8 +156,10 @@ Route::post('changePassword',['as'=>'changePassword','uses'=>'AuthController@Cha
 
 //Redirect view Buyer Change Information
 Route::get('BuyerInformation',['as'=>'Buyer_Infor', 'uses'=> 'AuthController@inf']);
-//Handle Change Infor for Buyer and Seller
-Route::post('changeInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeInfor']);
+//Handle Change Infor for Seller
+Route::post('changeSellerInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeSellerInfor']);
+//Handle Change Infor for Buyer
+Route::post('changeBuyerInfor',['as'=>'changeInfor','uses'=>'AuthController@ChangeBuyerInfor']);
 
 //Trả về toàn bộ sản phẩm trong database lên view
 Route::get('Products', ['as' => 'listprosale', 'uses'=> 'LoadDataController@loadListProduct_Sale']);

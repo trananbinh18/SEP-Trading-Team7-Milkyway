@@ -115,9 +115,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
-                                         <select class="form-control" id="ward" name="ward"></select>
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Hồ Chí Minh" name="city" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
@@ -131,12 +131,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group signupseller">
-                                    <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
+                                    <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('city'))
-                                            <span class="text-danger">{{ $errors->first('city') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
+                                      <select class="form-control" id="ward" name="ward">
+                                        <option value="" disabled selected>--Chọn Phường--</option>
+                                      </select>
                                     </div>
                                 </div>
                             </div>
@@ -260,14 +259,14 @@
                             </div>
                         </div>
 
+                       
                         <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
+                            <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                             <div class="col-md-8">
-                                <select class="form-control" id="ward" name="ward"></select>
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Hồ Chí Minh" name="city" disabled>
                             </div>
                         </div>
-
-                        <div class="form-group signupseller">
+                         <div class="form-group signupseller">
                             <label for="inputaddress" class="col-md-4 control-lab">Quận/Huyện</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="district">
@@ -277,14 +276,12 @@
                                 </select>
                             </div>
                         </div>
-
-                        <div class="form-group signupseller">
-                            <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
+                         <div class="form-group signupseller">
+                            <label for="inputaddress" class="col-md-4 control-lab">Phường/Xã</label>
                             <div class="col-md-8">
-                                @if ($errors->has('city'))
-                                        <span class="text-danger">{{ $errors->first('city') }}</span>
-                                @endif
-                                <input type="text" class="form-control" name="city" id="inputaddress" placeholder="Nhập Tỉnh/Thành phố" required>
+                              <select class="form-control" id="ward" name="ward">
+                                <option value="" disabled selected>--Chọn Phường--</option>
+                              </select>
                             </div>
                         </div>
                     </div>
