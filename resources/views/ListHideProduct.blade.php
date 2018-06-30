@@ -30,8 +30,8 @@ Danh sách sản phẩm người bán
           <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
           <div id="quickview-content">
              <div class="woocommerce product product-details-content">
-              <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
-              <p>Bạn có đồng ý hiện sản phẩm này.</p>
+              <h1>Thông báo xác Nhận</h1>
+              <p>Bạn có đồng ý hiện sản phẩm này ?</p>
               
               <div class="form-group">
                     <div class="input-group">

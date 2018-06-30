@@ -5788,11 +5788,11 @@ ul.tabs.tabs-title li span.count {
 
 .quickview-wrapper .quick-modal {
   max-width: 1140px;
-  width: 90%;
+  width: 50%;
   margin: 100px auto 0px;
   background: #fff;
   padding: 20px;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 
@@ -5842,6 +5842,7 @@ ul.tabs.tabs-title li span.count {
 .quickview-wrapper #quickview-content .product {
   float: left;
   width: 100%;
+  padding-top: 10px;
 }
 
 .quickview-wrapper #quickview-content .product .product-images {
@@ -5875,7 +5876,7 @@ ul.tabs.tabs-title li span.count {
 }
 
 .quickview-wrapper .closeqv i {
-  color: #e6e6e6;
+  color: #000;
   line-height: 36px;
 }
 
@@ -12537,6 +12538,7 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
   font: 400 18px/28px "Roboto Condensed";
   color: #565656;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .product-details-content .breadcrumb {
@@ -14329,7 +14331,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 .cart-list ul {
   overflow: auto;
   padding: 0 20px;
-  height: 100px;
+  height: 262px;
 }
 
 .cart-list li {
@@ -14406,6 +14408,7 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
 .cart-list .bottom {
   padding: 20px;
   padding-top: 0px;
+  margin-top: -35px;
   float: left;
   width: 100%;
 }
@@ -15665,7 +15668,12 @@ nav.pagination a.next:hover i, nav.pagination a.prev:hover i {
   outline: none;
 }
 .woocommerce .product .product-details-content p {
-  
+  position: absolute; 
+  left: 50px;
+  top: 13px;
+  font-weight:bold;
+  font:700 24px/60px 'Roboto Slab';
+  text-align: center;
 }
 
 
@@ -15683,6 +15691,7 @@ button.binhml {
   top: -12px;
   transition: all 0.4s ease 0s;
   z-index: 99;
+  margin-right: 240px;
 }
 
 }

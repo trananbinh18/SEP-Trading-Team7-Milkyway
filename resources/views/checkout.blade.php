@@ -20,8 +20,8 @@ Kiểm tra
                   <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
                   <div id="quickview-content">
                      <div class="woocommerce product product-details-content">
-                      <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
-                      <p>Bạn có đồng ý thanh toán tất cả sản phẩm trong giỏ hàng.</p>
+                      <h1>Thông báo xác Nhận</h1>
+                      <p>Bạn có đồng ý thanh toán tất cả sản phẩm trong giỏ hàng ?</p>
                       
               <div class="form-group">
                     <div class="input-group">
@@ -74,10 +74,10 @@ Kiểm tra
                             <div class="form-group ">
                                 <div class="optionAddress">
                                     <label class="radio-inline checkoutchoosse">
-                                        <input id="optmacdinh"  class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
+                                        <input id="optmacdinh" checked="true" class="tablink" type="radio" name="inlineRadioOptions" value="option1" onclick="openPage('defaultaddress', this)" id="defaultOpen">ĐỊA CHỈ MẶC ĐỊNH
                                     </label>
                                     <label class="radio-inline checkoutchose">
-                                        <input checked="true" type="radio" id="opttuychon" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
+                                        <input type="radio" id="opttuychon" name="inlineRadioOptions" value="option2" onclick="openPage('newaddress', this)" >ĐỊA CHỈ NHẬN HÀNG
                                     </label>
                                 </div>
                             </div>
