@@ -95,7 +95,7 @@ Kiểm tra
                                 </form>
                                 </div>                           
                             </div>
-                            <div id="newaddress" class="tabcontent space-50">
+                            <div id="newaddress" class="tabcontent space-50" style="display: none;">
                                 <form id="formDiaChi" action="{{route('Order')}}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group newaddressbox">
@@ -119,7 +119,7 @@ Kiểm tra
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab" >Quận</label>
                                     <div class="col-md-8">
-                                        <select class="form-control" name="district" style="margin: 10px 0px 10px 0px">
+                                        <select class="form-control" id="cbxquan" name="district" style="margin: 10px 0px 10px 0px">
                                             @foreach($district as $row)
                                                 <option value="{{ $row->MAQUAN }}">{{ $row->TENQUAN }}</option>
                                             @endforeach
@@ -129,7 +129,7 @@ Kiểm tra
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Phường</label>
                                     <div class="col-md-8">
-                                       <select class="form-control" id="ward" name="ward" style="margin: 10px 0px 10px 0px">
+                                       <select class="form-control" id="cbxphuong" name="ward" style="margin: 10px 0px 10px 0px">
                                             <option value="" disabled selected>--Chọn Phường--</option>
                                         </select>
                                     </div>
@@ -219,7 +219,7 @@ Kiểm tra
             tablinks[i].style.backgroundColor = "";
         }
         document.getElementById(pageName).style.display = "block";
-        elmnt.style.backgroundColor = color;
+        // elmnt.style.backgroundColor = color;
 
     }
 // Get the element with id="defaultOpen" and click on it
@@ -236,29 +236,26 @@ Kiểm tra
                 }
             });
         });
+
+
+    $("#cbxquan").val({{session()->get('district')}});
+    $.getJSON('ward/'+{{session()->get('district')}}, function (data){
+      $("#cbxphuong").empty();
+      for(i=0;i<data.length;i++){
+        $("#cbxphuong").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+      }
     });
-</script>
-<script type="text/javascript">
-var url = "{{ url('ward') }}";
-    $("select[name='district']").change(function(){
-        var MAQUAN = $(this).val();
-        var token = $("input[name='_token']").val();
-        $.ajax({
-            url: url,
-            method: 'POST',
-            dataType: "json",
-            data: {
-                MAQUAN: MAQUAN,
-                _token: token
-            },
-            success: function(data) {
-                $("select[name='ward'").html('');
-                $.each(data, function(key, value){
-                    $("select[name='ward']").append("<option value=" + value.MAPHUONG + ">" + value.TENPHUONG + "</option>"
-                    );
-                });
-            }
-        });
+
+    $("#cbxquan").change(function(){
+      $.getJSON('ward/'+$(this).val(), function (data){
+        $("#cbxphuong").empty();
+        for(i=0;i<data.length;i++){
+          $("#cbxphuong").append("<option value='"+data[i]['MAPHUONG']+"'>"+data[i]['TENPHUONG']+"</option>");
+        }
+      });
     });
+
+
+  });
 </script>
 @stop

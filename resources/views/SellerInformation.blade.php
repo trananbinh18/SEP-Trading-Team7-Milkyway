@@ -3,6 +3,32 @@
     Sửa thông tin
     @stop
     @section('content')
+    {{-- Confirm popup --}}
+              <div class="quickview-wrapper open" style="display: none">
+               <div onclick="hideQuickView()" class="overlay-bg"></div>
+               <div class="quick-modal show">
+                  <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+                  <div id="quickview-content">
+                     <div class="woocommerce product product-details-content">
+                      <h1>Thông báo xác Nhận</h1>
+                      <p>Bạn có đồng ý sửa thông tin của bạn ?</p>
+                      
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>
+              
+
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
     <div class="row row-addproduct">
       <div class="col-md-3 box-shadow control-infotproduct">
         <div>
@@ -30,7 +56,7 @@
       </div>
       @endif
 
-      <form class="form-horizontal" action="{{route('changeSellerInfor')}}" role="form" method="POST">
+      <form class="form-horizontal" id="formedit" action="{{route('changeSellerInfor')}}" role="form" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="center">
           <h2>THÔNG TIN TÀI KHOẢN</h2>
@@ -86,11 +112,12 @@
              </select>
           </div>
         </div>
+        </form>
         <div class="col-md-12 center">
           <br>
-          <a href="#"><button type="submit" class="link-v1 rt">Cập nhật</button></a>
+          <a href="#"><button type="submit" id="btnsubmit" class="link-v1 rt">Cập nhật</button></a>
         </div>
-      </form>
+      
     </div>
   </div>
   <script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
@@ -112,6 +139,13 @@
         }
       });
     });
+
+    $("#btnsubmit").click(function() {
+            $(".quickview-wrapper").show();
+            $("#btnaccept").click(function(){
+                $("#formedit").submit();
+            });
+        });
   });
   </script>
   @endsection

@@ -94,6 +94,14 @@
                                     </div>
                                     <!-- End col-md-5 -->
                                     </div>
+                                    <br>
+                                    <div class="row">
+                                    <!-- End col-md-6 -->
+                                    	<div class="col-md-5">
+                                        	<label>Tối đa: </label> {{$sanpham->SOLUONG}} {{$sanpham->DONVI}}
+                                    	</div>
+                                    <!-- End col-md-5 -->
+                                    </div>
                                     <!-- End row -->
                                 </div>
                                 <!-- End row -->
