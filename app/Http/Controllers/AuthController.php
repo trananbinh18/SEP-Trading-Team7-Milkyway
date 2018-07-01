@@ -199,6 +199,17 @@ public function inf(){
     $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
     //Check session
     if(session()->get('typeuser') == 1 && session()->get('typeuser') != 2){
+    //save session
+        $user = nguoiban::find(session()->get('userid'));
+                        session(['name' => $user->TENNB]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
+                        session(['phone' => $user->SDT]);
+                        session(['address' => $user->SONHA]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
+                        session(['city' => $user->TP]);
+                        session(['status'=>$user->TTNB]);
+
     $distr = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
     $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
 
@@ -214,14 +225,23 @@ public function inf(){
 
         return view('SellerInformation',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('distr', $distr);
     }else if(session()->get('typeuser')==2 && session()->get('typeuser') != 1){
+            $user = nguoimua::find(session()->get('userid'));
+                        session(['name' => $user->TENNM]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
+                        session(['phone' => $user->SDT]);
+                        session(['address' => $user->SONHA]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
+                        session(['city' => $user->TP]);
+                        session(['status'=>$user->TTNB]);
         return view('BuyerInformation',compact('district',$district));
     }else{
         return view('Error');
     }   
 }
-    public function ChangeBuyerInfor(CheckSignUpBuyerRequest $Infor_request){
+    public function ChangeBuyerInfor(Request $Infor_request){
         if(session()->get('typeuser') == 2){
-            $user           = nguoimua::where('MANM',session()->get('userid'))->first();
+            $user           = nguoimua::find(session()->get('userid'));
             $user->TENNM    = $Infor_request->name;
             $user->SDT      = $Infor_request->phone;
             $user->SONHA    = $Infor_request->number_house;
