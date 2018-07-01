@@ -51,9 +51,14 @@
       </div>
     <div class="col-md-8 control-infotproduct box-shadow">
       @if(session('thanhcong'))
-      <div class="alert-success">
-        {{session('thanhcong')}}
-      </div>
+        <div class="alert-success">
+          {{session('thanhcong')}}
+        </div>
+      @endif
+      @if(session('thongbao'))
+        <div class="alert-success">
+          {{session('thongbao')}}
+        </div>
       @endif
 
       <form class="form-horizontal" id="formedit" action="{{route('changeSellerInfor')}}" role="form" method="POST">

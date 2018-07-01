@@ -111,12 +111,18 @@
                     </div>
                     <label class="col-md-2 control-lab">Số lượng</label>
                     <div class="col-md-3">
+                      @if ($errors->has('Soluong'))
+                        <span class="text-danger">{{ $errors->first('Soluong') }}</span>
+                      @endif
                       <input type="text" class="form-control" name="Soluong" id="inputEmail3" value="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                     </div> 
                   </div>                             
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá cũ</label>
                     <div class="col-md-4">
+                      @if ($errors->has('giacu'))
+                        <span class="text-danger">{{ $errors->first('giacu') }}</span>
+                      @endif
                       <input type="text" class="form-control" name="giacu" id="inputEmail3" placeholder="VND" value="<?php echo "{$sanpham['GIA']}"; ?>">
                     </div> 
                     <label class="col-md-2 control-lab">Đơn vị</label>
@@ -131,6 +137,7 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-lab">Giá mới</label>
                     <div class="col-md-4">
+
                       <input type="text" class="form-control" name="giamoi" id="giamoi" placeholder="VND" disabled >
                     </div>
                     <div class="col-md-4">
@@ -143,6 +150,9 @@
                   </div>
 
                   <div class="form-group">
+                    @if ($errors->has('mieutasanpham'))
+                      <span class="text-danger">{{ $errors->first('mieutasanpham') }}</span>
+                    @endif
                     <label for="inputEmail3" class="col-md-3 control-lab">Miêu tả sản phẩm</label>
                     <div class="col-md-9">
                       <textarea type="text" class="form-control" name="mieutasanpham" rows="5" placeholder="Nhập thông tin miêu tả sản phẩm."><?php echo"{$sanpham['MOTA']}"?></textarea>

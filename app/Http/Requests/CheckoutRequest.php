@@ -24,20 +24,15 @@ class CheckoutRequest extends FormRequest
     public function rules()
     {
         return [
-        'phone'=> 'required|max:20',
-        'ward' => 'required|max:30',
-        'district' => 'required|max:20',
+        'phone'=> 'required|numeric|digits_between:9,20',
         'inputaddress' => 'required|max:50'
         ];
     }
     public function messages(){
         return[
             'phone.required' => 'Bạn chưa nhập số điện thoại',
-            'phone.max' => 'Bạn nhập quá độ dài cho phép',
-            'ward.required' => 'Bạn chưa nhập phường',
-            'ward.max' => 'Bạn nhập quá độ dài cho phép',
-            'district.required' => 'Bạn chưa nhập quận',
-            'district.max' => 'Bạn nhập quá độ dài cho phép',
+            'phone.numeric' => 'Giá trị nhập không đúng định dạng',
+            'phone.digits_between' => 'Bạn nhập số điện thoại không hợp lệ',
             'inputaddress.required' => 'Bạn chưa nhập địa chỉ',
             'inputaddress.max' => 'Bạn nhập quá độ dài cho phép' 
         ];

@@ -52,7 +52,11 @@
             {{session('thanhcong')}}
           </div>
       @endif
-
+      @if(session('thongbao'))
+          <div class="alert-success">
+            {{session('thongbao')}}
+          </div>
+      @endif
       <form class="form-horizontal" id="formedit" action="{{route('changeBuyerInfor')}}" role="form" method="POST">
        <input type="hidden" name="_token" value="{{ csrf_token() }}">
        <div class="center">

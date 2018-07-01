@@ -30,6 +30,11 @@
         {{session('thanhcong')}}
       </div>
       @endif
+      @if(session('thongbao'))
+      <div class="alert-success">
+        {{session('thongbao')}}
+      </div>
+      @endif
       <div class="page">
         <div class="container container-ver2">
           <div class="content-text space-50">
@@ -42,18 +47,27 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <label for="inputpass" class="col-md-4 control-lab">Mật khẩu hiện tại</label>
                     <div class="col-md-8">
+                      @if ($errors->has('current_password'))
+                    <span class="text-danger">{{ $errors->first('current_password') }}</span>
+                  @endif
                       <input type="password" class="form-control" name="current_password" id="inputpass" placeholder="Nhập mật khẩu hiện tại" >
                     </div>
                   </div>
                   <div class="form-group signupseller">
                     <label for="inputpass" class="col-md-4 control-lab">Mật khẩu mới</label>
                     <div class="col-md-8">
+                      @if ($errors->has('new_password'))
+                    <span class="text-danger">{{ $errors->first('new_password') }}</span>
+                  @endif
                       <input type="password" class="form-control" name="new_password" id="inputpass" placeholder="Nhập mật khẩu mới" >
                     </div>
                   </div>
                   <div class="form-group signupseller">
                     <label for="inputpass" class="col-md-4 control-lab">Nhập lại mật khẩu</label>
                     <div class="col-md-8">
+                      @if ($errors->has('confirm_password'))
+                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                  @endif
                       <input type="password" class="form-control" name="confirm_password" id="inputpass" placeholder="Nhập lại mật khẩu" >
                     </div>
                   </div>

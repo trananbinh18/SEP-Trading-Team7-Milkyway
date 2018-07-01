@@ -28,6 +28,7 @@ use App\Http\Requests\CheckSignUpBuyerRequest;
 use App\Http\Requests\CheckSignUpSellerRequest;
 use App\Http\Requests\CheckUpdateBuyerInfor;
 use App\Http\Requests\CheckUpdateSellerInfor;
+use App\Http\Requests\CheckUpdatePassforRequest;
 use \Crypt;
 
 
@@ -166,7 +167,7 @@ public function Chpass(){
     }
 }
 
-    public function ChangePassword(Request $PW_request){
+    public function ChangePassword(CheckUpdatePassforRequest $PW_request){
         if($PW_request->new_password == $PW_request->confirm_password)
         {
             if($PW_request->input('current_password') != session()->get('password')){
@@ -239,7 +240,7 @@ public function inf(){
         return view('Error');
     }   
 }
-    public function ChangeBuyerInfor(Request $Infor_request){
+    public function ChangeBuyerInfor(CheckUpdateBuyerInfor $Infor_request){
         if(session()->get('typeuser') == 2){
             $user           = nguoimua::find(session()->get('userid'));
             $user->TENNM    = $Infor_request->name;

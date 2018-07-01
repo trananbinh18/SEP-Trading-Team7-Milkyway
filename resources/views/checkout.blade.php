@@ -110,10 +110,7 @@ Kiểm tra
                                 <div class="form-group newaddressbox">
                                     <label for="inputaddress" class="col-md-4 control-lab">Tỉnh/Thành phố</label>
                                     <div class="col-md-8">
-                                        @if ($errors->has('city'))
-                                        <span class="text-danger">{{ $errors->first('city') }}</span>
-                                        @endif
-                                        <input type="text" class="form-control" name="city"  placeholder="Nhập Tỉnh/Thành phố" required>
+                                       <input type="text" class="form-control" id="inputEmail3" placeholder="Hồ Chí Minh" name="city" disabled>
                                     </div>
                                 </div>
                                 <div class="form-group newaddressbox">
