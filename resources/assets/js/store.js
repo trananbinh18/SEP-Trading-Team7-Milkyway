@@ -121,10 +121,6 @@ function priceArray(data,max){
 
 $(document).ready(function() {
     
-
-    $("#btnSub").click(function() {
-        $("#formSoLuong").submit();
-    });
     // Slider products
     var windowns = $(window);
     var owl = $(".product-tab-content");
