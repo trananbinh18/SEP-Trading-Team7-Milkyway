@@ -32,7 +32,7 @@ class CheckoutRequest extends FormRequest
         return[
             'phone.required' => 'Bạn chưa nhập số điện thoại',
             'phone.numeric' => 'Giá trị nhập không đúng định dạng',
-            'phone.digits_between' => 'Bạn nhập số điện thoại không hợp lệ',
+            'phone.digits_between' => 'Số điện thoại phải từ 9 đến 20 số',
             'inputaddress.required' => 'Bạn chưa nhập địa chỉ',
             'inputaddress.max' => 'Bạn nhập quá độ dài cho phép' 
         ];
