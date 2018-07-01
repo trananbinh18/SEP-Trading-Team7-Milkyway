@@ -85,6 +85,7 @@
                                            <div class="title">
                                                     <h3>SỐ LƯỢNG</h3>
                                             </div>
+                                            <div id="error" class="alert alert-danger" style="display: none">Số lượng tối đa là {{$sanpham->SOLUONG}}</div>
                                             <form id="formSoLuong" action="{{route('buyproduct')}}" method="get" enctype="multipart/form-data">
                                                 <input data-step="1" id="quanty" name="quan" value="1" title="Qty" min="1" size="4" type="number" max="<?php echo "{$sanpham['SOLUONG']}"; ?>">
                                                 <input type="hidden" name="id" value="{{$sanpham->MASP}}">
@@ -256,5 +257,21 @@
                 <!-- End container --> 
           </div>
           <!-- End MainContent -->
+          <script type="text/javascript">
+              $(document).ready(function(){
+                var max = $("#quanty").attr("max");
+                $("#btnSub").click(function(){
+                    var val = $("#quanty").val();
+                    if(val>max){
+                        $("#quanty").focus();
+                        focusSet = true;
+                         $("#error").show();
+                    }else{
+                        $("#formSoLuong").submit();
+                    }
+                    
+                });
+              });
+          </script>
 
 @endsection
