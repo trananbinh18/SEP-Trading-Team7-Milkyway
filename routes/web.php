@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('',['as'=>'homepageA','uses'=>'ControllerHome@home']);
 
 
 Route::get("Productdetail/{id}",'ControllerSanPham@productdetail')->name('Productdetail');
