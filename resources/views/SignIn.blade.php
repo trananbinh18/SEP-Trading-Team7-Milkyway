@@ -16,6 +16,11 @@
 <!-- End banner -->
 <div class="container container-ver2">
     <div class="page-login box space-100">
+        @if(session('thanhcong'))
+            <div class="alert-success">
+               {{session('thanhcong')}}
+           </div>
+        @endif
         <div class="row">
             <div class="col-sm-3 sign-in space-80">
 

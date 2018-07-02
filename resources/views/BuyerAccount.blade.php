@@ -28,7 +28,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          Danh sách sản phẩm
+          Danh sách tài khoản người mua
         </div>
         <div class="panel-body" style="font-size: 11px;">
           <div class="dataTable_wrapper">
