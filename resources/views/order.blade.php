@@ -32,7 +32,7 @@
                     <div class="col-md-4 space-30">
                         <div class="item center active">
                             <p class="icon">03</p>
-                            <h3>Thanh toán thành công</h3>
+                            <h3>Đặt hàng thành công</h3>
                         </div>
                     </div>
                     <!-- End col-md-4 -->
