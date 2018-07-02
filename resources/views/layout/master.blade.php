@@ -137,10 +137,10 @@
                                             <div class="bottom">
                                                 <a class="link-v1 rt" href="{{route('shopping')}}" title="viewcart">Xem giỏ hàng</a>
                                                 @if(Cart::count()==0)
-                                                <a class="link-v1 rt" href="{{route('homepage')}}" title="checkout">Thanh toán</a>
+                                                <a class="link-v1 rt" href="{{route('homepage')}}" title="checkout">Đặt hàng</a>
                                                 @endif()
                                                 @if(Cart::count()!=0)
-                                                <a class="link-v1 rt" href="{{route('Checkout')}}" title="checkout">Thanh toán</a>
+                                                <a class="link-v1 rt" href="{{route('Checkout')}}" title="checkout">Đặt hàng</a>
                                                 @endif
                                             </div>
                                         </div>

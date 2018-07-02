@@ -21,7 +21,7 @@ Kiểm tra
                   <div id="quickview-content">
                      <div class="woocommerce product product-details-content">
                       <h1>Thông báo xác Nhận</h1>
-                      <p>Bạn có đồng ý thanh toán tất cả sản phẩm trong giỏ hàng ?</p>
+                      <p>Bạn có đồng ý Đặt hàng tất cả sản phẩm trong giỏ hàng ?</p>
                       
               <div class="form-group">
                     <div class="input-group">
@@ -58,7 +58,7 @@ Kiểm tra
                         <div class="col-md-4 space-30">
                             <div class="item center">
                                 <p class="icon">03</p>
-                                <h3>THANH TOÁN THÀNH CÔNG</h3>
+                                <h3>Đặt hàng THÀNH CÔNG</h3>
                             </div>
                         </div>
                         <!-- End col-md-4 -->
@@ -183,10 +183,10 @@ Kiểm tra
                                 </div>
                                 <!-- End info-order -->
                                 @if(Cart::count()!=0)
-                                <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button>
+                                <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">Đặt hàng</button>
                                 @endif
                                 @if(Cart::count()==0)
-                                <a href="{{route('Checkout')}}"><button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">THANH TOÁN</button></a>
+                                <a href="{{route('Checkout')}}"><button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">Đặt hàng</button></a>
                                 @endif
                             </div>
                         </div>

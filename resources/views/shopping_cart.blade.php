@@ -35,7 +35,7 @@
                     <div class="col-md-4 space-30">
                         <div class="item center">
                             <p class="icon">03</p>
-                            <h3>Thanh toán thành công</h3>
+                            <h3>Đặt hàng thành công</h3>
                         </div>
                     </div>
                     <!-- End col-md-4 -->
@@ -96,7 +96,7 @@
                                 </span></h3>
                                 <p class="box"><span class="float-left">Phí vận chuyển</span><span class="float-right">Miễn phí</span></p>
                                 <p class="box space-30"><span class="float-left"><b>Tổng chi phí</b></span><span class="float-right"><b class="color-brand">{{Cart::subtotal()}} VND</b></span></p>
-                                <a class="link-v1 lh-50 rt" href="{{route('Checkout')}}" title="POCEEED TO CHECKOUT">THANH TOÁN</a>
+                                <a class="link-v1 lh-50 rt" href="{{route('Checkout')}}" title="POCEEED TO CHECKOUT">Đặt hàng</a>
                             </div>
                         </div>
                         <!-- End col-md-4 -->
