@@ -144,13 +144,14 @@
         }
       });
     });
-
-    $("#btnsubmit").click(function() {
+    
+       $("#btnsubmit").click(function() {
             $(".quickview-wrapper").show();
             $("#btnaccept").click(function(){
                 $("#formedit").submit();
             });
         });
-  });
+    });
+   
   </script>
   @endsection

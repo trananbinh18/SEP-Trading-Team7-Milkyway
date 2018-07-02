@@ -58,7 +58,7 @@ class ControllerAccount extends Controller
                         session(['userid' => $user->MANM]);
                         session(['typeuser' => 2]);
                         session(['name' => $user->TENNM]);
-                        session(['password' => $user->MATKHAU]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
                         session(['ward' => $user->MAPHUONG]);
@@ -69,13 +69,13 @@ class ControllerAccount extends Controller
                         session(['userid' => $user->MANV]);
                         session(['typeuser' => 3]);
                         session(['name' => $user->TENNV]);
-                        session(['password' => $user->MATKHAU]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
                         session(['phone' => $user->SDT]);
                         session(['address' => $user->SONHA]);
                         session(['ward' => $user->MAPHUONG]);
                         session(['district' => $user->MAQUAN]);
                         session(['city' => $user->TP]);
-                        return redirect()->route('homepage');    
+                        return redirect()->route('listprosale');    
                     default:
                         return redirect()->back();
                         break;

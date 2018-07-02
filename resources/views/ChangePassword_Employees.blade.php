@@ -3,6 +3,32 @@
     Sửa mật khẩu
     @stop
     @section('content')
+    {{-- Confirm popup --}}
+              <div class="quickview-wrapper open" style="display: none">
+               <div onclick="hideQuickView()" class="overlay-bg"></div>
+               <div class="quick-modal show">
+                  <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+                  <div id="quickview-content">
+                     <div class="woocommerce product product-details-content">
+                      <h1>Thông báo xác Nhận</h1>
+                      <p>Bạn có đồng ý sửa thông tin của bạn ?</p>
+                      
+              <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccept" type="submit">Đồng ý</button>
+                    </div>
+              </div>
+              
+
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
     <div class="row row-addproduct">
       <div class="col-md-3 box-shadow control-infotproduct">
         <div>
@@ -21,21 +47,15 @@
        </div>
      </div>
      <div class="col-md-8 control-infotproduct box-shadow">
-      @if(session('thongbao'))
-      <div class="alert-success">
-        {{session('thongbao')}}
-      </div>
-      @endif
-       @if(session('thanhcong'))
       <div class="alert-success">
         {{session('thanhcong')}}
+        {{session('thongbao')}}
       </div>
-      @endif
       <div class="page">
         <div class="container container-ver2">
           <div class="content-text space-50">
 
-            <form class="form-horizontal" role="form" action="{{route('changePassword')}}" method="POST">
+            <form class="form-horizontal" role="form" id="formedit" action="{{route('changePassword')}}" method="POST">
              <div class="col-md-8 space-80" id="bodyinput">
               <div class="center">
                 <h2>ĐỔI MẬT KHẨU</h2>
@@ -67,12 +87,13 @@
                   @endif
                   <input type="password" class="form-control" name="confirm_password" id="inputpass" placeholder="Nhập lại mật khẩu" required>
                 </div>
+              </div>  
               </div>
-              <div class="col-md-12 center">
-                <a href="#"><button type="submit" class="link-v1 rt">Cập nhật</button></a>
-              </div>
-            </div>
           </form>
+              <div class="col-md-12 center">
+                <button type="submit" id="btnsubmit" class="link-v1 rt">Cập nhật</button>
+              </div>
+            
 
         </div>
       </div>
@@ -80,4 +101,15 @@
     
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#btnsubmit").click(function() {
+            $(".quickview-wrapper").show();
+            $("#btnaccept").click(function(){
+                $("#formedit").submit();
+            });
+        });
+  });
+</script>
 @endsection

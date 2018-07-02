@@ -175,18 +175,21 @@ public function Chpass(){
             }if(session()->get('typeuser')==1){
                 $pass           = nguoiban::where('MANB', session()->get('userid'))->first();
                 $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
+                session(['password' => $PW_request->input('new_password')]);
                 $pass->save();
                 return redirect('SellerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }else if(session()->get('typeuser')==2){
                 $pass           = nguoimua::where('MANM', session()->get('userid'))->first();
                 $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
+                session(['password' => $PW_request->input('new_password')]);
                 $pass->save();
                 return redirect('BuyerPassword')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
             }else if(session()->get('typeuser')==3){
                 $pass           = nhanvien::where('MANV', session()->get('userid'))->first();
                 $pass->MATKHAU  = Crypt::encrypt($PW_request->input('new_password'));
+                session(['password' => $PW_request->input('new_password')]);
                 $pass->save();
-                return redirect('ChangePassword_Employees')->with('thanhcong','Bạn đã sửa mật khẩu thành công');
+                return redirect('ResetPassword')->with('thanhcong',"Bạn đã sửa mật khẩu thành công");
             }
         }else{
             return redirect()->back()->with('thongbao', "Nhập mật khẩu sai");
