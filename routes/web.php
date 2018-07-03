@@ -134,6 +134,10 @@ Route::get('ListproductHide',['as'=>'ListHide','uses'=>'LoadDataController@ListH
 Route::get('QuickHideProduct/{id}','LoadDataController@QuickHide');
 //Hiện sản phẩm nhanh
 Route::get('QuickShowProduct/{id}','LoadDataController@QuickShow');
+//Danh sách đơn hàng được đặt
+Route::get('Ordersplaced',['as'=>'ordersplaced','uses'=>'LoadDataController@ordersplaced']);
+//Xác nhận đơn hàng nhanh
+Route::get('Quickodersplaced/{id}',['as'=>'quickodersplaced','uses'=>'LoadDataController@quickodersplaced']);
 //chi add product
 Route::get('AddToCart/{id}',['as'=>'buyproduct','uses'=>'Controller@AddToCart']);
 //Mua sản phẩm

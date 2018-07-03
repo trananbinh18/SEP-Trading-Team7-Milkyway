@@ -84,6 +84,37 @@ class LoadDataController extends Controller
 		return view('Error');
 	}
 
+	//Đơn hàng được đặt
+    public function ordersplaced(){
+        if(session()->get('typeuser') == 1){
+            $Productsplaced = DB::table('hoadon')->join('chitiethoadon','hoadon.MAHD','=','chitiethoadon.MAHD')->join('sanpham','chitiethoadon.MASP','=','sanpham.MASP')->select('TENSP','NLHD','SLUONG','DONGIA','THANHTIEN','TTHD','hoadon.MAHD')->where('chitiethoadon.MANB', session()->get('userid'))->whereIn('TTHD', [0])->get();
+
+            $products = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [0])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countUnapprovedproduct = count($products); 
+
+            $product = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [1])->orderBy('sanpham.MASP', 'DESC')->get();
+            $countApproveproduct = count($product);
+
+            $productHide = DB::table('sanpham')->join('loaisanpham' ,'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP','TENSP','SOLUONG','GIA','GIACU','DONVI','TRANGTHAI','HINH', 'MASP')->where('MANB',session()->get('userid'))->whereIn('TRANGTHAI', [2])->orderBy('sanpham.MASP', 'DESC')->get();
+
+            $countHideproduct = count($productHide);   
+
+
+            return view('Ordersplaced',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('Productsplaced',$Productsplaced);
+        }else{
+            return view('Error');
+        }
+        
+    }
+    //Xác nhận đơn hàng nhanh
+    public function quickodersplaced($id){
+        $Productsplaced = hoadon::find($id);
+        $Productsplaced->TTHD = 3;
+        $Productsplaced->save();
+        return redirect()->route('ordersplaced')->with('thongbao','Bạn đã xác nhận đơn hàng thành công');
+    }
+
 	public function loadListProduct_Sale(){
 		if(session()->get('typeuser') == 3){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
 		$sanpham = DB::table('sanpham')->join('loaisanpham', 'loaisanpham.maloaisp', '=' , 'sanpham.maloaisp')->select('TENLOAISP', 'TENSP', 'SOLUONG', 'GIA', 'GIACU', 'DONVI', 'TRANGTHAI', 'HINH','GCN', 'MASP')->orderBy('sanpham.MASP', 'DESC')->get();
