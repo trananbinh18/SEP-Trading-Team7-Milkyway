@@ -20,17 +20,26 @@
                 </aside>
             </div>
           </div>
-          <div class="col-md-8 control-infotproduct box-shadow">
-              <form class="form-horizontal"  method="POST">
-                  <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                      <tr>
-                        <th>STT</th>
-                          <th>Mã đơn hàng</th>
-                          <th>Ngày mua</th>  
-                          <th>Tổng tiền</th>
-                          <th>Trạng thái đơn hàng</th>
-                      </tr>
-                      @php ($count = 0)
+<div class="col-md-8 table-product">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Lịch Sử Đơn Hàng</h2>
+        </div>
+        <div class="panel-body">
+          <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã đơn hàng</th>
+                  <th>Ngày mua</th>  
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái đơn hàng</th>
+                </tr>
+              </thead>           
+                   @php ($count = 0)
                       @foreach($history as $row)
                       <?php $count++ ?>
                       <tr>
@@ -43,14 +52,25 @@
                           @else($row -> TTHD == 4)
                           <th><?php echo 'Đơn hàng đã hủy' ?></th>
                           @endif
+                           
                       </tr>     
-                      @endforeach
-                      
-                  </table>
-              </form>
+                      @endforeach                                      
+              </table>
+            </div>
+            <!-- /.table-responsive -->
+
           </div>
+          <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
       </div>
-        <!-- jQuery -->
+      <!-- /.col-lg-12 -->
+    </div>
+  </div>
+</div> 
+      </div>
+      <!-- jQuery -->
+
       <script src="resources/assets/js/jquery.min.js"></script>
 
       <!-- Bootstrap Core JavaScript -->
@@ -74,6 +94,15 @@
             paging: false,
             searching: false
           });
+        });
+
+        document.getElementById("defaultOpen").click();
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $(".hideOrders").show();
+            $("#btnaccetHide").click(function(){
+                $("#hide").submit();
+            });
         });
       </script>
 
