@@ -25,11 +25,35 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          Danh sách sản phẩm
+          <h2>Đơn Hàng</h2>
         </div>
         <div class="panel-body">
           <div class="dataTable_wrapper">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+              {{-- Confirm popup --}}
+              <div class="quickview-wrapper hideOrders open" style="display: none">
+               <div onclick="hideQuickViwrapperew()" class="overlay-bg"></div>
+               <div class="quick-modal show">
+                  <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+                  <div id="quickview-content">
+                     <div class="woocommerce product product-details-content">
+                      <h1 style="position: absolute; left: 19px;top: 13px;font-weight:bold;font:700 24px/60px 'Roboto Slab';">Xác Nhận</h1>
+                      <p>Bạn có đồng ý hủy đơn hàng của chúng tôi không ?</p>
+                      
+                      <div class="form-group">
+                    <div class="input-group">
+                        <button class="binhml" id="btnaccetHide" type="submit">Đồng ý</button>
+                    </div>
+              </div>  
+                <!-- End product-info -->
+             </div>
+             <!-- End product -->
+          </div>
+          <!-- End quick view -->
+       </div>
+       <!-- End quick modal -->
+    </div>
+      {{-- End Confirm popup --}}
               <thead>
                 <tr>
                   <th>STT</th>
@@ -58,7 +82,7 @@
                           <th><?php echo 'Giao hàng thành công'?></th>
                           @endif
                           <th><span><a href="{{ url('Ordersdetail',[$row->MAHD]) }}"><i class="fas fa-info-circle"></i> Xem chi tiết</a></span> |
-                              <span><a href="{{ url('QuickHideOrders',[$row->MAHD]) }}"><i class="far fa-trash-alt"></i> Hủy đơn hàng</a></span>
+                              <span><form id="btnaccetHide"><a href="{{ url('QuickHideOrders',[$row->MAHD]) }}" id="hide"><i class="far fa-trash-alt"></i> Hủy đơn hàng</a></form></span>
                           </th>
                            
                       </tr>     
@@ -102,6 +126,15 @@
             paging: false,
             searching: false
           });
+        });
+
+        document.getElementById("defaultOpen").click();
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $(".hideOrders").show();
+            $("#btnaccetHide").click(function(){
+                $("#hide").submit();
+            });
         });
       </script>
 

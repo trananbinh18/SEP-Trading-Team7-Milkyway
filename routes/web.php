@@ -203,4 +203,6 @@ Route::get('unapprovedProducts/{id}','AuthController@unapprovedProducts');
 Route::get('changeStatusforSeller/{id}','AuthController@changeStatusforSeller');
 //Ajax Quận và Phường
 Route::get('ward/{idquan}','AuthController@ward');
-
+//Tạo tài khoản cho nhân viên
+Route::get('CreateAccount', ['as' => 'CreateAccount' , 'uses' => 'AuthController@getCreateAccount']);
+Route::post('CreateAccountEmployees', ['as'=> 'CreateAccountEmployees' , 'uses' => 'AuthController@postCreateAccount']); 

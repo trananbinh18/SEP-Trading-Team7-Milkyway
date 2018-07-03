@@ -33,7 +33,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          Danh sách sản phẩm
+          <h2>Danh sách sản phẩm</h2>
         </div>
         <div class="panel-body" style="font-size: 11px;">
           <div class="dataTable_wrapper">
@@ -47,6 +47,7 @@
                   <th>Giá</th>
                   <th>Trạng thái</th>
                   <th>Hình</th>
+                  <th>GCN</th>
                   <th>Tùy chọn</th>
                 </tr>
               </thead>
@@ -70,6 +71,7 @@
                       </td>
                         @endif
                     <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH ?>" width="60" , height="60"></td>
+                    <td><img src="resources/assets/images/Certificate/<?php echo $row->GCN ?>" alt="<?php echo $row->GCN ?>" width="60" , height="60"></td>
                     <td class="center">
                       <a href="{{ url('ChangeStatus',[$row->MASP]) }}">Sửa<span  aria-hidden="true"></span></a> </td>
                   </tr>

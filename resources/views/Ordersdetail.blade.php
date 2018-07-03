@@ -24,7 +24,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          Danh sách sản phẩm
+          <h2>Danh sách sản phẩm của đơn hàng</h2>
         </div>
         <div class="panel-body">
           <div class="dataTable_wrapper">

@@ -56,7 +56,7 @@
           <div class="col-lg-12">
             <div class="panel panel-default">
               <div class="panel-heading">
-                Danh sách sản phẩm
+                <h2>Sản Phẩm Chờ Duyệt</h2>
               </div>
               <div class="panel-body" style="font-size: 11px;">
                 <div class="dataTable_wrapper">
@@ -75,6 +75,7 @@
                         <th>Giá</th>
                         <th>Trạng thái</th>
                         <th>Hình</th>
+                        <th>GCN</th>
                         <th>Tùy chọn</th>
                       </tr>
                     </thead>
@@ -95,6 +96,7 @@
                           <?php echo "Đã duyệt" ?></td>
                           @endif
                         <td><img src="resources/assets/images/products/<?php echo $row->HINH ?>" alt="<?php echo $row->HINH; ?>" style="width:60px;height:60px"></td>
+                        <td><img src="resources/assets/images/Certificate/<?php echo $row->GCN ?>" alt="<?php echo $row->GCN; ?>" style="width:60px;height:60px"></td>
                         <td class="center">
                           
                           <a class="linkAn" href="{{ url('QuickHideProduct',[$row->MASP]) }}">Ẩn<span aria-hidden="true"></span></a>

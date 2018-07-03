@@ -29,6 +29,7 @@ use App\Http\Requests\CheckSignUpSellerRequest;
 use App\Http\Requests\CheckUpdateBuyerInfor;
 use App\Http\Requests\CheckUpdateSellerInfor;
 use App\Http\Requests\CheckUpdatePassforRequest;
+use App\Http\Requests\CheckCreateAccountEmployeesRequest;
 use \Crypt;
 
 
@@ -73,32 +74,33 @@ class AuthController extends Controller
         }
     }    
 }
-// function getemployees(){
-//     return view('Employees_SignUp');
-// }
-// function signupemployees(Request $Employees_request){
-//     $email = $Employees_request->email;
-//     if($email != ""){
-//         $ems = DB::table('nhanvien')->select('EMAIL')->where('EMAIL', $email)->get();
-//         if( count($ems) >=1) {
-//             return redirect()->back()->with('thongbao' ,'Email nhập đã tồn tại');
-//         }else{
-//             $users          = new nhanvien();
-//             $users->TENNV   = $Employees_request->name;
-//             $users->SDT     = $Employees_request->phone;
-//             $users->SONHA   = $Employees_request->number_house;
-//             $users->PHUONG  = $Employees_request->ward;
-//             $users->QUAN    = $Employees_request->district;
-//             $users->TP      = $Employees_request->city;
-//             $users->EMAIL   = $Employees_request->email;
-//             $users->MATKHAU = $Employees_request->password;
-//             $users->NGAYTAO = date('Y-m-d H:i:s');
+function getCreateAccount(){
+     $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
+    return view('CreateEmployeesAccount',compact('district', $district));
+}
+function postCreateAccount(Request $Employees_request){
+    $email = $Employees_request->email;
+    if($email != ""){
+        $ems = DB::table('nhanvien')->select('EMAIL')->where('EMAIL', $email)->get();
+        if( count($ems) >=1) {
+            return redirect()->back()->with('thongbao' ,'Email nhập đã tồn tại');
+        }else{
+            $users          = new nhanvien();
+            $users->TENNV   = $Employees_request->name;
+            $users->SDT     = $Employees_request->phone;
+            $users->SONHA   = $Employees_request->number_house;
+            $users->MAPHUONG  = $Employees_request->ward;
+            $users->MAQUAN    = $Employees_request->district;
+            $users->TP      = 'Hồ Chí Minh';
+            $users->EMAIL   = $Employees_request->email;
+            $users->MATKHAU = $Employees_request->password;
+            $users->NGAYTAO = date('Y-m-d H:i:s');
 
-//             $users->save();
-//             return redirect()->back()->with('thanhcong', 'Chúc mừng bạn đã tạo tài khoản thành công');
-//         }
-//     }
-// }
+            $users->save();
+            return redirect()->back()->with('thanhcong', 'Chúc mừng bạn đã tạo tài khoản thành công');
+        }
+    }
+}
 
 public function getSignUpSeller(){
     return view('SignUp');
