@@ -146,8 +146,8 @@ class Controller extends BaseController
         // $day = Carbon::now('Asia/Ho_Chi_Minh')->format('d');
         // $th = $day.$month.$year.$nHB;
         // echo $th;
-    $productSecond = DB::table('chitiethoadon')->join('sanpham','chitiethoadon.masp','=','sanpham.masp')->select('chitiethoadon.masp', 'maloaisp','tensp','gia','giacu','donvi','hinh','trangthai', DB::raw('count(*) as soluong'))->groupBy('chitiethoadon.masp','sanpham.maloaisp','sanpham.tensp','sanpham.gia','sanpham.giacu','sanpham.donvi','sanpham.hinh','sanpham.trangthai')->where('sanpham.trangthai','1')->orderBy('soluong','desc')->get();
-    echo $productSecond;
+    // $productSecond = DB::table('chitiethoadon')->join('sanpham','chitiethoadon.masp','=','sanpham.masp')->select('chitiethoadon.masp', 'maloaisp','tensp','gia','giacu','donvi','hinh','trangthai', DB::raw('count(*) as soluong'))->groupBy('chitiethoadon.masp','sanpham.maloaisp','sanpham.tensp','sanpham.gia','sanpham.giacu','sanpham.donvi','sanpham.hinh','sanpham.trangthai')->where('sanpham.trangthai','1')->orderBy('soluong','desc')->get();
+    // echo $productSecond;
         
         // $informationMessage = DB::table('hoadon')->join('chitiethoadon','hoadon.MAHD','=','chitiethoadon.MAHD')->join('sanpham','chitiethoadon.MASP','=','sanpham.MASP')->select('TENSP','NLHD','SLUONG','DONGIA','THANHTIEN','TTHD','chitiethoadon.MANB')->get();
         // echo $informationMessage;
