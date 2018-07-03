@@ -125,7 +125,7 @@ class Controller extends BaseController
 
             $countHideproduct = count($productHide);   
 
-            return view('HistoryBuyProducts',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('history', $history);
+            return view('Historybuyproducts',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('history', $history);
         }else{
             return view('Error');
         }
@@ -168,7 +168,7 @@ class Controller extends BaseController
     }
     public function Cart(){
         $content = Cart::content();
-        return view('shopping_cart',compact('content','total'));
+        return view('Shopping_cart',compact('content','total'));
     }
     //
     public function CheckoutCart()
@@ -176,7 +176,7 @@ class Controller extends BaseController
         $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
         $content = Cart::content();
         $count = Cart::count();
-        return view('checkout',compact('content','count'),compact($district, 'district'));
+        return view('Checkout',compact('content','count'),compact($district, 'district'));
     }
     // Thêm hóa đơn và chi tiết hóa đơn vào database
     public function postCheckout(CheckoutRequest $re){

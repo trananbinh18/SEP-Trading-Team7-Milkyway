@@ -21,7 +21,7 @@ Route::get('catalog','ControllerSanPham@catalog')->name('Catalog');
 // Route::get('catalog/{id}','ControllerSanPham@catalog');
 
 Route::get('shopping',function(){
-	return view('shopping_cart');
+	return view('Shopping_cart');
 });
 
 Route::get('Editproduct/{id}','ControllerSanPham@editproduct');
@@ -61,11 +61,11 @@ Route::get('contact',function(){
 });
 
 Route::get('checkout',function(){
-	return view('checkout');
+	return view('Checkout');
 })->name('Checkout');
 
 Route::get('shoppingcart',function(){
-	return view('shopping_cart');
+	return view('Shopping_cart');
 });
 
 Route::get('deliverypolicy',function(){
@@ -196,7 +196,7 @@ Route::get('QuickHideOrders/{id}','LoadDataController@deleteOrders');
 //Trả về view lịch sử mua hàng
 Route::get('HistoryOrders',['as' => 'HistoryOrders' , 'uses' => 'LoadDataController@historyOrders']);
 //Trả về view lịch sử bán hàng
-Route::get('HistoryBuyProducts',['as' => 'historybuyproducts','uses'=>'Controller@HistoryBuyProducts']);
+Route::get('Historybuyproducts',['as' => 'historybuyproducts','uses'=>'Controller@HistoryBuyProducts']);
 //Chuyển trạng thái sản phẩm nhanh
 Route::get('unapprovedProducts/{id}','AuthController@unapprovedProducts');
 //Thay đổi nhanh trạng thái tài khoản người bán
