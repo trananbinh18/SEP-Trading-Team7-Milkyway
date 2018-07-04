@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\nguoimua;
 use App\nguoiban;
 use App\nhanvien;
+use App\admin;
 use Cart;
 use \Crypt;
 use App\Http\Requests\CheckLoginRequest;
@@ -16,31 +17,49 @@ use App\Http\Requests\CheckLoginRequest;
 class ControllerAccount extends Controller
 {
     function Login(CheckLoginRequest $re){
-    	$user = nguoiban::where('EMAIL',$re->input('email'))->first();
+        $user = nguoiban::where('EMAIL',$re->input('email'))->first();
         //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
         //$query = "INSERT INTO nguoiban(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
-    	$typeuser = 1;
-    	if($user == null){
-    		$user = nguoimua::where('EMAIL',$re->input('email'))->first();
+        $typeuser = 1;
+        if($user == null){
+            $user = nguoimua::where('EMAIL',$re->input('email'))->first();
             //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
             //$query = "INSERT INTO nguoimua(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
-    		$typeuser = 2;
-    	}
-    	if($user==null){
-    		$user = nhanvien::where('EMAIL',$re->input('email'))->first();
+            $typeuser = 2;
+        }
+        if($user==null){
+            $user = nhanvien::where('EMAIL',$re->input('email'))->first();
             //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
             //$query = "INSERT INTO nhanvien(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
-    		$typeuser = 3;
-    	}
+            $typeuser = 3;
+        }
+        if($user==null){
+            $user = admin::where('EMAIL',$re->input('email'))->first();
+            //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
+            //$query = "INSERT INTO nhanvien(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
+            $typeuser = 0;
+        }
 
         if($user!=null) {
             //check password
             //
             if($re->input('matkhau')==Crypt::decrypt($user->MATKHAU)){
-            	// session_start();
-            	// $_SESSION["user"]=$user;
-            	// $_SESSION["typeuser"]=$typeuser;
+                // session_start();
+                // $_SESSION["user"]=$user;
+                // $_SESSION["typeuser"]=$typeuser;
                 switch ($typeuser) {
+                    case 0:
+                        session(['userid' => $user->MAAD]);
+                        session(['typeuser' => 0]);
+                        session(['name' => $user->TENAD]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
+                        session(['phone' => $user->SDT]);
+                        session(['address' => $user->SONHA]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
+                        session(['city' => $user->TP]);
+                        return redirect()->route('Account_Employees');
+                        break;
                     case 1:
                         session(['userid' => $user->MANB]);
                         session(['typeuser' => 1]);
@@ -88,12 +107,12 @@ class ControllerAccount extends Controller
     }
 
     function Logout(){
-    	// session_start();
-	    // unset($_SESSION["user"]);
-	    // unset($_SESSION["typeuser"]);
+        // session_start();
+        // unset($_SESSION["user"]);
+        // unset($_SESSION["typeuser"]);
         Cart::destroy();
-    	// session_destroy();
+        // session_destroy();
         session()->flush();
-    	return redirect()->route('homepage');
+        return redirect()->route('homepage');
     }
 }

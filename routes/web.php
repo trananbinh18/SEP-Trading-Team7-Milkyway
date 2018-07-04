@@ -42,15 +42,15 @@ Route::get('featured',function(){
 Route::get('discounted',function(){
 	return view('product_is_discounted');
 });
-Route::get('SignUp',function(){
-	return view('SignUp');
-});
-Route::get('SignIn',function(){
-	return view('SignIn');
-});
-Route::get('Admin',function(){
-	return view('databackend');
-});
+// Route::get('SignUp',function(){
+// 	return view('SignUp');
+// });
+// Route::get('SignIn',function(){
+// 	return view('SignIn');
+// });
+// Route::get('Admin',function(){
+// 	return view('databackend');
+// });
 
 Route::get('testdb',function(){
 	$user = App\sanpham::find(5)->nguoiban->toArray();
@@ -175,6 +175,8 @@ Route::get('ProductFilter/{dm}/{sx}', ['as' => 'productfilter', 'uses'=> 'Contro
 Route::get('Account_Seller',['as'=>'Account_Seller', 'uses' => 'LoadDataController@accountSeller']);
 //Danh sách tài khoản người mua
 Route::get('Account_Buyer',['as'=>'Account_Buyer', 'uses' => 'LoadDataController@accountBuyer']);
+//Danh sách tài khoản nhân viên
+Route::get('Account_Employees',['as'=>'Account_Employees', 'uses' => 'LoadDataController@accountEmployees']);
 //Return view Đơn Hàng
 Route::get('Orders',['as' =>'Orders','uses' => 'LoadDataController@orders']);
 //Return view Seller Change Passowrd

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\sanpham;
 use App\hoadon;
+use App\admin;
 use App\Http\Controller\Auth\RegisterController;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Query\Builder;
@@ -138,6 +139,15 @@ class LoadDataController extends Controller
 			$account = DB::table('nguoimua')->select('TENNM','SDT', 'EMAIL', 'MANM')->get();
 
 			return view('BuyerAccount')->with('account', $account);
+		}
+			return view('Error');
+	}
+	//Load tài khoản của nhân viên trong trang admin
+	public function accountEmployees(){
+		if(session()->get('typeuser') == 0){
+			$account = DB::table('nhanvien')->select('TENNV','SDT', 'EMAIL', 'MANV')->get();
+
+			return view('EmployeesAccount')->with('account', $account);
 		}
 			return view('Error');
 	}

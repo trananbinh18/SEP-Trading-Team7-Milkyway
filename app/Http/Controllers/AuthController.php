@@ -14,6 +14,7 @@ use App\chitiethoadon;
 use App\sanpham;
 use App\phuong;
 use App\quan;
+use App\admin;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;  
@@ -78,7 +79,7 @@ function getCreateAccount(){
      $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
     return view('CreateEmployeesAccount',compact('district', $district));
 }
-function postCreateAccount(Request $Employees_request){
+function postCreateAccount(CheckCreateAccountEmployeesRequest $Employees_request){
     $email = $Employees_request->email;
     if($email != ""){
         $ems = DB::table('nhanvien')->select('EMAIL')->where('EMAIL', $email)->get();
@@ -89,8 +90,8 @@ function postCreateAccount(Request $Employees_request){
             $users->TENNV   = $Employees_request->name;
             $users->SDT     = $Employees_request->phone;
             $users->SONHA   = $Employees_request->number_house;
-            $users->MAPHUONG  = $Employees_request->ward;
-            $users->MAQUAN    = $Employees_request->district;
+            $users->MAPHUONG= $Employees_request->ward;
+            $users->MAQUAN  = $Employees_request->district;
             $users->TP      = 'Hồ Chí Minh';
             $users->EMAIL   = $Employees_request->email;
             $users->MATKHAU = $Employees_request->password;
