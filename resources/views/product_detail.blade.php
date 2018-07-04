@@ -259,13 +259,13 @@
           <!-- End MainContent -->
           <script type="text/javascript">
               $(document).ready(function(){
-                var max = $("#quanty").attr("max");
+                var max = parseInt($('#quanty').attr('max'));
                 $("#btnSub").click(function(){
-                    var val = $("#quanty").val();
-                    if(val>max){
+                    var val1 = $("#quanty").val();
+                    if(val1>max){
                         $("#quanty").focus();
                         focusSet = true;
-                         $("#error").show();
+                        $("#error").show();
                     }else{
                         $("#formSoLuong").submit();
                     }
