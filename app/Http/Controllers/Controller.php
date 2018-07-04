@@ -125,7 +125,7 @@ class Controller extends BaseController
 
             $countHideproduct = count($productHide);   
 
-            return view('Historybuyproducts',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('history', $history);
+            return view('HistoryBuyProducts',compact('countUnapprovedproduct',$countUnapprovedproduct),compact('countApproveproduct',$countApproveproduct))->with('countHideproduct',$countHideproduct)->with('history', $history);
         }else{
             return view('Error');
         }
@@ -167,8 +167,11 @@ class Controller extends BaseController
         return redirect()->back();
     }
     public function Cart(){
-        $content = Cart::content();
-        return view('Shopping_cart',compact('content','total'));
+        if(session()->get('typeuser') === 2){
+            $content = Cart::content();
+            return view('shopping_cart',compact('content','total'));
+        }
+        return view('error');
     }
     //
     public function CheckoutCart()
@@ -176,7 +179,7 @@ class Controller extends BaseController
         $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
         $content = Cart::content();
         $count = Cart::count();
-        return view('Checkout',compact('content','count'),compact($district, 'district'));
+        return view('checkout',compact('content','count'),compact($district, 'district'));
     }
     // Thêm hóa đơn và chi tiết hóa đơn vào database
     public function postCheckout(CheckoutRequest $re){
@@ -213,7 +216,7 @@ class Controller extends BaseController
         $Bill->TONGTIEN = $Tongtien;
         $Bill->save();
         Cart::destroy();
-        return view('Order')->with('SOHD',$th);
+        return view('order')->with('SOHD',$th);
     }
     // Xóa sản phẩm trên view shopping
     public function Delete($id){
