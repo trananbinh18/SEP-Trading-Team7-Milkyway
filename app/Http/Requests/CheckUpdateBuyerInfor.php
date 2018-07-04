@@ -32,9 +32,10 @@ class CheckUpdateBuyerInfor extends FormRequest
     }
     public function messages(){
         return[
-        'name.max'  => 'Bạn nhập quá độ dài cho phép',
+        'name.max'  => 'Độ dài tối đa là 30 kí tự',
         'phone.digits_between' => 'Số điện thoại không tồn tại',
         'phone.numeric' => 'Số điện thoại nhập không đúng định dạng',
+        'phone.digits_between' => 'Độ dài của số điện thoại nhập trong khoảng 9 - 20 kí tự',
         'number_house.max' => 'Bạn nhập quá độ dài cho phép',
         ];
     }

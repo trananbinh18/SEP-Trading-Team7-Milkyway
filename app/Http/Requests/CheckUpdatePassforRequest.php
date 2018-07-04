@@ -15,12 +15,6 @@ class CheckUpdatePassforRequest extends FormRequest
     {
         return true;
     }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
@@ -33,10 +27,10 @@ class CheckUpdatePassforRequest extends FormRequest
     public function messages(){
         return[
             'current_password.required' => 'Chưa nhập mật khẩu cũ',
-            'current_password.min' => 'Mật khẩu nhập ngắn hơn giới hạn cho phép',
-            'current_password.max' => 'Mật khẩu nhập quá giới hạn cho phép',
-            'new_password.min' => 'Mật khẩu nhập ngắn hơn giới hạn cho phép',
-            'new_password.max' => 'Mật khẩu nhập quá giới hạn cho phép',
+            'current_password.min' => 'Độ dài tối thiếu là 8 kí tự',
+            'current_password.max' => 'Độ dài tối đa là 30 kí tự',
+            'new_password.min' => 'Độ dài tối thiểu là 8 kí tự',
+            'new_password.max' => 'Đồ dài tối đa là 30 kí tự',
             'new_password.required' => 'Chưa nhập mật khẩu mới',
             'confirm_password.same' => 'Mật khẩu nhập lại không khớp',
             'confirm_password.required' => 'Chưa nhập xác nhận lại mật khẩu',

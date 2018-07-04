@@ -38,12 +38,12 @@ class CheckSignUpBuyerRequest extends FormRequest
         return[
         //Messages SignUp
         'name.required' => 'Bạn chưa nhập tên người dùng',
-        'name.max'  => 'Bạn nhập quá độ dài cho phép',
+        'name.max'  => 'Độ dài tối đa là 30 kí tự',
         'phone.required' => 'Bạn chưa nhập số điện thoại',
         'phone.digits_between' => 'Số điện thoại không tồn tại',
         'phone.numeric' => 'Số điện thoại nhập không đúng định dạng',
         'number_house.required' => 'Bạn chưa nhập địa chỉ',
-        'number_house.max' => 'Bạn nhập quá độ dài cho phép',
+        'number_house.max' => 'Độ dài tối đa là 50 kí tự',
         'password.required' => 'Bạn chưa nhập mật khẩu', 
         'password.required' => 'Bạn chưa nhập mật khẩu' , 
         'password.between'=> 'Mật khẩu nên nhập từ 8 - 30 kí tự',
