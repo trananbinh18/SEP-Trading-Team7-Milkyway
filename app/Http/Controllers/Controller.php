@@ -167,8 +167,11 @@ class Controller extends BaseController
         return redirect()->back();
     }
     public function Cart(){
-        $content = Cart::content();
-        return view('Shopping_cart',compact('content','total'));
+        if(session()->get('typeuser') === 2){
+            $content = Cart::content();
+            return view('shopping_cart',compact('content','total'));
+        }
+        return view('error');
     }
     //
     public function CheckoutCart()
