@@ -176,10 +176,14 @@ class Controller extends BaseController
     //
     public function CheckoutCart()
     {
-        $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
-        $content = Cart::content();
-        $count = Cart::count();
-        return view('checkout',compact('content','count'),compact($district, 'district'));
+        if(session()->get('typeuser') ==2){
+            $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
+            $content = Cart::content();
+            $count = Cart::count();
+            return view('checkout',compact('content','count'),compact($district, 'district'));
+        }else{
+            return view('Error');
+        }
     }
     // Thêm hóa đơn và chi tiết hóa đơn vào database
     public function postCheckout(CheckoutRequest $re){

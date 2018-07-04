@@ -144,7 +144,7 @@ class LoadDataController extends Controller
 	}
 	//Load tài khoản của nhân viên trong trang admin
 	public function accountEmployees(){
-		if(session()->get('typeuser') == 0){
+		if(session()->get('typeuser') == 4){
 			$account = DB::table('nhanvien')->select('TENNV','SDT', 'EMAIL', 'MANV')->get();
 
 			return view('EmployeesAccount')->with('account', $account);

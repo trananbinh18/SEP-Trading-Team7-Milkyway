@@ -37,7 +37,7 @@ class ControllerAccount extends Controller
             $user = admin::where('EMAIL',$re->input('email'))->first();
             //$user->MATKHAU = password_hash($user->MATKHAU, PASSWORD_DEFAULT);
             //$query = "INSERT INTO nhanvien(EMAIL, MATKHAU) VALUES('$user', '$user->MATKHAU')";
-            $typeuser = 0;
+            $typeuser = 4;
         }
 
         if($user!=null) {
@@ -48,18 +48,6 @@ class ControllerAccount extends Controller
                 // $_SESSION["user"]=$user;
                 // $_SESSION["typeuser"]=$typeuser;
                 switch ($typeuser) {
-                    case 0:
-                        session(['userid' => $user->MAAD]);
-                        session(['typeuser' => 0]);
-                        session(['name' => $user->TENAD]);
-                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
-                        session(['phone' => $user->SDT]);
-                        session(['address' => $user->SONHA]);
-                        session(['ward' => $user->MAPHUONG]);
-                        session(['district' => $user->MAQUAN]);
-                        session(['city' => $user->TP]);
-                        return redirect()->route('Account_Employees');
-                        break;
                     case 1:
                         session(['userid' => $user->MANB]);
                         session(['typeuser' => 1]);
@@ -94,7 +82,19 @@ class ControllerAccount extends Controller
                         session(['ward' => $user->MAPHUONG]);
                         session(['district' => $user->MAQUAN]);
                         session(['city' => $user->TP]);
-                        return redirect()->route('listprosale');    
+                        return redirect()->route('listprosale');
+                    case 4:
+                        session(['userid' => $user->MAAD]);
+                        session(['typeuser' => 4]);
+                        session(['name' => $user->TENAD]);
+                        session(['password' => Crypt::decrypt($user->MATKHAU)]);
+                        session(['phone' => $user->SDT]);
+                        session(['address' => $user->SONHA]);
+                        session(['ward' => $user->MAPHUONG]);
+                        session(['district' => $user->MAQUAN]);
+                        session(['city' => $user->TP]);
+                        return redirect()->route('Account_Employees');
+                        break;    
                     default:
                         return redirect()->back();
                         break;

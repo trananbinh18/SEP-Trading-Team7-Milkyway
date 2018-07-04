@@ -76,8 +76,12 @@ class AuthController extends Controller
     }    
 }
 function getCreateAccount(){
-     $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
-    return view('CreateEmployeesAccount',compact('district', $district));
+    if(session()->get('typeuser') == 4 ){
+        $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
+        return view('CreateEmployeesAccount',compact('district', $district));
+    }else{
+        return view('Error');
+    }
 }
 function postCreateAccount(CheckCreateAccountEmployeesRequest $Employees_request){
     $email = $Employees_request->email;
