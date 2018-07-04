@@ -100,6 +100,17 @@ function weekArray(data,max){
     }
     return result;
 }
+function yearArray(data,max){
+    var result = [];
+    var ind = takeindex(data.length,max);
+    for(var i=ind;i<data.length;i++){
+        if(data[i]==undefined){
+            break;
+        }
+        result.push("Năm "+data[i]["nam"]);
+    }
+    return result;
+}
 
 function priceArray(data,max){
     var result = [];

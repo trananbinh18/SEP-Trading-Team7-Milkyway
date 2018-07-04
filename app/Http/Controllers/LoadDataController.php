@@ -201,6 +201,13 @@ class LoadDataController extends Controller
 		
 	}
 
+	public function Salerevenueemployee(){
+		if(session()->get('typeuser') == 3){ //check session xem đã đăng nhập hay chưa, nếu có rồi mới cho thực hiện
+		return view('revenueEmployee');
+		}
+		return view('Error');
+	}
+
 	//Trả lại dữ liệu thống kê theo thang gồm [tháng,tổng số tiền bán được trong tháng đó]
 	public function loadDataAnalyzethang($id){
 
@@ -218,4 +225,28 @@ class LoadDataController extends Controller
 
 		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('WEEK(NLHD) as tuan'),DB::raw('SUM(THANHTIEN) as tong'))->where('MANB','=',$id)->groupBy(DB::raw('WEEK(NLHD)'))->orderBy(DB::raw('WEEK(NLHD)'))->get();
 	}
+
+
+
+	//Trả dữ liệu thống kê cho nhân viên theo ngày
+	public function loadDataAnalyzengayforEmployee(){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('DAY(NLHD) as ngay,MONTH(NLHD) as thang'),DB::raw('SUM(THANHTIEN) as tong'))->groupBy(DB::raw('DAY(NLHD),MONTH(NLHD)'))->orderBy(DB::raw('NLHD'))->get();
+	}
+	//Trả dữ liệu thống kê cho nhân viên theo tháng
+	public function loadDataAnalyzethangforEmployee(){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('MONTH(NLHD) as thang'),DB::raw('SUM(THANHTIEN) as tong'))->groupBy(DB::raw('MONTH(NLHD)'))->orderBy(DB::raw('MONTH(NLHD)'))->get();
+	}
+	//Trả dữ liệu thống kê cho nhân viên theo tuần
+	public function loadDataAnalyzetuanforEmployee(){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('WEEK(NLHD) as tuan'),DB::raw('SUM(THANHTIEN) as tong'))->groupBy(DB::raw('WEEK(NLHD)'))->orderBy(DB::raw('WEEK(NLHD)'))->get();
+	}
+	//Trả dữ liệu thống kê cho nhân viên theo năm
+	public function loadDataAnalyzenamforEmployee(){
+
+		return DB::table('chitiethoadon')->join('hoadon','chitiethoadon.MAHD','=','hoadon.MAHD')->select(DB::raw('YEAR(NLHD) as nam'),DB::raw('SUM(THANHTIEN) as tong'))->groupBy(DB::raw('YEAR(NLHD)'))->orderBy(DB::raw('YEAR(NLHD)'))->get();
+	}
+
 }

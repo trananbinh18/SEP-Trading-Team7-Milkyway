@@ -123,6 +123,16 @@ Route::get('SalerevenueDatathang/{id}','LoadDataController@loadDataAnalyzethang'
 Route::get('SalerevenueDatangay/{id}','LoadDataController@loadDataAnalyzengay');
 //Trả về dữ liệu thống kê theo tuan
 Route::get('SalerevenueDatatuan/{id}','LoadDataController@loadDataAnalyzetuan');
+
+//Trả về dữ liệu thống kê theo thang cho nhân viên
+Route::get('SalerevenueDatathangforEmployee','LoadDataController@loadDataAnalyzethangforEmployee');
+//Trả về dữ liệu thống kê theo ngay cho nhân viên
+Route::get('SalerevenueDatangayforEmployee','LoadDataController@loadDataAnalyzengayforEmployee');
+//Trả về dữ liệu thống kê theo tuan cho nhân viên
+Route::get('SalerevenueDatatuanforEmployee','LoadDataController@loadDataAnalyzetuanforEmployee');
+//Trả về dữ liệu thống kê theo tuan cho nhân viên
+Route::get('SalerevenueDatanamforEmployee','LoadDataController@loadDataAnalyzenamforEmployee');
+
 //Trả về dữ liệu sản phẩm đã duyệt của người bán
 Route::get('ListproductApproved',['as'=>'ListApproved','uses'=>'LoadDataController@ListApproved']);
 //Trả về dữ liệu sản phẩm đã ẩn của người bán
@@ -209,3 +219,5 @@ Route::get('ward/{idquan}','AuthController@ward');
 //Tạo tài khoản cho nhân viên
 Route::get('CreateAccount', ['as' => 'CreateAccount' , 'uses' => 'AuthController@getCreateAccount']);
 Route::post('CreateAccountEmployees', ['as'=> 'CreateAccountEmployees' , 'uses' => 'AuthController@postCreateAccount']); 
+//Trả về trang Revenue của nhân viên
+Route::get('Salerevenueemployee',['as'=>'Salerevenueemployee','uses'=>'LoadDataController@Salerevenueemployee']);
