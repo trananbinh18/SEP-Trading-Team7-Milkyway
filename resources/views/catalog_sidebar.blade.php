@@ -1,4 +1,7 @@
 @extends('layout.master')
+@section (' title ')
+Danh sách sản phẩm
+@stop
 @section('content')
                 <?php $loaisp = App\loaisanpham::all();?>
     <div class="container">
