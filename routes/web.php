@@ -56,16 +56,13 @@ Route::get('testdb',function(){
 	$user = App\sanpham::find(5)->nguoiban->toArray();
 	return $user;
 });
-Route::get('contact',function(){
-	return view('contact');
-});
 
 Route::get('checkout',function(){
-	return view('Checkout');
+	return view('checkout');
 })->name('Checkout');
 
 Route::get('shoppingcart',function(){
-	return view('Shopping_cart');
+	return view('shopping_cart');
 });
 
 Route::get('deliverypolicy',function(){

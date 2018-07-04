@@ -48,8 +48,16 @@
      </div>
      <div class="col-md-8 control-infotproduct box-shadow">
       <div class="alert-success">
-        {{session('thanhcong')}}
-        {{session('thongbao')}}
+        @if(session('thanhcong'))
+          <div class="alert-success">
+            {{session('thanhcong')}}
+          </div>
+      @endif
+      @if(session('thongbao'))
+          <div class="alert-success">
+            {{session('thongbao')}}
+          </div>
+      @endif
       </div>
       <div class="page">
         <div class="container container-ver2">
@@ -112,4 +120,5 @@
         });
   });
 </script>
+<script type="text/javascript" src="{!!url("resources/assets/js/message.js")!!}"></script>
 @endsection

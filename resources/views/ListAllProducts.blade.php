@@ -115,9 +115,9 @@
 <script>
   $(document).ready(function() {
     $('#dataTables-example').DataTable({
-      responsive: true
+      responsive: true,
       paging: false,
-      searching: false
+      searching: false,
     });
   });
 </script>
