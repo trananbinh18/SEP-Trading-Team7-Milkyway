@@ -9,7 +9,7 @@ Kiểm tra
                     <img src="resources/assets/images/banner-product-checkout.jpg" alt="Banner-header">
                     <div class="text">
                         <h3>Kiểm tra</h3>
-                        <p><a href="#" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i>Kiểm tra</p>
+                        <p><a href="{{route('homepage')}}" title="Home">Trang chủ</a><i class="fa fa-caret-right"></i>Kiểm tra</p>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@ Kiểm tra
                                 <button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">Đặt hàng</button>
                                 @endif
                                 @if(Cart::count()==0)
-                                <a href="{{route('Checkout')}}"><button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">Đặt hàng</button></a>
+                                <a href="{{url('Error')}}"><button id="btnthanhtoan" type="submit" class="link-v1 box lh-50 rt full" title="PLACE ORDER">Đặt hàng</button></a>
                                 @endif
                             </div>
                         </div>

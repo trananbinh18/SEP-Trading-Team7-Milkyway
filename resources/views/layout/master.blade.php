@@ -70,7 +70,7 @@
             <div class="right">
                 <div id="topbar" class="topbar-ver2">
                     <div class="container container-ver2">
-                        <a class="logo-header-v3" href="#" title="Logo-FreshFood"><img src="{!!url("resources/assets/images/logo-header3.png")!!}" alt="FreshFood"></a>
+                        <a class="logo-header-v3" href="{{route('homepage')}}" title="Logo-FreshFood"><img src="{!!url("resources/assets/images/logo-header3.png")!!}" alt="FreshFood"></a>
                         <div class="inner-topbar box">
                             <div class="float-left">
                                 <p><img src="{!!url("resources/assets/images/icon-phone-header.png.png")!!}" alt="icon"> Gọi cho chúng tôi <span> 099-999-9999</span></p>
