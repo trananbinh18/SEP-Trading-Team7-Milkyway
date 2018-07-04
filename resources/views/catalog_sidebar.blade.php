@@ -91,6 +91,7 @@ Danh sách sản phẩm
                     <h3 class="widget-title">Danh mục</h3>
                     <ul class="product-categories">
                         <li><a class="loaisp" title="0">TẤT CẢ SẢN PHẨM</a></li>
+                        <li><a class="loaisp" title="-1">SẢN PHẨM KHUYỄN MÃI</a></li>
                         @foreach($loaisp as $loai)  
                         <li><a class="loaisp" title="{{$loai['MALOAISP']}}">{{$loai['TENLOAISP']}}</a></li>
                         @endforeach
@@ -98,7 +99,7 @@ Danh sách sản phẩm
                 </aside>
                 <aside class="widget widget_feature">
                     <h3 class="widget-title">SẢN PHẨM liên quan</h3>
-                    <ul>  
+                    <ul id="lsProductRelate">  
                         @for($i = 0; $i < 4; $i++)  
                         @if($sanpham->get($i)!=null)
                             <li>
@@ -150,7 +151,6 @@ Danh sách sản phẩm
                 if(i==lim){
                     break;
                 }
-
             $(".products").append("<div class='item-inner'><div class='product'><div class='product-images'><a href='"+pathname+"/Productdetail/"+data[i].MASP+"' title='product-images'><img class='primary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/><img class='secondary_image' src='resources/assets/images/products/"+data[i].HINH+"' alt=''/></a></div><a href='"+pathname+"/Productdetail/"+data[i].MASP+"' title='Bouble Fabric Blazer'><p class='product-title'>"+data[i].TENSP+"</p></a><p class='product-price-old'>"+checkGiaCu(data[i].GIACU)+"</p><p class='product-price'>"+data[i].GIA+" VND</p><p class='description'>"+data[i].MOTA+"</p><div class='action'>"+checkUsertype(data[i].MASP,pathname)+"</div><div class='social box'><h3>Share this :</h3><a class='twitter' href='#' title='social'><i class='fa fa-twitter-square'></i></a><a class='dribbble' href='#' title='social'><i class='fa fa-dribbble'></i></a><a class='skype' href='#' title='social'><i class='fa fa-skype'></i></a><a class='pinterest' href='#' title='social'><i class='fa fa-pinterest'></i></a><a class='facebook' href='#' title='social'><i class='fa fa-facebook-square'></i></a></div></div></div>");
             }
 
@@ -180,6 +180,14 @@ Danh sách sản phẩm
         dm = $(this).attr('title');
         $(".products").empty();
         $.getJSON('ProductFilter/'+dm+'/'+sx, function (data){
+        	$("#lsProductRelate").empty();
+        	for (var i = data.length - 1; i >= data.length-4; i--) {
+        		if(data[i]!=null){
+        		$("#lsProductRelate").append("<li><a class='images' href='Productdetail/"+data[i].MASP+"' title='images'><img class='img-responsive' src='resources/assets/images/products/"+data[i].HINH+"' alt='images'></a><div class='text'><h2><a href='Productdetail/"+data[i].MASP+"' title='Butterfly Bar Stool'>"+data[i].TENSP+"</a></h2><p><span>"+data[i].GIA+" VND</span></p><p class='rating'><i class='fa fa-star' aria-hidden='true'></i><i class='fa fa-star' aria-hidden='true'></i><i class='fa fa-star' aria-hidden='true'></i><i class='fa fa-star' aria-hidden='true'></i><i class='fa fa-star-half-o' aria-hidden='true'></i></p></div></li>");
+        		}else{
+        			break;
+        		}
+        	}
             var numofpage = (data.length/16)+1;
             numofpage = parseInt(numofpage);
             var i=(page-1)*16;
