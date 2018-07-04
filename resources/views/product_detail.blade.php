@@ -67,7 +67,7 @@
                                 <!-- End Rating -->
                                 <div class="wrap-price">
                                     <!-- <p class="price-old"><?php if($sanpham['GIACU'] != '0'){echo("{$sanpham['GIACU']} VND");} ?></p> -->
-                                    <p class="price">{{ number_format($sanpham['GIA'],0,',','.')}} VND</p>
+                                    <p class="price">{{ number_format($sanpham['GIA'],0,',','.')}} VND/ {{$sanpham['DONVI']}}</p>
                                 </div>
                                 <!-- End Price -->
                             </div>

@@ -12,7 +12,7 @@ use App\quan;
 
 class ControllerHome extends Controller
 {
-   	function about(){
+    function about(){
         return view('about');
     }
     function home(){
@@ -21,11 +21,19 @@ class ControllerHome extends Controller
         return view('home')->with('product',$product);
     }
     function Login(){
-        return view('SignIn');
+        if(session()->get('typeuser') != 1 && session()->get('typeuser') != 2 && session()->get('typeuser') != 3){
+            return view('SignIn');
+            }else{
+            return view('Error');    
+        }
     }
     function Register(){
-        $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
-        return view('SignUp', compact('district', $district));
+        if(session()->get('typeuser') != 1 && session()->get('typeuser') != 2 && session()->get('typeuser') != 3){
+            $district = DB::table('quan')->select('MAQUAN','TENQUAN')->get();
+            return view('SignUp', compact('district', $district));
+            }else{
+            return view('Error');
+        }
     }
     function Shipping(){
         return view('Shipping');
