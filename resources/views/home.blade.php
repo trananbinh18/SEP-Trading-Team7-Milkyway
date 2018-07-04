@@ -279,7 +279,7 @@
             <img src="resources/assets/images/icon-phone.png" alt="icon">
             <h4 style="text-shadow: 2px 2px 2px #000000">Gọi cho chúng tôi ngay</h4>
             <h3 style="text-shadow: 2px 2px 2px #000000">099 - 999 - 9999</h3>
-            <p style="text-shadow: 2px 2px 2px #000000">Đặt rau, củ quả và trái cây sạch cho sức khỏe tốt hơn!</p>
+            <p style="text-shadow: 2px 2px 2px #000000">Đa dạng sản phẩm, chất lượng tuyệt vời</p>
         </div>
     </div>
     
