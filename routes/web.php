@@ -199,7 +199,7 @@ Route::get('QuickHideOrders/{id}','LoadDataController@deleteOrders');
 //Trả về view lịch sử mua hàng
 Route::get('HistoryOrders',['as' => 'HistoryOrders' , 'uses' => 'LoadDataController@historyOrders']);
 //Trả về view lịch sử bán hàng
-Route::get('Historybuyproducts',['as' => 'historybuyproducts','uses'=>'Controller@HistoryBuyProducts']);
+Route::get('HistoryBuyProducts',['as' => 'historybuyproducts','uses'=>'Controller@HistoryBuyProducts']);
 //Chuyển trạng thái sản phẩm nhanh
 Route::get('unapprovedProducts/{id}','AuthController@unapprovedProducts');
 //Thay đổi nhanh trạng thái tài khoản người bán
