@@ -11,7 +11,7 @@ class RegisterBuyerTest extends TestCase
 {
     /**
      * Usecase-ID: TC-RE-01
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithAddValidField()
     {
@@ -33,7 +33,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-02
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithEmailAndPhoneValidFormat()
     {
@@ -55,7 +55,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-03
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithLengthOfNameEqualTenCharacters()
     {
@@ -77,7 +77,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-04
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithLengthOfPhoneEqualElevenCharacters()
     {
@@ -99,7 +99,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-05
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithLengthOfAddressEqualFifteenCharacters()
     {
@@ -121,7 +121,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-06
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithLengthOfAddressEqualFiftyFourCharacters()
     {
@@ -142,7 +142,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-07
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithLengthOfNameEqualThirtyOneCharacters()
     {
@@ -163,7 +163,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-08
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithLengthOfNumberEqualSevenCharacters()
     {
@@ -184,7 +184,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-09
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithLengthOfPasswordEqualTenCharacters()
     {
@@ -206,7 +206,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-10
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithLengthOfPasswordEqualFiveCharacters()
     {
@@ -227,7 +227,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-11
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithDistrictFieldHaveBeenChoosen()
     {
@@ -249,7 +249,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-12
-     * @return void
+     * @return boolean
      */
     public function testSignUpSuccessWithDistrictHaveBeenChoosen()
     {
@@ -271,7 +271,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-13
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithDistrictAndWardFieldHaventBeenChoosen()
     {
@@ -292,7 +292,7 @@ class RegisterBuyerTest extends TestCase
     }
     /**
      * Usecase-ID: TC-RE-14
-     * @return void
+     * @return boolean
      */
     public function testSignUpUnsuccessWithLengthOfEmailEqualFiftyOneCharacters()
     {
@@ -311,3 +311,4 @@ class RegisterBuyerTest extends TestCase
         	'email' => 'testdodaiemaillonhon51kytuduansepmilkyway@gmail.com'
     	]);
     }
+}
