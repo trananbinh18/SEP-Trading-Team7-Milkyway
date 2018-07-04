@@ -40,6 +40,7 @@
                <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Seller')}}" title="Danh sách sản phẩm">Danh Sách Người Bán</a></li>
                <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Account_Buyer')}}" title="Danh sách sản phẩm">Danh Sách Người Mua</a></li>
                <li><img src="resources/assets/images/icon-choose-2.png" alt=""><a href="{{route('listprosale')}}" title="Sửa thông tin">Danh Sách Sản Phẩm</a></li>
+               <li><img src="resources/assets/images/icon-choose-5.png" alt=""><a href="{{route('Salerevenueemployee')}}" title="Doanh số">Doanh Thu</a></li>
                <li><img src="resources/assets/images/icon-choose-4.png" alt=""><a href="{{route('ResetPassword')}}" title="Đổi mật khẩu">Đổi mật khẩu</a></li>
              </ul>
            </div>
