@@ -17,7 +17,7 @@ class ControllerSanPham extends Controller
    //
     public function productdetail($id){
         $sanpham = sanpham::where('TRANGTHAI','=',1)->find($id);
-        $lssanpham = sanpham::where('TRANGTHAI','=',1)->get();
+        $lssanpham = sanpham::where('TRANGTHAI','=',1)->where('MALOAISP',$sanpham->MALOAISP)->get();
         if($sanpham == null){
             return redirect()->route('homepage');
         }else{
